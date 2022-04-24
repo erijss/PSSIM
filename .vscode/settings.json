@@ -1,0 +1,34 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  //-------- Editor configuration --------
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  //-------- Files configuration --------
+  "files.autoGuessEncoding": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "search.exclude": {
+    "**/Tests/Data*": true
+  },
+  //-------- PowerShell configuration --------
+  "powershell.codeFormatting.preset": "OTBS",
+  "powershell.codeFormatting.alignPropertyValuePairs": true,
+  "powershell.codeFormatting.preset": "Allman",
+  "powershell.scriptAnalysis.settingsPath": "./ScriptAnalyzerSettings.psd1",
+  //-------- Language configuration --------
+  "[json]": {
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
+  },
+  "[xml]": {
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
+  },
+  "[powershell]": {
+    "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup",
+    "editor.semanticHighlighting.enabled": false,
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
+  }
+}
