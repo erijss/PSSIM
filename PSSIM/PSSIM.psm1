@@ -1,5 +1,5 @@
 # PSSIM
-# Copyright (c) 2021 Erwin Rijss
+# Copyright (c) 2022 Erwin Rijss
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -48,7 +48,7 @@ $script:PSSIM = @{}
 $PSSIM.Info = @{
     Version              = $PSSIMManifest.Version.ToString()
     Created              = 2022
-    ShowLogo             = 2
+    ShowLogo             = 1
     ModulePath           = $PSSIMModulePath
 }
 
@@ -74,7 +74,7 @@ $PSSIM.Context.Sitecore = @{}
 $PSSIM.Context.SqlServer = @{}
 $PSSIM.Context.Solr = @{}
 $PSSIM.Context.Resources = @{}
-# $PSSIM.Context.Certificates = @{}
+$PSSIM.Context.Certificates = @{}
 # $PSSIM.Context.Redis = @{}
 
 Export-ModuleMember -function Invoke-PSSIM
