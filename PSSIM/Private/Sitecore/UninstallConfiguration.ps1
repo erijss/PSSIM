@@ -25,7 +25,7 @@ function PSSIM.Sitecore.UnInstallConfiguration {
         $logFilePath = $PSSIM.Context.Settings.WorkingDirectory
         $LogFile = Join-Path $logFilePath $logFileName
 
-        $SIFPath = [System.IO.Path]::Combine($PSSIM.Info.ModulePath,"SIF",$SIFFolder)
+        $SIFPath = [System.IO.Path]::Combine($PSSIM.Info.ModulePath, "SIF", $PSSIM.Context.Sitecore.Version, $SIFFolder)
 
         Push-Location $SIFPath
 
