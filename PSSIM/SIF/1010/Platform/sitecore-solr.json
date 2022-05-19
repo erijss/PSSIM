@@ -1,0 +1,635 @@
+{
+    "Parameters": {
+        "SolrUrl": {
+            "Type": "string",
+            "DefaultValue": "https://localhost:8983/solr",
+            "Description": "The Solr instance url."
+        },
+        "SolrRoot": {
+            "Type": "string",
+            "DefaultValue": "c:\\solr-8.4.0",
+            "Description": "The file path to the Solr instance."
+        },
+        "SolrService": {
+            "Type": "string",
+            "DefaultValue": "Solr-8.4.0",
+            "Description": "The name of the Solr service."
+        },
+        "SolrBaseConfig": {
+            "Type": "string",
+            "DefaultValue": "_default",
+            "Description": "The configset to copy as a base for each core."
+        },
+        "SolrCorePrefix": {
+            "Type": "string",
+            "DefaultValue": "sitecore",
+            "Description": "The prefix for each of the created indexes."
+        }
+    },
+    "Variables": {
+        "Solr.Root": "[resolvepath(parameter('SolrRoot'))]",
+        "Solr.Server": "[joinpath(variable('Solr.Root'), 'server', 'solr')]",
+        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('SolrBaseConfig'))]",
+        "Solr.SchemaFileName": "managed-schema",
+        "Solr.Xpath.SchemaRoot": "//schema",
+        "Solr.Xpath.UniqueKey": "[concat(variable('Solr.Xpath.SchemaRoot'), '/uniqueKey')]",
+        "Solr.UniqueField": "_uniqueid",
+        "Solr.UniqueField.Attributes": {
+            "name": "[variable('Solr.UniqueField')]",
+            "type": "string",
+            "indexed": "true",
+            "required": "true",
+            "stored": "true"
+        },
+        "Solr.Core.Core.Name": "[concat(parameter('SolrCorePrefix'), '_core_index')]",
+        "Solr.Core.Master.Name": "[concat(parameter('SolrCorePrefix'), '_master_index')]",
+        "Solr.Core.Web.Name": "[concat(parameter('SolrCorePrefix'), '_web_index')]",
+        "Solr.Core.MarketingDefinitions.Master.Name": "[concat(parameter('SolrCorePrefix'), '_marketingdefinitions_master')]",
+        "Solr.Core.MarketingDefinitions.Web.Name": "[concat(parameter('SolrCorePrefix'), '_marketingdefinitions_web')]",
+        "Solr.Core.MarketingAssets.Master.Name": "[concat(parameter('SolrCorePrefix'), '_marketing_asset_index_master')]",
+        "Solr.Core.MarketingAssets.Web.Name": "[concat(parameter('SolrCorePrefix'), '_marketing_asset_index_web')]",
+        "Solr.Core.Testing.Name": "[concat(parameter('SolrCorePrefix'), '_testing_index')]",
+        "Solr.Core.Suggested.Name": "[concat(parameter('SolrCorePrefix'), '_suggested_test_index')]",
+        "Solr.Core.FXM.Master.Name": "[concat(parameter('SolrCorePrefix'), '_fxm_master_index')]",
+        "Solr.Core.FXM.Web.Name": "[concat(parameter('SolrCorePrefix'), '_fxm_web_index')]",
+        "Solr.Core.Personalization.Name": "[concat(parameter('SolrCorePrefix'), '_personalization_index')]",
+
+        "Solr.Core.Core.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Core.Name'))]",
+        "Solr.Core.Master.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Master.Name'))]",
+        "Solr.Core.Web.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Web.Name'))]",
+        "Solr.Core.MarketingDefinitions.Master.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.MarketingDefinitions.Master.Name'))]",
+        "Solr.Core.MarketingDefinitions.Web.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.MarketingDefinitions.Web.Name'))]",
+        "Solr.Core.MarketingAssets.Master.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.MarketingAssets.Master.Name'))]",
+        "Solr.Core.MarketingAssets.Web.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.MarketingAssets.Web.Name'))]",
+        "Solr.Core.Testing.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Testing.Name'))]",
+        "Solr.Core.Suggested.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Suggested.Name'))]",
+        "Solr.Core.FXM.Master.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.FXM.Master.Name'))]",
+        "Solr.Core.FXM.Web.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.FXM.Web.Name'))]",
+        "Solr.Core.Personalization.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Personalization.Name'))]",
+
+        "Solr.Core.Core.Conf": "[joinpath(variable('Solr.Core.Core.Root'), 'conf')]",
+        "Solr.Core.Master.Conf": "[joinpath(variable('Solr.Core.Master.Root'), 'conf')]",
+        "Solr.Core.Web.Conf": "[joinpath(variable('Solr.Core.Web.Root'), 'conf')]",
+        "Solr.Core.MarketingDefinitions.Master.Conf": "[joinpath(variable('Solr.Core.MarketingDefinitions.Master.Root'), 'conf')]",
+        "Solr.Core.MarketingDefinitions.Web.Conf": "[joinpath(variable('Solr.Core.MarketingDefinitions.Web.Root'), 'conf')]",
+        "Solr.Core.MarketingAssets.Master.Conf": "[joinpath(variable('Solr.Core.MarketingAssets.Master.Root'), 'conf')]",
+        "Solr.Core.MarketingAssets.Web.Conf": "[joinpath(variable('Solr.Core.MarketingAssets.Web.Root'), 'conf')]",
+        "Solr.Core.Testing.Conf": "[joinpath(variable('Solr.Core.Testing.Root'), 'conf')]",
+        "Solr.Core.Suggested.Conf": "[joinpath(variable('Solr.Core.Suggested.Root'), 'conf')]",
+        "Solr.Core.FXM.Master.Conf": "[joinpath(variable('Solr.Core.FXM.Master.Root'), 'conf')]",
+        "Solr.Core.FXM.Web.Conf": "[joinpath(variable('Solr.Core.FXM.Web.Root'), 'conf')]",
+        "Solr.Core.Personalization.Conf": "[joinpath(variable('Solr.Core.Personalization.Root'), 'conf')]"
+    },
+    "Tasks": {
+        "UnloadCores": {
+            "Description": "Unloads existing Cores (if exists)",
+            "Type": "ManageSolrCore",
+            "Params": [
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Core.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingDefinitions.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingDefinitions.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingAssets.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingAssets.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Testing.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Suggested.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.FXM.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.FXM.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Personalization.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                }
+            ]
+        },
+        "CleanCores": {
+            "Description": "Creates/clears core paths.",
+            "Type": "EnsurePath",
+            "Params": {
+                "Clean": [
+                    "[variable('Solr.Core.Core.Root')]",
+                    "[variable('Solr.Core.Master.Root')]",
+                    "[variable('Solr.Core.Web.Root')]",
+                    "[variable('Solr.Core.MarketingDefinitions.Master.Root')]",
+                    "[variable('Solr.Core.MarketingDefinitions.Web.Root')]",
+                    "[variable('Solr.Core.MarketingAssets.Master.Root')]",
+                    "[variable('Solr.Core.MarketingAssets.Web.Root')]",
+                    "[variable('Solr.Core.Testing.Root')]",
+                    "[variable('Solr.Core.Suggested.Root')]",
+                    "[variable('Solr.Core.FXM.Master.Root')]",
+                    "[variable('Solr.Core.FXM.Web.Root')]",
+                    "[variable('Solr.Core.Personalization.Root')]"
+                ]
+            }
+        },
+        "PrepareCores": {
+            "Description": "Copies base configs into the core paths.",
+            "Type": "Copy",
+            "Params": [
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.Core.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.Master.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.Web.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.MarketingDefinitions.Master.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.MarketingDefinitions.Web.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.MarketingAssets.Master.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.MarketingAssets.Web.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.Testing.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.Suggested.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.FXM.Master.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.FXM.Web.Root')]"
+                },
+                {
+                    "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]",
+                    "Destination": "[variable('Solr.Core.Personalization.Root')]"
+                }
+            ]
+        },
+        "AddSchemaUniqueKeyField": {
+            "Description": "Amends the core managed schema uniqueKey element.",
+            "Type": "SetXml",
+            "Params": [
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Core.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Master.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Web.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingDefinitions.Master.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingDefinitions.Web.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingAssets.Master.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingAssets.Web.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Testing.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Suggested.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.FXM.Master.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.FXM.Web.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Personalization.Conf'), variable('Solr.SchemaFileName'))]",
+                    "Xpath": "[variable('Solr.Xpath.SchemaRoot')]",
+                    "Element": "field",
+                    "Attributes": "[variable('Solr.UniqueField.Attributes')]"
+                }
+            ]
+        },
+        "UpdateSchemaUniqueKey": {
+            "Description": "Amends the core managed schema uniqueKey element.",
+            "Type": "SetXml",
+            "Params": [
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Core.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Master.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Web.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingDefinitions.Master.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingDefinitions.Web.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingAssets.Master.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.MarketingAssets.Web.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Testing.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Suggested.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.FXM.Master.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.FXM.Web.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Solr.Core.Personalization.Conf'), 'managed-schema')]",
+                    "Xpath": "[variable('Solr.Xpath.UniqueKey')]",
+                    "Value": "[variable('Solr.UniqueField')]"
+                }
+            ]
+        },
+        "CreateCores": {
+            "Description": "Tells Solr to create the new cores.",
+            "Type": "ManageSolrCore",
+            "Params": [
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.Core.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.Master.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.Web.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.MarketingDefinitions.Master.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.MarketingDefinitions.Web.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.MarketingAssets.Master.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.MarketingAssets.Web.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.Testing.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.Suggested.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.FXM.Master.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.FXM.Web.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                },
+                {
+                    "Action": "Create",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "name": "[variable('Solr.Core.Personalization.Name')]",
+                        "property.update.autoCreateFields": "false"
+                    }
+                }
+            ]
+        }
+    },
+    "UninstallTasks": {
+        "RemoveCores": {
+            "Description": "Removes the cores and instance folders.",
+            "Type": "ManageSolrCore",
+            "Params": [
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Core.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingDefinitions.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingDefinitions.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingAssets.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.MarketingAssets.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Testing.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Suggested.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.FXM.Master.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.FXM.Web.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                },
+                {
+                    "Action": "Unload",
+                    "Address": "[parameter('SolrUrl')]",
+                    "Arguments": {
+                        "core": "[variable('Solr.Core.Personalization.Name')]",
+                        "deleteInstanceDir": "true"
+                    },
+                    "ErrorAction": "SilentlyContinue"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,1383 @@
+{
+    "description": "Collection of parameters for an easy Sitecore installation and un-installation.",
+    "warning": "NEVER USE THIS WAY OF INSTALLING FOR PRODUCTION ENVIRONMENTS.",
+    "tip": "the (un)installation process creates logfiles. Keep this logfiles in a safe place because it contains passwords for databases and certificates",
+    "resources": {
+        "folder": "C:\\Resources\\PSSIM\\",
+        "downloadlocation": "https://downloadlocation/sitecorepackages.zip"
+    },
+    "sitecore": {
+        "prefix": "DEMO",
+        "topology": "XM0",
+        "version": "10.2.0",
+        "folder": "C:\\inetpub\\wwwroot",
+        "license": "C:\\Resources\\PSSIM\\license.xml",
+        "hostnames": [
+            "local-www.demo.com",
+            "local-www.anotherdemo.com"
+        ],
+        "databasespassword": "S!mpleP@ssword",
+        "hostnamepattern": "{{prefix}}.{{identifier}}",
+        "roles": {
+            "identity": {
+                "identifier": "auth",
+                "clientsecret": "identityserverclientsecret"
+            },
+            "contentmanagement": {
+                "identifier": "cm",
+                "adminpassword": "b"
+            },
+            "contentdelivery": {
+                "identifier": "cd"
+            },
+            "horizon": {
+                "identifier": "horizon",
+                "enablesxa": false,
+                "enablecontenthub": false
+            },
+            "publishing": {
+                "identifier": "pub"
+            },
+            "processing": {
+                "identifier": "prc"
+            },
+            "reporting": {
+                "identifier": "rep",
+                "apikey": "00112233445566778899AABBCCDDEEFF"
+            },
+            "emaildispatch": {
+                "identifier": "exmdds",
+                "exmcryptographickey": "0x0123456789012345678901234567890123456789012345678901234678901234",
+                "exmauthenticationkey": "0x0123456789012345678901234567890123456789012345678901234678901234"
+            },
+            "xconnectcollect": {
+                "identifier": "xccollect"
+            },
+            "xconnectsearch": {
+                "identifier": "xcsearch"
+            },
+            "xconnectrefdata": {
+                "identifier": "xcrefdata"
+            },
+            "marketingautomationoperations": {
+                "identifier": "maops"
+            },
+            "marketingautomationreporting": {
+                "identifier": "marep"
+            },
+            "cortexprocessing": {
+                "identifier": "cortexprc"
+            },
+            "cortexreporting": {
+                "identifier": "cortexrep"
+            }
+        }
+    },
+    "sqlserver": {
+        "edition": "Express",
+        "version": "2017",
+        "instance": {
+            "server": ".",
+            "name": "SQLEXPRESS2017"
+        },
+        "administrator": {
+            "username": "sa",
+            "password": "SqlExpress2017"
+        }
+    },
+    "solr": {
+        "folder": "C:\\Data\\Solr",
+        "version": "8.8.2",
+        "prefix": "pssim-",
+        "portprefix": 9,
+        "cores": [
+            "project_demo_master_index",
+            "project_demo_web_index",
+            "project_anotherdemo_master_index",
+            "project_anotherdemo_web_index"
+        ]
+    },
+    "redis": {
+        "folder": "C:\\Data\\Redis",
+        "version": "6.6.2"
+    },
+    "certificates": {
+        "folder": "C:\\Certificates\\",
+        "password": "S!mpleP@ssword",
+        "rootcertificate": "CustomRootCertificate"
+    },
+    "packages": {
+        "930": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 4.0.0 rev. 01437.zip"
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "Data Exchange Framework Activity for Marketing Automation 4.0.0 rev. 01437.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 4.0.0 rev. 01437.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_EXPERIENCEFORMS": {
+                "name": "Data Exchange Framework Save Action for Experience Forms 4.0.0 rev. 01437.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 4.0.0 rev. 01437.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "Sitecore DataExchange TenantService 4.0.0 rev. 01437.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM9.2-9.3.v.3.0.0-r00132.1325.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP9.2-9.3.v.3.0.0-r00132.1325.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 4.0.0 rev. 01421.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 4.0.0 rev. 01421.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 4.0.0 rev. 01411.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 4.0.0 rev. 01411.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "AuthoringHost.zip"
+            },
+            "HORIZON_FEATUREINTEGRATION": {
+                "name": "Horizon.FeatureIntegration 3.0.0.zip"
+            },
+            "HORIZON_FEATUREINTEGRATIONINSIGHTS": {
+                "name": "Horizon.FeatureIntegration.Insights 3.0.0.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 9.3 XM 13.0.0 rev. 190924.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 9.3 XM 13.0.0 rev. 190924.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 9.3 XP 13.0.0 rev. 190924.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 9.3 XP 13.0.0 rev. 190924.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 4.0.0 rev. 00257 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 9.3.0 rev. 003498 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 9.3.0 rev. 003498 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 9.3.0 rev. 003498 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.0.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator 9.3.0.2589.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator 9.3.0.2589 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 9.3.0.2589.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 9.3.0.2589 CD.scwdp.zip"
+            }
+        },
+        "1000": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 5.0.0 rev. 01466.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 5.0.0 rev. 01439.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 5.0.0 rev. 01439.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 5.0.0 rev. 01431.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost.1.36.0.zip"
+            },
+            "HORIZON_FEATUREINTEGRATION": {
+                "name": "Horizon.FeatureIntegration 4.0.0-r00721.zip"
+            },
+            "HORIZON_FEATUREINTEGRATIONINSIGHTS": {
+                "name": "Horizon.FeatureIntegration.Insights 4.0.0-r00721.zip"
+            },
+            "HORIZON_ZENITH": {
+                "name": "Sitecore Zenith Integration 1.270.0.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 5.0.0 rev. 00277 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.0.0 rev. 004346 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.0.0 rev. 004346 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore  10.0.0 rev. 004346 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.0.0 rev. 004346 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138.scwdp.zip"
+            }
+        },
+        "1001": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 5.0.0 rev. 01466.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 5.0.0 rev. 01439.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 5.0.0 rev. 01439.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 5.0.0 rev. 01431.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost.1.46.0.zip"
+            },
+            "HORIZON_FEATUREINTEGRATION": {
+                "name": "Horizon.FeatureIntegration 4.1.0-r00725.zip"
+            },
+            "HORIZON_FEATUREINTEGRATIONINSIGHTS": {
+                "name": "Horizon.FeatureIntegration.Insights 4.1.0-r00725.zip"
+            },
+            "HORIZON_ZENITH": {
+                "name": "Sitecore Zenith Integration 1.273.0.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 5.0.1 rev. 00280 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.0.1 rev. 004842 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.0.1 rev. 004842 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore  10.0.1 rev. 004842 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.0.1 rev. 004842 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138.scwdp.zip"
+            }
+        },
+        "1002": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 5.0.0 rev. 01466.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 5.0.0 rev. 01439.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 5.0.0 rev. 01439.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 5.0.0 rev. 01431.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost.1.46.0.zip"
+            },
+            "HORIZON_FEATUREINTEGRATION": {
+                "name": "Horizon.FeatureIntegration 4.1.0-r00725.zip"
+            },
+            "HORIZON_FEATUREINTEGRATIONINSIGHTS": {
+                "name": "Horizon.FeatureIntegration.Insights 4.1.0-r00725.zip"
+            },
+            "HORIZON_ZENITH": {
+                "name": "Sitecore Zenith Integration 1.273.0.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 5.0.1 rev. 00280 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.0.2 rev. 006052 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.0.2 rev. 006052 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore  10.0.2 rev. 006052 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.0.2 rev. 006052 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138.scwdp.zip"
+            }
+        },
+        "1003": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 5.0.0 rev. 01466.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 5.0.0 rev. 01466.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 5.0.0 rev. 01439.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 5.0.0 rev. 01439.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 5.0.0 rev. 01431.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost.1.46.0.zip"
+            },
+            "HORIZON_FEATUREINTEGRATION": {
+                "name": "Horizon.FeatureIntegration 4.1.0-r00725.zip"
+            },
+            "HORIZON_FEATUREINTEGRATIONINSIGHTS": {
+                "name": "Horizon.FeatureIntegration.Insights 4.1.0-r00725.zip"
+            },
+            "HORIZON_ZENITH": {
+                "name": "Sitecore Zenith Integration 1.273.0.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112 CD.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 5.0.0 rev. 00277 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.0.3 rev. 006577 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.0.3 rev. 006577 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore  10.0.3 rev. 006577 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.0.3 rev. 006577 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.0.0.3138.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.0.0.3138.scwdp.zip"
+            }
+        },
+        "1010": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 6.0.0 rev. 01537.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 6.0.0 rev. 01537.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 6.0.0-r01537.1182.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 6.0.0 rev. 01474.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 6.0.0 rev. 01474.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 6.0.0 rev. 01456.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 6.0.0 rev. 01456.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost 2.26.0 rev. 02700.zip"
+            },
+            "HORIZON_XM": {
+                "name": "Sitecore Horizon XM integration 2.26.0 rev. 02700.zip"
+            },
+            "HORIZON_XP": {
+                "name": "Sitecore Horizon XP integration 2.26.0 rev. 02700.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore Headless Services Server XM 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore Headless Services Server XM CD 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore Headless Services Server XP 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore Headless Services Server XP CD 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.1.0 rev. 00585.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 5.1.0 rev. 00290 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.1.0 rev. 005297 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.1.0 rev. 005297 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.1.0 rev. 005297 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.2.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.1.0.3751 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.1.0.3751.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.1.0.3751 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.1.0.3751.scwdp.zip"
+            }
+        },
+        "1011": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 6.0.0 rev. 01537.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 6.0.0 rev. 01537.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 6.0.0-r01537.1182.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 6.0.0 rev. 01474.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 6.0.0 rev. 01474.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 6.0.0 rev. 01456.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 6.0.0 rev. 01456.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost 2.26.1 rev. 04429.zip"
+            },
+            "HORIZON_XM": {
+                "name": "Sitecore Horizon XM integration 2.26.1 rev. 04429.zip"
+            },
+            "HORIZON_XP": {
+                "name": "Sitecore Horizon XP integration 2.26.1 rev. 04429.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore Headless Services Server XM 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore Headless Services Server XM CD 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore Headless Services Server XP 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore Headless Services Server XP CD 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.1.0 rev. 00585.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 5.1.1 rev. 00292 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.1.1 rev. 005862 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.1.1 rev. 005862 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.1.1 rev. 005862 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.2.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.1.0.3751 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.1.0.3751.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.1.0.3751 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.1.0.3751.scwdp.zip"
+            }
+        },
+        "1012": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 6.0.0 rev. 01537.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 6.0.0 rev. 01537.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 6.0.0-r01537.1182.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 6.0.0 rev. 01474.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 6.0.0 rev. 01474.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 6.0.0 rev. 01456.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 6.0.0 rev. 01456.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost 2.26.1 rev. 04429.zip"
+            },
+            "HORIZON_XM": {
+                "name": "Sitecore Horizon XM integration 2.26.1 rev. 04429.zip"
+            },
+            "HORIZON_XP": {
+                "name": "Sitecore Horizon XP integration 2.26.1 rev. 04429.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore Headless Services Server XM 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore Headless Services Server XM CD 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore Headless Services Server XP 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore Headless Services Server XP CD 18.0.0 rev. 00473.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.1.0 rev. 00585.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 6.0.0 rev. 00301 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.1.2 rev. 006578 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.1.2 rev. 006578 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM (OnPrem)_CM.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_REP": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_rep.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.1.2 rev. 006578 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.2.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.1.0.3751 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.1.0.3751.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.1.0.3751 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.1.0.3751.scwdp.zip"
+            }
+        },
+        "1020": {
+            "CONNECT_FRAMEWORK": {
+                "name": "Data Exchange Framework 7.0.0 rev. 01597.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_HOST": {
+                "name": "Sitecore Data Exchange Framework Tenant Web Service 7.0.0 rev. 01597.scwdp.zip"
+            },
+            "CONNECT_FRAMEWORK_TENANT_SERVICE_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_CM": {
+                "name": "n.a."
+            },
+            "CONNECT_FRAMEWORK_MARKETINGAUTOMTION_MAOPS": {
+                "name": "Sitecore Data Exchange Framework Action Plugin for Marketing Automation 7.0.0-r01597.1960.scwdp.zip"
+            },
+            "CONNECT_CONTENTHUB": {
+                "name": "Sitecore.Connector.ContentHub.WDP.5.0.0-r00328.4145.scwdp.zip"
+            },
+            "CONNECT_DAM": {
+                "name": "Sitecore Connect for Sitecore DAM-2.0.0.zip"
+            },
+            "CONNECT_CMP_XM": {
+                "name": "Sitecore.Connector.CMP.XM10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_CMP_XP": {
+                "name": "Sitecore.Connector.CMP.XP10.0.v.3.0.0-r00134.1334.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales 7.0.0 rev. 01499.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 7.0.0 rev. 01499.scwdp.zip"
+            },
+            "CONNECT_MICROSOFTDYNAMICSSALES_STAGING_DATABASE": {
+                "name": "Sitecore.DataExchange.Staging.dacpac"
+            },
+            "CONNECT_SALESFORCECRM": {
+                "name": "Sitecore Connect for Salesforce CRM 7.0.0 rev. 01480.zip"
+            },
+            "CONNECT_SALESFORCECRM_TENANT_SERVICE": {
+                "name": "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 7.0.0 rev. 01480.scwdp.zip"
+            },
+            "HORIZON_HOST": {
+                "name": "HorizonHost 3.0.0 rev. 05608.zip"
+            },
+            "HORIZON_XM": {
+                "name": "Sitecore Horizon Integration XM 3.0.0 rev. 05608.scwdp.zip"
+            },
+            "HORIZON_XP": {
+                "name": "Sitecore Horizon Integration XP 3.0.0 rev. 05608.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CM": {
+                "name": "Sitecore Headless Services Server XM 20.0.0 rev. 00539.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XM_CD": {
+                "name": "Sitecore Headless Services Server XM CD 20.0.0 rev. 00539.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CM": {
+                "name": "Sitecore Headless Services Server XP 20.0.0 rev. 00539.scwdp.zip"
+            },
+            "HEADLESSSERVICES_XP_CD": {
+                "name": "Sitecore Headless Services Server XP CD 20.0.0 rev. 00539.scwdp.zip"
+            },
+            "PUBLISHINGSERVICEHOST": {
+                "name": "Sitecore Publishing Service 6.0.0-netcoreapp3.1.zip"
+            },
+            "PUBLISHINGSERVICEMODULE": {
+                "name": "Sitecore Publishing Module 10.2.0 rev. 00631.zip"
+            },
+            "SITECORE_IDENTITY": {
+                "name": "Sitecore.IdentityServer 6.0.0 rev. 00301 (OnPrem)_identityserver.scwdp.zip"
+            },
+            "SITECORE_XM1_CD": {
+                "name": "Sitecore 10.2.0 rev. 006766 (XM) (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XM1_CM": {
+                "name": "Sitecore 10.2.0 rev. 006766 (XM) (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP0_SINGLE": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_single.scwdp.zip"
+            },
+            "SITECORE_XP0_XCONNECT": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp0xconnect.scwdp.zip"
+            },
+            "SITECORE_XP1_CD": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_cd.scwdp.zip"
+            },
+            "SITECORE_XP1_CM": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTPRC": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1cortexprocessing.scwdp.zip"
+            },
+            "SITECORE_XP1_CORTEXTREP": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1cortexreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_DDS": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_dds.scwdp.zip"
+            },
+            "SITECORE_XP1_EXM": {
+                "name": "Sitecore.Patch.EXM 10.2.0 rev. 006766 (OnPrem)_cm.scwdp.zip"
+            },
+            "SITECORE_XP1_MAOPS": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1marketingautomation.scwdp.zip"
+            },
+            "SITECORE_XP1_MAREP": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1marketingautomationreporting.scwdp.zip"
+            },
+            "SITECORE_XP1_PRC": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_prc.scwdp.zip"
+            },
+            "SITECORE_XP1_XCCOLLECT": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1collection.scwdp.zip"
+            },
+            "SITECORE_XP1_XCREFDATA": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1referencedata.scwdp.zip"
+            },
+            "SITECORE_XP1_XCSEARCH": {
+                "name": "Sitecore 10.2.0 rev. 006766 (OnPrem)_xp1collectionsearch.scwdp.zip"
+            },
+            "POWERSHELLEXTENSIONS": {
+                "name": "Sitecore.PowerShell.Extensions-6.3 - IAR.scwdp.zip"
+            },
+            "SXA_XM_CD": {
+                "name": "Sitecore Experience Accelerator XM 10.2.0 rev. 04247 CD.scwdp.zip"
+            },
+            "SXA_XM_CM": {
+                "name": "Sitecore Experience Accelerator XM 10.2.0 rev. 04247.scwdp.zip"
+            },
+            "SXA_XP_CD": {
+                "name": "Sitecore Experience Accelerator 10.2.0 rev. 04247 CD.scwdp.zip"
+            },
+            "SXA_XP_CM": {
+                "name": "Sitecore Experience Accelerator 10.2.0 rev. 04247.scwdp.zip"
+            }
+        }
+    }
+}

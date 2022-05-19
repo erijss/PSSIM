@@ -1,0 +1,109 @@
+{
+    "Parameters": {
+        "Package": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SiteName": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SiteRoot": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "Prefix": {
+            "Type": "String",
+            "Description": "",
+            "DefaultValue": ""
+        },
+        "SitecoreAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SqlAdminUser": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SqlAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SQLServer": {
+            "Type": "String",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "PackagesTempLocation": {
+            "Type": "String",
+            "Description": "",
+            "Reference": ""
+        },
+        "DownloadLocations": {
+            "Type": "String",
+            "Description": "",
+            "Reference": ""
+        },
+        "SHS:Package": {
+            "Type": "string",
+            "Reference": "Package",
+            "Description": ""
+        },
+        "SHS:SiteRoot": {
+            "Type": "string",
+            "Reference": "SiteRoot",
+            "Description": ""
+        },
+        "SHS:SiteName": {
+            "Type": "string",
+            "Reference": "SiteName",
+            "Description": ""
+        },
+        "SHS:SitecoreAdminPassword": {
+            "Type": "string",
+            "Reference": "SitecoreAdminPassword",
+            "Description": ""
+        },
+        "SHS:SqlAdminUser": {
+            "Type": "string",
+            "Reference": "SqlAdminUser",
+            "Description": ""
+        },
+        "SHS:SqlAdminPassword": {
+            "Type": "string",
+            "Reference": "SqlAdminPassword",
+            "Description": ""
+        },
+        "SHS:SqlServer": {
+            "Type": "string",
+            "Reference": "SqlServer",
+            "Description": ""
+        },
+        "SHS:SqlDbPrefix": {
+            "Type": "string",
+            "Reference": "Prefix",
+            "Description": ""
+        },
+        "SHS:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": ""
+        },
+        "SHS:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": ""
+        }
+    },
+    "Includes": {
+        "SHS": {
+            "Source": ".\\shs-CM.json"
+        }
+    }
+}

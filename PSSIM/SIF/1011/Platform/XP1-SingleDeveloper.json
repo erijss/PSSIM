@@ -1,0 +1,1457 @@
+{
+    "Parameters": {
+        "CertificateName": {
+            "Type": "String",
+            "Description": "The name of the certificate to be created.",
+            "DefaultValue": ""
+        },
+        "IdentityServerCertificateName": {
+            "Type": "String",
+            "Description": "The name of the certificate to be created for the identity server.",
+            "DefaultValue": ""
+        },
+        "IdentityServerSiteName": {
+            "Type": "string",
+            "Description": "The name of the identity server to be created.",
+            "DefaultValue": "IdentityServer"
+        },
+        "LicenseFile": {
+            "Type": "String",
+            "Description": "The path to the Sitecore license file.",
+            "DefaultValue": ".\\License.xml"
+        },
+        "Prefix": {
+            "Type": "String",
+            "DefaultValue": "SC910",
+            "Description": "The prefix for uniquely identifying instances."
+        },
+        "XP1CollectionPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 Collection package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1CollectionSearchPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 Collection search package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1CortexProcessingPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 Processing package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1MarketingAutomationPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 Marketing Automation package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1MarketingAutomationReportingPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 Marketing Automation Reporting package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1CortexReportingPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 reporting package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1ReferenceDataPackage": {
+            "Type": "string",
+            "Description": "The path to the XP1 reference data package to deploy.",
+            "DefaultValue": ""
+        },
+        "SitecoreXP1CDPackage": {
+            "Type": "string",
+            "Description": "The path to the Sitecore XP1 content delivery package to deploy.",
+            "DefaultValue": ""
+        },
+        "SitecoreXP1CMPackage": {
+            "Type": "string",
+            "Description": "The path to the Sitecore XP1 content management package to deploy.",
+            "DefaultValue": ""
+        },
+        "SitecoreXP1PrcPackage": {
+            "Type": "string",
+            "Description": "The path to the Sitecore XP1 prc package to deploy.",
+            "DefaultValue": ""
+        },
+        "IdentityServerPackage": {
+            "Type": "string",
+            "Description": "The path to the Identity Server package to deploy.",
+            "DefaultValue": ""
+        },
+        "XP1CortexProcessingSitename": {
+            "Type": "string",
+            "DefaultValue": "CortexProcessing",
+            "Description": "The name of the Cortex Processing site to be deployed."
+        },
+        "XP1CollectionSitename": {
+            "Type": "string",
+            "DefaultValue": "XConnectCollection",
+            "Description": "The name of the XConnect Collection site to be deployed."
+        },
+        "XP1CollectionSearchSitename": {
+            "Type": "string",
+            "DefaultValue": "XConnectCollectionSearch",
+            "Description": "The name of the XConnect Collection Search site to be deployed."
+        },
+        "XP1MarketingAutomationSitename": {
+            "Type": "string",
+            "DefaultValue": "XConnectMarketingAutomation",
+            "Description": "The name of the site to be deployed."
+        },
+        "XP1MarketingAutomationReportingSitename": {
+            "Type": "string",
+            "DefaultValue": "XConnectMarketingAutomationReporting",
+            "Description": "The name of the XConnect Marketing Automation Reporting site to be deployed."
+        },
+        "XP1ReferenceDataSitename": {
+            "Type": "string",
+            "DefaultValue": "XConnectReferenceData",
+            "Description": "The name of the XConnect Reference Data site to be deployed."
+        },
+        "XP1CortexReportingSitename": {
+            "Type": "string",
+            "DefaultValue": "CortexReporting",
+            "Description": "The name of the Cortex Reporting site to be deployed."
+        },
+        "SitecoreXP1CDSitename": {
+            "Type": "string",
+            "DefaultValue": "SitecoreCD",
+            "Description": "The name of the Sitecore Content Delivery site to be deployed."
+        },
+        "SitecoreXP1CMSitename": {
+            "Type": "string",
+            "DefaultValue": "SitecoreCM",
+            "Description": "The name of the Sitecore Content Management site to be deployed."
+        },
+        "SitecoreXP1PrcSitename": {
+            "Type": "string",
+            "DefaultValue": "SitecoreProcessing",
+            "Description": "The name of the Sitecore Processing site to be deployed."
+        },
+        "ProcessingService": {
+            "Type": "string",
+            "DefaultValue": "https://SitecoreProcessing",
+            "Description": "The url for the Processing Service."
+        },
+        "CortexReportingService": {
+            "Type": "string",
+            "DefaultValue": "https://CortexReporting",
+            "Description": "The url for the Cortex Reporting Service."
+        },
+        "ReportingServiceApiKey": {
+            "Type": "string",
+            "DefaultValue": "00112233445566778899AABBCCDDEEFF",
+            "Description": "The api key to use with the Processing Service server must be at least 32 characters long. e.g 00112233445566778899AABBCCDDEEFF"
+        },
+        "PasswordRecoveryUrl": {
+            "Type": "string",
+            "Description": "Password recovery Url (Host name of CM instance).",
+            "DefaultValue": "http:\\SitecoreCM"
+        },
+        "ClientsConfiguration": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "Sitecore IdentityServer clients configuration"
+        },
+        "SqlAdminUser": {
+            "Type": "string",
+            "DefaultValue": "sa",
+            "Description": "The Sql admin user account to use when installing databases."
+        },
+        "SqlAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "12345",
+            "Description": "The Sql admin password to use when installing databases."
+        },
+        "SQLServer": {
+            "Type": "String",
+            "DefaultValue": "Localhost",
+            "Description": "The Sql Server where databases will be installed."
+        },
+        "SitecoreAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "The admin password for the Sitecore instance."
+        },
+        "SiteRoot": {
+            "Type": "String",
+            "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
+            "DefaultValue": ""
+        },
+        "SqlCorePassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Core connection string in Sitecore."
+        },
+        "SqlSecurityPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Security connection string in Sitecore."
+        },
+        "SqlMarketingAutomationPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Marketing Automation connection string in Sitecore."
+        },
+        "SqlMessagingPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Messaging connection string in Sitecore."
+        },
+        "SqlProcessingPoolsPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Processing Pools connection string in Sitecore."
+        },
+        "SqlCollectionUser": {
+            "Type": "string",
+            "DefaultValue": "collectionuser",
+            "Description": "The Sql user account to use for the collection databases."
+        },
+        "SqlCollectionPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "TThe Sql password for the collection connection string in Sitecore."
+        },
+        "SqlReferenceDataPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Reference Data connection string in Sitecore."
+        },
+        "SqlProcessingEnginePassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Processing Engine Tasks and Storage database connection strings in Sitecore."
+        },
+        "SqlReportingPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Reporting connection string in Sitecore."
+        },
+        "SqlExmMasterPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the EXM Master connection string in Sitecore."
+        },
+        "SqlFormsPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Experience Forms connection string in Sitecore."
+        },
+        "SqlMasterPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Master connection string in Sitecore."
+        },
+        "SqlWebPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Web connection string in Sitecore."
+        },
+        "SqlProcessingTasksPassword": {
+            "Type": "string",
+            "DefaultValue": "SIF-Default",
+            "Description": "The Sql password for the Processing Tasks connection string in Sitecore."
+        },
+        "EXMCryptographicKey": {
+            "Type": "string",
+            "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
+            "Description": "64 digits hexadecimal EXM Cryptographic Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "EXMAuthenticationKey": {
+            "Type": "string",
+            "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
+            "Description": "64 digits hexadecimal EXM Authentication Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "SolrUrl": {
+            "Type": "String",
+            "DefaultValue": "https://localhost:8983/solr",
+            "Description": "The Solr instance to use."
+        },
+        "SolrRoot": {
+            "Type": "String",
+            "DefaultValue": "C:\\solr-8.4.0",
+            "Description": "The file path to the Solr instance."
+        },
+        "SolrService": {
+            "Type": "String",
+            "DefaultValue": "Solr-8.4.0",
+            "Description": "The name of the Solr service."
+        },
+        "XConnectCollectionService": {
+            "Type": "String",
+            "DefaultValue": "https://localhost",
+            "Description": "The url for the XConnect Collection Service."
+        },
+        "XConnectCollectionSearchService": {
+            "Type": "String",
+            "DefaultValue": "https://localhost",
+            "Description": "The url for the XConnect Collection Search Service."
+        },
+        "XConnectReferenceDataService": {
+            "Type": "String",
+            "DefaultValue": "https://localhost",
+            "Description": "The URL of the XConnect Reference Data service."
+        },
+        "MarketingAutomationOperationsService": {
+            "Type": "String",
+            "DefaultValue": "https://localhost",
+            "Description": "The URL of the Marketing Automation Operations service."
+        },
+        "MarketingAutomationReportingService": {
+            "Type": "String",
+            "DefaultValue": "https://localhost",
+            "Description": "The URL of the Marketing Automation Operations service."
+        },
+        "AllowedCorsOrigins": {
+            "Type": "string",
+            "Description": "Pipe-separated list of instances (URIs) that are allowed to login via Sitecore Identity.",
+            "DefaultValue": ""
+        },
+        "ClientSecret": {
+            "Type": "string",
+            "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
+            "DefaultValue": "IdentityServerClientSecret"
+        },
+        "SitecoreIdentityAuthority": {
+            "Type": "string",
+            "DefaultValue": "https://SitecoreIdentityServerHost",
+            "Description": "IdentityServer provider URI."
+        },
+        "PackagesTempLocation": {
+            "Type": "String",
+            "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
+            "DefaultValue": ""
+        },
+        "DownloadLocations": {
+            "Type": "String",
+            "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
+            "DefaultValue": ".\\downloads.json"
+        },
+        "DisableHttpsForCD": {
+            "Type": "bool",
+            "Description": "The option for the enable/disable HTTPS to the Sitecore Content Delivery.",
+            "DefaultValue": false
+        },
+        "Update": {
+            "Type": "bool",
+            "Description": "The parameter for the installing delta WDP packages.",
+            "DefaultValue": false
+        },
+        "SitecoreXP1CD:DisableHttps": {
+            "Type": "bool",
+            "Reference": "DisableHttpsForCD",
+            "Description": "Override to pass DisableHttpsForCD value to SitecoreXP1CD config."
+        },
+        "XConnectCertificates:CertificateName": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to Certificates config."
+        },
+        "XConnectCertificates:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to Certificates config."
+        },
+        "XP1Collection:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1Collection config."
+        },
+        "XP1CollectionSearch:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1CollectionSearch config."
+        },
+        "XP1MarketingAutomation:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1MarketingAutomationReporting config."
+        },
+        "XP1CortexProcessing:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1CortexReporting config."
+        },
+        "XP1ReferenceData:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:XConnectCert": {
+            "Type": "String",
+            "Reference": "CertificateName",
+            "Description": "Override to pass CertificateName value to SitecoreXP1Prc config."
+        },
+        "XP1Collection:Package": {
+            "Type": "String",
+            "Reference": "XP1CollectionPackage",
+            "Description": "Override to pass XP1CollectionPackage value to XP1Collection config."
+        },
+        "XP1CollectionSearch:Package": {
+            "Type": "String",
+            "Reference": "XP1CollectionSearchPackage",
+            "Description": "Override to pass XP1CollectionSearchPackage value to XP1CollectionSearch config."
+        },
+        "XP1MarketingAutomation:Package": {
+            "Type": "String",
+            "Reference": "XP1MarketingAutomationPackage",
+            "Description": "Override to pass XP1MarketingAutomationPackage value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:Package": {
+            "Type": "String",
+            "Reference": "XP1MarketingAutomationReportingPackage",
+            "Description": "Override to pass XP1MarketingAutomationReportingPackage value to XP1MarketingAutomationReporting config."
+        },
+        "XP1CortexProcessing:Package": {
+            "Type": "String",
+            "Reference": "XP1CortexProcessingPackage",
+            "Description": "Override to pass XP1CortexProcessingPackage value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:Package": {
+            "Type": "String",
+            "Reference": "XP1CortexReportingPackage",
+            "Description": "Override to pass XP1CortexReportingPackage value to XP1ReferenceData config."
+        },
+        "XP1ReferenceData:Package": {
+            "Type": "String",
+            "Reference": "XP1ReferenceDataPackage",
+            "Description": "Override to pass XP1ReferenceDataPackage value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:Package": {
+            "Type": "String",
+            "Reference": "SitecoreXP1CDPackage",
+            "Description": "Override to pass SitecoreXP1CDPackage value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:Package": {
+            "Type": "String",
+            "Reference": "SitecoreXP1CMPackage",
+            "Description": "Override to pass SitecoreXP1CMPackage value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:Package": {
+            "Type": "String",
+            "Reference": "SitecoreXP1PrcPackage",
+            "Description": "Override to pass SitecoreXP1PrcPackage value to SitecoreXP1Prc config."
+        },
+        "IdentityServer:Package": {
+            "Type": "String",
+            "Reference": "IdentityServerPackage",
+            "Description": "Override to pass IdentityServerPackage value to IdentityServer config."
+        },
+        "XP1Collection:Sitename": {
+            "Type": "String",
+            "Reference": "XP1CollectionSitename",
+            "Description": "Override to pass XP1CollectionSitename value to XP1Collection config."
+        },
+        "XP1CollectionSearch:Sitename": {
+            "Type": "String",
+            "Reference": "XP1CollectionSearchSitename",
+            "Description": "Override to pass XP1CollectionSearchSitename value to XP1CollectionSearch config."
+        },
+        "XP1CortexProcessing:Sitename": {
+            "Type": "String",
+            "Reference": "XP1CortexProcessingSitename",
+            "Description": "Override to pass XP1CortexProcessingSitename value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:Sitename": {
+            "Type": "String",
+            "Reference": "XP1CortexReportingSitename",
+            "Description": "Override to pass XP1CortexReportingSitename value to XP1CortexReporting config."
+        },
+        "XP1MarketingAutomation:Sitename": {
+            "Type": "String",
+            "Reference": "XP1MarketingAutomationSitename",
+            "Description": "Override to pass XP1MarketingAutomationSitename value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:Sitename": {
+            "Type": "String",
+            "Reference": "XP1MarketingAutomationReportingSitename",
+            "Description": "Override to pass XP1MarketingAutomationReportingSitename value to XP1MarketingAutomationReporting config."
+        },
+        "XP1ReferenceData:Sitename": {
+            "Type": "String",
+            "Reference": "XP1ReferenceDataSitename",
+            "Description": "Override to pass XP1ReferenceDataSitename value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:Sitename": {
+            "Type": "String",
+            "Reference": "SitecoreXP1CDSitename",
+            "Description": "Override to pass SitecoreXP1CDSitename value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:Sitename": {
+            "Type": "String",
+            "Reference": "SitecoreXP1CMSitename",
+            "Description": "Override to pass SitecoreXP1CMSitename value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:Sitename": {
+            "Type": "String",
+            "Reference": "SitecoreXP1PrcSitename",
+            "Description": "Override to pass SitecoreXP1PrcSitename value to SitecoreXP1Prc config."
+        },
+        "IdentityServer:Sitename": {
+            "Type": "String",
+            "Reference": "IdentityServerSitename",
+            "Description": "Override to pass IdentityServerSitename value to IdentityServer config."
+        },
+        "IdentityServer:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to IdentityServer config."
+        },
+        "XP1Collection:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1Collection config."
+        },
+        "XP1CollectionSearch:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1CollectionSearch config."
+        },
+        "XP1ReferenceData:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1ReferenceData config."
+        },
+        "XP1MarketingAutomation:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1MarketingAutomationReporting config."
+        },
+        "XP1CortexProcessing:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to XP1CortexReporting config."
+        },
+        "SitecoreXP1CM:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CD:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1Prc:SiteRoot": {
+            "Type": "String",
+            "Reference": "SiteRoot",
+            "Description": "Override to pass SiteRoot value to SitecoreXP1Prc config."
+        },
+        "SitecoreXP1CM:ProcessingService": {
+            "Type": "String",
+            "Reference": "ProcessingService",
+            "Description": "Override to pass ProcessingService value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CM:CortexReportingService": {
+            "Type": "String",
+            "Reference": "CortexReportingService",
+            "Description": "Override to pass CortexReportingService value to SitecoreXP1CM config."
+        },
+        "XP1CortexProcessing:XConnectSearchService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionSearchService",
+            "Description": "Override to pass XConnectCollectionSearchService value to XP1CortexProcessing config."
+        },
+        "SitecoreXP1CM:XConnectCollectionSearchService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionSearchService",
+            "Description": "Override to pass XConnectCollectionSearchService value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CM:XConnectCollectionService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionService",
+            "Description": "Override to pass XConnectCollectionService value to SitecoreXP1CM config."
+        },
+        "IdentityServer:PasswordRecoveryUrl": {
+            "Type": "String",
+            "Reference": "PasswordRecoveryUrl",
+            "Description": "Override to pass PasswordRecoveryUrl value to IdentityServer config."
+        },
+        "IdentityServer:ClientsConfiguration": {
+            "Type": "String",
+            "Reference": "ClientsConfiguration",
+            "Description": "Override to pass ClientsConfiguration value to IdentityServer config."
+        },
+        "XConnectSolr:SolrUrl": {
+            "Type": "String",
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to XConnectSolr config."
+        },
+        "XP1CollectionSearch:SolrUrl": {
+            "Type": "String",
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to XP1CollectionSearch config."
+        },
+        "SitecoreSolr:SolrUrl": {
+            "Type": "String",
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to SitecoreSolr config."
+        },
+        "SitecoreXP1CD:SolrUrl": {
+            "Type": "String",
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:SolrUrl": {
+            "Type": "String",
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to SitecoreXP1CM config."
+        },
+        "XConnectSolr:SolrRoot": {
+            "Type": "String",
+            "Reference": "SolrRoot",
+            "Description": "Override to pass SolrRoot value to XConnectSolr config."
+        },
+        "SitecoreSolr:SolrRoot": {
+            "Type": "String",
+            "Reference": "SolrRoot",
+            "Description": "Override to pass SolrRoot value to SitecoreSolr config."
+        },
+        "XConnectSolr:SolrService": {
+            "Type": "String",
+            "Reference": "SolrService",
+            "Description": "Override to pass SolrService value to XConnectSolr config."
+        },
+        "SitecoreSolr:SolrService": {
+            "Type": "String",
+            "Reference": "SolrService",
+            "Description": "Override to pass SolrService value to SitecoreSolr config."
+        },
+        "SitecoreSolr:SolrCorePrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to SitecoreSolr config."
+        },
+        "SitecoreXP1CD:SolrCorePrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:SolrCorePrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to SitecoreXP1CM config."
+        },
+        "XConnectSolr:SolrCorePrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XConnectSolr config."
+        },
+        "XP1CollectionSearch:SolrCorePrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1CollectionSearch config."
+        },
+        "XP1CortexProcessing:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1CortexReporting config."
+        },
+        "XP1Collection:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1Collection config."
+        },
+        "XP1CollectionSearch:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1CollectionSearch config."
+        },
+        "XP1MarketingAutomation:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1MarketingAutomationReporting config."
+        },
+        "XP1ReferenceData:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to SitecoreXP1Prc config."
+        },
+        "IdentityServer:SqlDbPrefix": {
+            "Type": "String",
+            "Reference": "Prefix",
+            "Description": "Override to pass Prefix value to IdentityServer config."
+        },
+        "XP1Collection:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1Collection config."
+        },
+        "XP1CollectionSearch:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1CollectionSearch config."
+        },
+        "XP1MarketingAutomation:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1MarketingAutomationReporting config."
+        },
+        "XP1CortexProcessing:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1CortexReporting config."
+        },
+        "XP1ReferenceData:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:SqlServer": {
+            "Type": "String",
+            "Reference": "SqlServer",
+            "Description": "Override to pass SqlServer value to SitecoreXP1Prc config."
+        },
+        "IdentityServer:SqlServer": {
+            "Type": "String",
+            "Reference": "SQLServer",
+            "Description": "Override to pass SqlServer value to IdentityServer config."
+        },
+        "XP1Collection:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to XP1Collection config."
+        },
+        "XP1CortexProcessing:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to XP1CortexReporting config."
+        },
+        "XP1MarketingAutomation:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to XP1MarketingAutomation config."
+        },
+        "XP1ReferenceData:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CM:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:SqlAdminUser": {
+            "Type": "String",
+            "Reference": "SqlAdminUser",
+            "Description": "Override to pass SqlAdminUser value to SitecoreXP1Prc config."
+        },
+        "XP1Collection:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to XP1Collection config."
+        },
+        "XP1MarketingAutomation:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to XP1MarketingAutomation config."
+        },
+        "XP1ReferenceData:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to XP1ReferenceData config."
+        },
+        "XP1CortexProcessing:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to XP1CortexReporting config."
+        },
+        "SitecoreXP1CM:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:SqlAdminPassword": {
+            "Type": "String",
+            "Reference": "SqlAdminPassword",
+            "Description": "Override to pass SqlAdminPassword value to SitecoreXP1Prc config."
+        },
+        "XP1Collection:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1Collection config."
+        },
+        "XP1CollectionSearch:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1CollectionSearch config."
+        },
+        "XP1MarketingAutomation:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1MarketingAutomationReporting config."
+        },
+        "XP1ReferenceData:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1ReferenceData config."
+        },
+        "XP1CortexProcessing:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to XP1CortexReporting config."
+        },
+        "SitecoreXP1CD:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to SitecoreXP1Prc config."
+        },
+        "IdentityServerCertificates:CertificateName": {
+            "Type": "String",
+            "Reference": "IdentityServerSiteName",
+            "Description": "Override to pass IdentityServerSiteName value to IdentityServerCertificates config."
+        },
+        "IdentityServerCertificates:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to Certificates config."
+        },
+        "IdentityServer:SitecoreIdentityCert": {
+            "Type": "String",
+            "Reference": "IdentityServerSiteName",
+            "Description": "Override to pass IdentityServerSiteName value to IdentityServer config."
+        },
+        "IdentityServer:LicenseFile": {
+            "Type": "String",
+            "Reference": "LicenseFile",
+            "Description": "Override to pass LicenseFile value to IdentityServer config."
+        },
+        "XP1MarketingAutomation:XConnectCollectionSearchService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionSearchService",
+            "Description": "Override to pass XConnectCollectionSearchService value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomation:XConnectCollectionService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionService",
+            "Description": "Override to pass XConnectCollectionService value to XP1MarketingAutomation config."
+        },
+        "XP1CortexProcessing:XConnectCollectionService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionService",
+            "Description": "Override to pass XConnectCollectionService value to XP1CortexProcessing config."
+        },
+        "SitecoreXP1CD:XConnectCollectionService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionService",
+            "Description": "Override to pass XConnectCollectionService value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1Prc:XConnectCollectionService": {
+            "Type": "String",
+            "Reference": "XConnectCollectionService",
+            "Description": "Override to pass XConnectCollectionService value to SitecoreXP1Prc config."
+        },
+        "XP1MarketingAutomation:XConnectReferenceDataService": {
+            "Type": "String",
+            "Reference": "XConnectReferenceDataService",
+            "Description": "Override to pass XConnectReferenceDataService value to XP1MarketingAutomation config."
+        },
+        "SitecoreXP1CD:XConnectReferenceDataService": {
+            "Type": "String",
+            "Reference": "XConnectReferenceDataService",
+            "Description": "Override to pass XConnectReferenceDataService value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:XConnectReferenceDataService": {
+            "Type": "String",
+            "Reference": "XConnectReferenceDataService",
+            "Description": "Override to pass XConnectReferenceDataService value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CD:MarketingAutomationOperationsService": {
+            "Type": "String",
+            "Reference": "MarketingAutomationOperationsService",
+            "Description": "Override to pass MarketingAutomationOperationsService value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:MarketingAutomationOperationsService": {
+            "Type": "String",
+            "Reference": "MarketingAutomationOperationsService",
+            "Description": "Override to pass MarketingAutomationOperationsService value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CD:MarketingAutomationReportingService": {
+            "Type": "String",
+            "Reference": "MarketingAutomationReportingService",
+            "Description": "Override to pass MarketingAutomationReportingService value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:MarketingAutomationReportingService": {
+            "Type": "String",
+            "Reference": "MarketingAutomationReportingService",
+            "Description": "Override to pass MarketingAutomationReportingService value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CM:SitecoreIdentityAuthority": {
+            "Type": "String",
+            "Reference": "SitecoreIdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1CD:SitecoreIdentityAuthority": {
+            "Type": "String",
+            "Reference": "SitecoreIdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to SitecoreXP1CD config."
+        },
+        "IdentityServer:AllowedCorsOrigins": {
+            "Type": "String",
+            "Reference": "AllowedCorsOrigins",
+            "Description": "Override to pass AllowedCorsOrigins value to IdentityServer config."
+        },
+        "SitecoreXP1CM:SitecoreAdminPassword": {
+            "Type": "String",
+            "Reference": "SitecoreAdminPassword",
+            "Description": "Override to pass SitecoreAdminPassword value to SitecoreXP1CM config."
+        },
+        "IdentityServer:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation value to IdentityServer config."
+        },
+        "XP1Collection:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1Collection config."
+        },
+        "XP1CollectionSearch:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1CollectionSearch config."
+        },
+        "XP1CortexProcessing:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1CortexReporting config."
+        },
+        "XP1MarketingAutomation:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1MarketingAutomationReporting config."
+        },
+        "XP1ReferenceData:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to SitecoreXP1Prc config."
+        },
+        "IdentityServer:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations value to IdentityServer config."
+        },
+        "XP1Collection:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1Collection config."
+        },
+        "XP1CollectionSearch:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1CollectionSearch config."
+        },
+        "XP1CortexProcessing:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1CortexProcessing config."
+        },
+        "XP1CortexReporting:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1CortexReporting config."
+        },
+        "XP1MarketingAutomation:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1MarketingAutomation config."
+        },
+        "XP1MarketingAutomationReporting:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1MarketingAutomationReporting config."
+        },
+        "XP1ReferenceData:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XP1ReferenceData config."
+        },
+        "SitecoreXP1CD:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to SitecoreXP1CM config."
+        },
+        "SitecoreXP1Prc:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to SitecoreXP1Prc config."
+        },
+        "SitecoreXP1Prc:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to SitecoreXP1Prc config."
+        },
+        "SitecoreXP1CD:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to SitecoreXP1CD config."
+        },
+        "SitecoreXP1CM:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to SitecoreXP1CM config."
+        },
+        "XP1CortexReporting:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1CortexReporting config."
+        },
+        "XP1CortexProcessing:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1CortexProcessing config."
+        },
+        "XP1MarketingAutomationReporting:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1MarketingAutomationReporting config."
+        },
+        "XP1MarketingAutomation:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1MarketingAutomation config."
+        },
+        "XP1ReferenceData:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1ReferenceData config."
+        },
+        "XP1CollectionSearch:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1CollectionSearch config."
+        },
+        "XP1Collection:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XP1Collection config."
+        },
+        "IdentityServer:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to IdentityServer config."
+        },
+        "XConnectSolr:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to XConnectSolr config."
+        },
+        "SitecoreSolr:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to SitecoreSolr config."
+        }
+    },
+    "Variables": {
+        "Sql.Database.MarketingAutomation.Password": "[if(variable('Sql.Database.MarketingAutomation.Password.Test'),variable('Sql.Database.MarketingAutomation.Password.Generate'),parameter('SqlMarketingAutomationPassword'))]",
+        "Sql.Database.MarketingAutomation.Password.Test": "[equal(parameter('SqlMarketingAutomationPassword'),'SIF-Default')]",
+        "Sql.Database.MarketingAutomation.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1Collection:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "XP1CollectionSearch:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "XP1MarketingAutomation:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "XP1MarketingAutomationReporting:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+
+        "Sql.Database.Messaging.Password": "[if(variable('Sql.Database.Messaging.Password.Test'),variable('Sql.Database.Messaging.Password.Generate'),parameter('SqlMessagingPassword'))]",
+        "Sql.Database.Messaging.Password.Test": "[equal(parameter('SqlMessagingPassword'),'SIF-Default')]",
+        "Sql.Database.Messaging.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1Collection:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "XP1CortexProcessing:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "XP1CollectionSearch:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "XP1MarketingAutomation:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "SitecoreXP1CM:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "SitecoreXP1CD:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+
+        "Sql.Database.ProcessingPools.Password": "[if(variable('Sql.Database.ProcessingPools.Password.Test'),variable('Sql.Database.ProcessingPools.Password.Generate'),parameter('SqlProcessingPoolsPassword'))]",
+        "Sql.Database.ProcessingPools.Password.Test": "[equal(parameter('SqlProcessingPoolsPassword'),'SIF-Default')]",
+        "Sql.Database.ProcessingPools.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1Collection:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "XP1CollectionSearch:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "SitecoreXP1Prc:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "XP1MarketingAutomation:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+
+        "Sql.Database.Collection.Password": "[if(variable('Sql.Database.Collection.Password.Test'),variable('Sql.Database.Collection.Password.Generate'),parameter('SqlCollectionPassword'))]",
+        "Sql.Database.Collection.Password.Test": "[equal(parameter('SqlCollectionPassword'),'SIF-Default')]",
+        "Sql.Database.Collection.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1Collection:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+        "XP1CollectionSearch:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+        "XP1MarketingAutomation:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+
+        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('SqlCorePassword'))]",
+        "Sql.Database.Core.Password.Test": "[equal(parameter('SqlCorePassword'),'SIF-Default')]",
+        "Sql.Database.Core.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1CM:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
+        "SitecoreXP1Prc:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
+
+        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('SqlSecurityPassword'))]",
+        "Sql.Database.Security.Password.Test": "[equal(parameter('SqlSecurityPassword'),'SIF-Default')]",
+        "Sql.Database.Security.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1CM:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "SitecoreXP1CD:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "IdentityServer:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "SitecoreXP1Prc:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+
+        "Sql.Database.ReferenceData.Password": "[if(variable('Sql.Database.ReferenceData.Password.Test'),variable('Sql.Database.ReferenceData.Password.Generate'),parameter('SqlReferenceDataPassword'))]",
+        "Sql.Database.ReferenceData.Password.Test": "[equal(parameter('SqlReferenceDataPassword'),'SIF-Default')]",
+        "Sql.Database.ReferenceData.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1ReferenceData:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XP1MarketingAutomation:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XP1MarketingAutomationReporting:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XP1Collection:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XP1CollectionSearch:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "SitecoreXP1CM:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "SitecoreXP1Prc:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+
+        "Sql.Database.ProcessingEngine.Password": "[if(variable('Sql.Database.ProcessingEngine.Password.Test'),variable('Sql.Database.ProcessingEngine.Password.Generate'),parameter('SqlProcessingEnginePassword'))]",
+        "Sql.Database.ProcessingEngine.Password.Test": "[equal(parameter('SqlProcessingEnginePassword'),'SIF-Default')]",
+        "Sql.Database.ProcessingEngine.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1CortexProcessing:Sql.Database.ProcessingEngine.Password": "[variable('Sql.Database.ProcessingEngine.Password')]",
+
+        "Sql.Database.Reporting.Password": "[if(variable('Sql.Database.Reporting.Password.Test'),variable('Sql.Database.Reporting.Password.Generate'),parameter('SqlReportingPassword'))]",
+        "Sql.Database.Reporting.Password.Test": "[equal(parameter('SqlReportingPassword'),'SIF-Default')]",
+        "Sql.Database.Reporting.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "XP1CortexReporting:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "XP1CortexProcessing:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "SitecoreXP1CM:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "SitecoreXP1Prc:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+
+        "Sql.Database.EXMMaster.Password": "[if(variable('Sql.Database.EXMMaster.Password.Test'),variable('Sql.Database.EXMMaster.Password.Generate'),parameter('SqlExmMasterPassword'))]",
+        "Sql.Database.EXMMaster.Password.Test": "[equal(parameter('SqlExmMasterPassword'),'SIF-Default')]",
+        "Sql.Database.EXMMaster.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1CM:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
+        "SitecoreXP1CD:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
+
+        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('SqlFormsPassword'))]",
+        "Sql.Database.Forms.Password.Test": "[equal(parameter('SqlFormsPassword'),'SIF-Default')]",
+        "Sql.Database.Forms.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1CM:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+        "SitecoreXP1CD:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+
+        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('SqlMasterPassword'))]",
+        "Sql.Database.Master.Password.Test": "[equal(parameter('SqlMasterPassword'),'SIF-Default')]",
+        "Sql.Database.Master.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1CM:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
+        "SitecoreXP1Prc:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
+
+        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('SqlWebPassword'))]",
+        "Sql.Database.Web.Password.Test": "[equal(parameter('SqlWebPassword'),'SIF-Default')]",
+        "Sql.Database.Web.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1CM:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+        "SitecoreXP1CD:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+
+        "Sql.Database.ProcessingTasks.Password": "[if(variable('Sql.Database.ProcessingTasks.Password.Test'),variable('Sql.Database.ProcessingTasks.Password.Generate'),parameter('SqlProcessingTasksPassword'))]",
+        "Sql.Database.ProcessingTasks.Password.Test": "[equal(parameter('SqlProcessingTasksPassword'),'SIF-Default')]",
+        "Sql.Database.ProcessingTasks.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
+
+        "SitecoreXP1Prc:Sql.Database.ProcessingTasks.Password": "[variable('Sql.Database.ProcessingTasks.Password')]",
+
+        "Sql.Database.Collection.User": "[if(variable('Sql.Database.Collection.User.Test'),variable('Sql.Database.Collection.User.Generate'),parameter('SqlCollectionUser'))]",
+        "Sql.Database.Collection.User.Test": "[equal(parameter('SqlCollectionUser'),'collectionuser')]",
+        "Sql.Database.Collection.User.Generate": "[concat(parameter('Prefix'), '_collectionuser')]",
+
+        "XP1Collection:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
+        "XP1CollectionSearch:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
+        "XP1MarketingAutomation:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
+
+        "ReportingService.ApiKey": "[if(variable('ReportingService.ApiKey.Test'),variable('ReportingService.ApiKey.Generate'),parameter('ReportingServiceApiKey'))]",
+
+        "SitecoreXP1CM:ReportingService.ApiKey": "[variable('ReportingService.ApiKey')]",
+        "ReportingService.ApiKey.Test": "[equal(parameter('ReportingServiceApiKey'),'00112233445566778899AABBCCDDEEFF')]",
+        "ReportingService.ApiKey.Generate": "[randomstring(Length:32,DisAllowSpecial:True,EnforceComplexity:True)]",
+        "SitecoreXP1Prc:ReportingService.ApiKey": "[variable('ReportingService.ApiKey')]",
+
+        "EXM.CryptographicKey": "[if(variable('EXM.CryptographicKey.Test'),variable('EXM.CryptographicKey.Generate'),parameter('EXMCryptographicKey'))]",
+        "EXM.CryptographicKey.Test": "[equal(parameter('EXMCryptographicKey'),'0x0123456789012345678901234567890123456789012345678901234678901234')]",
+        "EXM.CryptographicKey.Generate": "[concat('0x',randomstring(Length:64,DisAllowSpecial:True,DisAllowCaps:True,DisAllowLower:True))]",
+
+        "SitecoreXP1CM:EXM.CryptographicKey": "[variable('EXM.CryptographicKey')]",
+        "SitecoreXP1CD:EXM.CryptographicKey": "[variable('EXM.CryptographicKey')]",
+
+        "EXM.AuthenticationKey": "[if(variable('EXM.AuthenticationKey.Test'),variable('EXM.AuthenticationKey.Generate'),parameter('EXMAuthenticationKey'))]",
+        "EXM.AuthenticationKey.Test": "[equal(parameter('EXMAuthenticationKey'),'0x0123456789012345678901234567890123456789012345678901234678901234')]",
+        "EXM.AuthenticationKey.Generate": "[concat('0x',randomstring(Length:64,DisAllowSpecial:True,DisAllowCaps:True,DisAllowLower:True))]",
+
+        "SitecoreXP1CM:EXM.AuthenticationKey": "[variable('EXM.AuthenticationKey')]",
+        "SitecoreXP1CD:EXM.AuthenticationKey": "[variable('EXM.AuthenticationKey')]",
+
+        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('ClientSecret'))]",
+        "IdentityServer.Client.Secret.Test": "[equal(parameter('ClientSecret'),'SIF-Default')]",
+        "IdentityServer.Client.Secret.Generate": "[randomstring(Length:100,DisAllowSpecial:True)]",
+
+        "IdentityServer:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
+        "SitecoreXP1CM:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
+    },
+    "Includes": {
+        "IdentityServerCertificates": {
+            "Source": ".\\..\\Certificates\\createcert.json"
+        },
+        "IdentityServer": {
+            "Source": ".\\IdentityServer.json"
+        },
+        "XConnectCertificates": {
+            "Source": ".\\..\\Certificates\\createcert.json"
+        },
+        "XConnectSolr": {
+            "Source": ".\\xconnect-solr.json"
+        },
+        "XP1Collection": {
+            "Source": ".\\xconnect-xp1-collection.json"
+        },
+        "XP1CollectionSearch": {
+            "Source": ".\\xconnect-xp1-collectionsearch.json"
+        },
+        "XP1ReferenceData": {
+            "Source": ".\\xconnect-xp1-referencedata.json"
+        },
+        "XP1MarketingAutomation": {
+            "Source": ".\\xconnect-xp1-marketingautomation.json"
+        },
+        "XP1MarketingAutomationReporting": {
+            "Source": ".\\xconnect-xp1-marketingautomationreporting.json"
+        },
+        "XP1CortexProcessing": {
+            "Source": ".\\xconnect-xp1-cortexprocessing.json"
+        },
+        "XP1CortexReporting": {
+            "Source": ".\\xconnect-xp1-cortexreporting.json"
+        },
+        "SitecoreSolr": {
+            "Source": ".\\Sitecore-solr.json"
+        },
+        "SitecoreXP1CM": {
+            "Source": ".\\Sitecore-xp1-cm.json"
+        },
+        "SitecoreXP1CD": {
+            "Source": ".\\Sitecore-xp1-cd.json"
+        },
+        "SitecoreXP1Prc": {
+            "Source": ".\\Sitecore-xp1-prc.json"
+        }
+    },
+    "Register": {
+        "Tasks": {
+            "SetVariable": "Set-Variable"
+        }
+    },
+    "Tasks": {
+        "GeneratePasswords": {
+            "Description": "Generates all shared passwords and secrets.",
+            "Type": "SetVariable",
+            "Params": {
+                "Name": "XP1Passwords",
+                "Scope": "Global",
+                "Value": [
+                    {
+                        "SqlMarketingAutomationPassword": "[variable('Sql.Database.MarketingAutomation.Password')]"
+                    },
+                    {
+                        "SqlProcessingTasksPassword": "[variable('Sql.Database.ProcessingTasks.Password')]"
+                    },
+                    {
+                        "SqlProcessingPoolsPassword": "[variable('Sql.Database.ProcessingPools.Password')]"
+                    },
+                    {
+                        "SqlCollectionPassword": "[variable('Sql.Database.Collection.Password')]"
+                    },
+                    {
+                        "SqlMessagingPassword": "[variable('Sql.Database.Messaging.Password')]"
+                    },
+                    {
+                        "SqlCorePassword": "[variable('Sql.Database.Core.Password')]"
+                    },
+                    {
+                        "SqlSecurityPassword": "[variable('Sql.Database.Security.Password')]"
+                    },
+                    {
+                        "SqlReferenceDataPassword": "[variable('Sql.Database.ReferenceData.Password')]"
+                    },
+                    {
+                        "SqlProcessingEnginePassword": "[variable('Sql.Database.ProcessingEngine.Password')]"
+                    },
+                    {
+                        "SqlReportingPassword": "[variable('Sql.Database.Reporting.Password')]"
+                    },
+                    {
+                        "SqlExmMasterPassword": "[variable('Sql.Database.EXMMaster.Password')]"
+                    },
+                    {
+                        "SqlFormsPassword": "[variable('Sql.Database.Forms.Password')]"
+                    },
+                    {
+                        "SqlMasterPassword": "[variable('Sql.Database.Master.Password')]"
+                    },
+                    {
+                        "SqlWebPassword": "[variable('Sql.Database.Web.Password')]"
+                    },
+                    {
+                        "SqlCollectionUser": "[variable('Sql.Database.Collection.User')]"
+                    },
+                    {
+                        "ClientSecret": "[variable('IdentityServer.Client.Secret')]"
+                    },
+                    {
+                        "ReportingServiceApiKey": "[variable('ReportingService.ApiKey')]"
+                    },
+                    {
+                        "EXMCryptographicKey": "[variable('EXM.CryptographicKey')]"
+                    },
+                    {
+                        "EXMAuthenticationKey": "[variable('EXM.AuthenticationKey')]"
+                    }
+                ]
+            },
+            "Skip": "[parameter('Update')]"
+        }
+    }
+}

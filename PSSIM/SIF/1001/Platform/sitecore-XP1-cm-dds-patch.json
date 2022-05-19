@@ -1,0 +1,146 @@
+﻿{
+    "Parameters": {
+        "Package": {
+            "Type": "string",
+            "Description": "The path to the patch Web Deploy package to deploy.",
+            "DefaultValue": ""
+        },
+        "SiteName": {
+            "Type": "string",
+            "DefaultValue": "SitecoreCM",
+            "Description": "The name of the CM site to be patched."
+        },
+        "SiteRoot": {
+            "Type": "String",
+            "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
+            "DefaultValue": ""
+        },
+        "EXMCryptographicKey": {
+            "Type": "string",
+            "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
+            "Description": "64 digits hexadecimal EXM Cryptographic Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "EXMAuthenticationKey": {
+            "Type": "string",
+            "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
+            "Description": "64 digits hexadecimal EXM Authentication Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "EXMInternalApiKey": {
+            "Type": "string",
+            "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
+            "Description": "64 digits hexadecimal EXM Internal API Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "DedicatedDispatchService": {
+            "Type": "string",
+            "DefaultValue": "/sitecore%20modules/web/exm/dedicateddispatchservice.asmx",
+            "Description": "Dedicated Dispatch Service Path."
+        },
+        "DedicatedServerHostName": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": "Dedicated Server Host Name."
+        },
+        "PackagesTempLocation": {
+            "Type": "String",
+            "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
+            "DefaultValue": "",
+            "Validate": "[TestPath(variable('Package.Download.Location'))]"
+        },
+        "DownloadLocations": {
+            "Type": "String",
+            "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
+            "DefaultValue": ".\\downloads.json"
+        }
+    },
+    "Variables": {
+        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",
+        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
+        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
+        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
+        "Site.DataFolder": "[joinpath(variable('Site.Path'), 'App_Data')]",
+
+        "Packages.DownloadLocations.File": "[ReadJson(parameter('DownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('DownloadLocations'))]",
+
+        "Package.Download.Identifier": "sitecore-XP1-cm-dds-patch.json",
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
+        "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
+        "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
+        "Package.Download.Hash": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Hash')]",
+        "Package.Download.Path": "[JoinPath(variable('Package.Download.Location'),variable('Package.Download.Filename'))]",
+        "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
+        "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
+
+        "Package": "[if(parameter('Package'),parameter('Package'),variable('Package.Download.Path'))]",
+        "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
+        "Package.Provided": "[if(parameter('Package'),parameter('Package'),'')]"
+    },
+    "Register": {
+        "ConfigFunction": {
+            "TestPath": "Test-Path",
+            "SelectObject": "Select-Object",
+            "SplitPath": "Split-Path",
+            "GetVariable": "Get-Variable"
+        }
+    },
+    "Tasks": {
+        "DownloadWDP": {
+            "Description": "Download the WDP and verifies it against the stored hash.",
+            "Type": "DownloadFile",
+            "Params": {
+                "SourceUri": "[variable('Package.Download.URI')]",
+                "DestinationPath": "[variable('Package.Download.Path')]",
+                "Hash": "[variable('Package.Download.Hash')]"
+            },
+            "Skip": "[variable('Package.Available')]"
+        },
+        "InstallDDSPatchWDP": {
+            "Description": "Syncs the web deploy package with the website",
+            "Type": "WebDeploy",
+            "Params": {
+                "Verb": "Sync",
+                "Arguments": {
+                    "Source": {
+                        "Package": "[resolvepath(variable('Package'))]"
+                    },
+                    "Dest": "Auto",
+                    "enableRule": "DoNotDeleteRule",
+                    "SetParam": [
+                        {
+                            "Name": "Application Path",
+                            "Value": "[parameter('SiteName')]"
+                        },
+                        {
+                            "Name": "EXM Cryptographic Key",
+                            "Value": "[parameter('EXMCryptographicKey')]"
+                        },
+                        {
+                            "Name": "EXM Authentication Key",
+                            "Value": "[parameter('EXMAuthenticationKey')]"
+                        },
+                        {
+                            "Name": "EXM Internal Api Key",
+                            "Value": "[parameter('EXMInternalApiKey')]"
+                        },
+                        {
+                            "Name": "Dedicated Dispatch Service",
+                            "Value": "[parameter('DedicatedDispatchService')]"
+                        },
+                        {
+                            "Name": "Dedicated Server Host Name",
+                            "Value": "[parameter('DedicatedServerHostName')]"
+                        }
+                    ]
+                }
+            }
+        },
+        "TransformXmlDocuments": {
+            "Type": "TransformXmlDoc",
+            "Params": {
+                "RootDirectoryPath": "[variable('Site.Path')]",
+                "XdtDirectory": "[joinpath(variable('Site.DataFolder'), 'Transforms', 'EXM', 'xdts')]"
+            }
+        }
+    }
+}

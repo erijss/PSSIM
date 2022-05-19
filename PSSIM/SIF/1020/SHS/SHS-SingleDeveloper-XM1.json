@@ -1,0 +1,148 @@
+{
+    "Parameters": {
+        "SHSCMPackage": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SHSCDPackage": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "CMSiteName": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "CDSiteName": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SiteRoot": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "Prefix": {
+            "Type": "String",
+            "Description": "",
+            "DefaultValue": ""
+        },
+        "SitecoreAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SqlAdminUser": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SqlAdminPassword": {
+            "Type": "string",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "SQLServer": {
+            "Type": "String",
+            "DefaultValue": "",
+            "Description": ""
+        },
+        "PackagesTempLocation": {
+            "Type": "String",
+            "Description": "",
+            "Reference": ""
+        },
+        "DownloadLocations": {
+            "Type": "String",
+            "Description": "",
+            "Reference": ""
+        },
+        "SHSCM:Package": {
+            "Type": "string",
+            "Reference": "SHSCMPackage",
+            "Description": ""
+        },
+        "SHSCM:SiteRoot": {
+            "Type": "string",
+            "Reference": "SiteRoot",
+            "Description": ""
+        },
+        "SHSCM:SiteName": {
+            "Type": "string",
+            "Reference": "CMSiteName",
+            "Description": ""
+        },
+        "SHSCM:SitecoreAdminPassword": {
+            "Type": "string",
+            "Reference": "SitecoreAdminPassword",
+            "Description": ""
+        },
+        "SHSCM:SqlAdminUser": {
+            "Type": "string",
+            "Reference": "SqlAdminUser",
+            "Description": ""
+        },
+        "SHSCM:SqlAdminPassword": {
+            "Type": "string",
+            "Reference": "SqlAdminPassword",
+            "Description": ""
+        },
+        "SHSCM:SqlServer": {
+            "Type": "string",
+            "Reference": "SqlServer",
+            "Description": ""
+        },
+        "SHSCM:SqlDbPrefix": {
+            "Type": "string",
+            "Reference": "Prefix",
+            "Description": ""
+        },
+        "SHSCM:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": ""
+        },
+        "SHSCM:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": ""
+        },
+        "SHSCD:Package": {
+            "Type": "string",
+            "Reference": "SHSCDPackage",
+            "Description": ""
+        },
+        "SHSCD:SiteRoot": {
+            "Type": "string",
+            "Reference": "SiteRoot",
+            "Description": ""
+        },
+        "SHSCD:SiteName": {
+            "Type": "string",
+            "Reference": "CDSiteName",
+            "Description": ""
+        },
+        "SHSCD:PackagesTempLocation": {
+            "Type": "String",
+            "Reference": "PackagesTempLocation",
+            "Description": ""
+        },
+        "SHSCD:DownloadLocations": {
+            "Type": "String",
+            "Reference": "DownloadLocations",
+            "Description": ""
+        }
+    },
+    "Includes": {
+        "SHSCM": {
+            "Source": ".\\shs-CM.json"
+        },
+        "SHSCD": {
+            "Source": ".\\shs-CD.json"
+        }
+
+    }
+}

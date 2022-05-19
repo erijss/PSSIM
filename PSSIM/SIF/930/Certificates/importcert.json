@@ -1,0 +1,67 @@
+{
+    "Parameters": {
+        "ClientCertPath": {
+            "Type": "string",
+            "Description": "The physical path to pfx file where client certificate is stored.",
+            "DefaultValue": ""
+        },
+        "RootCertPath": {
+            "Type": "string",
+            "Description": "The physical path to pfx file where root certificate is stored.",
+            "DefaultValue": ""
+        },
+        "ClientCertPassword": {
+            "Type": "string",
+            "Description": "The password of client certificate file.",
+            "DefaultValue": "sif-default"
+        },
+        "RootCertPassword": {
+            "Type": "string",
+            "Description": "The password of root certificate file.",
+            "DefaultValue": "sif-default"
+        },
+        "Update": {
+            "Type": "bool",
+            "Description": "The parameter for the installing delta WDP packages.",
+            "DefaultValue": false
+        }
+    },    
+    "Variables": {
+        "Client.Cert.Secure.Password": "[ConvertToSecureString(String:parameter('ClientCertPassword'),AsPlainText:true,Force:true)]",
+        "Root.Cert.Secure.Password": "[ConvertToSecureString(String:parameter('RootCertPassword'),AsPlainText:true,Force:true)]",
+        "Root.Cert.Store": "Cert:\\LocalMachine\\Root",
+        "Client.Cert.Store": "Cert:\\LocalMachine\\My"
+    },
+    "Tasks": {
+        "ImportRootCert":{
+            "Type": "ImportPfxCertificate",
+            "Description": "Import the root certificate from pfx file",
+            "Params": {
+                "FilePath": "[parameter('RootCertPath')]",
+                "Password": "[variable('Root.Cert.Secure.Password')]",
+                "CertStoreLocation": "[variable('Root.Cert.Store')]",
+                "Exportable": true
+            },
+            "Skip": "[or(not(parameter('RootCertPath')),parameter('Update'))]"
+        },
+        "ImportClientCert":{
+            "Type": "ImportPfxCertificate",
+            "Description": "Import the client certificate from pfx file",
+            "Params": {
+                "FilePath": "[parameter('ClientCertPath')]",
+                "Password": "[variable('Client.Cert.Secure.Password')]",
+                "CertStoreLocation": "[variable('Client.Cert.Store')]",
+                "Exportable": true
+            },
+            "Skip": "[or(not(parameter('ClientCertPath')),parameter('Update'))]"
+        }
+    },
+    "Register":{
+        "Tasks": {
+            "ImportPfxCertificate": "Import-PfxCertificate"
+        },
+        "ConfigFunction": {
+            "ConvertToSecureString" :"ConvertTo-SecureString"
+        }
+    }
+}

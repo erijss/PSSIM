@@ -1,0 +1,1939 @@
+{
+    "settings": {
+        "noLogo": true,
+        "startAction": "",
+        "startMenu": "MainMenu",
+        "menuType": "console",
+        "option": {
+            "pattern": "{0}: {1}",
+            "padLeft": 2,
+            "padRight": 0
+        },
+        "confirmation": {
+            "question": "Do you like to continue?",
+            "continue": {
+                "label": "&Yes",
+                "help": "Type 'Y' to continue"
+            },
+            "cancel": {
+                "label": "&No",
+                "help": "Type 'N' to not continue"
+            }
+        },
+        "selection": {
+            "promptForChoice": "Make your choice. Type [b] to go back",
+            "promptForAnykey": "Type any key to continue"
+        },
+        "action": {
+            "errorAction": "Continue",
+            "postActionErrorSummary": true
+        }
+    },
+    "menus": [
+        {
+            "id": "MainMenu",
+            "name": "Installation Menu",
+            "cls": true,
+            "header": [
+                "=======================================================",
+                "",
+                "MACAW POWERSHELL SITECORE INSTALLTION MODULE",
+                "",
+                "Install Sitecore Platform and additonal modules",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "PSSIM Parameters",
+                    "type": "menu",
+                    "action": "MenuPSSIMParameters"
+                },
+                {
+                    "id": "2",
+                    "value": "Sitecore Platform",
+                    "type": "menu",
+                    "action": "MenuSitecorePlatform"
+                },
+                {
+                    "id": "3",
+                    "value": "Sitecore Modules",
+                    "type": "menu",
+                    "action": "MenuSitecoreModules"
+                },
+                {
+                    "id": "4",
+                    "value": "Miscellaneous",
+                    "type": "menu",
+                    "action": "MenuMiscellaneous"
+                },
+                {
+                    "id": "5",
+                    "value": "Prerequisites",
+                    "type": "menu",
+                    "action": "MenuPrerequisites"
+                },
+                {
+                    "id": "6",
+                    "value": "Resources",
+                    "type": "menu",
+                    "action": "MenuResources"
+                },
+                {
+                    "id": "q",
+                    "value": "Exit PSSIM",
+                    "type": "exit"
+                }
+            ],
+            "selection": {
+                "prompt": "Make your choice. Type [q] to exit the menu"
+            }
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecorePlatform",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE PLATFORM",
+                "",
+                "Install, Update or Uninstall the Sitecore Platform",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Platform",
+                    "type": "action",
+                    "action": "ActionInstallSitecorePlatform"
+                },
+                {
+                    "id": "2",
+                    "value": "Update Sitecore Platform",
+                    "type": "action",
+                    "action": "ActionUpdateSitecorePlatform"
+                },
+                {
+                    "id": "3",
+                    "value": "Uninstall Sitecore Platform",
+                    "type": "action",
+                    "action": "ActionUninstallSitecorePlatform"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecoreModules",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE MODULES",
+                "",
+                "Install or Uninstall the Sitecore Moduules",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Sitecore Horizon",
+                    "type": "menu",
+                    "action": "MenuSitecoreHorion"
+                },
+                {
+                    "id": "2",
+                    "value": "Sitecore PowerShell Extensions",
+                    "type": "menu",
+                    "action": "MenuSitecorePowerShellExtensions"
+                },
+                {
+                    "id": "3",
+                    "value": "Sitecore Headless Services (JSS)",
+                    "type": "menu",
+                    "action": "MenuSitecoreHeadlessServices"
+                },
+                {
+                    "id": "4",
+                    "value": "Sitecore Experience Accelerator",
+                    "type": "menu",
+                    "action": "MenuSitecoreExperienceAccelerator"
+                },
+                {
+                    "id": "5",
+                    "value": "Sitecore Data Exchange Framework",
+                    "type": "menu",
+                    "action": "MenuSitecoreDataExchangeFramework"
+                },
+                {
+                    "id": "6",
+                    "value": "Sitecore ContentHub Connector",
+                    "type": "menu",
+                    "action": "MenuSitecoreContentHubConnector"
+                },
+                {
+                    "id": "7",
+                    "value": "Sitecore Publishing Service",
+                    "type": "menu",
+                    "action": "MenuSitecorePublishingService"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecoreHorion",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE HORIZON",
+                "",
+                "Install or Uninstall Sitecore Horizon",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Horizon",
+                    "type": "action",
+                    "action": "ActionInstallSitecoreHorizon"
+                },
+                {
+                    "id": "3",
+                    "value": "Uninstall Sitecore Horizon",
+                    "type": "action",
+                    "action": "ActionUninstallSitecoreHorizon"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecorePowerShellExtensions",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE POWERSHELL EXTENSIONS",
+                "",
+                "Install or Update Sitecore PowerShell Extensions",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore PowerShell Extensions",
+                    "type": "action",
+                    "action": "ActionInstallSitecorePowerShellExtensions"
+                },
+                {
+                    "id": "2",
+                    "value": "Update Sitecore PowerShell Extensions",
+                    "type": "action",
+                    "action": "ActionUpdateSitecorePowerShellExtensions"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecoreHeadlessServices",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE HEADLESS SERVICES",
+                "",
+                "Install or Update Sitecore Headless Services",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Headless Services",
+                    "type": "action",
+                    "action": "ActionInstallSitecoreHeadlessServices"
+                },
+                {
+                    "id": "2",
+                    "value": "Update Sitecore Headless Services",
+                    "type": "action",
+                    "action": "ActionUpdateSitecoreHeadlessServices"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecoreExperienceAccelerator",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE EXPERIENCE ACCELERATOR",
+                "",
+                "Install or Update Sitecore Experience Accelerator",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Experience Accelerator",
+                    "type": "action",
+                    "action": "ActionInstallSitecoreExperienceAccelerator"
+                },
+                {
+                    "id": "2",
+                    "value": "Update Sitecore Experience Accelerator",
+                    "type": "action",
+                    "action": "ActionUpdateSitecoreExperienceAccelerator"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecoreDataExchangeFramework",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE DATA EXCHANGE FRAMEWORK",
+                "",
+                "Install or Update Sitecore Data Exchange Framework",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Data Exchange Framework",
+                    "type": "action",
+                    "action": "ActionInstallSitecoreDataExchangeFramework"
+                },
+                {
+                    "id": "2",
+                    "value": "Update Sitecore Data Exchange Framework",
+                    "type": "action",
+                    "action": "ActionUpdateSitecoreDataExchangeFramework"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecoreContentHubConnector",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE CONTENTHUB CONNECTOR",
+                "",
+                "Install or Update Sitecore ContentHub Connector",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore ContentHub Connector",
+                    "type": "action",
+                    "action": "ActionInstallSitecoreContentHubConnector"
+                },
+                {
+                    "id": "2",
+                    "value": "Update Sitecore ContentHub Connector",
+                    "type": "action",
+                    "action": "ActionUpdateSitecoreContentHubConnector"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSitecorePublishingService",
+            "header": [
+                "=======================================================",
+                "",
+                "SITECORE PUBLISHING SERVICE",
+                "",
+                "Install or Update Sitecore Publishing Service",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Publishing Service",
+                    "type": "action",
+                    "action": "ActionInstallSitecorePublishingService"
+                },
+                {
+                    "id": "3",
+                    "value": "Uninstall Sitecore Publishing Service",
+                    "type": "action",
+                    "action": "ActionUninstallSitecorePublishingService"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuMiscellaneous",
+            "header": [
+                "=======================================================",
+                "",
+                "MISCELLANEOUS ACTIONS",
+                "",
+                "Update Bindings and Solr cores",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Add Custom Bindings and Certificates",
+                    "type": "action",
+                    "action": "ActionAddCustomBindingsAndCertificates"
+                },
+                {
+                    "id": "2",
+                    "value": "Add custom Solr Cores",
+                    "type": "action",
+                    "action": "ActionAddCustomSolrCores"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuPSSIMParameters",
+            "header": [
+                "=======================================================",
+                "",
+                "PSSIM PARAMETERS",
+                "",
+                "Get a fresh copy of the PSSIM-Parameters.json or",
+                "set the installation paramters from a file.",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Set PSSIM parameters from file",
+                    "type": "action",
+                    "action": "ActionSetPSSIMParameters"
+                },
+                {
+                    "id": "2",
+                    "value": "Display loaded PSSIM parameters",
+                    "type": "action",
+                    "action": "ActionGetPSSIMParameters"
+                },
+                {
+                    "id": "3",
+                    "value": "Get PSSIM-Parameters.json (Documented)",
+                    "type": "action",
+                    "action": "ActionGetDocumentedPSSIMParametersFile"
+                },
+                {
+                    "id": "4",
+                    "value": "Get PSSIM-Parameters.json (Undocumented)",
+                    "type": "action",
+                    "action": "ActionGetUndocumentedPSSIMParametersFile"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuPrerequisites",
+            "header": [
+                "=======================================================",
+                "",
+                "PREREQUISITES",
+                "",
+                "Install Sitecore Install Framework, Solr and",
+                "Microsoft modules required for running a Sitecore",
+                "Platform.",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Sitecore Installation Framework (Latest Version)",
+                    "type": "action",
+                    "action": "ActionInstallSitecoreInstallationFramework"
+                },
+                {
+                    "id": "2",
+                    "value": "Install Sitecore Prerequisites",
+                    "type": "action",
+                    "action": "ActionInstallSitecorePrerequisites"
+                },
+                {
+                    "id": "3",
+                    "value": "Solr Search Engine",
+                    "type": "menu",
+                    "action": "MenuSolrSearchEngine"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuSolrSearchEngine",
+            "header": [
+                "=======================================================",
+                "",
+                "SOLR SEARCH ENGINE",
+                "",
+                "Install or Uninstall of Solr",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Install Solr Search Engine",
+                    "type": "action",
+                    "action": "ActionInstallSolrSearchEngine"
+                },
+                {
+                    "id": "3",
+                    "value": "Uninstall Solr Search Engine",
+                    "type": "action",
+                    "action": "ActionUninstallSolrSearchEngine"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        },
+        {
+            "cls": true,
+            "id": "MenuResources",
+            "header": [
+                "=======================================================",
+                "",
+                "DOWNLOAD RESOURCES",
+                "",
+                "Download the Resources for the installation of",
+                "Sitecore and it's various modules",
+                "",
+                "======================================================="
+            ],
+            "options": [
+                {
+                    "id": "1",
+                    "value": "Download Resources",
+                    "type": "action",
+                    "action": "ActionDownloadResources"
+                },
+                {
+                    "id": "b",
+                    "value": "Go back to the previous menu",
+                    "type": "exit"
+                }
+            ],
+            "selection": {}
+        }
+    ],
+    "actions": [
+        {
+            "id": "ActionInstallSitecorePlatform",
+            "name": "Install Sitecore Platform",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE PLATFORM",
+                    "",
+                    "This action installs the Sitecore Platform according",
+                    "to the topology and version defined in the parameters",
+                    "file.",
+                    "",
+                    "It is conditional that all prerequisites are installed",
+                    "before (Sitecore prerequisites, Solr and SIF",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePlatform"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUpdateSitecorePlatform",
+            "name": "Update Sitecore Platform",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UPDATE SITECORE PLATFORM",
+                    "",
+                    "This action updates the Sitecore Platform according",
+                    "to the topology and version defined in the parameters",
+                    "file.",
+                    "",
+                    "Note that this is not a version upgrade but a re-install",
+                    "without deletion. Passwords and certificatesstay intact.",
+                    "Will not work for version prior to 10.1.0",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePlatform"
+                        },
+                        {
+                            "Update": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUninstallSitecorePlatform",
+            "name": "Uninstall Sitecore Platform",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UNINSTALL SITECORE PLATFORM",
+                    "",
+                    "This action removes the Sitecore Platform according",
+                    "the topology and version defined in the parameters",
+                    "file.",
+                    "",
+                    "CAUTION: THIS IS IRREVERSIBLE",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePlatform"
+                        },
+                        {
+                            "Uninstall": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecoreHorizon",
+            "name": "Install Sitecore Horizon",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE HORIZON",
+                    "",
+                    "This action installs Sitecore Horizon according and ",
+                    "connects it to the Sitecore Platform based on the",
+                    "prefix,topology and version defined in the parameters",
+                    "file.",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreHorizon"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUninstallSitecoreHorizon",
+            "name": "Uninstall Sitecore Horizon",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UNINSTALL SITECORE HORIZON",
+                    "",
+                    "This action deletes the Sitecore Platform instance",
+                    "to the topology and version defined in the parameters",
+                    "file.",
+                    "",
+                    "CAUTION: THIS IS IRREVERSIBLE",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreHorizon"
+                        },
+                        {
+                            "Uninstall": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecorePowerShellExtensions",
+            "name": "Install Sitecore PowerShell Extensions",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE POWERSHELL EXTENSIONS",
+                    "",
+                    "This action installs the Sitecore PowerShell Extensions",
+                    "on the already installed Sitecore Platform",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePowerShellExtensions"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUpdateSitecorePowerShellExtensions",
+            "name": "Update Sitecore PowerShell Extenstions",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UPDATE SITECORE POWERSHELL EXTENSIONS",
+                    "",
+                    "This action updates the Sitecore PowerShell Extensions,",
+                    "which is more or less a re-install.",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePowerShellExtensions"
+                        },
+                        {
+                            "Update": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecoreHeadlessServices",
+            "name": "Install Sitecore Headless Services",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE Headless Services",
+                    "",
+                    "This action installs the Sitecore Headless Services",
+                    "on the already installed Sitecore Platform",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreHeadlessServices"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUpdateSitecoreHeadlessServices",
+            "name": "Update Sitecore PowerShell Extenstions",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UPDATE SITECORE Headless Services",
+                    "",
+                    "This action updates the Sitecore Headless Services,",
+                    "which is more or less a re-install.",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreHeadlessServices"
+                        },
+                        {
+                            "Update": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecoreExperienceAccelerator",
+            "name": "Install Sitecore Experience Accelerator",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE EXPERIENCE ACCELERATOR",
+                    "",
+                    "This action installs the Sitecore Experience Accelerator",
+                    "on the already installed Sitecore Platform",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreExperienceAccelerator"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUpdateSitecoreExperienceAccelerator",
+            "name": "Update Sitecore PowerShell Extenstions",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UPDATE SITECORE EXPERIENCE ACCELERATOR",
+                    "",
+                    "This action updates the Sitecore Experience Accelerator,",
+                    "which is more or less a re-install.",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreExperienceAccelerator"
+                        },
+                        {
+                            "Update": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecoreDataExchangeFramework",
+            "name": "Install Sitecore Data Exchange Framework",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE DATA EXCHANGE FRAMEWORK",
+                    "",
+                    "This action installs the Sitecore Data Exchange Framework",
+                    "on the already installed Sitecore Platform",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreDataExchangeFramework"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUpdateSitecoreDataExchangeFramework",
+            "name": "Update Sitecore PowerShell Extenstions",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "UPDATE SITECORE DATA EXCHANGE FRAMEWORK",
+                    "",
+                    "This action updates the Sitecore Data Exchange Framework,",
+                    "which is more or less a re-install.",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreDataExchangeFramework"
+                        },
+                        {
+                            "Update": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecoreContentHubConnector",
+            "name": "Install Sitecore ContentHub Connector",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE CONTENTHUB CONNECTOr",
+                    "",
+                    "This action installs the Sitecore ContentHub Connector",
+                    "on the already installed Sitecore Platform. Conditional",
+                    "is that the Data Exchange Framework already is installed",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreContentHubConnector"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "===========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "==========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUpdateSitecoreContentHubConnector",
+            "name": "Update Sitecore ContentHub Connector",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "UPDATE SITECORE CONTENTHUB CONNECTOR",
+                    "",
+                    "This action updates the Sitecore ContentHub Connector,",
+                    "which is more or less a re-install.",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreContentHubConnector"
+                        },
+                        {
+                            "Update": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "===========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "==========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecorePublishingService",
+            "name": "Install Sitecore Publishing Service",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=======================================================",
+                    "",
+                    "INSTALL SITECORE PUBLISHING SERVICE",
+                    "",
+                    "This action installs the Sitecore Publishing Service",
+                    "module on the already installed Sitecore Platform as well.",
+                    "as the Publishing Service application",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePublishingService"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "===========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "==========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUninstallSitecorePublishingService",
+            "name": "Update Sitecore PowerShell Extenstions",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "UNINSTALL SITECORE PUBLISHING SERVICE",
+                    "",
+                    "This action removes the Sitecore Publishing Service",
+                    "instance, but not the Publishing Service Module on the.",
+                    " installed Sitecore Platofrm",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePublishingService"
+                        },
+                        {
+                            "Uninstall": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "===========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "==========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionAddCustomBindingsAndCertificates",
+            "name": "Add Custom Bindings and Certificates",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "ADD CUSTOM BINDINGS AND CERTIFICATES",
+                    "",
+                    "This action add custom bindings to the Content Delivery",
+                    "server, including the necessary certificates. Also the",
+                    "host file is updated.",
+                    "",
+                    "This action can be executed multiple times",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "AddCustomBindings"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "===========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "==========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionAddCustomSolrCores",
+            "name": "Add Custom Solr Cores",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "ADD CUSTOM SOLR CORES",
+                    "",
+                    "This action adds custom Solr Cores for the project",
+                    "",
+                    "The action can be executed multiple times",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "AddCustomSolrCores"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "===========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "==========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionGetDocumentedPSSIMParametersFile",
+            "name": "Get Documented PSSIM Parameters Example",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "GET DOCUMENTED PSSIM PARAMETERS FILE",
+                    "",
+                    "This action saves a file with can be used to set the instal- ",
+                    "lation parameters. The file has descriptions to explain the",
+                    "purpose of extra parameter.",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Get-PSSIMParametersFile"
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionGetUndocumentedPSSIMParametersFile",
+            "name": "Get Documented Installation Parameters Example",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "GET UNDOCUMENTED INSTALLATION PARAMETERS FILE",
+                    "",
+                    "This action saves a file with can be used to set the instal- ",
+                    "lation parameters. This file has no descriptions.",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Get-PSSIMParametersFile",
+                    "parameters": [
+                        {
+                            "Undocumented": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionSetPSSIMParameters",
+            "name": "Set Installation Parameters",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "SET INSTALLATION PARAMETERS",
+                    "",
+                    "This action loads the configuration  from a instal- ",
+                    "lation parameters file.",
+                    "",
+                    "Note: by default the module tries to find a ",
+                    "PSSIM-Parameters.json file in the current",
+                    "directory.",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Set-PSSIMParameters"
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionGetPSSIMParameters",
+            "name": "Get Documented Installation Parameters Example",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "SHOW INSTALLATION PARAMETERS",
+                    "",
+                    "This displays the currently loaded installation parameters.",
+                    "",
+                    "==========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Get-PSSIMParameters"
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecoreInstallationFramework",
+            "name": "Install Sitecore Installation Framework",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "INSTALL SITECORE INSTALLATION FRAMEWORK (SIF)",
+                    "",
+                    "This action installs the latest version of the Sitcore",
+                    "Installation Framework (SIF)",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecoreInstallationFramework"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSitecorePrerequisites",
+            "name": "Install Sitecore Prerequisites",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "INSTALL SITECORE PREREQUISITES",
+                    "",
+                    "This action installs the requried modules like Micro-",
+                    "Microsoft Web Platform Installer, SQL CLR Types, SQL",
+                    "DAC Framework, SQL ODBC Drivers and .NET Core 3.1.x",
+                    " Hosting Bundle",
+                    "",
+                    "This action can be executed repeatedly, withouth harm.",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SitecorePrerequisites"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionInstallSolrSearchEngine",
+            "name": "Install Solr Search Engine",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "INSTALL SOLR SEARCH ENGINE",
+                    "",
+                    "This action installs the Solr Search Engine at the given",
+                    "location in the folder Solr-[versionnumber], e.g. ",
+                    "Solr-8.8.2. It also adds a service with the same naming",
+                    "covnention. The administartor interface of Solr can be  ",
+                    "reached at https://localhost:[prefix][versionnumber] e.g.",
+                    "https://localhost:10882",
+                    "",
+                    "By grouping everything around the versionnumber, you can  ",
+                    "add multiple Solr instances if required. The Sitecore",
+                    "installation uses the same pattern for the connection-",
+                    "string to the Solr instance",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SolrSearchEngine"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionUninstallSolrSearchEngine",
+            "name": "Uninstall Solr Search Engine",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "UNINSTALL SOLR SEARCH ENGINE",
+                    "",
+                    "This action installs the Solr Search Engine, given ",
+                    "the location and versionnumber. ",
+                    "",
+                    "CAUTION: YOU WILL LOOSE AL YOUR INDEXED DATA",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "SolrSearchEngine"
+                        },
+                        {
+                            "Uninstall": true
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        },
+        {
+            "id": "ActionDownloadResources",
+            "name": "Download Resources",
+            "begin": {
+                "cls": true,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "DOWNLOAD RESOURCES",
+                    "",
+                    "Download all Sitecore Web Deployment Packages (SCWDP)",
+                    "from the given location",
+                    "",
+                    "========================================================="
+                ],
+                "confirmation": {}
+            },
+            "invoke": {
+                "cls": true,
+                "method": {
+                    "name": "Install-FromPSSIMParameters",
+                    "parameters": [
+                        {
+                            "Action": "DownloadResources"
+                        },
+                        {
+                            "NoLogo": true
+                        }
+                    ]
+                }
+            },
+            "end": {
+                "cls": false,
+                "header": [
+                    "=========================================================",
+                    "",
+                    "{ if ( $ActionContext.Success ) { Write-Host 'The action is succesfully executed' } else { Write-Host 'The action failed' } }",
+                    "It took $([math]::Round($ActionContext.Stopwatch.Elapsed.TotalSeconds)) seconds to execute ",
+                    "the action '$($ActionContext.Name)'",
+                    "",
+                    "========================================================="
+                ],
+                "selection": {
+                    "anykey": true
+                }
+            }
+        }
+    ],
+    "Texts": []
+}

@@ -1,0 +1,106 @@
+{
+  "Parameters": {
+    "CMSiteName":{
+      "Type": "string"
+    },
+    "CMSiteUrl": {
+      "Type": "string"
+    },
+    "CMSitePhysicalPath": {
+      "Type": "string"
+    },
+    "CMAdminName": {
+      "Type": "string",
+      "DefaultValue": "admin"
+    },
+    "CMAdminPassword": {
+      "Type": "string"
+    },
+    "HorizonAppUrl": {
+      "Type": "string"
+    },
+    "FeatureIntegrationPackageXPPath": {
+      "Type": "string"
+    },
+    "FeatureIntegrationPackageXMPath": {
+      "Type": "string"
+    },
+    "SolrCorePrefix": {
+      "Type": "string"
+    },
+    "Topology": {
+      "Type": "string"
+    }
+  },
+  "Variables": {
+    "CMSite.PhysicalPath.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('CMSiteUrl'))]",
+    "CMSite.PhysicalPath": "[if(equal(parameter('CMSitePhysicalPath'), ''), variable('CMSite.PhysicalPath.Default'), parameter('CMSitePhysicalPath'))]",
+    "Solr.Master.Name": "[concat(parameter('SolrCorePrefix'), '_master_index')]"
+  },
+  "Tasks": {
+    "InstallFeatureIntegrationPackageHorizon_XM": {
+      "Type": "WebDeploy",
+      "Params": {
+        "Verb": "Sync",
+        "Arguments": {
+          "Source": {
+            "Package": "[parameter('FeatureIntegrationPackageXMPath')]"
+          },
+          "Dest": "auto",
+          "enableRule": "DoNotDeleteRule",
+          "SetParam": [
+            { "Name": "Application Path", "Value": "[parameter('CMSiteName')]" }
+          ]
+        }
+      },
+      "Skip": "[equal(parameter('Topology'), 'XP')]"
+    },
+    "InstallFeatureIntegrationPackageHorizon_XP": {
+      "Type": "WebDeploy",
+      "Params": {
+        "Verb": "Sync",
+        "Arguments": {
+          "Source": {
+            "Package": "[parameter('FeatureIntegrationPackageXPPath')]"
+          },
+          "Dest": "auto",
+          "enableRule": "DoNotDeleteRule",
+          "SetParam": [
+            { "Name": "Application Path", "Value": "[parameter('CMSiteName')]" }
+          ]
+        }
+      },
+      "Skip": "[equal(parameter('Topology'), 'XM')]"
+    },
+    "UpdateHorizonClientHostConfig": {
+      "Type": "SetXml",
+      "Params": {
+        "FilePath": "[joinpath(variable('CMSite.PhysicalPath'), 'App_Config', 'Modules', 'Horizon', 'Sitecore.Horizon.Integration.config')]",
+        "XPath": "/configuration/sitecore/settings/setting[@name='Horizon.ClientHost']",
+        "Attributes": {
+          "value": "[ToLower(parameter('HorizonAppUrl'))]"
+        }
+      }
+    },
+    "UpdateHorizonSearchIndexName": {
+      "Type": "SetXml",
+      "Params": {
+        "FilePath": "[joinpath(variable('CMSite.PhysicalPath'), 'App_Config', 'Modules', 'Horizon', 'Search', 'Sitecore.Horizon.Search.Solr.Index.config')]",
+        "XPath": "/configuration/sitecore/contentSearch/configuration[@type='Sitecore.ContentSearch.ContentSearchConfiguration, Sitecore.ContentSearch']/indexes/index[@id='sitecore_horizon_index']/param[@desc='core']",
+        "Value": "[ToLower(variable('Solr.Master.Name'))]"
+      }
+    },
+    "PopulateHorizonSearchSchema": {
+      "Type" : "SitecoreUrl",
+      "Params": {
+        "SitecoreInstanceRoot": "[parameter('CMSiteUrl')]",
+        "SitecoreActionPath":"sitecore/admin/PopulateManagedSchema.aspx?indexes=sitecore_horizon_index",
+        "UserName": "[parameter('CMAdminName')]",
+        "Password": "[parameter('CMAdminPassword')]"
+      }
+    }
+  },
+  "Modules": [
+    ".\\Tools\\utils.psm1"
+  ]
+}
