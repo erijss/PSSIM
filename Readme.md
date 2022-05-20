@@ -4,6 +4,9 @@ PowerShell Sitecore Install Module (PSSIM) is a wrapper around the Sitecore Inst
 
 PSSIM has combined all the SIF json file from Sitecore 9.3 and beyond. Earlier versions are not supported by this module. The SIF json files are adapted to be used in PSSIM, although the order of tasks is not changed.
 
+>**Note**
+Despite the intro, not all versions are implemented yet. WIP :-)
+
 
 ## PSSIM Development status
 The table below gives an overview of the implemented topologies modules that can be installed right in the currently published version (1.01)
