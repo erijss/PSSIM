@@ -9,7 +9,7 @@ function PSSIM.Action.DownloadResources {
     #>
     param (
     )
-    PSSIM.UserInteraction.WriteNotImplmented -ActionName "DownloadResources"
+    PSSIM.UserInteraction.WriteNotImplemented -ActionName "DownloadResources"
     # $packages = $PSSIM.Context.Resources.Packages
 
     # foreach ($package in $packages.GetEnumerator()) {
