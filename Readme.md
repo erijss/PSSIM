@@ -153,7 +153,7 @@ Not all parameters are used yet. For example, the Redis and Certificates section
 
 
 ## Solr installation
-The PSSIM module has a strict way how Solr is installed. A Solr installation can be done from the module as well **and is mandatory to use this module**. If Solr is installed with these parameters:
+The PSSIM module has a strict way how Solr is installed. A Solr installation can be done from the module as well **and is mandatory to use this module**. If Solr is installed with these parameters in the MyProject.json parameter file:
 
 ```
     "solr": {
@@ -166,6 +166,11 @@ The PSSIM module has a strict way how Solr is installed. A Solr installation can
             "project_website_web_index"
         ]
     },
+```
+
+Using this command:
+```
+Install-FromPSSIMParameters -Path ".\MyProject.json" -Action SolrSearchEngine
 ```
 
 The outcome is:
