@@ -1,146 +1,146 @@
 {
     "Parameters": {
-        "SHSCMPackage": {
+        "HeadlessServices_ContentManagement_Package": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SHSCDPackage": {
+        "HeadlessServices_ContentDelivery_Package": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "CMSiteName": {
+        "ContentManagement_AppName": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "CDSiteName": {
+        "ContentDelivery_AppName": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SiteRoot": {
+        "Apps_RootFolder": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "Prefix": {
+        "Apps_Prefix": {
             "Type": "String",
             "Description": "",
             "DefaultValue": ""
         },
-        "SitecoreAdminPassword": {
+        "Sitecore_AdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlAdminUser": {
+        "SqlServer_AdminUser": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlAdminPassword": {
+        "SqlServer_AdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SQLServer": {
+        "SqlServer_Instance": {
             "Type": "String",
             "DefaultValue": "",
             "Description": ""
         },
-        "PackagesTempLocation": {
+        "Packages_TempLocation": {
             "Type": "String",
             "Description": "",
             "Reference": ""
         },
-        "DownloadLocations": {
+        "Packages_DownloadLocations": {
             "Type": "String",
             "Description": "",
             "Reference": ""
         },
-        "SHSCM:Package": {
+        "SHS_ContentManagement:app_Package": {
             "Type": "string",
-            "Reference": "SHSCMPackage",
+            "Reference": "HeadlessServices_ContentManagement_Package",
             "Description": ""
         },
-        "SHSCM:SiteRoot": {
+        "SHS_ContentManagement:app_Folder": {
             "Type": "string",
-            "Reference": "SiteRoot",
+            "Reference": "Apps_RootFolder",
             "Description": ""
         },
-        "SHSCM:SiteName": {
+        "SHS_ContentManagement:app_Name": {
             "Type": "string",
-            "Reference": "CMSiteName",
+            "Reference": "ContentManagement_AppName",
             "Description": ""
         },
-        "SHSCM:SitecoreAdminPassword": {
+        "SHS_ContentManagement:sitecore_AdminPassword": {
             "Type": "string",
-            "Reference": "SitecoreAdminPassword",
+            "Reference": "Sitecore_AdminPassword",
             "Description": ""
         },
-        "SHSCM:SqlAdminUser": {
+        "SHS_ContentManagement:sqlserver_AdminUser": {
             "Type": "string",
-            "Reference": "SqlAdminUser",
+            "Reference": "SqlServer_AdminUser",
             "Description": ""
         },
-        "SHSCM:SqlAdminPassword": {
+        "SHS_ContentManagement:sqlserver_AdminPassword": {
             "Type": "string",
-            "Reference": "SqlAdminPassword",
+            "Reference": "SqlServer_AdminPassword",
             "Description": ""
         },
-        "SHSCM:SqlServer": {
+        "SHS_ContentManagement:sqlserver_Instance": {
             "Type": "string",
-            "Reference": "SqlServer",
+            "Reference": "SqlServer_Instance",
             "Description": ""
         },
-        "SHSCM:SqlDbPrefix": {
+        "SHS_ContentManagement:sqlserver_DatabasePrefix": {
             "Type": "string",
-            "Reference": "Prefix",
+            "Reference": "Apps_Prefix",
             "Description": ""
         },
-        "SHSCM:PackagesTempLocation": {
+        "SHS_ContentManagement:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
+            "Reference": "Packages_TempLocation",
             "Description": ""
         },
-        "SHSCM:DownloadLocations": {
+        "SHS_ContentManagement:packages_DownloadLocations": {
             "Type": "String",
-            "Reference": "DownloadLocations",
+            "Reference": "Packages_DownloadLocations",
             "Description": ""
         },
-        "SHSCD:Package": {
+        "SHS_ContentDelivery:app_Package": {
             "Type": "string",
-            "Reference": "SHSCDPackage",
+            "Reference": "HeadlessServices_ContentDelivery_Package",
             "Description": ""
         },
-        "SHSCD:SiteRoot": {
+        "SHS_ContentDelivery:app_Folder": {
             "Type": "string",
-            "Reference": "SiteRoot",
+            "Reference": "Apps_RootFolder",
             "Description": ""
         },
-        "SHSCD:SiteName": {
+        "SHS_ContentDelivery:app_Name": {
             "Type": "string",
-            "Reference": "CDSiteName",
+            "Reference": "ContentDelivery_AppName",
             "Description": ""
         },
-        "SHSCD:PackagesTempLocation": {
+        "SHS_ContentDelivery:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
+            "Reference": "Packages_TempLocation",
             "Description": ""
         },
-        "SHSCD:DownloadLocations": {
+        "SHS_ContentDelivery:packages_DownloadLocations": {
             "Type": "String",
-            "Reference": "DownloadLocations",
+            "Reference": "Packages_DownloadLocations",
             "Description": ""
         }
     },
     "Includes": {
-        "SHSCM": {
+        "SHS_ContentManagement": {
             "Source": ".\\shs-CM.json"
         },
-        "SHSCD": {
+        "SHS_ContentDelivery": {
             "Source": ".\\shs-CD.json"
         }
 

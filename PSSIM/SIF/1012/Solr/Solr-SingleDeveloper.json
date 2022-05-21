@@ -94,7 +94,7 @@
 
         "Test.Solr.Download.Availability": "[Equal(variable('Solr.Download.StatusCode'),200)]",
         "Solr.Download.StatusCode": "[SelectObject(InputObject:variable('Get.Solr.Download.Availability'),ExpandProperty:'StatusCode')]",
-        "Get.Solr.Download.Availability":"[InvokeWebRequest(URI:variable('Solr.Download.URL'),Method:'head',UseBasicParsing:true)]",
+        "Get.Solr.Download.Availability": "[InvokeWebRequest(URI:variable('Solr.Download.URL'),Method:'head',UseBasicParsing:true)]",
 
         "Solr.StartupType": "[if(parameter('SolrCloud'),'solrcloud','')]",
 
@@ -145,7 +145,7 @@
                 "InformationAction": "Continue"
             }
         },
-        "TestSolrService":{
+        "TestSolr_Endpoint":{
             "Description": "Detects if Solr service name has already been used.",
             "Type": "WriteInformation",
             "Params": {
@@ -285,7 +285,7 @@
                 "DestinationPath": "[variable('ACD.Install.Path')]"
             }
         },
-        "CreateSOLRService":{
+        "CreateSOLR_Endpoint":{
             "Description": "Creates Solr Service",
             "Type": "StartProcess",
             "Params": {
@@ -311,7 +311,7 @@
         },
         "StartSolr": {
             "Description": "Runs the Solr service.",
-            "Type": "ManageService",
+            "Type": "Manage_Endpoint",
             "Params": {
                 "Name": "[variable('Solr.Service')]",
                 "Status": "Running",
@@ -329,16 +329,16 @@
         }
     },
     "UninstallTasks": {
-        "StopSolrService": {
+        "StopSolr_Endpoint": {
             "Description" : "Stops the Solr Service",
-            "Type": "ManageService",
+            "Type": "Manage_Endpoint",
             "Params": {
                 "Name": "[variable('Solr.Service')]",
                 "Status": "Stopped",
                 "PostDelay": 4000
             }
         },
-        "RemoveSolrService": {
+        "RemoveSolr_Endpoint": {
             "Description": "Removes the Solr Service.",
             "Type": "StartProcess",
             "Params": {

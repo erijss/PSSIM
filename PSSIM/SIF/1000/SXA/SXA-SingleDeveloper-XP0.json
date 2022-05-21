@@ -1,189 +1,189 @@
 {
     "Parameters": {
-        "SiteName": {
+        "Sitecore_AppName": {
             "Type": "string",
             "DefaultValue": "Sitecore",
             "Description": "The name of the site to be deployed to."
         },
-        "Prefix": {
+        "Apps_Prefix": {
             "Type": "String",
             "Description": "The prefix for the Solr, SQL and Sitecore instances.",
             "DefaultValue": ""
         },
-        "SitecoreAdminPassword": {
+        "Sitecore_AdminPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The admin password for the Sitecore instance."
         },
-        "SqlAdminUser": {
+        "SqlServer_AdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlAdminPassword": {
+        "SqlServer_AdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SQLServer": {
+        "SqlServer_Instance": {
             "Type": "String",
             "DefaultValue": "Localhost",
             "Description": "The Sql Server where databases will be installed."
         },
-        "SolrUrl": {
+        "Solr_Url": {
             "Type": "String",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance to use."
         },
-        "SolrRoot": {
+        "Solr_Folder": {
             "Type": "String",
             "DefaultValue": "C:\\solr-7.5.0",
             "Description": "The file path to the Solr instance."
         },
-        "SolrService": {
+        "Solr_Service": {
             "Type": "String",
             "DefaultValue": "Solr-7.5.0",
             "Description": "The name of the Solr service."
         },
-        "SXAPackage": {
+        "ExperienceAccelerator_Package": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Sitecore Experience Accelerator package to deploy."
         },
-        "SPEPackage": {
+        "PowerShellExtensions_Package": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Sitecore Powershell Extensions package to deploy."
         },
-        "PackagesTempLocation": {
+        "Packages_TempLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": ""
         },
-        "DownloadLocations": {
+        "Packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         },
-        "SXA:SiteName": {
+        "SXA_Sitecore:app_Name": {
             "Type": "String",
-            "Reference": "SiteName",
+            "Reference": "Sitecore_AppName",
             "Description": "Override to pass SiteName value to SXA config."
         },
-        "SPE:SiteName": {
+        "SPE_Sitecore:app_Name": {
             "Type": "String",
-            "Reference": "SiteName",
+            "Reference": "Sitecore_AppName",
             "Description": "Override to pass SiteName value to SPE config."
         },
-        "SXA:Package": {
+        "SXA_Sitecore:app_Package": {
             "Type": "String",
-            "Reference": "SXAPackage",
+            "Reference": "ExperienceAccelerator_Package",
             "Description": "Override to pass SXAPackage value to SXA config."
         },
-        "SPE:Package": {
+        "SPE_Sitecore:app_Package": {
             "Type": "String",
-            "Reference": "SPEPackage",
+            "Reference": "PowerShellExtensions_Package",
             "Description": "Override to pass SPEPackage value to SPE config."
         },
-        "SPE:SQLServer": {
+        "SPE_Sitecore:sqlserver_Instance": {
             "Type": "String",
-            "Reference": "SQLServer",
+            "Reference": "SqlServer_Instance",
             "Description": "Override to pass SQLServer value to SPE config."
         },
-        "SXA:SQLServer": {
+        "SXA_Sitecore:sqlserver_Instance": {
             "Type": "String",
-            "Reference": "SQLServer",
+            "Reference": "SqlServer_Instance",
             "Description": "Override to pass SQLServer value to SXA config."
         },
-        "SXA:SqlAdminPassword": {
+        "SXA_Sitecore:sqlserver_AdminPassword": {
             "Type": "String",
-            "Reference": "SqlAdminPassword",
-            "Description": "Override to pass SqlAdminPassword value to SXA config."
+            "Reference": "SqlServer_AdminPassword",
+            "Description": "Override to pass SqlServer_AdminPassword value to SXA config."
         },
-        "SPE:SqlAdminPassword": {
+        "SPE_Sitecore:sqlserver_AdminPassword": {
             "Type": "String",
-            "Reference": "SqlAdminPassword",
-            "Description": "Override to pass SqlAdminPassword value to SPE config."
+            "Reference": "SqlServer_AdminPassword",
+            "Description": "Override to pass SqlServer_AdminPassword value to SPE config."
         },
-        "SXA:SqlAdminUser": {
+        "SXA_Sitecore:sqlserver_AdminUser": {
             "Type": "String",
-            "Reference": "SqlAdminUser",
-            "Description": "Override to pass SqlAdminUser value to SXA config."
+            "Reference": "SqlServer_AdminUser",
+            "Description": "Override to pass SqlServer_AdminUser value to SXA config."
         },
-        "SPE:SqlAdminUser": {
+        "SPE_Sitecore:sqlserver_AdminUser": {
             "Type": "String",
-            "Reference": "SqlAdminUser",
-            "Description": "Override to pass SqlAdminUser value to SPE config."
+            "Reference": "SqlServer_AdminUser",
+            "Description": "Override to pass SqlServer_AdminUser value to SPE config."
         },
-        "SXA:SqlDbPrefix": {
+        "SXA_Sitecore:sqlserver_DatabasePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
+            "Reference": "Apps_Prefix",
             "Description": "Override to pass Prefix value to SXA config."
         },
-        "SPE:SqlDbPrefix": {
+        "SPE_Sitecore:sqlserver_DatabasePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
+            "Reference": "Apps_Prefix",
             "Description": "Override to pass Prefix value to SPE config."
         },
-        "SXA:SolrCorePrefix": {
+        "SXA_Sitecore:solr_CorePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
+            "Reference": "Apps_Prefix",
             "Description": "Override to pass Prefix value to SXA config."
         },
-        "SXA:SitecoreAdminPassword": {
+        "SXA_Sitecore:sitecore_AdminPassword": {
             "Type": "String",
-            "Reference": "SitecoreAdminPassword",
+            "Reference": "Sitecore_AdminPassword",
             "Description": "Override to pass SitecoreAdminPassword value to SXA config."
         },
-        "Solr:SolrCorePrefix": {
+        "SXA_Solr:solr_CorePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
+            "Reference": "Apps_Prefix",
             "Description": "Override to pass Prefix value to Solr config."
         },
-        "Solr:SolrUrl": {
+        "SXA_Solr:solr_Url": {
             "Type": "String",
-            "Reference": "SolrUrl",
+            "Reference": "Solr_Url",
             "Description": "Override to pass SolrUrl to Solr config."
         },
-        "Solr:SolrService": {
+        "SXA_Solr:solr_Service": {
             "Type": "String",
-            "Reference": "SolrService",
+            "Reference": "Solr_Service",
             "Description": "Override to pass SolrService to Solr config."
         },
-        "Solr:SolrRoot": {
+        "SXA_Solr:solr_Path": {
             "Type": "String",
-            "Reference": "SolrRoot",
+            "Reference": "Solr_Folder",
             "Description": "Override to pass SolrRoot to Solr config."
         },
-        "SPE:PackagesTempLocation": {
+        "SPE_Sitecore:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
+            "Reference": "Packages_TempLocation",
             "Description": "Override to pass PackagesTempLocation value to SPE config."
         },
-        "SXA:PackagesTempLocation": {
+        "SXA_Sitecore:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
+            "Reference": "Packages_TempLocation",
             "Description": "Override to pass PackagesTempLocation value to SXA config."
         },
-        "SPE:Downloads": {
+        "SPE_Sitecore:packages_DownloadLocations": {
             "Type": "String",
             "Reference": "Downloads",
             "Description": "Override to pass Downloads value to SPE config."
         },
-        "SXA:Downloads": {
+        "SXA_Sitecore:packages_DownloadLocations": {
             "Type": "String",
             "Reference": "Downloads",
             "Description": "Override to pass Downloads value to SXA config."
         }
     },
     "Includes": {
-        "SPE": {
+        "SPE_Sitecore": {
             "Source": ".\\..\\SPE\\spe.json"
         },
-        "Solr": {
+        "SXA_Solr": {
             "Source": ".\\sxa-solr.json"
         },
-        "SXA": {
+        "SXA_Sitecore": {
             "Source": ".\\sxa-XP0.json"
         }
     }

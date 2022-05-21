@@ -1,151 +1,151 @@
 {
     "Parameters": {
-        "LicenseFile": {
+        "Apps_LicenseFile": {
             "Type": "String",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "IdentityServerCertificateName": {
+        "IdentityServer_CertificateName": {
             "Type": "String",
             "Description": "The name of the certificate to be created for the identity server.",
             "DefaultValue": ""
         },
-        "IdentityServerSiteName": {
+        "IdentityServer_AppName": {
             "Type": "String",
             "Description": "The name of the identity server to be created.",
-            "DefaultValue": "IdentityServer"
+            "DefaultValue": "sitecore.auth"
         },
-        "Prefix": {
+        "Apps_Prefix": {
             "Type": "String",
             "DefaultValue": "SC910",
             "Description": "The prefix for uniquely identifying instances."
         },
-        "SitecoreContentManagementSiteName": {
+        "ContentManagement_AppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreXM1CD",
+            "DefaultValue": "sitecore.cd",
             "Description": "The name of the content management site to be deployed."
         },
-        "SitecoreContentDeliverySiteName": {
+        "ContentDelivery_AppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreXP1CM",
+            "DefaultValue": "sitecore.cm",
             "Description": "The name of the content delivery site to be deployed."
         },
-        "SitecoreAdminPassword": {
+        "Sitecore_AdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The admin password for the Sitecore instance."
         },
-        "SiteRoot": {
+        "Apps_RootFolder": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "SqlAdminUser": {
+        "SqlServer_AdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlAdminPassword": {
+        "SqlServer_AdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SQLServer": {
+        "SqlServer_Instance": {
             "Type": "String",
             "DefaultValue": "Localhost",
             "Description": "The Sql Server where databases will be installed."
         },
-        "SqlFormsPassword": {
+        "Database_Forms_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Experience Forms connection string in Sitecore."
         },
-        "SqlSecurityPassword": {
+        "Database_Security_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Security connection string in Sitecore."
         },
-        "SqlCorePassword": {
+        "Database_Core_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Core connection string in Sitecore."
         },
-        "SqlMasterPassword": {
+        "Database_Master_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Master connection string in Sitecore."
         },
-        "SqlWebPassword": {
+        "Database_Web_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Web connection string in Sitecore."
         },
-        "SolrUrl": {
+        "Solr_Url": {
             "Type": "String",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance to use."
         },
-        "SolrRoot": {
+        "Solr_Folder": {
             "Type": "String",
             "DefaultValue": "C:\\solr-8.4.0",
             "Description": "The file path to the Solr instance."
         },
-        "SolrService": {
+        "Solr_Service": {
             "Type": "String",
             "DefaultValue": "Solr-8.4.0",
             "Description": "The name of the Solr service."
         },
-        "SitecoreContentManagementPackage": {
+        "ContentManagement_Package": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Sitecore package to deploy."
         },
-        "SitecoreContentDeliveryPackage": {
+        "ContentDelivery_Package": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Sitecore package to deploy."
         },
-        "IdentityServerPackage": {
+        "IdentityServer_Package": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Identity Server package to deploy."
         },
-        "PasswordRecoveryUrl": {
+        "IdentityServer_PasswordRecoveryUrl": {
             "Type": "string",
             "Description": "Password recovery Url (Host name of CM instance).",
             "DefaultValue": "http:\\"
         },
-        "ClientsConfiguration": {
+        "IdentityServer_ClientsConfiguration": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "Sitecore IdentityServer clients configuration"
         },
-        "AllowedCorsOrigins": {
+        "IdentityServer_AllowedCorsOrigins": {
             "Type": "string",
             "Description": "Pipe-separated list of instances (URIs) that are allowed to login via Sitecore Identity.",
             "DefaultValue": ""
         },
-        "ClientSecret": {
+        "IdentityServer_ClientSecret": {
             "Type": "string",
             "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
             "DefaultValue": "IdentityServerClientSecret"
         },
-        "SitecoreIdentityAuthority": {
+        "Sitecore_IdentityAuthority": {
             "Type": "string",
             "DefaultValue": "https://SitecoreIdentityServerHost",
             "Description": "IdentityServer provider URI."
         },
-        "PackagesTempLocation": {
+        "Packages_TempLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": ""
         },
-        "DownloadLocations": {
+        "Packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         },
-        "DisableHttpsForCD": {
+        "ContentDelivery_DisableHttps": {
             "Type": "bool",
             "Description": "The option for the enable/disable HTTPS to the Sitecore Content Delivery.",
             "DefaultValue": false
@@ -155,303 +155,306 @@
             "Description": "The parameter for the installing delta WDP packages.",
             "DefaultValue": false
         },
-        "SitecoreSolr:SolrUrl": {
+        "Sitecore_Solr:solr_Url": {
             "Type": "String",
-            "Reference": "SolrUrl",
-            "Description": "Override to pass SolrURL value to SitecoreSolr config."
+            "Reference": "Solr_Url",
+            "Description": "Override to pass SolrURL value to Sitecore_Solr config."
         },
-        "SitecoreCM:SolrUrl": {
+        "ContentManagment_App:solr_Url": {
             "Type": "String",
-            "Reference": "SolrUrl",
-            "Description": "Override to pass SolrURL value to SitecoreCM config."
+            "Reference": "Solr_Url",
+            "Description": "Override to pass SolrURL value to ContentManagment_App config."
         },
-        "SitecoreCD:SolrUrl": {
+        "ContentDelivery_App:solr_Url": {
             "Type": "String",
-            "Reference": "SolrUrl",
-            "Description": "Override to pass SolrURL value to SitecoreCD config."
+            "Reference": "Solr_Url",
+            "Description": "Override to pass SolrURL value to ContentDelivery_App config."
         },
-        "SitecoreSolr:SolrRoot": {
+        "Sitecore_Solr:solr_Path": {
             "Type": "String",
-            "Reference": "SolrRoot",
-            "Description": "Override to pass SolrRoot value to SitecoreSolr config."
+            "Reference": "Solr_Folder",
+            "Description": "Override to pass SolrRoot value to Sitecore_Solr config."
         },
-        "SitecoreSolr:SolrService": {
+        "Sitecore_Solr:solr_Service": {
             "Type": "String",
-            "Reference": "SolrService",
-            "Description": "Override to pass SolrService value to SitecoreSolr config."
+            "Reference": "Solr_Service",
+            "Description": "Override to pass SolrService value to Sitecore_Solr config."
         },
-        "SitecoreSolr:SolrCorePrefix": {
+        "Sitecore_Solr:solr_CorePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
-            "Description": "Override to pass Prefix value to SitecoreSolr config."
+            "Reference": "Apps_Prefix",
+            "Description": "Override to pass Prefix value to Sitecore_Solr config."
         },
-        "SitecoreCM:SolrCorePrefix": {
+        "ContentManagment_App:solr_CorePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
-            "Description": "Override to pass Prefix value to SitecoreCM config."
+            "Reference": "Apps_Prefix",
+            "Description": "Override to pass Prefix value to ContentManagment_App config."
         },
-        "SitecoreCD:SolrCorePrefix": {
+        "ContentDelivery_App:solr_CorePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
-            "Description": "Override to pass Prefix value to SitecoreCD config."
+            "Reference": "Apps_Prefix",
+            "Description": "Override to pass Prefix value to ContentDelivery_App config."
         },
-        "SitecoreCM:LicenseFile": {
+        "ContentManagment_App:app_License": {
             "Type": "String",
-            "Reference": "LicenseFile",
-            "Description": "Override to pass LicenseFile value to SitecoreCM config."
+            "Reference": "Apps_LicenseFile",
+            "Description": "Override to pass LicenseFile value to ContentManagment_App config."
         },
-        "SitecoreCD:LicenseFile": {
+        "ContentDelivery_App:app_License": {
             "Type": "String",
-            "Reference": "LicenseFile",
-            "Description": "Override to pass LicenseFile value to SitecoreCD config."
+            "Reference": "Apps_LicenseFile",
+            "Description": "Override to pass LicenseFile value to ContentDelivery_App config."
         },
-        "IdentityServerCertificates:CertificateName": {
+        "IdentityServer_Certificate:certificate_Name": {
             "Type": "String",
-            "Reference": "IdentityServerCertificateName",
-            "Description": "Override to pass IdentityServerCertificateName value to IdentityServerCertificates config."
+            "Reference": "IdentityServer_CertificateName",
+            "Description": "Override to pass IdentityServer_CertificateName value to IdentityServer_Certificate config."
         },
-        "IdentityServerCertificates:Update": {
+        "IdentityServer_Certificate:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to Certificates config."
         },
-        "IdentityServer:SiteName": {
+        "IdentityServer_App:app_Name": {
             "Type": "String",
-            "Reference": "IdentityServerSiteName",
-            "Description": "Override to pass IdentityServerSiteName value to IdentityServer config."
+            "Reference": "IdentityServer_AppName",
+            "Description": "Override to pass IdentityServer_AppName value to IdentityServer config."
         },
-        "SitecoreCM:SiteName": {
+        "ContentManagment_App:app_Name": {
             "Type": "String",
-            "Reference": "SitecoreContentManagementSiteName",
-            "Description": "Override to pass SitecoreContentManagementSiteName value to SitecoreCM config."
+            "Reference": "ContentManagement_AppName",
+            "Description": "Override to pass SitecoreContentManagementSiteName value to ContentManagment_App config."
         },
-        "SitecoreCD:SiteName": {
+        "ContentDelivery_App:app_Name": {
             "Type": "String",
-            "Reference": "SitecoreContentDeliverySiteName",
-            "Description": "Override to pass SitecoreContentDeliverySiteName value to SitecoreCD config."
+            "Reference": "ContentDelivery_AppName",
+            "Description": "Override to pass SitecoreContentDeliverySiteName value to ContentDelivery_App config."
         },
-        "IdentityServer:SiteRoot": {
+        "IdentityServer_App:app_Folder": {
             "Type": "String",
-            "Reference": "SiteRoot",
+            "Reference": "Apps_RootFolder",
             "Description": "Override to pass SiteRoot value to IdentityServer config."
         },
-        "SitecoreCM:SiteRoot": {
+        "ContentManagment_App:app_Folder": {
             "Type": "String",
-            "Reference": "SiteRoot",
-            "Description": "Override to pass SiteRoot value to SitecoreCM config."
+            "Reference": "Apps_RootFolder",
+            "Description": "Override to pass SiteRoot value to ContentManagment_App config."
         },
-        "SitecoreCD:SiteRoot": {
+        "ContentDelivery_App:app_Folder": {
             "Type": "String",
-            "Reference": "SiteRoot",
-            "Description": "Override to pass SiteRoot value to SitecoreCD config."
+            "Reference": "Apps_RootFolder",
+            "Description": "Override to pass SiteRoot value to ContentDelivery_App config."
         },
-        "IdentityServer:SitecoreIdentityCert": {
+        "IdentityServer_App:app_Certificate": {
             "Type": "String",
-            "Reference": "IdentityServerCertificateName",
-            "Description": "Override to pass IdentityServerCertificateName value to IdentityServer config."
+            "Reference": "IdentityServer_CertificateName",
+            "Description": "Override to pass IdentityServer_CertificateName value to IdentityServer config."
         },
-        "IdentityServer:LicenseFile": {
+        "IdentityServer_App:app_License": {
             "Type": "String",
-            "Reference": "LicenseFile",
+            "Reference": "Apps_LicenseFile",
             "Description": "Override to pass LicenseFile value to IdentityServer config."
         },
-        "IdentityServer:ClientsConfiguration": {
+        "IdentityServer_App:identityserver_ClientsConfiguration": {
             "Type": "String",
-            "Reference": "ClientsConfiguration",
+            "Reference": "IdentityServer_ClientsConfiguration",
             "Description": "Override to pass ClientsConfiguration value to IdentityServer config."
         },
-        "IdentityServer:PasswordRecoveryUrl": {
+        "IdentityServer_App:identityserver_PasswordRecoveryUrl": {
             "Type": "String",
-            "Reference": "PasswordRecoveryUrl",
+            "Reference": "IdentityServer_PasswordRecoveryUrl",
             "Description": "Override to pass PasswordRecoveryUrl value to IdentityServer config."
         },
-        "SitecoreCM:Package": {
+        "ContentManagment_App:app_Package": {
             "Type": "String",
-            "Reference": "SitecoreContentManagementPackage",
-            "Description": "Override to pass SitecoreContentManagementPackage value to SitecoreXP0 config."
+            "Reference": "ContentManagement_Package",
+            "Description": "Override to pass SitecoreContentManagementPackage value to Sitecore_App config."
         },
-        "SitecoreCD:Package": {
+        "ContentDelivery_App:app_Package": {
             "Type": "String",
-            "Reference": "SitecoreContentDeliveryPackage",
-            "Description": "Override to pass SitecoreContentDeliveryPackage value to SitecoreXP0 config."
+            "Reference": "ContentDelivery_Package",
+            "Description": "Override to pass SitecoreContentDeliveryPackage value to Sitecore_App config."
         },
-        "IdentityServer:Package": {
+        "IdentityServer_App:app_Package": {
             "Type": "String",
-            "Reference": "IdentityServerPackage",
+            "Reference": "IdentityServer_Package",
             "Description": "Override to pass IdentityServerPackage value to IdentityServer config."
         },
-        "SitecoreCM:SqlDbPrefix": {
+        "ContentManagment_App:sqlserver_DatabasePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
-            "Description": "Override to pass Prefix value to SitecoreCM config."
+            "Reference": "Apps_Prefix",
+            "Description": "Override to pass Prefix value to ContentManagment_App config."
         },
-        "SitecoreCD:SqlDbPrefix": {
+        "ContentDelivery_App:sqlserver_DatabasePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
-            "Description": "Override to pass Prefix value to SitecoreCD config."
+            "Reference": "Apps_Prefix",
+            "Description": "Override to pass Prefix value to ContentDelivery_App config."
         },
-        "IdentityServer:SqlDbPrefix": {
+        "IdentityServer_App:sqlserver_DatabasePrefix": {
             "Type": "String",
-            "Reference": "Prefix",
+            "Reference": "Apps_Prefix",
             "Description": "Override to pass Prefix value to IdentityServer config."
         },
-        "SitecoreCM:SqlServer": {
+        "ContentManagment_App:sqlserver_Instance": {
             "Type": "String",
-            "Reference": "SQLServer",
-            "Description": "Override to pass SqlServer value to SitecoreCM config."
+            "Reference": "SqlServer_Instance",
+            "Description": "Override to pass SqlServer value to ContentManagment_App config."
         },
-        "SitecoreCD:SqlServer": {
+        "ContentDelivery_App:sqlserver_Instance": {
             "Type": "String",
-            "Reference": "SQLServer",
-            "Description": "Override to pass SqlServer value to SitecoreCD config."
+            "Reference": "SqlServer_Instance",
+            "Description": "Override to pass SqlServer value to ContentDelivery_App config."
         },
-        "IdentityServer:SqlServer": {
+        "IdentityServer_App:sqlserver_Instance": {
             "Type": "String",
-            "Reference": "SQLServer",
+            "Reference": "SqlServer_Instance",
             "Description": "Override to pass SqlServer value to IdentityServer config."
         },
-        "SitecoreCM:SqlAdminUser": {
+        "ContentManagment_App:sqlserver_AdminUser": {
             "Type": "String",
-            "Reference": "SqlAdminUser",
-            "Description": "Override to pass SqlAdminUser value to SitecoreCM config."
+            "Reference": "SqlServer_AdminUser",
+            "Description": "Override to pass SqlServer_AdminUser value to ContentManagment_App config."
         },
-        "SitecoreCM:SqlAdminPassword": {
+        "ContentManagment_App:sqlserver_AdminPassword": {
             "Type": "String",
-            "Reference": "SqlAdminPassword",
-            "Description": "Override to pass SqlAdminPassword value to SitecoreCM config."
+            "Reference": "SqlServer_AdminPassword",
+            "Description": "Override to pass SqlServer_AdminPassword value to ContentManagment_App config."
         },
-        "IdentityServer:AllowedCorsOrigins": {
+        "IdentityServer_App:identityserver_AllowedCorsOrigins": {
             "Type": "String",
-            "Reference": "AllowedCorsOrigins",
+            "Reference": "IdentityServer_AllowedCorsOrigins",
             "Description": "Override to pass AllowedCorsOrigins value to IdentityServer config."
         },
-        "SitecoreCM:SitecoreIdentityAuthority": {
+        "ContentManagment_App:sitecore_IdentityAuthority": {
             "Type": "String",
-            "Reference": "SitecoreIdentityAuthority",
-            "Description": "Override to pass SitecoreIdentityAuthority value to SitecoreCM config."
+            "Reference": "Sitecore_IdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to ContentManagment_App config."
         },
-        "SitecoreCD:SitecoreIdentityAuthority": {
+        "ContentDelivery_App:sitecore_IdentityAuthority": {
             "Type": "String",
-            "Reference": "SitecoreIdentityAuthority",
-            "Description": "Override to pass SitecoreIdentityAuthority name value to SitecoreCD config."
+            "Reference": "Sitecore_IdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority name value to ContentDelivery_App config."
         },
-        "IdentityServer:PackagesTempLocation": {
+        "IdentityServer_App:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
+            "Reference": "Packages_TempLocation",
             "Description": "Override to pass PackagesTempLocation value to IdentityServer config."
         },
-        "SitecoreCD:PackagesTempLocation": {
+        "ContentDelivery_App:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to SitecoreCD config."
+            "Reference": "Packages_TempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to ContentDelivery_App config."
         },
-        "SitecoreCM:PackagesTempLocation": {
+        "ContentManagment_App:packages_TemporaryLocation": {
             "Type": "String",
-            "Reference": "PackagesTempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to SitecoreCM config."
+            "Reference": "Packages_TempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to ContentManagment_App config."
         },
-        "IdentityServer:DownloadLocations": {
+        "IdentityServer_App:packages_DownloadLocations": {
             "Type": "String",
-            "Reference": "DownloadLocations",
+            "Reference": "Packages_DownloadLocations",
             "Description": "Override to pass DownloadLocations value to IdentityServer config."
         },
-        "SitecoreCD:DownloadLocations": {
+        "ContentDelivery_App:packages_DownloadLocations": {
             "Type": "String",
-            "Reference": "DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to SitecoreCD config."
+            "Reference": "Packages_DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to ContentDelivery_App config."
         },
-        "SitecoreCM:DownloadLocations": {
+        "ContentManagment_App:packages_DownloadLocations": {
             "Type": "String",
-            "Reference": "DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to SitecoreCM config."
+            "Reference": "Packages_DownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to ContentManagment_App config."
         },
-        "SitecoreCM:SitecoreAdminPassword": {
+        "ContentManagment_App:sitecore_AdminPassword": {
             "Type": "String",
-            "Reference": "SitecoreAdminPassword",
-            "Description": "Override to pass SitecoreAdminPassword name value to SitecoreCM config."
+            "Reference": "Sitecore_AdminPassword",
+            "Description": "Override to pass SitecoreAdminPassword name value to ContentManagment_App config."
         },
-        "SitecoreCD:DisableHttps": {
+        "ContentDelivery_App:DisableHttps": {
             "Type": "bool",
-            "Reference": "DisableHttpsForCD",
-            "Description": "Override to pass DisableHttpsForCD value to SitecoreCD config."
+            "Reference": "ContentDelivery_DisableHttps",
+            "Description": "Override to pass DisableHttpsForCD value to ContentDelivery_App config."
         },
-        "SitecoreCD:Update": {
-            "Type": "bool",
-            "Reference": "Update",
-            "Description": "Override to pass Update value to SitecoreCD config."
-        },
-        "SitecoreCM:Update": {
+        "ContentDelivery_App:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to SitecoreCM config."
+            "Description": "Override to pass Update value to ContentDelivery_App config."
         },
-        "IdentityServer:Update": {
+        "ContentManagment_App:Update": {
+            "Type": "bool",
+            "Reference": "Update",
+            "Description": "Override to pass Update value to ContentManagment_App config."
+        },
+        "IdentityServer_App:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to IdentityServer config."
         },
-        "SitecoreSolr:Update": {
+        "Sitecore_Solr:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to SitecoreSolr config."
+            "Description": "Override to pass Update value to Sitecore_Solr config."
         }
     },
     "Variables": {
-        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('SqlCorePassword'))]",
-        "Sql.Database.Core.Password.Test": "[equal(parameter('SqlCorePassword'),'SIF-Default')]",
+        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('Database_Core_Password'))]",
+        "Sql.Database.Core.Password.Test": "[equal(parameter('Database_Core_Password'),'SIF-Default')]",
         "Sql.Database.Core.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "SitecoreCM:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
+        "ContentManagment_App:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
 
-        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('SqlSecurityPassword'))]",
-        "Sql.Database.Security.Password.Test": "[equal(parameter('SqlSecurityPassword'),'SIF-Default')]",
+        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('Database_Security_Password'))]",
+        "Sql.Database.Security.Password.Test": "[equal(parameter('Database_Security_Password'),'SIF-Default')]",
         "Sql.Database.Security.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "SitecoreCM:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
-        "SitecoreCD:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
-        "IdentityServer:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "ContentManagment_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "ContentDelivery_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "IdentityServer_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
 
-        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('SqlMasterPassword'))]",
-        "Sql.Database.Master.Password.Test": "[equal(parameter('SqlMasterPassword'),'SIF-Default')]",
+        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('Database_Master_Password'))]",
+        "Sql.Database.Master.Password.Test": "[equal(parameter('Database_Master_Password'),'SIF-Default')]",
         "Sql.Database.Master.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "SitecoreCM:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
+        "ContentManagment_App:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
 
-        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('SqlWebPassword'))]",
-        "Sql.Database.Web.Password.Test": "[equal(parameter('SqlWebPassword'),'SIF-Default')]",
+        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('Database_Web_Password'))]",
+        "Sql.Database.Web.Password.Test": "[equal(parameter('Database_Web_Password'),'SIF-Default')]",
         "Sql.Database.Web.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "SitecoreCM:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
-        "SitecoreCD:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+        "ContentManagment_App:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+        "ContentDelivery_App:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
 
-        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('SqlFormsPassword'))]",
-        "Sql.Database.Forms.Password.Test": "[equal(parameter('SqlFormsPassword'),'SIF-Default')]",
+        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('Database_Forms_Password'))]",
+        "Sql.Database.Forms.Password.Test": "[equal(parameter('Database_Forms_Password'),'SIF-Default')]",
         "Sql.Database.Forms.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "SitecoreCM:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
-        "SitecoreCD:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+        "ContentManagment_App:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+        "ContentDelivery_App:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
 
-        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('ClientSecret'))]",
-        "IdentityServer.Client.Secret.Test": "[equal(parameter('ClientSecret'),'SIF-Default')]",
+        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('IdentityServer_ClientSecret'))]",
+        "IdentityServer.Client.Secret.Test": "[equal(parameter('IdentityServer_ClientSecret'),'SIF-Default')]",
         "IdentityServer.Client.Secret.Generate": "[randomstring(Length:100,DisAllowSpecial:True)]",
 
-        "IdentityServer:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
-        "SitecoreCM:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
+        "IdentityServer_App:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
+        "ContentManagment_App:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
     },
     "Includes": {
-        "IdentityServerCertificates": {
+        "IdentityServer_Certificate": {
             "Source": ".\\..\\Certificates\\createcert.json"
         },
-        "IdentityServer": {
+        "IdentityServer_App": {
             "Source": ".\\identityServer.json"
         },
-        "SitecoreSolr": {
+        "Sitecore_Certificate": {
+            "Source": ".\\..\\Certificates\\createcert.json"
+        },
+        "Sitecore_Solr": {
             "Source": ".\\Sitecore-solr.json"
         },
-        "SitecoreCM": {
+        "ContentManagment_App": {
             "Source": ".\\Sitecore-XM1-cm.json"
         },
-        "SitecoreCD": {
+        "ContentDelivery_App": {
             "Source": ".\\Sitecore-XM1-cd.json"
         }
     },
@@ -469,22 +472,22 @@
                 "Scope": "Global",
                 "Value": [
                     {
-                        "SqlCorePassword": "[variable('Sql.Database.Core.Password')]"
+                        "Database_Core_Password": "[variable('Sql.Database.Core.Password')]"
                     },
                     {
-                        "SqlSecurityPassword": "[variable('Sql.Database.Security.Password')]"
+                        "Database_Security_Password": "[variable('Sql.Database.Security.Password')]"
                     },
                     {
-                        "SqlMasterPassword": "[variable('Sql.Database.Master.Password')]"
+                        "Database_Master_Password": "[variable('Sql.Database.Master.Password')]"
                     },
                     {
-                        "SqlWebPassword": "[variable('Sql.Database.Web.Password')]"
+                        "Database_Web_Password": "[variable('Sql.Database.Web.Password')]"
                     },
                     {
-                        "SqlFormsPassword": "[variable('Sql.Database.Forms.Password')]"
+                        "Database_Forms_Password": "[variable('Sql.Database.Forms.Password')]"
                     },
                     {
-                        "ClientSecret": "[variable('IdentityServer.Client.Secret')]"
+                        "IdentityServer_ClientSecret": "[variable('IdentityServer.Client.Secret')]"
                     }
                 ]
             },

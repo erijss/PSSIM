@@ -70,7 +70,7 @@
             "Params": {
                 "Path": "[parameter('certificate_Path')]",
                 "Name": "[parameter('certificate_Root_Name')]",
-                "app_DnsName": [
+                "DnsName": [
                     "[variable('Certificate.Root.DnsName')]",
                     "127.0.0.1"
                 ],
@@ -87,7 +87,7 @@
                 "Path": "[parameter('certificate_Path')]",
                 "CertStoreLocation": "[variable('Certificate.Client.Store')]",
                 "Name": "[parameter('certificate_Name')]",
-                "app_DnsName": [
+                "DnsName": [
                     "[parameter('certificate_Name')]",
                     "127.0.0.1"
                 ],
