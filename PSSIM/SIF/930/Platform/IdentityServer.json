@@ -1,121 +1,121 @@
 ﻿{
     "Parameters": {
-        "Package": {
+        "app_Package": {
             "Type": "string",
             "Description": "The path to the Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "SitecoreIdentityCert": {
+        "app_Certificate": {
             "Type": "string",
             "Description": "The certificate to use for encryption. Provide the name or the thumbprint.",
             "DefaultValue": ""
         },
-        "LicenseFile": {
+        "app_License": {
             "Type": "string",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "SiteName": {
+        "app_Name": {
             "Type": "string",
             "DefaultValue": "IdentityServer",
             "Description": "The name of the site to be deployed."
         },
-        "SiteRoot": {
+        "app_Path": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "SqlServer": {
+        "sqlserver_Instance": {
             "Type": "string",
-            "DefaultValue": ".\\SQLSERVER",
+            "DefaultValue": ".\\sqlserver_Instance",
             "Description": "The Sql Server where databases will be installed."
         },
-        "SqlDbPrefix": {
+        "sqlserver_DatabasePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Sql databases.",
             "DefaultValue": ""
         },
-        "SqlSecurityDbName": {
+        "identityserver_SecurityDatabaseName": {
             "Type": "string",
             "DefaultValue": "_Core",
             "Description": "The database to use in Security database connection string."
         },
-        "SqlSecurityUser": {
+        "database_Security_User": {
             "Type": "string",
             "DefaultValue": "securityuser",
             "Description": "The user to use in Security database connection string."
         },
-        "SqlSecurityPassword": {
+        "database_Security_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Security database connection string."
         },
-        "PasswordRecoveryUrl": {
+        "identityserver_PasswordRecoveryUrl": {
             "Type": "string",
             "Description": "Password recovery Url (Host name of CM instance).",
             "DefaultValue": "https:\\"
         },
-        "AllowedCorsOrigins": {
+        "identityserver_AllowedCorsOrigins": {
             "Type": "string",
             "Description": "Pipe-separated list of instances (URIs) that are allowed to login via Sitecore Identity.",
             "DefaultValue": ""
         },
-        "ClientSecret": {
+        "identityserver_ClientSecret": {
             "Type": "string",
             "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
             "DefaultValue": "SIF-Default"
         },
-        "CustomConfigurationFile": {
+        "identityserver_CustomConfigurationFile": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "Path to file with custom configuration to be deployed in Identity Server folder."
         },
-        "HostMappingName": {
+        "app_HostMappingName": {
             "Type": "string",
-            "Reference": "SiteName",
-            "Description": "The host name of the site."
+            "Reference": "app_Name",
+            "Description": "The host name of the app."
         },
-        "DnsName": {
+        "app_DnsName": {
             "Type": "string",
-            "Reference": "SiteName",
-            "Description": "The dns name of the site."
+            "Reference": "app_Name",
+            "Description": "The dns name of the app."
         },
-        "PackagesTempLocation": {
+        "packages_TemporaryLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": "",
             "Validate": "[TestPath(variable('Package.Download.Location'))]"
         },
-        "DownloadLocations": {
+        "packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         }
     },
     "Variables": {
-        "Sql.Database.Security.Name": "[concat(parameter('SqlDbPrefix'), parameter('SqlSecurityDbName'))]",
-        "Sql.Database.Security.User": "[parameter('SqlSecurityUser')]",
-        "Sql.Database.Security.Password": "[parameter('SqlSecurityPassword')]",
-        "Sql.Database.Security.ConnectionString": "[concat('Data Source=', parameter('SqlServer'), ';Initial Catalog=', variable('Sql.Database.Security.Name'), ';User ID=', variable('Sql.Database.Security.User'), ';Password=', variable('Sql.Database.Security.Password'))]",
-        
-        "Certificates.Store": "Cert:\\Localmachine\\My",
-        "Certificates.Site.Thumbprint": "[GetCertificateThumbprint(parameter('SitecoreIdentityCert'), variable('Certificates.Store'))]",
-        "Certificates.Site.Path": "[joinpath(variable('Certificates.Store'), variable('Certificates.Site.Thumbprint'))]",
-        
-        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",
-        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
-        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
-        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
-        "Site.LicenseFolder": "[joinpath(variable('Site.Path'), 'sitecoreruntime')]",
-        "Site.ConfigFolder": "[joinpath(variable('Site.Path'), 'Config', 'production')]",
-        
-        "IdentityServer.Client.Secret": "[parameter('ClientSecret'))]",
-        
-        "Packages.DownloadLocations.File": "[ReadJson(Path:parameter('DownloadLocations'))]",
-        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('DownloadLocations'))]",
+        "Sql.Database.Security.Name": "[concat(parameter('sqlserver_DatabasePrefix'), parameter('identityserver_SecurityDatabaseName'))]",
+        "Sql.Database.Security.User": "[parameter('database_Security_User')]",
+        "Sql.Database.Security.Password": "[parameter('database_Security_Password')]",
+        "Sql.Database.Security.ConnectionString": "[concat('Data Source=', parameter('sqlserver_Instance'), ';Initial Catalog=', variable('Sql.Database.Security.Name'), ';User ID=', variable('Sql.Database.Security.User'), ';Password=', variable('Sql.Database.Security.Password'))]",
 
-        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
-        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
+        "Certificate.Store": "Cert:\\Localmachine\\My",
+        "Certificate.App.Thumbprint": "[GetCertificateThumbprint(parameter('app_Certificate'), variable('Certificate.Store'))]",
+        "Certificate.App.Path": "[joinpath(variable('Certificate.Store'), variable('Certificate.App.Thumbprint'))]",
+
+        "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
+        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
+        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.LicenseFolder": "[joinpath(variable('App.Path'), 'sitecoreruntime')]",
+        "App.ConfigFolder": "[joinpath(variable('App.Path'), 'Config', 'production')]",
+
+        "IdentityServer.Client.Secret": "[parameter('identityserver_ClientSecret'))]",
+
+        "Packages.DownloadLocations.File": "[ReadJson(Path:parameter('packages_DownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('packages_DownloadLocations'))]",
+
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('packages_TemporaryLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('packages_TemporaryLocation'),'')]",
         "Package.Download.Identifier": "IdentityServer.json",
         "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
         "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
@@ -124,9 +124,9 @@
         "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
         "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
 
-        "Package": "[if(parameter('Package'),parameter('Package'),variable('Package.Download.Path'))]",
+        "app_Package": "[if(parameter('app_Package'),parameter('app_Package'),variable('Package.Download.Path'))]",
         "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
-        "Package.Provided": "[if(parameter('Package'),parameter('Package'),'')]"
+        "Package.Provided": "[if(parameter('app_Package'),parameter('app_Package'),'')]"
     },
     "Register": {
         "Tasks": {
@@ -155,7 +155,7 @@
             "Type": "EnsurePath",
             "Params": {
                 "Exists": [
-                    "[variable('Site.Path')]"
+                    "[variable('App.Path')]"
                 ]
             }
         },
@@ -163,7 +163,7 @@
             "Description": "Creates or updates the app pool.",
             "Type": "AppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Properties": {
                     "ProcessModel": {
                         "identityType": "ApplicationPoolIdentity",
@@ -178,10 +178,10 @@
             "Description": "Set permissions for the App Pool User to access the client certificate.",
             "Type": "FilePermissions",
             "Params": {
-                "Path": "[ResolveCertificatePath(variable('Certificates.Site.Path'))]",
+                "Path": "[ResolveCertificatePath(variable('Certificate.App.Path'))]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('SiteName'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
                         "FileSystemRights": [
                             "Read"
                         ],
@@ -196,16 +196,16 @@
             "Description": "Creates or updates the IIS website instance.",
             "Type": "Website",
             "Params": {
-                "Name": "[parameter('SiteName')]",
-                "ApplicationPool": "[parameter('SiteName')]",
-                "PhysicalPath": "[variable('Site.Path')]"
+                "Name": "[parameter('app_Name')]",
+                "ApplicationPool": "[parameter('app_Name')]",
+                "PhysicalPath": "[variable('App.Path')]"
             }
         },
         "StopWebsite": {
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -213,7 +213,7 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -221,7 +221,7 @@
             "Description": "Provisions the HKLM registry so that the specified user account can persist auto-generated machine keys.",
             "Type": "ManageKeyStorage",
             "Params": {
-                "AppPoolName": "[parameter('SiteName')]",
+                "AppPoolName": "[parameter('app_Name')]",
                 "Action": "Create"
             }
         },
@@ -229,7 +229,7 @@
             "Description": "Removes the default *:80 web binding.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Remove": [
                     {
                         "Port": "80",
@@ -239,37 +239,37 @@
             }
         },
         "CreateBindingsWithThumbprint": {
-            "Description": "Configures the site bindings for the website.",
+            "Description": "Configures the site bindings for the webapp.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Add": [
                     {
-                        "HostHeader": "[parameter('DNSName')]",
+                        "HostHeader": "[parameter('app_DnsName')]",
                         "Protocol": "https",
                         "SSLFlags": 1,
-                        "Thumbprint": "[variable('Certificates.Site.Thumbprint')]"
+                        "Thumbprint": "[variable('Certificate.App.Thumbprint')]"
                     }
                 ]
             },
-            "Skip": "[not(parameter('SitecoreIdentityCert'))]"
+            "Skip": "[not(parameter('app_Certificate'))]"
         },
         "CreateHostHeader": {
-            "Description": "Sets a hostheader for the website.",
+            "Description": "Sets a hostheader for the webapp.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('HostMappingName')]"
+                "HostName": "[parameter('app_HostMappingName')]"
             },
-            "Skip": "[not(parameter('HostMappingName'))]"
+            "Skip": "[not(parameter('app_HostMappingName'))]"
         },
         "SetPermissions": {
             "Description": "Sets permissions for the app pool user.",
             "Type": "FilePermissions",
             "Params": {
-                "Path": "[variable('Site.Path')]",
+                "Path": "[variable('App.Path')]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('SiteName'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
                         "FileSystemRights": "FullControl",
                         "InheritanceFlags": [
                             "ContainerInherit",
@@ -280,19 +280,19 @@
             }
         },
         "InstallWDP": {
-            "Description": "Syncs the web deploy package with the website.",
+            "Description": "Syncs the web deploy package with the webapp.",
             "Type": "WebDeploy",
             "Params": {
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "Package": "[resolvepath(variable('Package'))]"
+                        "app_Package": "[resolvepath(variable('app_Package'))]"
                     },
                     "Dest": "Auto",
                     "SetParam": [
                         {
                             "Name": "IIS Web Application Name",
-                            "Value": "[parameter('SiteName')]"
+                            "Value": "[parameter('app_Name')]"
                         },
                         {
                             "Name": "Security Connection String",
@@ -300,18 +300,18 @@
                         },
                         {
                             "Name": "CertificateThumbprint",
-                            "Value": "[variable('Certificates.Site.Thumbprint')]"
+                            "Value": "[variable('Certificate.App.Thumbprint')]"
                         },
                         {
-                            "Name": "PasswordRecoveryUrl",
-                            "Value": "[parameter('PasswordRecoveryUrl')]"
+                            "Name": "identityserver_PasswordRecoveryUrl",
+                            "Value": "[parameter('identityserver_PasswordRecoveryUrl')]"
                         },
                         {
-                            "Name": "AllowedCorsOrigins",
-                            "Value": "[parameter('AllowedCorsOrigins')]"
+                            "Name": "identityserver_AllowedCorsOrigins",
+                            "Value": "[parameter('identityserver_AllowedCorsOrigins')]"
                         },
                         {
-                            "Name": "ClientSecret",
+                            "Name": "identityserver_ClientSecret",
                             "Value": "[variable('IdentityServer.Client.Secret')]"
                         }
                     ]
@@ -323,7 +323,7 @@
             "Type": "EnsurePath",
             "Params": {
                 "Exists": [
-                    "[variable('Site.LicenseFolder')]"
+                    "[variable('App.LicenseFolder')]"
                 ]
             }
         },
@@ -331,33 +331,33 @@
             "Description": "Copies the license file to the instance license folder.",
             "Type": "Copy",
             "Params": {
-                "Source": "[resolvepath(parameter('LicenseFile'))]",
-                "Destination": "[variable('Site.LicenseFolder')]"
+                "Source": "[resolvepath(parameter('app_License'))]",
+                "Destination": "[variable('App.LicenseFolder')]"
             },
-            "Skip": "[not(parameter('LicenseFile'))]"
+            "Skip": "[not(parameter('app_License'))]"
         },
         "CustomConfigFile": {
             "Description": "Copies the custom config file to the instance config folder.",
             "Type": "Copy",
             "Params": {
-                "Source": "[resolvepath(parameter('CustomConfigurationFile'))]",
-                "Destination": "[variable('Site.ConfigFolder')]"
+                "Source": "[resolvepath(parameter('identityserver_CustomConfigurationFile'))]",
+                "Destination": "[variable('App.ConfigFolder')]"
             },
-            "Skip": "[not(parameter('CustomConfigurationFile'))]"
+            "Skip": "[not(parameter('identityserver_CustomConfigurationFile'))]"
         },
         "StartAppPool": {
             "Description": "Starts the app pool.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         },
         "StartWebsite": {
-            "Description": "Starts the website.",
+            "Description": "Starts the webapp.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         }
@@ -367,7 +367,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
@@ -376,7 +376,7 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
@@ -385,7 +385,7 @@
             "Description": "Deletes the HKLM registry so that the specified user account can persist auto-generated machine keys.",
             "Type": "ManageKeyStorage",
             "Params": {
-                "AppPoolName": "[parameter('SiteName')]",
+                "AppPoolName": "[parameter('app_Name')]",
                 "Action": "Delete"
             }
         },
@@ -393,30 +393,30 @@
             "Description": "Removes the AppPool.",
             "Type": "RemoveAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]"
+                "Name": "[parameter('app_Name')]"
             }
         },
         "RemoveWebsite": {
-            "Description": "Removes the website.",
+            "Description": "Removes the webapp.",
             "Type": "RemoveWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]"
+                "Name": "[parameter('app_Name')]"
             }
         },
         "RemoveContent": {
             "Description": "Removes website content.",
             "Type": "RemoveItem",
             "Params": {
-                "Path": "[variable('Site.Path')]",
+                "Path": "[variable('App.Path')]",
                 "Recurse": true,
                 "ErrorAction": "SilentlyContinue"
             }
         },
         "RemoveHostHeader": {
-            "Description": "Removes the hostheader for the website.",
+            "Description": "Removes the hostheader for the webapp.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('SiteName')]",
+                "HostName": "[parameter('app_Name')]",
                 "Action": "Remove"
             }
         }

@@ -1,63 +1,63 @@
 ﻿{
     "Parameters": {
-        "Package": {
+        "app_Package": {
             "Type": "string",
             "Description": "The path to the Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "SqlDbPrefix": {
+        "sqlserver_DatabasePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Sql databases.",
             "DefaultValue": ""
         },
-        "SolrCorePrefix": {
+        "solr_CorePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Solr cores.",
             "DefaultValue": ""
         },
-        "SiteName": {
+        "app_Name": {
             "Type": "string",
             "DefaultValue": "Sitecore",
             "Description": "The name of the site to be deployed."
         },
-        "SqlAdminUser": {
+        "sqlserver_AdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlAdminPassword": {
+        "sqlserver_AdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SqlServer": {
+        "sqlserver_Instance": {
             "Type": "string",
-            "DefaultValue": ".\\SQLSERVER",
+            "DefaultValue": ".\\sqlserver_Instance",
             "Description": "The Sql Server where databases will be installed."
         }
     },
     "Variables": {
-        "Sql.Database.Core.Name": "[concat(parameter('SqlDbPrefix'), '_Core')]",
-        "Sql.Database.Master.Name": "[concat(parameter('SqlDbPrefix'), '_Master')]",
+        "Sql.Database.Core.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Core')]",
+        "Sql.Database.Master.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Master')]",
 
-        "Sql.Database.Core.ConnectionString": "[SqlConnectionString(Server:parameter('SqlServer'),Database:variable('Sql.Database.Core.Name'),UserName:parameter('SqlAdminUser'),Password:parameter('SqlAdminPassword'))]",
-        "Sql.Database.Master.ConnectionString": "[SqlConnectionString(Server:parameter('SqlServer'),Database:variable('Sql.Database.Master.Name'),UserName:parameter('SqlAdminUser'),Password:parameter('SqlAdminPassword'))]",
+        "Sql.Database.Core.ConnectionString": "[SqlConnectionString(Server:parameter('sqlserver_Instance'),Database:variable('Sql.Database.Core.Name'),UserName:parameter('sqlserver_AdminUser'),Password:parameter('sqlserver_AdminPassword'))]",
+        "Sql.Database.Master.ConnectionString": "[SqlConnectionString(Server:parameter('sqlserver_Instance'),Database:variable('Sql.Database.Master.Name'),UserName:parameter('sqlserver_AdminUser'),Password:parameter('sqlserver_AdminPassword'))]",
 
-        "Solr.Core.Master.Name": "[concat(parameter('SolrCorePrefix'), '_sxa_master_index')]",
-        "Solr.Core.Web.Name": "[concat(parameter('SolrCorePrefix'), '_sxa_web_index')]",
+        "Solr.Core.Master.Name": "[concat(parameter('solr_CorePrefix'), '_sxa_master_index')]",
+        "Solr.Core.Web.Name": "[concat(parameter('solr_CorePrefix'), '_sxa_web_index')]",
 
-        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",
-        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
-        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
-        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
-        "Site.DataFolder": "[joinpath(variable('Site.Path'), 'App_Data')]"
+        "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
+        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
+        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.DataFolder": "[joinpath(variable('App.Path'), 'App_Data')]"
     },
     "Tasks": {
         "StopWebsite": {
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -65,25 +65,25 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
         "InstallWDP": {
-            "Description": "Syncs the web deploy package with the website.",
+            "Description": "Syncs the web deploy package with the webapp.",
             "Type": "WebDeploy",
             "Params": {
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "Package": "[resolvepath(parameter('Package'))]"
+                        "app_Package": "[resolvepath(parameter('app_Package'))]"
                     },
                     "Dest": "Auto",
                     "enableRule": "DoNotDeleteRule",
                     "SetParam": [
                         {
                             "Name": "Application Path",
-                            "Value": "[parameter('SiteName')]"
+                            "Value": "[parameter('app_Name')]"
                         },
                         {
                             "Name": "Solr Master Index Name",
@@ -100,23 +100,23 @@
         "TransformXmlDocuments": {
             "Type": "TransformXmlDoc",
             "Params": {
-                "RootDirectoryPath": "[variable('Site.Path')]",
-                "XdtDirectory": "[joinpath(variable('Site.DataFolder'), 'SxaXdt')]"
+                "RootDirectoryPath": "[variable('App.Path')]",
+                "XdtDirectory": "[joinpath(variable('App.DataFolder'), 'SxaXdt')]"
             }
         },
         "StartAppPool": {
             "Description": "Starts the app pool.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         },
         "StartWebsite": {
-            "Description": "Starts the website.",
+            "Description": "Starts the webapp.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         }

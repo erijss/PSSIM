@@ -33,9 +33,9 @@
     }
   },
   "Variables": {
-    "Horizon.Site.PhysicalPath.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('InstanceName'))]",
-    "Horizon.Site.PhysicalPath": "[if(equal(parameter('PhysicalPath'), ''), variable('Horizon.Site.PhysicalPath.Default'), parameter('PhysicalPath'))]",
-    "OpenIdConnectXml": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'Config', 'OpenIdConnect.xml')]"
+    "Horizon.App.PhysicalPath.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('InstanceName'))]",
+    "Horizon.App.PhysicalPath": "[if(equal(parameter('PhysicalPath'), ''), variable('Horizon.App.PhysicalPath.Default'), parameter('PhysicalPath'))]",
+    "OpenIdConnectXml": "[joinpath(variable('Horizon.App.PhysicalPath'), 'Config', 'OpenIdConnect.xml')]"
   },
   "Tasks": {
     "CreatePackageFolderPaths": {
@@ -50,7 +50,7 @@
       "Type": "EnsurePath",
       "Params": {
         "Exists": [
-          "[variable('Horizon.Site.PhysicalPath')]"
+          "[variable('Horizon.App.PhysicalPath')]"
         ]
       }
     },
@@ -61,7 +61,7 @@
         "Properties": {
           "ManagedRuntimeVersion": "",
           "ProcessModel": {
-            "identityType": "NetworkService"
+            "identityType": "endpoint_Network_Url"
           }
         }
       }
@@ -71,7 +71,7 @@
       "Params": {
         "Name": "[parameter('InstanceName')]",
         "ApplicationPool": "[parameter('InstanceName')]",
-        "PhysicalPath": "[variable('Horizon.Site.PhysicalPath')]"
+        "PhysicalPath": "[variable('Horizon.App.PhysicalPath')]"
       }
     },
     "StopAppPool": {
@@ -84,7 +84,7 @@
     "CreateBindings": {
       "Type": "WebBinding",
       "Params": {
-        "SiteName": "[parameter('InstanceName')]",
+        "app_Name": "[parameter('InstanceName')]",
         "Remove": [
           {
             "Port": "80",
@@ -111,7 +111,7 @@
         "Verb": "Sync",
         "Arguments": {
           "Source": {
-            "Package": "[parameter('PackagePath')]"
+            "app_Package": "[parameter('PackagePath')]"
           },
           "Dest": {
             "contentPath": "[parameter('InstanceName')]"
@@ -122,7 +122,7 @@
     "SetPermissions": {
       "Type": "FilePermissions",
       "Params": {
-        "Path": "[variable('Horizon.Site.PhysicalPath')]",
+        "Path": "[variable('Horizon.App.PhysicalPath')]",
         "Rights": [
           {
             "User": "[concat('IIS AppPool\\', parameter('InstanceName'))]",
@@ -138,7 +138,7 @@
     "SetFederatedUIHorizonHostOnPrem": {
       "Type": "SetXml",
       "Params": {
-        "FilePath": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'Config', 'Host.xml')]",
+        "FilePath": "[joinpath(variable('Horizon.App.PhysicalPath'), 'Config', 'Host.xml')]",
         "XPath": "/Settings/FederatedUI/HostBaseUrl",
         "Value": "[parameter('AppUrl')]"
       }
@@ -146,7 +146,7 @@
     "SetContentManagementUrlParameter": {
       "Type": "SetXml",
       "Params": {
-        "FilePath": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'Config', 'Host.xml')]",
+        "FilePath": "[joinpath(variable('Horizon.App.PhysicalPath'), 'Config', 'Host.xml')]",
         "XPath": "/Settings/SitecorePlatform/ContentManagementUrl",
         "Value": "[parameter('ContentManagementUrl')]"
       }
@@ -154,7 +154,7 @@
     "SetContentManagementInternalUrlParameter": {
       "Type": "SetXml",
       "Params": {
-        "FilePath": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'Config', 'Host.xml')]",
+        "FilePath": "[joinpath(variable('Horizon.App.PhysicalPath'), 'Config', 'Host.xml')]",
         "XPath": "/Settings/SitecorePlatform/ContentManagementInternalUrl",
         "Value": "[parameter('ContentManagementInternalUrl')]"
       }
@@ -179,7 +179,7 @@
       "Type": "InsertXml",
       "Description": "Enables DAM ContentHub plugin ",
       "Params": {
-        "FilePath": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'sitecorehost.xml')]",
+        "FilePath": "[joinpath(variable('Horizon.App.PhysicalPath'), 'sitecorehost.xml')]",
         "XPath": "/Sitecore/Plugins/Filters",
         "Xml": "<ContentHub>+ContentHub</ContentHub>"
       },
@@ -189,12 +189,12 @@
       "Type": "InsertXml",
       "Description": "Enables SXA integration plugin ",
       "Params": {
-        "FilePath": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'sitecorehost.xml')]",
+        "FilePath": "[joinpath(variable('Horizon.App.PhysicalPath'), 'sitecorehost.xml')]",
         "XPath": "/Sitecore/Plugins/Filters",
         "Xml": "<ExperienceAccelerator>+SXA</ExperienceAccelerator>"
       },
       "Skip": "[not(parameter('EnableSXA'))]"
-    },  
+    },
     "StartAppPool": {
       "Type": "ManageAppPool",
       "Params": {
@@ -205,14 +205,14 @@
     "CreateLicenseFolder": {
       "Type": "EnsurePath",
       "Params": {
-        "Exists": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'sitecoreruntime')]"
+        "Exists": "[joinpath(variable('Horizon.App.PhysicalPath'), 'sitecoreruntime')]"
       }
     },
     "CopyLicense": {
       "Type": "Copy",
       "Params": {
         "Source": "[parameter('LicensePath')]",
-        "Destination": "[joinpath(variable('Horizon.Site.PhysicalPath'), 'sitecoreruntime')]"
+        "Destination": "[joinpath(variable('Horizon.App.PhysicalPath'), 'sitecoreruntime')]"
       }
     },
     "StartWebsite": {
@@ -240,7 +240,7 @@
       "Type": "EnsurePath",
       "Params": {
         "Clean": [
-          "[variable('Horizon.Site.PhysicalPath')]"
+          "[variable('Horizon.App.PhysicalPath')]"
         ]
       }
     }

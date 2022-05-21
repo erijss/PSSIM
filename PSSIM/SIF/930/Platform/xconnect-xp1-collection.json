@@ -1,180 +1,180 @@
 ﻿{
     "Parameters": {
-        "Package": {
+        "app_Package": {
             "Type": "string",
             "Description": "The path to the Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "LicenseFile": {
+        "app_License": {
             "Type": "string",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "SiteName": {
+        "app_Name": {
             "Type": "string",
             "DefaultValue": "XConnectCollection",
             "Description": "The name of the site to be deployed."
         },
-        "SiteRoot": {
+        "app_Path": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "SSLCert": {
+        "app_Certificate": {
             "Type": "string",
             "Description": "The certificate to use for HTTPS web bindings. Provide the name or the thumbprint. If not provided a certificate will be generated.",
             "DefaultValue": ""
         },
-        "XConnectCert": {
+        "xconnect_Certificate": {
             "Type": "string",
             "Description": "The certificate to use for encryption. Provide the name or the thumbprint.",
             "DefaultValue": ""
         },
-        "SqlDbPrefix": {
+        "sqlserver_DatabasePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Sql databases.",
             "DefaultValue": ""
         },
-        "SqlAdminUser": {
+        "sqlserver_AdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlAdminPassword": {
+        "sqlserver_AdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SqlCollectionUser": {
+        "database_Collection_User": {
             "Type": "string",
             "DefaultValue": "collectionuser",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlCollectionPassword": {
+        "database_Collection_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SqlProcessingPoolsUser": {
+        "database_ProcessingPools_User": {
             "Type": "string",
             "DefaultValue": "poolsuser",
             "Description": "The Sql user for the Processing Pools connection string in Sitecore."
         },
-        "SqlProcessingPoolsPassword": {
+        "database_ProcessingPools_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Pools connection string in Sitecore."
         },
-        "SqlMarketingAutomationUser": {
+        "database_MarketingAutomation_User": {
             "Type": "string",
             "DefaultValue": "marketingautomationuser",
             "Description": "The Sql user for the Marketing Automation connection string in Sitecore."
         },
-        "SqlMarketingAutomationPassword": {
+        "database_MarketingAutomation_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Marketing Automation connection string in Sitecore."
         },
-        "SqlMessagingUser": {
+        "database_Messaging_User": {
             "Type": "string",
             "DefaultValue": "messaginguser",
             "Description": "The Sql user for the Messaging connection string in Sitecore."
         },
-        "SqlMessagingPassword": {
+        "database_Messaging_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Messaging connection string in Sitecore."
         },
-        "SqlServer": {
+        "sqlserver_Instance": {
             "Type": "string",
-            "DefaultValue": ".\\SQLSERVER",
+            "DefaultValue": ".\\sqlserver_Instance",
             "Description": "The Sql Server where databases will be installed."
         },
-        "XConnectEnvironment": {
+        "app_Environment": {
             "Type": "string",
             "DefaultValue": "Development",
             "Description": "The configuration environment for this instance."
         },
-        "XConnectLogLevel": {
+        "app_LogLevel": {
             "Type": "string",
             "DefaultValue": "Information",
             "Description": "The level of log information to output."
         },
-        "HostMappingName": {
+        "app_HostMappingName": {
             "Type": "string",
-            "Reference": "SiteName",
-            "Description": "The host mapping name of the site."
+            "Reference": "app_Name",
+            "Description": "The host mapping name of the app."
         },
-        "DnsName": {
+        "app_DnsName": {
             "Type": "string",
-            "Reference": "SiteName",
-            "Description": "The dns name of the site."
+            "Reference": "app_Name",
+            "Description": "The dns name of the app."
         },
-        "SkipDatabaseInstallation": {
+        "app_SkipDatabaseInstallation": {
             "Type": "bool",
             "DefaultValue": false,
             "Description": "Skip database installation."
         },
-        "PackagesTempLocation": {
+        "packages_TemporaryLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": "",
             "Validate": "[TestPath(variable('Package.Download.Location'))]"
         },
-        "DownloadLocations": {
+        "packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         }
     },
     "Variables": {
-        "Sql.Server.Password.Secure": "[ConvertToSecureString(String:parameter('SqlAdminPassword'),AsPlainText:true,Force:true)]",
-        "Sql.Server.Credential": "[NewPSCredential(Username:parameter('SqlAdminUser'),Password:variable('Sql.Server.Password.Secure'))]",
+        "Sql.Server.Password.Secure": "[ConvertToSecureString(String:parameter('sqlserver_AdminPassword'),AsPlainText:true,Force:true)]",
+        "Sql.Server.Credential": "[NewPSCredential(Username:parameter('sqlserver_AdminUser'),Password:variable('Sql.Server.Password.Secure'))]",
 
-        "Skip.dbDacFx": "[if(parameter('SkipDatabaseInstallation'),'dbDacFx','null')]",
-        "Skip.dbFullSql": "[if(parameter('SkipDatabaseInstallation'),'dbFullSql','null')]",
+        "Skip.dbDacFx": "[if(parameter('app_SkipDatabaseInstallation'),'dbDacFx','null')]",
+        "Skip.dbFullSql": "[if(parameter('app_SkipDatabaseInstallation'),'dbFullSql','null')]",
 
-        "Sql.Database.Sharding.Prefix": "[concat(parameter('SqlDbPrefix'), '_Xdb.Collection.Shard')]",
+        "Sql.Database.Sharding.Prefix": "[concat(parameter('sqlserver_DatabasePrefix'), '_Xdb.Collection.Shard')]",
         "Sql.Database.ShardMapManager.Name": "[concat(variable('Sql.Database.Sharding.Prefix'), 'MapManager')]",
         "Sql.Database.Shard0.Name": "[concat(variable('Sql.Database.Sharding.Prefix'), '0')]",
         "Sql.Database.Shard1.Name": "[concat(variable('Sql.Database.Sharding.Prefix'), '1')]",
-        "Sql.Database.ProcessingPools.Name": "[concat(parameter('SqlDbPrefix'), '_Processing.Pools')]",
-        "Sql.Database.MarketingAutomation.Name": "[concat(parameter('SqlDbPrefix'), '_MarketingAutomation')]",
-        "Sql.Database.Messaging.Name": "[concat(parameter('SqlDbPrefix'), '_Messaging')]",
-        "Sql.Database.MarketingAutomation.Password": "[parameter('SqlMarketingAutomationPassword'))]",
-        "Sql.Database.Messaging.Password": "[parameter('SqlMessagingPassword'))]",
-        "Sql.Database.ProcessingPools.Password": "[parameter('SqlProcessingPoolsPassword'))]",
-        "Sql.Database.Collection.Password": "[parameter('SqlCollectionPassword'))]",
-        "Sql.Database.Collection.User": "[parameter('SqlCollectionUser'))]",
-        
-        "Certificates.Store": "Cert:\\Localmachine\\My",
-        "Certificates.Site.Thumbprint": "[GetCertificateThumbprint(parameter('SSLCert'), variable('Certificates.Store'))]",
-        "Certificates.XConnect.Thumbprint": "[GetCertificateThumbprint(parameter('XConnectCert'), variable('Certificates.Store'))]",
-        "Certificates.XConnect.Path": "[joinpath(variable('Certificates.Store'), variable('Certificates.XConnect.Thumbprint'))]",
-        
-        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",
-        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
-        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
-        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
-        "Site.DataFolder": "[joinpath(variable('Site.Path'), 'App_Data')]",
-        
-        "Services.IndexWorker.InstallPath": "[joinpath(variable('Site.DataFolder'), 'jobs','continuous','IndexWorker')]",
-        "Services.IndexWorker.Name": "[concat(parameter('SiteName'), '-indexworker')]",
-        
-        "Sharding.Root.Path": "[joinpath(variable('Site.DataFolder'), 'collectiondeployment')]",
+        "Sql.Database.ProcessingPools.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Processing.Pools')]",
+        "Sql.Database.MarketingAutomation.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_MarketingAutomation')]",
+        "Sql.Database.Messaging.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Messaging')]",
+        "Sql.Database.MarketingAutomation.Password": "[parameter('database_MarketingAutomation_Password'))]",
+        "Sql.Database.Messaging.Password": "[parameter('database_Messaging_Password'))]",
+        "Sql.Database.ProcessingPools.Password": "[parameter('database_ProcessingPools_Password'))]",
+        "Sql.Database.Collection.Password": "[parameter('database_Collection_Password'))]",
+        "Sql.Database.Collection.User": "[parameter('database_Collection_User'))]",
+
+        "Certificate.Store": "Cert:\\Localmachine\\My",
+        "Certificate.App.Thumbprint": "[GetCertificateThumbprint(parameter('app_Certificate'), variable('Certificate.Store'))]",
+        "Certificate.XConnect.Thumbprint": "[GetCertificateThumbprint(parameter('xconnect_Certificate'), variable('Certificate.Store'))]",
+        "Certificate.XConnect.Path": "[joinpath(variable('Certificate.Store'), variable('Certificate.XConnect.Thumbprint'))]",
+
+        "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
+        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
+        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.DataFolder": "[joinpath(variable('App.Path'), 'App_Data')]",
+
+        "Services.IndexWorker.InstallPath": "[joinpath(variable('App.DataFolder'), 'jobs','continuous','IndexWorker')]",
+        "Services.IndexWorker.Name": "[concat(parameter('app_Name'), '-indexworker')]",
+
+        "Sharding.Root.Path": "[joinpath(variable('App.DataFolder'), 'collectiondeployment')]",
         "Sharding.Tool.Path": "[joinpath(variable('Sharding.Root.Path'), 'Sitecore.Xdb.Collection.Database.SqlShardingDeploymentTool.exe')]",
         "Sharding.DacPac.Path": "[joinpath(variable('Sharding.Root.Path'), 'Sitecore.Xdb.Collection.Database.Sql.dacpac')]",
-        "Sharding.DB.Connection": "[sqlconnectionstring(parameter('SqlServer'), '', parameter('SqlAdminUser'), parameter('SqlAdminPassword'))]",
+        "Sharding.DB.Connection": "[sqlconnectionstring(parameter('sqlserver_Instance'), '', parameter('sqlserver_AdminUser'), parameter('sqlserver_AdminPassword'))]",
         "Sharding.Edition": "Basic",
         "Sharding.SqlCmd.Path.CreateShardApplicationDatabaseServerLogin": "[joinpath(variable('Sharding.Root.Path'), 'CreateShardApplicationDatabaseServerLogin.sql')]",
         "Sharding.SqlCmd.Path.CreateShardManagerApplicationDatabaseUser": "[joinpath(variable('Sharding.Root.Path'), 'CreateShardManagerApplicationDatabaseUser.sql')]",
         "Sharding.SqlCmd.Path.CreateShardApplicationDatabaseUser": "[joinpath(variable('Sharding.Root.Path'), 'CreateShardApplicationDatabaseUser.sql')]",
-                
-        "Packages.DownloadLocations.File": "[ReadJson(parameter('DownloadLocations'))]",
-        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('DownloadLocations'))]",
 
-        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
-        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
+        "Packages.DownloadLocations.File": "[ReadJson(parameter('packages_DownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('packages_DownloadLocations'))]",
+
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('packages_TemporaryLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('packages_TemporaryLocation'),'')]",
         "Package.Download.Identifier": "xconnect-xp1-collection.json",
         "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
         "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
@@ -183,9 +183,9 @@
         "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
         "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
 
-        "Package": "[if(parameter('Package'),parameter('Package'),variable('Package.Download.Path'))]",
+        "app_Package": "[if(parameter('app_Package'),parameter('app_Package'),variable('Package.Download.Path'))]",
         "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
-        "Package.Provided": "[if(parameter('Package'),parameter('Package'),'')]"
+        "Package.Provided": "[if(parameter('app_Package'),parameter('app_Package'),'')]"
     },
     "Register": {
         "Tasks": {
@@ -217,7 +217,7 @@
             "Type": "EnsurePath",
             "Params": {
                 "Exists": [
-                    "[variable('Site.Path')]"
+                    "[variable('App.Path')]"
                 ]
             }
         },
@@ -225,7 +225,7 @@
             "Description": "Creates or updates the app pool.",
             "Type": "AppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Properties": {
                     "ProcessModel": {
                         "identityType": "ApplicationPoolIdentity"
@@ -237,10 +237,10 @@
             "Description": "Set permissions for the App Pool User to access the client certificate.",
             "Type": "FilePermissions",
             "Params": {
-                "Path": "[ResolveCertificatePath(variable('Certificates.XConnect.Path'))]",
+                "Path": "[ResolveCertificatePath(variable('Certificate.XConnect.Path'))]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('SiteName'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
                         "FileSystemRights": [
                             "Read"
                         ],
@@ -255,16 +255,16 @@
             "Description": "Creates or updates the IIS website instance.",
             "Type": "Website",
             "Params": {
-                "Name": "[parameter('SiteName')]",
-                "ApplicationPool": "[parameter('SiteName')]",
-                "PhysicalPath": "[variable('Site.Path')]"
+                "Name": "[parameter('app_Name')]",
+                "ApplicationPool": "[parameter('app_Name')]",
+                "PhysicalPath": "[variable('App.Path')]"
             }
         },
         "StopWebsite": {
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -272,7 +272,7 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -280,7 +280,7 @@
             "Description": "Removes the default *:80 web binding.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Remove": [
                     {
                         "Port": "80",
@@ -290,53 +290,53 @@
             }
         },
         "CreateBindingsWithThumbprint": {
-            "Description": "Configures the site bindings for the website.",
+            "Description": "Configures the site bindings for the webapp.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Add": [
                     {
-                        "HostHeader": "[parameter('DnsName')]",
+                        "HostHeader": "[parameter('app_DnsName')]",
                         "Protocol": "https",
                         "SSLFlags": 1,
-                        "Thumbprint": "[variable('Certificates.Site.Thumbprint')]"
+                        "Thumbprint": "[variable('Certificate.App.Thumbprint')]"
                     }
                 ]
             },
-            "Skip": "[not(parameter('SSLCert'))]"
+            "Skip": "[not(parameter('app_Certificate'))]"
         },
         "SetClientCertificatePermissions": {
             "Type": "WebsiteClientCert",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Setting": "Accept"
             }
         },
         "SupportListManagerLargeUpload": {
             "Type": "IISConfiguration",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "ConfigPath": "system.webServer/serverRuntime",
                 "Key": "uploadReadAheadSize",
                 "Value": 491520000
             }
         },
         "CreateHostHeader": {
-            "Description": "Sets a hostheader for the website.",
+            "Description": "Sets a hostheader for the webapp.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('HostMappingName')]"
+                "HostName": "[parameter('app_HostMappingName')]"
             },
-            "Skip": "[not(parameter('HostMappingName'))]"
+            "Skip": "[not(parameter('app_HostMappingName'))]"
         },
         "SetPermissions": {
             "Description": "Sets permissions for the app pool user.",
             "Type": "FilePermissions",
             "Params": {
-                "Path": "[variable('Site.Path')]",
+                "Path": "[variable('App.Path')]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('SiteName'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
                         "FileSystemRights": "FullControl",
                         "InheritanceFlags": [
                             "ContainerInherit",
@@ -347,35 +347,35 @@
             }
         },
         "InstallWDP": {
-            "Description": "Syncs the web deploy package with the website.",
+            "Description": "Syncs the web deploy package with the webapp.",
             "Type": "WebDeploy",
             "Params": {
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "Package": "[resolvepath(variable('Package'))]"
+                        "app_Package": "[resolvepath(variable('app_Package'))]"
                     },
                     "Dest": "Auto",
                     "SetParam": [
                         {
                             "Name": "IIS Web Application Name",
-                            "Value": "[parameter('SiteName')]"
+                            "Value": "[parameter('app_Name')]"
                         },
                         {
                             "Name": "Database Server Name",
-                            "Value": "[parameter('SqlServer')]"
+                            "Value": "[parameter('sqlserver_Instance')]"
                         },
                         {
                             "Name": "Database Admin User Name",
-                            "Value": "[parameter('SqlAdminUser')]"
+                            "Value": "[parameter('sqlserver_AdminUser')]"
                         },
                         {
                             "Name": "Database Admin User Password",
-                            "Value": "[parameter('SqlAdminPassword')]"
+                            "Value": "[parameter('sqlserver_AdminPassword')]"
                         },
                         {
                             "Name": "Collection Database Server Name",
-                            "Value": "[parameter('SqlServer')]"
+                            "Value": "[parameter('sqlserver_Instance')]"
                         },
                         {
                             "Name": "Collection Shard Map Manager Database Name",
@@ -411,7 +411,7 @@
                         },
                         {
                             "Name": "Processing Pool Database Application User Name",
-                            "Value": "[parameter('SqlProcessingPoolsUser')]"
+                            "Value": "[parameter('database_ProcessingPools_User')]"
                         },
                         {
                             "Name": "Processing Pool Database Application User Password",
@@ -419,7 +419,7 @@
                         },
                         {
                             "Name": "Marketing Automation Database Application User Name",
-                            "Value": "[parameter('SqlMarketingAutomationUser')]"
+                            "Value": "[parameter('database_MarketingAutomation_User')]"
                         },
                         {
                             "Name": "Marketing Automation Database Application User Password",
@@ -427,7 +427,7 @@
                         },
                         {
                             "Name": "Messaging Database Application User Name",
-                            "Value": "[parameter('SqlMessagingUser')]"
+                            "Value": "[parameter('database_Messaging_User')]"
                         },
                         {
                             "Name": "Messaging Database Application User Password",
@@ -435,15 +435,15 @@
                         },
                         {
                             "Name": "XConnect Server Configuration Environment",
-                            "Value": "[parameter('XConnectEnvironment')]"
+                            "Value": "[parameter('app_Environment')]"
                         },
                         {
                             "Name": "XConnect Server Certificate Validation Thumbprint",
-                            "Value": "[variable('Certificates.XConnect.Thumbprint')]"
+                            "Value": "[variable('Certificate.XConnect.Thumbprint')]"
                         },
                         {
                             "Name": "XConnect Server Log Level",
-                            "Value": "[parameter('XConnectLogLevel')]"
+                            "Value": "[parameter('app_LogLevel')]"
                         }
                     ],
                     "Skip": [
@@ -461,19 +461,19 @@
             "Description": "Copies the license file to the instance data folder.",
             "Type": "Copy",
             "Params": {
-                "Source": "[resolvepath(parameter('LicenseFile'))]",
-                "Destination": "[variable('Site.DataFolder')]"
+                "Source": "[resolvepath(parameter('app_License'))]",
+                "Destination": "[variable('App.DataFolder')]"
             }
         },
         "CreateBindingsWithDevelopmentThumbprint": {
             "Description": "Creates a new thumbprint with a custom CA.",
             "Type": "AddWebFeatureSSL",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
-                "HostName": "[parameter('DnsName')]",
-                "OutputDirectory": "[variable('Site.DataFolder')]"
+                "app_Name": "[parameter('app_Name')]",
+                "HostName": "[parameter('app_DnsName')]",
+                "OutputDirectory": "[variable('App.DataFolder')]"
             },
-            "Skip": "[parameter('SSLCert')]"
+            "Skip": "[parameter('app_Certificate')]"
         },
         "CleanShards": {
             "Description": "Drop existing shards.",
@@ -490,7 +490,7 @@
                 ],
                 "TaskName": "ShardingTool - Clean"
             },
-            "Skip": "[parameter('SkipDatabaseInstallation')]"
+            "Skip": "[parameter('app_SkipDatabaseInstallation')]"
         },
         "CreateShards": {
             "Description": "Create new shards.",
@@ -517,13 +517,13 @@
                 ],
                 "TaskName": "ShardingTool - Create"
             },
-            "Skip": "[parameter('SkipDatabaseInstallation')]"
+            "Skip": "[parameter('app_SkipDatabaseInstallation')]"
         },
         "CreateShardApplicationDatabaseServerLoginInvokeSqlCmd": {
             "Description": "Create Collection Shard Database Server Login.",
             "Type": "InvokeSqlcmd",
             "Params": {
-                "ServerInstance": "[parameter('SqlServer')]",
+                "ServerInstance": "[parameter('sqlserver_Instance')]",
                 "Credential": "[variable('Sql.Server.Credential')]",
                 "InputFile": "[variable('Sharding.SqlCmd.Path.CreateShardApplicationDatabaseServerLogin')]",
                 "Variable": [
@@ -531,13 +531,13 @@
                     "[concat('Password=',variable('Sql.Database.Collection.Password'))]"
                 ]
             },
-            "Skip": "[parameter('SkipDatabaseInstallation')]"
+            "Skip": "[parameter('app_SkipDatabaseInstallation')]"
         },
         "CreateShardManagerApplicationDatabaseUserInvokeSqlCmd": {
             "Description": "Create Collection Shard Manager Database User.",
             "Type": "InvokeSqlcmd",
             "Params": {
-                "ServerInstance": "[parameter('SqlServer')]",
+                "ServerInstance": "[parameter('sqlserver_Instance')]",
                 "Credential": "[variable('Sql.Server.Credential')]",
                 "InputFile": "[variable('Sharding.SqlCmd.Path.CreateShardManagerApplicationDatabaseUser')]",
                 "Variable": [
@@ -545,13 +545,13 @@
                     "[concat('ShardMapManagerDatabaseName=',variable('Sql.Database.ShardMapManager.Name'))]"
                 ]
             },
-            "Skip": "[parameter('SkipDatabaseInstallation')]"
+            "Skip": "[parameter('app_SkipDatabaseInstallation')]"
         },
         "CreateShard0ApplicationDatabaseUserInvokeSqlCmd": {
             "Description": "Create Collection Shard 0 Database User.",
             "Type": "InvokeSqlcmd",
             "Params": {
-                "ServerInstance": "[parameter('SqlServer')]",
+                "ServerInstance": "[parameter('sqlserver_Instance')]",
                 "Credential": "[variable('Sql.Server.Credential')]",
                 "InputFile": "[variable('Sharding.SqlCmd.Path.CreateShardApplicationDatabaseUser')]",
                 "Variable": [
@@ -559,13 +559,13 @@
                     "[concat('ShardDatabaseName=',variable('Sql.Database.Shard0.Name'))]"
                 ]
             },
-            "Skip": "[parameter('SkipDatabaseInstallation')]"
+            "Skip": "[parameter('app_SkipDatabaseInstallation')]"
         },
         "CreateShard1ApplicationDatabaseUserInvokeSqlCmd": {
             "Description": "Create Collection Shard 1 Database User.",
             "Type": "InvokeSqlcmd",
             "Params": {
-                "ServerInstance": "[parameter('SqlServer')]",
+                "ServerInstance": "[parameter('sqlserver_Instance')]",
                 "Credential": "[variable('Sql.Server.Credential')]",
                 "InputFile": "[variable('Sharding.SqlCmd.Path.CreateShardApplicationDatabaseUser')]",
                 "Variable": [
@@ -573,21 +573,21 @@
                     "[concat('ShardDatabaseName=',variable('Sql.Database.Shard1.Name'))]"
                 ]
             },
-            "Skip": "[parameter('SkipDatabaseInstallation')]"
+            "Skip": "[parameter('app_SkipDatabaseInstallation')]"
         },
         "StartAppPool": {
             "Description": "Starts the app pool.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         },
         "StartWebsite": {
-            "Description": "Starts the website.",
+            "Description": "Starts the webapp.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         }
@@ -597,7 +597,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
@@ -606,30 +606,30 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
         },
         "RemoveWebsite": {
-            "Description": "Removes the IIS website.",
+            "Description": "Removes the IIS webapp.",
             "Type": "RemoveWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]"
+                "Name": "[parameter('app_Name')]"
             }
         },
         "RemoveAppPool": {
             "Description": "Removes the IIS application pool.",
             "Type": "RemoveAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]"
+                "Name": "[parameter('app_Name')]"
             }
         },
         "RemoveContent": {
             "Description": "Removes website content.",
             "Type": "RemoveItem",
             "Params": {
-                "Path": "[variable('Site.Path')]",
+                "Path": "[variable('App.Path')]",
                 "Recurse": true,
                 "ErrorAction": "SilentlyContinue"
             }
@@ -638,7 +638,7 @@
             "Description": "Removes the website host name.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('SiteName')]",
+                "HostName": "[parameter('app_Name')]",
                 "Action": "Remove"
             }
         },
@@ -646,8 +646,8 @@
             "Description": "Removes the databases.",
             "Type": "RemoveSQLDatabase",
             "Params": {
-                "ServerName": "[parameter('SqlServer')]",
-                "Username": "[parameter('SqlAdminUser')]",
+                "ServerName": "[parameter('sqlserver_Instance')]",
+                "Username": "[parameter('sqlserver_AdminUser')]",
                 "Password": "[variable('Sql.Server.Password.Secure')]",
                 "DatabaseName": [
                     "[variable('Sql.Database.ShardMapManager.Name')]",
@@ -660,11 +660,11 @@
             }
         },
         "RemoveLogin": {
-            "Description": "Removes the sqlcollectionuser login from the database server.",
+            "Description": "Removes the database_collection_User login from the database server.",
             "Type": "RemoveSQLLogin",
             "Params": {
                 "LoginName": "[variable('Sql.Database.Collection.User')]",
-                "ServerInstance": "[parameter('SqlServer')]",
+                "ServerInstance": "[parameter('sqlserver_Instance')]",
                 "Credential": "[variable('Sql.Server.Credential')]",
                 "Force": true,
                 "ErrorAction": "SilentlyContinue"

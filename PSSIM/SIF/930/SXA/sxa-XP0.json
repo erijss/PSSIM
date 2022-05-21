@@ -1,52 +1,52 @@
 ﻿{
     "Parameters": {
-        "Package": {
+        "app_Package": {
             "Type": "string",
             "Description": "The path to the Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "SqlDbPrefix": {
+        "sqlserver_DatabasePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Sql databases.",
             "DefaultValue": ""
         },
-        "SolrCorePrefix": {
+        "solr_CorePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Solr cores.",
             "DefaultValue": ""
         },
-        "SiteName": {
+        "app_Name": {
             "Type": "string",
             "DefaultValue": "Sitecore",
             "Description": "The name of the site to be deployed."
         },
-        "SitecoreAdminPassword": {
+        "sitecore_AdminPassword": {
             "Type": "string",
             "DefaultValue": "b",
             "Description": "The admin password for the Sitecore instance."
         },
-        "SqlAdminUser": {
+        "sqlserver_AdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlAdminPassword": {
+        "sqlserver_AdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SqlServer": {
+        "sqlserver_Instance": {
             "Type": "string",
-            "DefaultValue": ".\\SQLSERVER",
+            "DefaultValue": ".\\sqlserver_Instance",
             "Description": "The Sql Server where databases will be installed."
         },
-        "PackagesTempLocation": {
+        "packages_TemporaryLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": "",
             "Validate": "[TestPath(variable('Package.Download.Location'))]"
         },
-        "DownloadLocations": {
+        "packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
@@ -60,27 +60,27 @@
         }
     },
     "Variables": {
-        "Sql.Database.Core.Name": "[concat(parameter('SqlDbPrefix'), '_Core')]",
-        "Sql.Database.Master.Name": "[concat(parameter('SqlDbPrefix'), '_Master')]",
+        "Sql.Database.Core.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Core')]",
+        "Sql.Database.Master.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Master')]",
 
-        "Sql.Database.Core.ConnectionString": "[SqlConnectionString(Server:parameter('SqlServer'),Database:variable('Sql.Database.Core.Name'),UserName:parameter('SqlAdminUser'),Password:parameter('SqlAdminPassword'))]",
-        "Sql.Database.Master.ConnectionString": "[SqlConnectionString(Server:parameter('SqlServer'),Database:variable('Sql.Database.Master.Name'),UserName:parameter('SqlAdminUser'),Password:parameter('SqlAdminPassword'))]",
+        "Sql.Database.Core.ConnectionString": "[SqlConnectionString(Server:parameter('sqlserver_Instance'),Database:variable('Sql.Database.Core.Name'),UserName:parameter('sqlserver_AdminUser'),Password:parameter('sqlserver_AdminPassword'))]",
+        "Sql.Database.Master.ConnectionString": "[SqlConnectionString(Server:parameter('sqlserver_Instance'),Database:variable('Sql.Database.Master.Name'),UserName:parameter('sqlserver_AdminUser'),Password:parameter('sqlserver_AdminPassword'))]",
 
-        "Solr.Core.Master.Name": "[concat(parameter('SolrCorePrefix'), '_sxa_master_index')]",
-        "Solr.Core.Web.Name": "[concat(parameter('SolrCorePrefix'), '_sxa_web_index')]",
-        
-        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",
-        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
-        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
-        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
-        "Site.DataFolder": "[joinpath(variable('Site.Path'), 'App_Data')]",
+        "Solr.Core.Master.Name": "[concat(parameter('solr_CorePrefix'), '_sxa_master_index')]",
+        "Solr.Core.Web.Name": "[concat(parameter('solr_CorePrefix'), '_sxa_web_index')]",
 
-        "Packages.DownloadLocations.File": "[ReadJson(parameter('DownloadLocations'))]",
-        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('DownloadLocations'))]",
+        "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
+        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
+        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.DataFolder": "[joinpath(variable('App.Path'), 'App_Data')]",
+
+        "Packages.DownloadLocations.File": "[ReadJson(parameter('packages_DownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('packages_DownloadLocations'))]",
 
         "Package.Download.Identifier": "sxa-XP0.json",
-        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
-        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('packages_TemporaryLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('packages_TemporaryLocation'),'')]",
         "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
         "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
         "Package.Download.Hash": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Hash')]",
@@ -88,9 +88,9 @@
         "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
         "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
 
-        "Package": "[if(parameter('Package'),parameter('Package'),variable('Package.Download.Path'))]",
+        "app_Package": "[if(parameter('app_Package'),parameter('app_Package'),variable('Package.Download.Path'))]",
         "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
-        "Package.Provided": "[if(parameter('Package'),parameter('Package'),'')]"
+        "Package.Provided": "[if(parameter('app_Package'),parameter('app_Package'),'')]"
     },
     "Tasks": {
         "DownloadWDP": {
@@ -107,7 +107,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -115,25 +115,25 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
         "InstallWDP": {
-            "Description": "Syncs the web deploy package with the website.",
+            "Description": "Syncs the web deploy package with the webapp.",
             "Type": "WebDeploy",
             "Params": {
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "Package": "[resolvepath(variable('Package'))]"
+                        "app_Package": "[resolvepath(variable('app_Package'))]"
                     },
                     "Dest": "Auto",
                     "enableRule": "DoNotDeleteRule",
                     "SetParam": [
                         {
                             "Name": "Application Path",
-                            "Value": "[parameter('SiteName')]"
+                            "Value": "[parameter('app_Name')]"
                         },
                         {
                             "Name": "Core Admin Connection String",
@@ -158,42 +158,42 @@
         "TransformXmlDocuments": {
             "Type": "TransformXmlDoc",
             "Params": {
-                "RootDirectoryPath": "[variable('Site.Path')]",
-                "XdtDirectory": "[joinpath(variable('Site.DataFolder'), 'SxaXdt')]"
+                "RootDirectoryPath": "[variable('App.Path')]",
+                "XdtDirectory": "[joinpath(variable('App.DataFolder'), 'SxaXdt')]"
             }
         },
         "StartAppPool": {
             "Description": "Starts the app pool.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         },
         "StartWebsite": {
-            "Description": "Starts the website.",
+            "Description": "Starts the webapp.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         },
         "UpdateSolrSchema": {
             "Type": "SitecoreUrl",
             "Params": {
-                "SitecoreInstanceRoot": "[concat('https://', parameter('SiteName'))]",
+                "SitecoreInstanceRoot": "[concat('https://', parameter('app_Name'))]",
                 "SitecoreActionPath": "sitecore/admin/PopulateManagedSchema.aspx?indexes=all",
                 "UserName": "admin",
-                "Password": "[parameter('SitecoreAdminPassword')]"
+                "Password": "[parameter('sitecore_AdminPassword')]"
             }
         },
         "CleanupDatabase": {
             "Type": "SitecoreUrl",
             "Params": {
-                "SitecoreInstanceRoot": "[concat('https://', parameter('SiteName'))]",
+                "SitecoreInstanceRoot": "[concat('https://', parameter('app_Name'))]",
                 "SitecoreActionPath": "sitecore/admin/CleanupDatabase.aspx",
                 "UserName": "admin",
-                "Password": "[parameter('SitecoreAdminPassword')]"
+                "Password": "[parameter('sitecore_AdminPassword')]"
             }
         }
     }

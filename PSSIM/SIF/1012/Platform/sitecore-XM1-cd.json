@@ -1,107 +1,107 @@
 ﻿{
     "Parameters": {
-        "Package": {
+        "app_Package": {
             "Type": "string",
             "Description": "The path to the Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "LicenseFile": {
+        "app_License": {
             "Type": "string",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "SqlDbPrefix": {
+        "sqlserver_DatabasePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Sql databases.",
             "DefaultValue": ""
         },
-        "SolrCorePrefix": {
+        "solr_CorePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Solr cores.",
             "DefaultValue": ""
         },
-        "SSLCert": {
+        "app_Certificate": {
             "Type": "string",
             "Description": "The certificate to use for HTTPS web bindings. Provide the name or the thumbprint. If not provided a certificate will be generated.",
             "DefaultValue": ""
         },
-        "SiteName": {
+        "app_Name": {
             "Type": "string",
             "DefaultValue": "SitecoreXM1CD",
             "Description": "The name of the site to be deployed."
         },
-        "SiteRoot": {
+        "app_Path": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "SqlSecurityUser": {
+        "database_Security_User": {
             "Type": "string",
             "DefaultValue": "securityuser",
             "Description": "The Sql user for the Security connection string in Sitecore."
         },
-        "SqlSecurityPassword": {
+        "database_Security_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Security connection string in Sitecore."
         },
-        "SqlWebUser": {
+        "database_Web_User": {
             "Type": "string",
             "DefaultValue": "webuser",
             "Description": "The Sql user for the Web connection string in Sitecore."
         },
-        "SqlWebPassword": {
+        "database_Web_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Web connection string in Sitecore."
         },
-        "SqlFormsUser": {
+        "database_Forms_User": {
             "Type": "string",
             "DefaultValue": "formsuser",
             "Description": "The Sql user for the Experience Forms connection string in Sitecore."
         },
-        "SqlFormsPassword": {
+        "database_Forms_Password": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Experience Forms connection string in Sitecore."
         },
-        "SqlServer": {
+        "sqlserver_Instance": {
             "Type": "string",
-            "DefaultValue": ".\\SQLSERVER",
+            "DefaultValue": ".\\sqlserver_Instance",
             "Description": "The Sql Server where databases will be installed."
         },
-        "SolrUrl": {
+        "solr_Url": {
             "Type": "string",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance to use."
         },
-        "SitecoreIdentityAuthority": {
+        "sitecore_IdentityAuthority": {
             "Type": "string",
             "DefaultValue": "https://SitecoreIdentityServerHost",
             "Description": "IdentityServer provider URI."
         },
-        "HostMappingName": {
+        "app_HostMappingName": {
             "Type": "string",
-            "Reference": "SiteName",
-            "Description": "The host name of the site."
+            "Reference": "app_Name",
+            "Description": "The host name of the app."
         },
-        "DnsName": {
+        "app_DnsName": {
             "Type": "string",
-            "Reference": "SiteName",
-            "Description": "The dns name of the site."
+            "Reference": "app_Name",
+            "Description": "The dns name of the app."
         },
-        "PackagesTempLocation": {
+        "packages_TemporaryLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": "",
             "Validate": "[TestPath(variable('Package.Download.Location'))]"
         },
-        "DownloadLocations": {
+        "packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         },
-        "DisableHttps": {
+        "app_DisableHttps": {
             "Type": "bool",
             "Description": "The option for the enable/disable HTTPS.",
             "DefaultValue": false
@@ -124,36 +124,36 @@
         }
     },
     "Variables": {
-        "Sql.Database.Security.Name": "[concat(parameter('SqlDbPrefix'), '_Core')]",
-        "Sql.Database.Web.Name": "[concat(parameter('SqlDbPrefix'), '_Web')]",
-        "Sql.Database.Forms.Name": "[concat(parameter('SqlDbPrefix'), '_ExperienceForms')]",
+        "Sql.Database.Security.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Core')]",
+        "Sql.Database.Web.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Web')]",
+        "Sql.Database.Forms.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_ExperienceForms')]",
 
-        "Sql.Database.Web.Password": "[parameter('SqlWebPassword')]",
-        "Sql.Database.Forms.Password": "[parameter('SqlFormsPassword')]",
-        "Sql.Database.Security.Password": "[parameter('SqlSecurityPassword')]",
+        "Sql.Database.Web.Password": "[parameter('database_Web_Password')]",
+        "Sql.Database.Forms.Password": "[parameter('database_Forms_Password')]",
+        "Sql.Database.Security.Password": "[parameter('database_Security_Password')]",
 
-        "Solr.Core.Web.Name": "[concat(parameter('SolrCorePrefix'), '_web_index')]",
-        "Solr.Core.MarketingDefinitions.Web.Name": "[concat(parameter('SolrCorePrefix'), '_marketingdefinitions_web')]",
-        "Solr.Core.MarketingAssets.Web.Name": "[concat(parameter('SolrCorePrefix'), '_marketing_asset_index_web')]",
-        "Solr.Core.FXM.Web.Name": "[concat(parameter('SolrCorePrefix'), '_fxm_web_index')]",
+        "Solr.Core.Web.Name": "[concat(parameter('solr_CorePrefix'), '_web_index')]",
+        "Solr.Core.MarketingDefinitions.Web.Name": "[concat(parameter('solr_CorePrefix'), '_marketingdefinitions_web')]",
+        "Solr.Core.MarketingAssets.Web.Name": "[concat(parameter('solr_CorePrefix'), '_marketing_asset_index_web')]",
+        "Solr.Core.FXM.Web.Name": "[concat(parameter('solr_CorePrefix'), '_fxm_web_index')]",
 
-        "Certificates.Store": "Cert:\\Localmachine\\My",
-        "Certificates.Site.Thumbprint": "[GetCertificateThumbprint(parameter('SSLCert'), variable('Certificates.Store'))]",
-        "Certificates.Site.SkipAddBindingsWithThumbprint": "[or(parameter('DisableHttps'),not(parameter('SSLCert')))]",
-        "Certificates.Site.SkipAddBindingsWithDevelopmentThumbprint": "[or(parameter('DisableHttps'),parameter('SSLCert'))]",
+        "Certificate.Store": "Cert:\\Localmachine\\My",
+        "Certificate.App.Thumbprint": "[GetCertificateThumbprint(parameter('app_Certificate'), variable('Certificate.Store'))]",
+        "Certificate.App.SkipAddBindingsWithThumbprint": "[or(parameter('app_DisableHttps'),not(parameter('app_Certificate')))]",
+        "Certificate.App.SkipAddBindingsWithDevelopmentThumbprint": "[or(parameter('app_DisableHttps'),parameter('app_Certificate'))]",
 
-        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",        
-        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
-        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
-        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
-        "Site.DataFolder": "[joinpath(variable('Site.Path'), 'App_Data')]",
+        "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
+        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
+        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.DataFolder": "[joinpath(variable('App.Path'), 'App_Data')]",
 
-        "Packages.DownloadLocations.File": "[ReadJson(parameter('DownloadLocations'))]",
-        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('DownloadLocations'))]",
+        "Packages.DownloadLocations.File": "[ReadJson(parameter('packages_DownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('packages_DownloadLocations'))]",
 
         "Package.Download.Identifier": "sitecore-XM1-cd.json",
-        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
-        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('packages_TemporaryLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('packages_TemporaryLocation'),'')]",
         "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
         "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
         "Package.Download.Hash": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Hash')]",
@@ -161,9 +161,9 @@
         "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
         "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
 
-        "Package": "[if(parameter('Package'),parameter('Package'),variable('Package.Download.Path'))]",
+        "app_Package": "[if(parameter('app_Package'),parameter('app_Package'),variable('Package.Download.Path'))]",
         "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
-        "Package.Provided": "[if(parameter('Package'),parameter('Package'),'')]"
+        "Package.Provided": "[if(parameter('app_Package'),parameter('app_Package'),'')]"
     },
     "Tasks": {
         "DownloadWDP": {
@@ -181,7 +181,7 @@
             "Type": "EnsurePath",
             "Params": {
                 "Exists": [
-                    "[variable('Site.Path')]"
+                    "[variable('App.Path')]"
                 ]
             },
             "Skip": "[parameter('Update')]"
@@ -190,7 +190,7 @@
             "Description": "Creates or updates the app pool.",
             "Type": "AppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Properties": {
                     "ProcessModel": {
                         "identityType": "ApplicationPoolIdentity"
@@ -203,9 +203,9 @@
             "Description": "Creates or updates the IIS website instance.",
             "Type": "Website",
             "Params": {
-                "Name": "[parameter('SiteName')]",
-                "ApplicationPool": "[parameter('SiteName')]",
-                "PhysicalPath": "[variable('Site.Path')]"
+                "Name": "[parameter('app_Name')]",
+                "ApplicationPool": "[parameter('app_Name')]",
+                "PhysicalPath": "[variable('App.Path')]"
             },
             "Skip": "[parameter('Update')]"
         },
@@ -213,7 +213,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
@@ -221,18 +221,18 @@
             "Description": " Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop"
             }
         },
         "CreateBindings": {
-            "Description": "Configures the site bindings for the website.",
+            "Description": "Configures the site bindings for the webapp.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Add": [
                     {
-                        "HostHeader": "[parameter('DnsName')]"
+                        "HostHeader": "[parameter('app_DnsName')]"
                     }
                 ],
                 "Remove": [
@@ -242,13 +242,13 @@
                     }
                 ]
             },
-            "Skip": "[or(not(parameter('DisableHttps')),parameter('Update'))]"
+            "Skip": "[or(not(parameter('app_DisableHttps')),parameter('Update'))]"
         },
         "RemoveDefaultBinding": {
             "Description": "Removes the default *:80 web binding.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Remove": [
                     {
                         "Port": "80",
@@ -256,40 +256,40 @@
                     }
                 ]
             },
-            "Skip": "[or(parameter('DisableHttps'),parameter('Update'))]"
+            "Skip": "[or(parameter('app_DisableHttps'),parameter('Update'))]"
         },
         "CreateBindingsWithThumbprint": {
-            "Description": "Configures the site bindings for the website.",
+            "Description": "Configures the site bindings for the webapp.",
             "Type": "WebBinding",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
+                "app_Name": "[parameter('app_Name')]",
                 "Add": [
                     {
-                        "HostHeader": "[parameter('DnsName')]",
+                        "HostHeader": "[parameter('app_DnsName')]",
                         "Protocol": "https",
                         "SSLFlags": 1,
-                        "Thumbprint": "[variable('Certificates.Site.Thumbprint')]"
+                        "Thumbprint": "[variable('Certificate.App.Thumbprint')]"
                     }
                 ]
             },
-            "Skip": "[or(variable('Certificates.Site.SkipAddBindingsWithThumbprint'),parameter('Update'))]"
+            "Skip": "[or(variable('Certificate.App.SkipAddBindingsWithThumbprint'),parameter('Update'))]"
         },
         "CreateHostHeader": {
-            "Description": "Sets a hostheader for the website.",
+            "Description": "Sets a hostheader for the webapp.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('HostMappingName')]"
+                "HostName": "[parameter('app_HostMappingName')]"
             },
-            "Skip": "[or(not(parameter('HostMappingName')),parameter('Update'))]"
+            "Skip": "[or(not(parameter('app_HostMappingName')),parameter('Update'))]"
         },
         "SetPermissions": {
             "Description": "Sets permissions for the app pool user.",
             "Type": "FilePermissions",
             "Params": {
-                "Path": "[variable('Site.Path')]",
+                "Path": "[variable('App.Path')]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('SiteName'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
                         "FileSystemRights": "FullControl",
                         "InheritanceFlags": [
                             "ContainerInherit",
@@ -306,18 +306,18 @@
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "Package": "[resolvepath(variable('Package'))]"
+                        "app_Package": "[resolvepath(variable('app_Package'))]"
                     },
                     "Dest": "Auto",
                     "enableRule": "DoNotDeleteRule",
                     "SetParam": [
                         {
                             "Name": "Application Path",
-                            "Value": "[parameter('SiteName')]"
+                            "Value": "[parameter('app_Name')]"
                         },
                         {
                             "Name": "Database Server Name",
-                            "Value": "[parameter('SqlServer')]"
+                            "Value": "[parameter('sqlserver_Instance')]"
                         },
                         {
                             "Name": "Security DB Name",
@@ -333,7 +333,7 @@
                         },
                         {
                             "Name": "Security DB User Name",
-                            "Value": "[parameter('SqlSecurityUser')]"
+                            "Value": "[parameter('database_Security_User')]"
                         },
                         {
                             "Name": "Security DB User Password",
@@ -341,7 +341,7 @@
                         },
                         {
                             "Name": "Web DB User Name",
-                            "Value": "[parameter('SqlWebUser')]"
+                            "Value": "[parameter('database_Web_User')]"
                         },
                         {
                             "Name": "Web DB User Password",
@@ -349,7 +349,7 @@
                         },
                         {
                             "Name": "Experience Forms DB User Name",
-                            "Value": "[parameter('SqlFormsUser')]"
+                            "Value": "[parameter('database_Forms_User')]"
                         },
                         {
                             "Name": "Experience Forms DB User Password",
@@ -357,7 +357,7 @@
                         },
                         {
                             "Name": "SOLR Connection String",
-                            "Value": "[parameter('SolrUrl')]"
+                            "Value": "[parameter('solr_Url')]"
                         },
                         {
                             "Name": "Solr Web Index Name",
@@ -377,7 +377,7 @@
                         },
                         {
                             "Name": "Sitecore Identity Authority",
-                            "Value": "[parameter('SitecoreIdentityAuthority')]"
+                            "Value": "[parameter('sitecore_IdentityAuthority')]"
                         }
                     ]
                 }
@@ -387,18 +387,18 @@
             "Description": "Creates a new thumbprint with a custom CA.",
             "Type": "AddWebFeatureSSL",
             "Params": {
-                "SiteName": "[parameter('SiteName')]",
-                "HostName": "[parameter('DnsName')]",
-                "OutputDirectory": "[variable('Site.DataFolder')]"
+                "app_Name": "[parameter('app_Name')]",
+                "HostName": "[parameter('app_DnsName')]",
+                "OutputDirectory": "[variable('App.DataFolder')]"
             },
-            "Skip": "[or(variable('Certificates.Site.SkipAddBindingsWithDevelopmentThumbprint'),parameter('Update'))]"
+            "Skip": "[or(variable('Certificate.App.SkipAddBindingsWithDevelopmentThumbprint'),parameter('Update'))]"
         },
         "SetLicense": {
             "Description": "Copies the license file to the instance data folder.",
             "Type": "Copy",
             "Params": {
-                "Source": "[resolvepath(parameter('LicenseFile'))]",
-                "Destination": "[variable('Site.DataFolder')]"
+                "Source": "[resolvepath(parameter('app_License'))]",
+                "Destination": "[variable('App.DataFolder')]"
             },
             "Skip": "[parameter('Update')]"
         },
@@ -406,15 +406,15 @@
             "Description": "Starts the app pool.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         },
         "StartWebsite": {
-            "Description": "Starts the website.",
+            "Description": "Starts the webapp.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Start"
             }
         }
@@ -424,7 +424,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
@@ -433,30 +433,30 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]",
+                "Name": "[parameter('app_Name')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
         },
         "RemoveWebsite": {
-            "Description": "Removes the IIS website.",
+            "Description": "Removes the IIS webapp.",
             "Type": "RemoveWebsite",
             "Params": {
-                "Name": "[parameter('SiteName')]"
+                "Name": "[parameter('app_Name')]"
             }
         },
         "RemoveAppPool": {
             "Description": "Removes the IIS application pool.",
             "Type": "RemoveAppPool",
             "Params": {
-                "Name": "[parameter('SiteName')]"
+                "Name": "[parameter('app_Name')]"
             }
         },
         "RemoveContent": {
             "Description": "Removes website content.",
             "Type": "RemoveItem",
             "Params": {
-                "Path": "[variable('Site.Path')]",
+                "Path": "[variable('App.Path')]",
                 "Recurse": true,
                 "ErrorAction": "SilentlyContinue"
             }
@@ -465,7 +465,7 @@
             "Description": "Removes the website host name.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('SiteName')]",
+                "HostName": "[parameter('app_Name')]",
                 "Action": "Remove"
             }
         }

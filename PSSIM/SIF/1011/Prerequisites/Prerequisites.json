@@ -73,13 +73,13 @@
         }
     },
     "Variables": {
-        "SQLServer.Module": "[GetModule(ListAvailable:True,Name:'SqlServer',ErrorAction:'SilentlyContinue')]",
-        "SQLServer.Module.First": "[variable('SqlServer.Module')[0]]",
-        "SQLServer.Module.Test": "[if(variable('SQLServer.Module'),variable('SQLServer.Module.First'),$null)]",
-        "SQLServer.Module.Version": "[SelectObject(InputObject:variable('SQLServer.Module.Test'),ExpandProperty:'Version')]",
-        "SQLServer.Module.Version.Compare": "[InvokeExpression(Command:variable('SQLServer.Module.Version.Command'))]",
-        "SQLServer.Module.Version.Command": "[concat('[system.version]\"',variable('SQLServer.Module.Null.Version'),'\" -ge [system.version]\"',variable('SQLServer.Module.Minimum.Version'),'\"')]",
-        "SQLServer.Module.Null.Version": "[if(variable('SQLServer.Module.Version'),variable('SQLServer.Module.Version'),'0.0')]",
+        "sqlserver_Instance.Module": "[GetModule(ListAvailable:True,Name:'sqlserver_Instance',ErrorAction:'SilentlyContinue')]",
+        "sqlserver_Instance.Module.First": "[variable('sqlserver_Instance.Module')[0]]",
+        "sqlserver_Instance.Module.Test": "[if(variable('sqlserver_Instance.Module'),variable('sqlserver_Instance.Module.First'),$null)]",
+        "sqlserver_Instance.Module.Version": "[SelectObject(InputObject:variable('sqlserver_Instance.Module.Test'),ExpandProperty:'Version')]",
+        "sqlserver_Instance.Module.Version.Compare": "[InvokeExpression(Command:variable('sqlserver_Instance.Module.Version.Command'))]",
+        "sqlserver_Instance.Module.Version.Command": "[concat('[system.version]\"',variable('sqlserver_Instance.Module.Null.Version'),'\" -ge [system.version]\"',variable('sqlserver_Instance.Module.Minimum.Version'),'\"')]",
+        "sqlserver_Instance.Module.Null.Version": "[if(variable('sqlserver_Instance.Module.Version'),variable('sqlserver_Instance.Module.Version'),'0.0')]",
 
         "WebPlatform.Package": "[GetPackage(Name:'Microsoft` Web` Platform` Installer*',ErrorAction:'SilentlyContinue')]",
         "WebPlatform.Version": "[SelectObject(InputObject:variable('WebPlatform.Package'),ExpandProperty:'Version')]",
@@ -166,7 +166,7 @@
         "SQL.Dac.Framework.x86.Minimum.Version": "14.0.4079.2",
         "SQL.Dac.Framework.x64.Minimum.Version": "14.0.4079.2",
         "SQL.ODBC.Minimum.Version": "13.1.4414.46",
-        "SQLServer.Module.Minimum.Version": "21.1.18080",
+        "sqlserver_Instance.Module.Minimum.Version": "21.1.18080",
         "VisualC++.x86.Minimum.Version": "14.0.24212.0",
         "VisualC++.x86.Debug.Minimum.Version": "14.0.0",
         "VisualC++.x64.Minimum.Version": "14.0.24212.0",
@@ -245,16 +245,16 @@
             },
             "Skip": "[variable('VisualC++.x64.Compare')]"
         },
-        "SQLServerModule": {
+        "sqlserver_InstanceModule": {
             "Type": "InstallModule",
             "Params": {
-                "Name": "SQLServer",
+                "Name": "sqlserver_Instance",
                 "Repository" : "[parameter('PSRepositoryPSGallery')]",
-                "MinimumVersion": "[variable('SQLServer.Module.Minimum.Version')]",
+                "MinimumVersion": "[variable('sqlserver_Instance.Module.Minimum.Version')]",
                 "AllowClobber": true,
                 "Force": true
             },
-            "Skip": "[variable('SQLServer.Module.Version.Compare')]"
+            "Skip": "[variable('sqlserver_Instance.Module.Version.Compare')]"
         },
         "WindowsFeatures": {
             "Type": "EnableWindowsOptionalFeature",
@@ -267,7 +267,7 @@
                     "IIS-ApplicationInit",
                     "NetFx4Extended-ASPNET45",
                     "WAS-ProcessModel",
-                    "WAS-WindowsActivationService"
+                    "WAS-endpoint_WindowsActivation_Url"
                 ],
                 "All": true,
                 "NoRestart": true

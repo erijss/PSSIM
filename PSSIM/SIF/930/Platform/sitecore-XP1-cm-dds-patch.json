@@ -1,38 +1,38 @@
 ﻿{
     "Parameters": {
-        "Package": {
+        "app_Package": {
             "Type": "string",
             "Description": "The path to the patch Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "SiteName": {
+        "app_Name": {
             "Type": "string",
             "DefaultValue": "SitecoreCM",
             "Description": "The name of the CM site to be patched."
         },
-        "SiteRoot": {
+        "app_Path": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "EXMCryptographicKey": {
+        "sitecore_EXMCryptographicKey": {
             "Type": "string",
             "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
             "Description": "64 digits hexadecimal EXM Cryptographic Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
         },
-        "EXMAuthenticationKey": {
+        "sitecore_EXMAuthenticationKey": {
             "Type": "string",
             "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
             "Description": "64 digits hexadecimal EXM Authentication Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
         },
-        "EXMInternalApiKey": {
+        "sitecore_EXMInternalApiKey": {
             "Type": "string",
             "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
             "Description": "64 digits hexadecimal EXM Internal API Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
         },
-        "DedicatedDispatchService": {
+        "endpoint_DedicatedDispatch_Url": {
             "Type": "string",
-            "DefaultValue": "/sitecore%20modules/web/exm/dedicateddispatchservice.asmx",
+            "DefaultValue": "/sitecore%20modules/web/exm/endpoint_dedicateddispatch_Url.asmx",
             "Description": "Dedicated Dispatch Service Path."
         },
         "DedicatedServerHostName": {
@@ -40,31 +40,31 @@
             "DefaultValue": "",
             "Description": "Dedicated Server Host Name."
         },
-        "PackagesTempLocation": {
+        "packages_TemporaryLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": "",
             "Validate": "[TestPath(variable('Package.Download.Location'))]"
         },
-        "DownloadLocations": {
+        "packages_DownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         }
     },
     "Variables": {
-        "Site.Path": "[if(variable('Site.Path.Test'),variable('Site.Path.Default'),variable('Site.Path.Custom'))]",
-        "Site.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
-        "Site.Path.Custom": "[joinpath(parameter('SiteRoot'),parameter('SiteName'))]",
-        "Site.Path.Test": "[equal(parameter('SiteRoot'),'')]",
-        "Site.DataFolder": "[joinpath(variable('Site.Path'), 'App_Data')]",
-        
-        "Packages.DownloadLocations.File": "[ReadJson(parameter('DownloadLocations'))]",
-        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('DownloadLocations'))]",
+        "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
+        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
+        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.DataFolder": "[joinpath(variable('App.Path'), 'App_Data')]",
+
+        "Packages.DownloadLocations.File": "[ReadJson(parameter('packages_DownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('packages_DownloadLocations'))]",
 
         "Package.Download.Identifier": "sitecore-XP1-cm-dds-patch.json",
-        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
-        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('packages_TemporaryLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('packages_TemporaryLocation'),'')]",
         "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
         "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
         "Package.Download.Hash": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Hash')]",
@@ -72,9 +72,9 @@
         "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
         "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
 
-        "Package": "[if(parameter('Package'),parameter('Package'),variable('Package.Download.Path'))]",
+        "app_Package": "[if(parameter('app_Package'),parameter('app_Package'),variable('Package.Download.Path'))]",
         "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
-        "Package.Provided": "[if(parameter('Package'),parameter('Package'),'')]"
+        "Package.Provided": "[if(parameter('app_Package'),parameter('app_Package'),'')]"
     },
     "Register": {
         "ConfigFunction": {
@@ -102,30 +102,30 @@
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "Package": "[resolvepath(variable('Package'))]"
+                        "app_Package": "[resolvepath(variable('app_Package'))]"
                     },
                     "Dest": "Auto",
                     "enableRule": "DoNotDeleteRule",
                     "SetParam": [
                         {
                             "Name": "Application Path",
-                            "Value": "[parameter('SiteName')]"
+                            "Value": "[parameter('app_Name')]"
                         },
                         {
                             "Name": "EXM Cryptographic Key",
-                            "Value": "[parameter('EXMCryptographicKey')]"
+                            "Value": "[parameter('sitecore_EXMCryptographicKey')]"
                         },
                         {
                             "Name": "EXM Authentication Key",
-                            "Value": "[parameter('EXMAuthenticationKey')]"
+                            "Value": "[parameter('sitecore_EXMAuthenticationKey')]"
                         },
                         {
                             "Name": "EXM Internal Api Key",
-                            "Value": "[parameter('EXMInternalApiKey')]"
+                            "Value": "[parameter('sitecore_EXMInternalApiKey')]"
                         },
                         {
                             "Name": "Dedicated Dispatch Service",
-                            "Value": "[parameter('DedicatedDispatchService')]"
+                            "Value": "[parameter('endpoint_DedicatedDispatch_Url')]"
                         },
                         {
                             "Name": "Dedicated Server Host Name",
@@ -138,8 +138,8 @@
         "TransformXmlDocuments": {
             "Type": "TransformXmlDoc",
             "Params": {
-                "RootDirectoryPath": "[variable('Site.Path')]",
-                "XdtDirectory": "[joinpath(variable('Site.DataFolder'), 'Transforms', 'EXM', 'xdts')]"
+                "RootDirectoryPath": "[variable('App.Path')]",
+                "XdtDirectory": "[joinpath(variable('App.DataFolder'), 'Transforms', 'EXM', 'xdts')]"
             }
         }
     }

@@ -1,35 +1,35 @@
 {
     "Parameters": {
-        "SolrUrl": {
+        "solr_Url": {
             "Type": "string",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance url."
         },
-        "SolrRoot": {
+        "solr_Path": {
             "Type": "string",
             "DefaultValue": "c:\\solr-6.6.1",
             "Description": "The file path to the Solr instance."
         },
-        "SolrService": {
+        "solr_Service": {
             "Type": "string",
             "DefaultValue": "Solr-6.6.1",
             "Description": "The name of the Solr service."
         },
-        "SolrBaseConfig": {
+        "solr_BaseConfig": {
             "Type": "string",
             "DefaultValue": "_default",
             "Description": "The configset to copy as a base for each core."
         },
-        "SolrCorePrefix": {
+        "solr_CorePrefix": {
             "Type": "string",
             "DefaultValue": "sitecore",
             "Description": "The prefix for each of the created indexes."
         }
     },
     "Variables": {
-        "Solr.Root": "[resolvepath(parameter('SolrRoot'))]",
+        "Solr.Root": "[resolvepath(parameter('solr_Path'))]",
         "Solr.Server": "[joinpath(variable('Solr.Root'), 'server', 'solr')]",
-        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('SolrBaseConfig'))]",
+        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('solr_BaseConfig'))]",
         "Solr.SchemaFileName": "managed-schema",
         "Solr.Xpath.SchemaRoot": "//schema",
         "Solr.Xpath.UniqueKey": "[concat(variable('Solr.Xpath.SchemaRoot'), '/uniqueKey')]",
@@ -41,8 +41,8 @@
             "required": "true",
             "stored": "true"
         },
-        "Solr.Core.Master.Name": "[concat(parameter('SolrCorePrefix'), '_sxa_master_index')]",
-        "Solr.Core.Web.Name": "[concat(parameter('SolrCorePrefix'), '_sxa_web_index')]",
+        "Solr.Core.Master.Name": "[concat(parameter('solr_CorePrefix'), '_sxa_master_index')]",
+        "Solr.Core.Web.Name": "[concat(parameter('solr_CorePrefix'), '_sxa_web_index')]",
 
         "Solr.Core.Master.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Master.Name'))]",
         "Solr.Core.Web.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Web.Name'))]",
@@ -53,9 +53,9 @@
     "Tasks": {
         "StopSolr": {
             "Description": "Stops the Solr service if it is running.",
-            "Type": "ManageService",
+            "Type": "endpoint_Manage_Url",
             "Params": {
-                "Name": "[parameter('SolrService')]",
+                "Name": "[parameter('solr_Service')]",
                 "Status": "Stopped",
                 "PostDelay": 1000
             }
@@ -120,9 +120,9 @@
         },
         "StartSolr": {
             "Description": "Starts the Solr service.",
-            "Type": "ManageService",
+            "Type": "endpoint_Manage_Url",
             "Params": {
-                "Name": "[parameter('SolrService')]",
+                "Name": "[parameter('solr_Service')]",
                 "Status": "Running",
                 "PostDelay": 8000
             }
@@ -133,7 +133,7 @@
             "Params": [
                 {
                     "Action": "Create",
-                    "Address": "[parameter('SolrUrl')]",
+                    "Address": "[parameter('solr_Url')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Master.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -141,7 +141,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('SolrUrl')]",
+                    "Address": "[parameter('solr_Url')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Web.Name')]",
                         "property.update.autoCreateFields": "false"
