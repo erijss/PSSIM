@@ -105,7 +105,7 @@
             "DefaultValue": "",
             "Description": "The path to the Sitecore package to deploy."
         },
-        "IdentityServerPackage": {
+        "IdentityServerAppPackage": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Identity Server package to deploy."
@@ -132,7 +132,7 @@
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://SitecoreIdentityServerHost",
+            "DefaultValue": "https://sitecore.auth",
             "Description": "IdentityServer provider URI."
         },
         "PackagesTempLocation": {
@@ -197,7 +197,7 @@
         },
         "IdentityServerCertificate:CertificateName": {
             "Type": "String",
-            "Reference": "IdentityServerCertificateName",
+            "Reference": "IdentityServerAppName",
             "Description": "Override to pass IdentityServerCertificateName value to IdentityServerCertificate config."
         },
         "IdentityServerApp:AppName": {
@@ -232,7 +232,7 @@
         },
         "IdentityServerApp:AppCertificate": {
             "Type": "String",
-            "Reference": "IdentityServerCertificateName",
+            "Reference": "IdentityServerAppName",
             "Description": "Override to pass IdentityServerCertificateName value to IdentityServer config."
         },
         "IdentityServerApp:AppsLicenseFile": {
@@ -262,8 +262,8 @@
         },
         "IdentityServerApp:AppPackage": {
             "Type": "String",
-            "Reference": "IdentityServerPackage",
-            "Description": "Override to pass IdentityServerPackage value to IdentityServer config."
+            "Reference": "IdentityServerAppPackage",
+            "Description": "Override to pass IdentityServerAppPackage value to IdentityServer config."
         },
         "ContentManagmentApp:SqlServerDatabasePrefix": {
             "Type": "String",

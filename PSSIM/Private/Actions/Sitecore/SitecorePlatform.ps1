@@ -1,4 +1,5 @@
-function PSSIM.Action.SitecorePlatform {
+function PSSIM.Action.SitecorePlatform
+{
     <#
     .SYNOPSIS
     .DESCRIPTION
@@ -10,30 +11,33 @@ function PSSIM.Action.SitecorePlatform {
     param (
     )
 
-    process {
+    process
+    {
 
         $parameters = @{}
 
-        switch ( $PSSIM.Context.Sitecore.Topology ) {
-            "XM0" {
+        switch ( $PSSIM.Context.Sitecore.Topology )
+        {
+            "XM0"
+            {
                 $parameters.Add("Path", "XM0-SingleDeveloper.json")
                 $parameters.Add("AppLicenseFile", $PSSIM.Context.Sitecore.LicenseFile)
                 $parameters.Add("AppPrefix", $PSSIM.Context.Sitecore.Prefix)
                 $parameters.Add("AppFolder", $PSSIM.Context.Sitecore.Folder)
                 $parameters.Add("ContentDeliveryDisableHttps", $false)
                 $parameters.Add("ContentManagementAppName", $PSSIM.Context.Sitecore.Roles.CM.Hostname)
-                $parameters.Add("ContentManagementPackage",  $PSSIM.Context.Resources.Packages.SITECORE_XM1_CM.Path)
-                $parameters.Add("DatabaseCorePassword",  $PSSIM.Context.Sitecore.DatabasesPassword)
-                $parameters.Add("DatabaseFormsPassword",  $PSSIM.Context.Sitecore.DatabasesPassword)
-                $parameters.Add("DatabaseMasterPassword",  $PSSIM.Context.Sitecore.DatabasesPassword)
-                $parameters.Add("DatabaseSecurityPassword",  $PSSIM.Context.Sitecore.DatabasesPassword)
-                $parameters.Add("DatabaseWebPassword",  $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("ContentManagementPackage", $PSSIM.Context.Resources.Packages.SITECORE_XM1_CM.Path)
+                $parameters.Add("DatabaseCorePassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseFormsPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseMasterPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseSecurityPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseWebPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
                 $parameters.Add("IdentityServerAllowedCorsOrigins", $PSSIM.Context.Sitecore.Roles.CM.Url)
                 $parameters.Add("IdentityServerAppName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
                 $parameters.Add("IdentityServerCertificateName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
                 $parameters.Add("IdentityServerClientsConfiguration", "")
                 $parameters.Add("IdentityServerClientSecret", $PSSIM.Context.Sitecore.Roles.Identity.ClientSecret)
-                $parameters.Add("IdentityServerPackage",  $PSSIM.Context.Resources.Packages.SITECORE_IDENTITY.Path)
+                $parameters.Add("IdentityServerPackage", $PSSIM.Context.Resources.Packages.SITECORE_IDENTITY.Path)
                 $parameters.Add("IdentityServerPasswordRecoveryUrl", $PSSIM.Context.Sitecore.Roles.CM.Url)
                 $parameters.Add("PackagesDownloadLocations", ".\filethatdoesnotexist.json")
                 $parameters.Add("PackagesTempLocation", $PSSIM.Context.Resources.Folder)
@@ -48,44 +52,8 @@ function PSSIM.Action.SitecorePlatform {
                 $parameters.Add("SqlServerInstance", $PSSIM.Context.SqlServer.Instance)
                 $parameters.Add("Update", $PSSIM.Context.Settings.Update)
             }
-            # "XM0" {
-            #     $parameters.Add("Path", "XM0-SingleDeveloper.json")
-            #     # $parameters.Add("CertPath", $PSSIM.Context.Certificates.Folder)
-            #     # $parameters.Add("RootCertFileName", $PSSIM.Context.Certificates.RootCertificate)
-            #     # $parameters.Add("ExportPassword", $PSSIM.Context.Certificates.Password)
-            #     $parameters.Add("LicenseFile", $PSSIM.Context.Sitecore.LicenseFile)
-            #     $parameters.Add("IdentityServerCertificateName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
-            #     $parameters.Add("IdentityServerSiteName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
-            #     $parameters.Add("Prefix", $PSSIM.Context.Sitecore.Prefix)
-            #     $parameters.Add("SitecoreContentManagementSiteName", $PSSIM.Context.Sitecore.Roles.CM.Hostname)
-            #     # $parameters.Add("ContentManagementCertificateName", $PSSIM.Context.Sitecore.Roles.CM.Hostname)
-            #     $parameters.Add("SitecoreAdminPassword", $PSSIM.Context.Sitecore.Roles.CM.AdminPassword)
-            #     $parameters.Add("SiteRoot", $PSSIM.Context.Sitecore.Folder)
-            #     $parameters.Add("SqlAdminUser", $PSSIM.Context.SqlServer.Administrator.Username)
-            #     $parameters.Add("SqlAdminPassword", $PSSIM.Context.SqlServer.Administrator.Password)
-            #     $parameters.Add("SQLServer", $PSSIM.Context.SqlServer.Instance)
-            #     $parameters.Add("SqlFormsPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
-            #     $parameters.Add("SqlSecurityPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
-            #     $parameters.Add("SqlCorePassword", $PSSIM.Context.Sitecore.DatabasesPassword)
-            #     $parameters.Add("SqlMasterPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
-            #     $parameters.Add("SqlWebPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
-            #     $parameters.Add("SolrUrl", $PSSIM.Context.Solr.Url)
-            #     $parameters.Add("SolrRoot", $PSSIM.Context.Solr.Folder)
-            #     $parameters.Add("SolrService", $PSSIM.Context.Solr.Service)
-            #     $parameters.Add("SitecoreContentManagementPackage", $PSSIM.Context.Resources.Packages.SITECORE_XM1_CM.Path)
-            #     $parameters.Add("IdentityServerPackage", $PSSIM.Context.Resources.Packages.SITECORE_IDENTITY.Path)
-            #     $parameters.Add("PasswordRecoveryUrl", $PSSIM.Context.Sitecore.Roles.CM.Url)
-            #     $parameters.Add("ClientsConfiguration", "")
-            #     $parameters.Add("AllowedCorsOrigins", $PSSIM.Context.Sitecore.Roles.CM.Url)
-            #     $parameters.Add("ClientSecret", $PSSIM.Context.Sitecore.Roles.Identity.ClientSecret)
-            #     $parameters.Add("SitecoreIdentityAuthority", $PSSIM.Context.Sitecore.Roles.Identity.Url)
-            #     $parameters.Add("PackagesTempLocation", $PSSIM.Context.Resources.Folder)
-            #     $parameters.Add("DownloadLocations", ".\filethatdoesnotexist.json")
-            #     $parameters.Add("DisableHttpsForCD", $false)
-            #     $parameters.Add("Update", $PSSIM.Context.Settings.Update)
-            #     $parameters.Add("DeployToElasticPoolName", "")
-            # }
-            "XM1" {
+            "XM1"
+            {
                 $parameters.Add("Path", "XM1-SingleDeveloper.json")
                 $parameters.Add("LicenseFile", $PSSIM.Context.Sitecore.LicenseFile)
                 $parameters.Add("IdentityServerCertificateName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
@@ -120,7 +88,8 @@ function PSSIM.Action.SitecorePlatform {
                 $parameters.Add("Update", $PSSIM.Context.Settings.Update)
                 $parameters.Add("DeployToElasticPoolName", "")
             }
-            "XP0" {
+            "XP0"
+            {
                 $parameters.Add("Path", "XP0-SingleDeveloper.json")
                 $parameters.Add("XConnectCertificateName", $PSSIM.Context.Sitecore.Roles.XcCollect.Hostname)
                 $parameters.Add("IdentityServerCertificateName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
@@ -165,24 +134,14 @@ function PSSIM.Action.SitecorePlatform {
                 $parameters.Add("Update", $PSSIM.Context.Settings.Update)
                 $parameters.Add("DeployToElasticPoolName", "")
             }
-            "XP1" {
+            "XP1"
+            {
                 $parameters.Add("Path", "XP1-SingleDeveloper.json")
                 $parameters.Add("CertificateName", $PSSIM.Context.Sitecore.Roles.XcCollect.HostName)
                 $parameters.Add("IdentityServerCertificateName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
                 $parameters.Add("IdentityServerSiteName", $PSSIM.Context.Sitecore.Roles.Identity.Hostname)
                 $parameters.Add("LicenseFile", $PSSIM.Context.Sitecore.LicenseFile)
                 $parameters.Add("Prefix", $PSSIM.Context.Sitecore.Prefix)
-                $parameters.Add("XP1CollectionPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_XCCOLLECT.Path)
-                $parameters.Add("XP1CollectionSearchPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_XCSEARCH.Path)
-                $parameters.Add("XP1CortexProcessingPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CORTEXTPRC.Path)
-                $parameters.Add("XP1MarketingAutomationPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_MAOPS.Path)
-                $parameters.Add("XP1MarketingAutomationReportingPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_MAREP.Path)
-                $parameters.Add("XP1CortexReportingPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CORTEXTREP.Path)
-                $parameters.Add("XP1ReferenceDataPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_XCREFDATA.Path)
-                $parameters.Add("SitecoreXP1CDPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CD.Path)
-                $parameters.Add("SitecoreXP1CMPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CM.Path)
-                $parameters.Add("SitecoreXP1PrcPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_PRC.Path)
-                $parameters.Add("IdentityServerPackage", $PSSIM.Context.Resources.Packages.SITECORE_IDENTIT.Path)
                 $parameters.Add("XP1CortexProcessingSitename", $PSSIM.Context.Sitecore.Roles.CortexPrc.HostName)
                 $parameters.Add("XP1CollectionSitename", $PSSIM.Context.Sitecore.Roles.XcCollect.HostName)
                 $parameters.Add("XP1CollectionSearchSitename", $PSSIM.Context.Sitecore.Roles.XcSearch.HostName)
@@ -239,15 +198,117 @@ function PSSIM.Action.SitecorePlatform {
                 # $Parameters.Add("IdentityServerCertificates_CertPath", $PSSIM.Context.Certificates.Folder)
                 # $Parameters.Add("IdentityServerCertificates_RootCertFileName", $PSSIM.Context.Certificates.RootCertificate)
                 # $Parameters.Add("IdentityServerCertificates_ExportPassword", $PSSIM.Context.Certificates.Password)
+                $parameters.Add("Path", "XP1-SingleDeveloper.json")
+                $parameters.Add("AppsLicenseFile", $PSSIM.Context.Sitecore.LicenseFile)
+                $parameters.Add("AppsPrefix", $PSSIM.Context.Sitecore.Prefix)
+                $parameters.Add("AppsRootFolder", $PSSIM.Context.Sitecore.Folder)
+                $parameters.Add("CertificatesRootName", $PSSIM.Context.Certificates.RootCertificate)
+                $parameters.Add("CertificatesPath", $PSSIM.Context.Certificates.Folder)
+                $parameters.Add("CertificatesPassword", $PSSIM.Context.Certificates.Password)
+                $parameters.Add("ContentDeliveryAppName", $PSSIM.Context.Sitecore.Roles.CD.HostName)
+                $parameters.Add("ContentDeliveryAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CD.Path)
+                if ( [int]$PSSIM.Sitecore.Version -ge 1001 )
+                {
+                    $parameters.Add("ContentDeliveryDisableHttps", $false)
+                }
+                $parameters.Add("ContentManagementAppName", $PSSIM.Context.Sitecore.Roles.CM.HostName)
+                $parameters.Add("ContentManagementAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CM.Path)
+                $parameters.Add("CortexProcessingAppName", $PSSIM.Context.Sitecore.Roles.CortexPrc.HostName)
+                $parameters.Add("CortexProcessingAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CORTEXTPRC.Path)
+                if ( [int]$PSSIM.Sitecore.Version -ge 1020 )
+                {
+                    $parameters.Add("CortexProcessingEndpoint", $PSSIM.Context.Sitecore.Roles.CortexPrc.Url)
+                }
+                $parameters.Add("CortexReportingAppName", $PSSIM.Context.Sitecore.Roles.CortexRep.HostName)
+                $parameters.Add("CortexReportingAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_CORTEXTREP.Path)
+                $parameters.Add("CortexReportingEndpoint", $PSSIM.Context.Sitecore.Roles.CortexRep.Url)
+                $parameters.Add("DatabaseCollectionPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseCorePassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseExmMasterPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseFormsPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseMarketingAutomationPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseMasterPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseMessagingPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseProcessingEnginePassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseProcessingPoolsPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseProcessingTasksPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseReferenceDataPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseReportingPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseSecurityPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("DatabaseWebPassword", $PSSIM.Context.Sitecore.DatabasesPassword)
+                $parameters.Add("IdentityServerAllowedCorsOrigins", $PSSIM.Context.Sitecore.Roles.Cm.Url)
+                $parameters.Add("IdentityServerAppName", $PSSIM.Context.Sitecore.Roles.Identity.HostName)
+                $parameters.Add("IdentityServerAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_IDENTITY.Path)
+                $parameters.Add("IdentityServerCertificateName", $PSSIM.Context.Sitecore.Roles.CortexPrc.HostName)
+                $parameters.Add("IdentityServerClientsConfiguration", $PSSIM.Context.Sitecore.Roles.Identity.ClientsConfiguration)
+                $parameters.Add("IdentityServerClientSecret", $PSSIM.Context.Sitecore.Roles.CortexPrc.HostName)
+                $parameters.Add("IdentityServerPasswordRecoveryUrl", $PSSIM.Context.Sitecore.Roles.Cm.Url)
+                if ( [int]$PSSIM.Sitecore.Version -le 1003 )
+                {
+                    $parameters.Add("MachineLearningServerBlobEndpointCertificatePassword", "")
+                    $parameters.Add("MachineLearningServerBlobEndpointCertificatePath", "")
+                    $parameters.Add("MachineLearningServerEndpointCertificationAuthorityCertificatePath", "")
+                    $parameters.Add("MachineLearningServerTableEndpointCertificatePassword", "")
+                    $parameters.Add("MachineLearningServerTableEndpointCertificatePath", "")
+                    $parameters.Add("MachineLearningServerUrl", "")
+                }
+                $parameters.Add("MarketingAutomationOperationsAppName", $PSSIM.Context.Sitecore.Roles.MaOps.HostName)
+                $parameters.Add("MarketingAutomationOperationsAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_MAOPS.Path)
+                $parameters.Add("MarketingAutomationOperationsEndpoint", $PSSIM.Context.Sitecore.Roles.MaOps.Url)
+                $parameters.Add("MarketingAutomationReportingAppName", $PSSIM.Context.Sitecore.Roles.MaRep.HostName)
+                $parameters.Add("MarketingAutomationReportingAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_MAREP.Path)
+                $parameters.Add("MarketingAutomationReportingEndpoint", $PSSIM.Context.Sitecore.Roles.MaRep.Url)
+                $parameters.Add("PackagesDownloadLocations", $PSSIM.Context.Resources.DownloadLocations)
+                $parameters.Add("PackagesTempLocation", $PSSIM.Context.Resources.Folder)
+                $parameters.Add("ProcessingAppName", $PSSIM.Context.Sitecore.Roles.Prc.HostName)
+                $parameters.Add("ProcessingAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_PRC.Path)
+                $parameters.Add("ProcessingEndpoint", $PSSIM.Context.Sitecore.Roles.Prc.Url)
+                $parameters.Add("ReferenceDataAppName", $PSSIM.Context.Sitecore.Roles.XcRefdata.HostName)
+                $parameters.Add("ReferenceDataAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_XCREFDATA.Path)
+                $parameters.Add("ReferenceDataEndpoint", $PSSIM.Context.Sitecore.Roles.XcRefdata.Url)
+                $parameters.Add("ReportingApiKey", $PSSIM.Context.Sitecore.Roles.Rep.ApiKey)
+                if ( [int]$PSSIM.Sitecore.Version -le 1003 )
+                {
+                    $parameters.Add("ReportingAppName", $PSSIM.Context.Sitecore.Roles.Rep.HostName)
+                    $parameters.Add("ReportingAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_REP.Path)
+                    $parameters.Add("ReportingEndpoint", $PSSIM.Context.Sitecore.Roles.Rep.Url)
+                }
+                $parameters.Add("SitecoreAdminPassword", $PSSIM.Context.Sitecore.AdminPassword)
+                $parameters.Add("SitecoreEXMAuthenticationKey", $PSSIM.Context.Sitecore.Roles.Dds.exmauthenticationkey)
+                $parameters.Add("SitecoreEXMCryptographicKey", $PSSIM.Context.Sitecore.Roles.Dds.exmcryptographickey)
+                $parameters.Add("SitecoreIdentityAuthority", $PSSIM.Context.Sitecore.Roles.Identity.Url)
+                $parameters.Add("SolrFolder", $PSSIM.Context.Solr.Folder)
+                $parameters.Add("SolrService", $PSSIM.Context.Solr.Service)
+                $parameters.Add("SolrUrl", $PSSIM.Context.Solr.Url)
+                $parameters.Add("SqlServerAdminPassword", $PSSIM.Context.SqlServer.Administrator.Password)
+                $parameters.Add("SqlServerAdminUser", $PSSIM.Context.SqlServer.Administrator.Username)
+                if ( [int]$PSSIM.Sitecore.Version -ge 1020 )
+                {
+                    $parameters.Add("SqlServerDeployToElasticPoolName", $false)
+                }
+                $parameters.Add("SqlServerInstance", $PSSIM.Context.SqlServer.Instance)
+                if ( [int]$PSSIM.Sitecore.Version -ge 1011 )
+                {
+                    $parameters.Add("Update", $PSSIM.Context.Settings.Update)
+                }
+                $parameters.Add("XConnectCertificateName", $PSSIM.Context.Sitecore.Roles.XcCollect.HostName)
+                $parameters.Add("XConnectCollectionAppName", $PSSIM.Context.Sitecore.Roles.XcCollect.HostName)
+                $parameters.Add("XConnectCollectionAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_XCCOLLECT.Path)
+                $parameters.Add("XConnectCollectionEndpoint", $PSSIM.Context.Sitecore.Roles.XcCollect.Url)
+                $parameters.Add("XConnectCollectionSearchAppName", $PSSIM.Context.Sitecore.Roles.XcSearch.HostName)
+                $parameters.Add("XConnectCollectionSearchAppPackage", $PSSIM.Context.Resources.Packages.SITECORE_XP1_XCSEARCH.Path)
+                $parameters.Add("XConnectCollectionSearchEndpoint", $PSSIM.Context.Sitecore.Roles.XcSearch.Url)
             }
         }
 
         $logFileNameString = $PSSIM.Context.Sitecore.Prefix + "_" + "SitecorePlatform" + "_" + $PSSIM.Context.Sitecore.Topology + "_" + $PSSIM.Context.Sitecore.Version
 
-        if ( $PSSIM.Context.Settings.Uninstall ) {
+        if ( $PSSIM.Context.Settings.Uninstall )
+        {
             PSSIM.Sitecore.UnInstallConfiguration -Parameters $parameters -VerboseOutput $false -LogFileNameAddition $logFileNameString -SIFFolder "Platform"
         }
-        else {
+        else
+        {
             PSSIM.Sitecore.InstallConfiguration -Parameters $parameters -VerboseOutput $false -LogFileNameAddition $logFileNameString -SIFFolder "Platform"
         }
     }

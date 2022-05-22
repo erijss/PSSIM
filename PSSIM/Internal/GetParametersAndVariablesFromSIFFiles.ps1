@@ -56,8 +56,10 @@ function WriteParameters
         $InterfaceFiles,
         [Parameter()]
         [string]
-        $Topology
-
+        $Topology,
+        [Parameter()]
+        [string]
+        $AsPowerShell
     )
 
     Write-Host ""
@@ -84,29 +86,35 @@ function WriteParameters
             $output += "----------------------------------------------------------------------------"
         }
 
-        $rawparameters = ((Get-Content -Path $_.FullName  -Force -Raw).Where({ $_ -notmatch '^\s*\/\/' }) | Out-String | ConvertFrom-Json).Parameters
-        if ( $null -ne $rawparameters)
+        $rawsifparameters = ((Get-Content -Path $_.FullName  -Force -Raw).Where({ $_ -notmatch '^\s*\/\/' }) | Out-String | ConvertFrom-Json).Parameters
+        if ( $null -ne $rawsifparameters)
         {
-            $parameters = ($rawparameters | ConvertToHashtable).GetEnumerator() | Sort-Object -Property "Name"
+            $sifparameters = ($rawsifparameters | ConvertToHashtable).GetEnumerator() | Sort-Object -Property "Name"
         }
         else
         {
-            $parameters = @{}
+            $sifparameters = @{}
         }
 
 
         # Main Parameters of the JSON file
-        foreach ($parameter in $parameters.GetEnumerator())
+        foreach ($sifparameter in $sifparameters.GetEnumerator())
         {
-            if ( -not $parameter.Name.Contains(":") ) { $output += ($parameter.Name ) }
+            if ( -not $AsPowerShell ) {
+                if ( -not $sifparameter.Name.Contains(":") ) { $output += $sifparameter.Name }
+            }
+            else {
+                $line = '$parameters.Add("{0}","")' -f $sifparameter.Name
+                if ( -not $sifparameter.Name.Contains(":") ) { $output += $line }
+            }
         }
 
         if (-not $InterfaceFiles)
         {
             # Delegated Parameters of the JSON file (only for "UI" files (files with Single or Distributed in the name))
-            foreach ($parameter in $parameters.GetEnumerator())
+            foreach ($sifparameter in $sifparameters.GetEnumerator())
             {
-                if ( $parameter.Name.Contains(":") ) { $output += ($parameter.Name) }
+                if ( $sifparameter.Name.Contains(":") ) { $output += $sifparameter.Name }
             }
         }
 
@@ -164,25 +172,25 @@ function WriteVariables
             $output += "----------------------------------------------------------------------------"
         }
 
-        $rawparameters = ((Get-Content -Path $_.FullName  -Force -Raw).Where({ $_ -notmatch '^\s*\/\/' }) | Out-String | ConvertFrom-Json).Variables
-        if ( $null -ne $rawparameters)
+        $rawsifparameters = ((Get-Content -Path $_.FullName  -Force -Raw).Where({ $_ -notmatch '^\s*\/\/' }) | Out-String | ConvertFrom-Json).Variables
+        if ( $null -ne $rawsifparameters)
         {
-            $parameters = ($rawparameters | ConvertToHashtable).GetEnumerator() | Sort-Object -Property "Name"
+            $sifparameters = ($rawsifparameters | ConvertToHashtable).GetEnumerator() | Sort-Object -Property "Name"
         }
         else
         {
-            $parameters = @{}
+            $sifparameters = @{}
         }
 
         # Main Parameters of the JSON file
-        foreach ($parameter in $parameters.GetEnumerator())
+        foreach ($sifparameter in $sifparameters.GetEnumerator())
         {
-            if ( -not $parameter.Name.Contains(":") ) { $output += ($parameter.Name ) }
+            if ( -not $sifparameter.Name.Contains(":") ) { $output += ($sifparameter.Name ) }
         }
         # Delegated Parameters of the JSON file (only for "UI" files (files with Single or Distributed in the name))
-        foreach ($parameter in $parameters.GetEnumerator())
+        foreach ($sifparameter in $sifparameters.GetEnumerator())
         {
-            if ( $parameter.Name.Contains(":") ) { $output += ($parameter.Name) }
+            if ( $sifparameter.Name.Contains(":") ) { $output += ($sifparameter.Name) }
         }
 
         $output += ""

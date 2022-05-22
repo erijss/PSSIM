@@ -217,7 +217,7 @@
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://SitecoreIdentityServerHost",
+            "DefaultValue": "https://sitecore.auth",
             "Description": "IdentityServer provider URI."
         },
         "SitecoreIdentityAuthoritySecret": {
