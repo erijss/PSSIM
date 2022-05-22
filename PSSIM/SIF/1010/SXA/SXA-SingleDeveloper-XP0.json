@@ -2,7 +2,7 @@
     "Parameters": {
         "SitecoreAppName": {
             "Type": "string",
-            "DefaultValue": "Sitecore",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed to."
         },
         "AppsPrefix": {
@@ -22,27 +22,27 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "SqlServerInstance": {
             "Type": "String",
-            "DefaultValue": "Localhost",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SolrUrl": {
             "Type": "String",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "SolrFolder": {
             "Type": "String",
-            "DefaultValue": "C:\\solr-7.5.0",
+            "DefaultValue": "",
             "Description": "The file path to the Solr instance."
         },
         "SolrService": {
             "Type": "String",
-            "DefaultValue": "Solr-7.5.0",
+            "DefaultValue": "",
             "Description": "The name of the Solr service."
         },
         "ExperienceAcceleratorPackage": {

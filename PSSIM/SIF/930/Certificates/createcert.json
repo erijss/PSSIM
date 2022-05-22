@@ -8,7 +8,7 @@
         "CertificatePath": {
             "Type": "String",
             "Description": "The physical path on disk where certificates will be stored.",
-            "DefaultValue": "C:\\certificates"
+            "DefaultValue": "C:\\Certificates"
         },
         "CertificateRootName": {
             "Type": "String",

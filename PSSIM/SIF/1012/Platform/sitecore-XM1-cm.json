@@ -27,7 +27,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreXM1CM",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "AppsRootFolder": {
@@ -47,7 +47,7 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "DatabaseSecurityUser": {
@@ -102,17 +102,17 @@
         },
         "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\SQL2016",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SolrUrl": {
             "Type": "string",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "SitecoreIdentityAuthoritySecret": {

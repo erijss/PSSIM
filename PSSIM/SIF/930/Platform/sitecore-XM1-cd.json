@@ -62,17 +62,17 @@
         },
         "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\SqlServerInstance",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SolrUrl": {
             "Type": "string",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "AppHostMappingName": {

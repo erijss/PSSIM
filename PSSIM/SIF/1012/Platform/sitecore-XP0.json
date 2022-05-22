@@ -32,7 +32,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "Sitecore",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "AppsRootFolder": {
@@ -52,7 +52,7 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "DatabaseCoreUser": {
@@ -177,7 +177,7 @@
         },
         "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\SqlServerInstance",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SitecoreEXMEdsPProvider": {
@@ -197,12 +197,12 @@
         },
         "SolrUrl": {
             "Type": "string",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "EndpointXConnectCollection": {
             "Type": "string",
-            "DefaultValue": "https://XConnect",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Service."
         },
         "EndpointReferenceData": {
@@ -227,7 +227,7 @@
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "SitecoreIdentityAuthoritySecret": {

@@ -27,7 +27,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreCD",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "AppsRootFolder": {
@@ -87,37 +87,37 @@
         },
         "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\SqlServerInstance",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SolrUrl": {
             "Type": "string",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "EndpointXConnectCollection": {
             "Type": "string",
-            "DefaultValue": "https://XConnectCollection",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Service."
         },
         "EndpointReferenceData": {
             "Type": "string",
-            "DefaultValue": "https://ReferenceData",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Search Service."
         },
         "EndpointMarketingAutomationOperations": {
             "Type": "string",
-            "DefaultValue": "https://XConnectMarketingAutomation",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Marketing Automation Service."
         },
         "EndpointMarketingAutomationReporting": {
             "Type": "string",
-            "DefaultValue": "https://XConnectMarketingAutomationReporting",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Marketing Automation Reporting Service."
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "SitecoreEXMCryptographicKey": {

@@ -12,7 +12,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "CortexProcessing",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "AppsRootFolder": {
@@ -42,7 +42,7 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "DatabaseMessagingUser": {
@@ -77,17 +77,17 @@
         },
         "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\SqlServerInstance",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "EndpointXConnectCollection": {
             "Type": "string",
-            "DefaultValue": "https://XConnectCollection",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Service."
         },
         "EndpointXConnectSearch": {
             "Type": "string",
-            "DefaultValue": "https://XConnectSearch",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Search Service."
         },
         "AppEnvironment": {

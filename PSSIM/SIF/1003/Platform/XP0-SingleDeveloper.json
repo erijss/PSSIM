@@ -13,7 +13,7 @@
         "IdentityServerAppName": {
             "Type": "String",
             "Description": "The name of the identity server to be created.",
-            "DefaultValue": "sitecore.auth"
+            "DefaultValue": ""
         },
         "AppsLicenseFile": {
             "Type": "String",
@@ -22,7 +22,7 @@
         },
         "AppsPrefix": {
             "Type": "String",
-            "DefaultValue": "SC910",
+            "DefaultValue": "",
             "Description": "The prefix for uniquely identifying instances."
         },
         "SitecoreAdminPassword": {
@@ -42,12 +42,12 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "SqlServerInstance": {
             "Type": "String",
-            "DefaultValue": "Localhost",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "DatabaseCollectionPassword": {
@@ -122,17 +122,17 @@
         },
         "SolrUrl": {
             "Type": "String",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "SolrFolder": {
             "Type": "String",
-            "DefaultValue": "C:\\solr-8.4.0",
+            "DefaultValue": "",
             "Description": "The file path to the Solr instance."
         },
         "SolrService": {
             "Type": "String",
-            "DefaultValue": "Solr-8.4.0",
+            "DefaultValue": "",
             "Description": "The name of the Solr service."
         },
         "XConnectPackage": {
@@ -142,18 +142,18 @@
         },
         "XConnectAppName": {
             "Type": "String",
-            "DefaultValue": "XConnect",
+            "DefaultValue": "",
             "Description": "The name of the XConnect site."
         },
         "SitecoreAppName": {
             "Type": "String",
-            "DefaultValue": "Sitecore",
+            "DefaultValue": "",
             "Description": "The name of the Sitecore site."
         },
         "IdentityServerPasswordRecoveryUrl": {
             "Type": "string",
             "Description": "Password recovery Url (Host name of CM instance).",
-            "DefaultValue": "http:\\"
+            "DefaultValue": ""
         },
         "SitecorePackage": {
             "Type": "String",
@@ -167,7 +167,7 @@
         },
         "XConnectCollectionEndpoint": {
             "Type": "string",
-            "DefaultValue": "https://XConnect",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Service."
         },
         "IdentityServerClientsConfiguration": {
@@ -182,7 +182,7 @@
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "IdentityServerClientSecret": {

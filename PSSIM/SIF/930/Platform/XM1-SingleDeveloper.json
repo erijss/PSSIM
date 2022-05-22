@@ -13,21 +13,21 @@
         "IdentityServerAppName": {
             "Type": "String",
             "Description": "The name of the identity server to be created.",
-            "DefaultValue": "sitecore.auth"
+            "DefaultValue": ""
         },
         "AppsPrefix": {
             "Type": "String",
-            "DefaultValue": "SC910",
+            "DefaultValue": "",
             "Description": "The prefix for uniquely identifying instances."
         },
         "ContentManagementAppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreXM1CM",
+            "DefaultValue": "",
             "Description": "The name of the content management site to be deployed."
         },
         "ContentDeliveryAppName": {
             "Type": "string",
-            "DefaultValue": "sitecore.cd",
+            "DefaultValue": "",
             "Description": "The name of the content delivery site to be deployed."
         },
         "SitecoreAdminPassword": {
@@ -47,12 +47,12 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "SqlServerInstance": {
             "Type": "String",
-            "DefaultValue": "Localhost",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "DatabaseFormsPassword": {
@@ -82,17 +82,17 @@
         },
         "SolrUrl": {
             "Type": "String",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "SolrFolder": {
             "Type": "String",
-            "DefaultValue": "C:\\solr-8.1.1",
+            "DefaultValue": "",
             "Description": "The file path to the Solr instance."
         },
         "SolrService": {
             "Type": "String",
-            "DefaultValue": "Solr-8.1.1",
+            "DefaultValue": "",
             "Description": "The name of the Solr service."
         },
         "ContentManagementPackage": {
@@ -132,7 +132,7 @@
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "PackagesTempLocation": {

@@ -27,7 +27,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreProcessing",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "AppsRootFolder": {
@@ -42,7 +42,7 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "DatabaseCoreUser": {
@@ -117,12 +117,12 @@
         },
         "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\SqlServerInstance",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "EndpointXConnectCollection": {
             "Type": "string",
-            "DefaultValue": "https://XConnectCollection",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Service."
         },
         "EndpointReportingApiKey": {

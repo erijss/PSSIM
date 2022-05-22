@@ -2,17 +2,17 @@
     "Parameters": {
         "SolrUrl": {
             "Type": "string",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance url."
         },
         "SolrFolder": {
             "Type": "string",
-            "DefaultValue": "c:\\solr-8.1.1",
+            "DefaultValue": "",
             "Description": "The file path to the Solr instance."
         },
         "SolrService": {
             "Type": "string",
-            "DefaultValue": "Solr-8.1.1",
+            "DefaultValue": "",
             "Description": "The name of the Solr service."
         },
         "SolrBaseConfig": {
@@ -22,7 +22,7 @@
         },
         "SolrCorePrefix": {
             "Type": "string",
-            "DefaultValue": "sitecore",
+            "DefaultValue": "",
             "Description": "The prefix for each of the created indexes."
         }
     },

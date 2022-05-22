@@ -7,7 +7,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreCM",
+            "DefaultValue": "",
             "Description": "The name of the CM site to be patched."
         },
         "AppsRootFolder": {

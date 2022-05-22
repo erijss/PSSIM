@@ -12,7 +12,7 @@
         },
         "AppName": {
             "Type": "string",
-            "DefaultValue": "Sitecore",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "PackagesTempLocation": {

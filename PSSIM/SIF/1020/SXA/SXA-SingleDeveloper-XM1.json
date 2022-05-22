@@ -2,17 +2,17 @@
     "Parameters": {
         "ContentManagementAppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreXM1CM",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed to."
         },
         "ContentDeliveryAppName": {
             "Type": "string",
-            "DefaultValue": "sitecore.cd",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed to."
         },
         "AppsRootFolder": {
             "Type": "string",
-            "DefaultValue": "Sitecore",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed to."
         },
         "AppsPrefix": {
@@ -32,12 +32,12 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "SqlServerInstance": {
             "Type": "String",
-            "DefaultValue": "Localhost",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SolrUrl": {
@@ -52,7 +52,7 @@
         },
         "SolrService": {
             "Type": "String",
-            "DefaultValue": "Solr-8.8.2",
+            "DefaultValue": "",
             "Description": "The name of the Solr service."
         },
         "ExperienceAcceleratorContentManagementPackage": {

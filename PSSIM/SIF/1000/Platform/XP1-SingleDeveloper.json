@@ -13,7 +13,7 @@
         "IdentityServerAppName": {
             "Type": "string",
             "Description": "The name of the identity server to be created.",
-            "DefaultValue": "sitecore.auth"
+            "DefaultValue": ""
         },
         "AppsLicenseFile": {
             "Type": "String",
@@ -22,7 +22,7 @@
         },
         "AppsPrefix": {
             "Type": "String",
-            "DefaultValue": "SC910",
+            "DefaultValue": "",
             "Description": "The prefix for uniquely identifying instances."
         },
         "XConnectCollectionAppPackage": {
@@ -87,72 +87,72 @@
         },
         "CortexProcessingAppName": {
             "Type": "string",
-            "DefaultValue": "CortexProcessing",
+            "DefaultValue": "",
             "Description": "The name of the Cortex Processing site to be deployed."
         },
         "XConnectCollectionAppName": {
             "Type": "string",
-            "DefaultValue": "XConnectCollection",
+            "DefaultValue": "",
             "Description": "The name of the XConnect Collection site to be deployed."
         },
         "XConnectCollectionSearchAppName": {
             "Type": "string",
-            "DefaultValue": "XConnectCollectionSearch",
+            "DefaultValue": "",
             "Description": "The name of the XConnect Collection Search site to be deployed."
         },
         "MarketingAutomationOperationsAppName": {
             "Type": "string",
-            "DefaultValue": "XConnectMarketingAutomation",
+            "DefaultValue": "",
             "Description": "The name of the site to be deployed."
         },
         "MarketingAutomationReportingAppName": {
             "Type": "string",
-            "DefaultValue": "XConnectMarketingAutomationReporting",
+            "DefaultValue": "",
             "Description": "The name of the XConnect Marketing Automation Reporting site to be deployed."
         },
         "ReferenceDataAppName": {
             "Type": "string",
-            "DefaultValue": "XConnectReferenceData",
+            "DefaultValue": "",
             "Description": "The name of the XConnect Reference Data site to be deployed."
         },
         "CortexReportingAppName": {
             "Type": "string",
-            "DefaultValue": "CortexReporting",
+            "DefaultValue": "",
             "Description": "The name of the Cortex Reporting site to be deployed."
         },
         "ContentDeliveryAppName": {
             "Type": "string",
-            "DefaultValue": "ContentDeliveryApp",
+            "DefaultValue": "",
             "Description": "The name of the Sitecore Content Delivery site to be deployed."
         },
         "ContentManagementAppName": {
             "Type": "string",
-            "DefaultValue": "ContentManagmentApp",
+            "DefaultValue": "",
             "Description": "The name of the Sitecore Content Management site to be deployed."
         },
         "ReportingAppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreReporting",
+            "DefaultValue": "",
             "Description": "The name of the Sitecore Reporting site to be deployed."
         },
         "ProcessingAppName": {
             "Type": "string",
-            "DefaultValue": "SitecoreProcessing",
+            "DefaultValue": "",
             "Description": "The name of the Sitecore Processing site to be deployed."
         },
         "ProcessingEndpoint": {
             "Type": "string",
-            "DefaultValue": "https://SitecoreProcessing",
+            "DefaultValue": "",
             "Description": "The url for the Processing Service."
         },
         "ReportingEndpoint": {
             "Type": "string",
-            "DefaultValue": "https://SitecoreReporting",
+            "DefaultValue": "",
             "Description": "The url for the Reporting Service."
         },
         "CortexReportingEndpoint": {
             "Type": "string",
-            "DefaultValue": "https://CortexReporting",
+            "DefaultValue": "",
             "Description": "The url for the Cortex Reporting Service."
         },
         "ReportingApiKey": {
@@ -163,7 +163,7 @@
         "IdentityServerPasswordRecoveryUrl": {
             "Type": "string",
             "Description": "Password recovery Url (Host name of CM instance).",
-            "DefaultValue": "http:\\ContentManagmentApp"
+            "DefaultValue": ""
         },
         "IdentityServerClientsConfiguration": {
             "Type": "string",
@@ -177,12 +177,12 @@
         },
         "SqlServerAdminPassword": {
             "Type": "string",
-            "DefaultValue": "12345",
+            "DefaultValue": "",
             "Description": "The Sql admin password to use when installing databases."
         },
         "SqlServerInstance": {
             "Type": "String",
-            "DefaultValue": "Localhost",
+            "DefaultValue": "",
             "Description": "The Sql Server where databases will be installed."
         },
         "SitecoreAdminPassword": {
@@ -282,47 +282,47 @@
         },
         "SolrUrl": {
             "Type": "String",
-            "DefaultValue": "https://localhost:8983/solr",
+            "DefaultValue": "",
             "Description": "The Solr instance to use."
         },
         "SolrFolder": {
             "Type": "String",
-            "DefaultValue": "C:\\solr-8.4.0",
+            "DefaultValue": "",
             "Description": "The file path to the Solr instance."
         },
         "SolrService": {
             "Type": "String",
-            "DefaultValue": "Solr-8.4.0",
+            "DefaultValue": "",
             "Description": "The name of the Solr service."
         },
         "XConnectCollectionEndpoint": {
             "Type": "String",
-            "DefaultValue": "https://localhost",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Service."
         },
         "XConnectCollectionSearchEndpoint": {
             "Type": "String",
-            "DefaultValue": "https://localhost",
+            "DefaultValue": "",
             "Description": "The url for the XConnect Collection Search Service."
         },
         "ReferenceDataEndpoint": {
             "Type": "String",
-            "DefaultValue": "https://localhost",
+            "DefaultValue": "",
             "Description": "The URL of the XConnect Reference Data service."
         },
         "MarketingAutomationOperationsEndpoint": {
             "Type": "String",
-            "DefaultValue": "https://localhost",
+            "DefaultValue": "",
             "Description": "The URL of the Marketing Automation Operations service."
         },
         "MarketingAutomationReportingEndpoint": {
             "Type": "String",
-            "DefaultValue": "https://localhost",
+            "DefaultValue": "",
             "Description": "The URL of the Marketing Automation Operations service."
         },
         "MachineLearningServerUrl": {
             "Type": "String",
-            "DefaultValue": "http://localhost",
+            "DefaultValue": "",
             "Description": "The URL of the Machine Learning Service."
         },
         "MachineLearningServerBlobEndpointCertificatePath": {
@@ -362,7 +362,7 @@
         },
         "SitecoreIdentityAuthority": {
             "Type": "string",
-            "DefaultValue": "https://sitecore.auth",
+            "DefaultValue": "",
             "Description": "IdentityServer provider URI."
         },
         "PackagesTempLocation": {

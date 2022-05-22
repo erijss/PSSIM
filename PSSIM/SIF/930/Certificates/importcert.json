@@ -13,12 +13,12 @@
         "CertificateClientPassword": {
             "Type": "string",
             "Description": "The password of client certificate file.",
-            "DefaultValue": "sif-default"
+            "DefaultValue": "SIF-Default"
         },
         "CertificateRootPassword": {
             "Type": "string",
             "Description": "The password of root certificate file.",
-            "DefaultValue": "sif-default"
+            "DefaultValue": "SIF-Default"
         },
         "Update": {
             "Type": "bool",
