@@ -84,7 +84,7 @@ function WriteParameters
             $output += "----------------------------------------------------------------------------"
         }
 
-        $rawparameters = (Get-Content -Path $_.FullName  -Force -Raw | ConvertFrom-Json).Parameters
+        $rawparameters = ((Get-Content -Path $_.FullName  -Force -Raw).Where({ $_ -notmatch '^\s*\/\/' }) | Out-String | ConvertFrom-Json).Parameters
         if ( $null -ne $rawparameters)
         {
             $parameters = ($rawparameters | ConvertToHashtable).GetEnumerator() | Sort-Object -Property "Name"
@@ -164,7 +164,7 @@ function WriteVariables
             $output += "----------------------------------------------------------------------------"
         }
 
-        $rawparameters = (Get-Content -Path $_.FullName  -Force -Raw | ConvertFrom-Json).Variables
+        $rawparameters = ((Get-Content -Path $_.FullName  -Force -Raw).Where({ $_ -notmatch '^\s*\/\/' }) | Out-String | ConvertFrom-Json).Variables
         if ( $null -ne $rawparameters)
         {
             $parameters = ($rawparameters | ConvertToHashtable).GetEnumerator() | Sort-Object -Property "Name"
