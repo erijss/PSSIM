@@ -1,26 +1,26 @@
 {
     "Parameters": {
-        "solr_Url": {
+        "SolrUrl": {
             "Type": "string",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance url."
         },
-        "solr_Path": {
+        "SolrFolder": {
             "Type": "string",
             "DefaultValue": "c:\\solr-8.4.0",
             "Description": "The file path to the Solr instance."
         },
-        "solr_Service": {
+        "SolrService": {
             "Type": "string",
             "DefaultValue": "Solr-8.4.0",
             "Description": "The name of the Solr service."
         },
-        "solr_BaseConfig": {
+        "SolrBaseConfig": {
             "Type": "string",
             "DefaultValue": "_default",
             "Description": "The configset to copy as a base for each core."
         },
-        "solr_CorePrefix": {
+        "SolrCorePrefix": {
             "Type": "string",
             "DefaultValue": "sitecore",
             "Description": "The prefix for each of the created indexes."
@@ -32,11 +32,11 @@
         }
     },
     "Variables": {
-        "Solr.Root": "[resolvepath(parameter('solr_Path'))]",
+        "Solr.Root": "[resolvepath(parameter('SolrFolder'))]",
         "Solr.Server": "[joinpath(variable('Solr.Root'), 'server', 'solr')]",
-        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('solr_BaseConfig'))]",
+        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('SolrBaseConfig'))]",
 
-        "Solr.Core.Xdb.Name": "[concat(parameter('solr_CorePrefix'), '_xdb')]",
+        "Solr.Core.Xdb.Name": "[concat(parameter('SolrCorePrefix'), '_xdb')]",
         "Solr.Core.XdbRebuild.Name": "[concat(variable('Solr.Core.Xdb.Name'), '_rebuild')]",
 
         "Solr.Core.Xdb.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Xdb.Name'))]",
@@ -49,7 +49,7 @@
             "Params": [
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Xdb.Name')]",
                         "deleteInstanceDir": "true"
@@ -58,7 +58,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.XdbRebuild.Name')]",
                         "deleteInstanceDir": "true"
@@ -100,7 +100,7 @@
             "Params": [
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Xdb.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -108,7 +108,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.XdbRebuild.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -125,7 +125,7 @@
             "Params": [
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Xdb.Name')]",
                         "deleteInstanceDir": "true"
@@ -134,7 +134,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.XdbRebuild.Name')]",
                         "deleteInstanceDir": "true"

@@ -5,27 +5,27 @@
             "DefaultValue": "dummy",
             "Description": "The name of the new Solr core"
         },
-        "solr_Url": {
+        "SolrUrl": {
             "Type": "string",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance url."
         },
-        "solr_Path": {
+        "SolrFolder": {
             "Type": "string",
             "DefaultValue": "c:\\solr-8.8.2",
             "Description": "The file path to the Solr instance."
         },
-        "solr_Service": {
+        "SolrService": {
             "Type": "string",
             "DefaultValue": "Solr-8.8.2",
             "Description": "The name of the Solr service."
         },
-        "solr_BaseConfig": {
+        "SolrBaseConfig": {
             "Type": "string",
             "DefaultValue": "_default",
             "Description": "The configset to copy as a base for each core."
         },
-        "solr_CorePrefix": {
+        "SolrCorePrefix": {
             "Type": "string",
             "DefaultValue": "sitecore",
             "Description": "The prefix for each of the created indexes."
@@ -37,9 +37,9 @@
         }
     },
     "Variables": {
-        "Solr.FullRoot":    "[resolvepath(parameter('solr_Path'))]",
+        "Solr.FullRoot":    "[resolvepath(parameter('SolrFolder'))]",
         "Solr.Server":      "[joinpath(variable('Solr.FullRoot'), 'server', 'solr')]",
-        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('solr_BaseConfig'))]",
+        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('SolrBaseConfig'))]",
         "Solr.SchemaFileName": "managed-schema",
         "Solr.Xpath.SchemaRoot": "//schema",
         "Solr.Xpath.UniqueKey": "[concat(variable('Solr.Xpath.SchemaRoot'), '/uniqueKey')]",
@@ -51,7 +51,7 @@
             "required": "true",
             "stored": "true"
         },
-        "Solr.Core.Name":        "[concat(parameter('solr_CorePrefix'), '_', parameter('CoreName'))]",
+        "Solr.Core.Name":        "[concat(parameter('SolrCorePrefix'), '_', parameter('CoreName'))]",
         "Solr.Core.Root":        "[joinpath(variable('Solr.Server'), variable('Solr.Core.Name'))]",
         "Solr.Core.Conf":        "[joinpath(variable('Solr.Core.Root'), 'conf')]"
     },
@@ -60,7 +60,7 @@
 			"Description" : "Unloads existing Cores (if exists)",
             "Type": "ManageSolrCore",
             "Params": [
-                { "Action": "Unload", "Address": "[parameter('solr_Url')]", "Arguments": { "core": "[variable('Solr.Core.Name')]", "deleteInstanceDir": "true" }, "ErrorAction": "SilentlyContinue" }
+                { "Action": "Unload", "Address": "[parameter('SolrUrl')]", "Arguments": { "core": "[variable('Solr.Core.Name')]", "deleteInstanceDir": "true" }, "ErrorAction": "SilentlyContinue" }
             ],
             "Skip": "[parameter('Update')]"
         },
@@ -102,7 +102,7 @@
 			"Description" : "Tells Solr to create the new cores.",
             "Type": "ManageSolrCore",
             "Params": [
-                { "Action": "Create", "Address": "[parameter('solr_Url')]", "Arguments": { "name": "[variable('Solr.Core.Name')]", "property.update.autoCreateFields": "false" } }
+                { "Action": "Create", "Address": "[parameter('SolrUrl')]", "Arguments": { "name": "[variable('Solr.Core.Name')]", "property.update.autoCreateFields": "false" } }
             ],
             "Skip": "[parameter('Update')]"
         }
@@ -112,7 +112,7 @@
             "Description": "Removes the cores and instance folders.",
             "Type": "ManageSolrCore",
             "Params": [
-                { "Action": "Unload", "Address": "[parameter('solr_Url')]", "Arguments": { "core": "[variable('Solr.Core.Name')]", "deleteInstanceDir": "true" }, "ErrorAction": "SilentlyContinue" }
+                { "Action": "Unload", "Address": "[parameter('SolrUrl')]", "Arguments": { "core": "[variable('Solr.Core.Name')]", "deleteInstanceDir": "true" }, "ErrorAction": "SilentlyContinue" }
             ]
         }
     }

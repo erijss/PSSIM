@@ -77,7 +77,8 @@ $PSSIM.Context.Resources = @{}
 $PSSIM.Context.Certificates = @{}
 # $PSSIM.Context.Redis = @{}
 
-Export-ModuleMember -function Invoke-PSSIM
+
+
 Export-ModuleMember -function Install-FromPSSIMParameters  -Alias *
 Export-ModuleMember -function Get-PSSIMParametersFile
 Export-ModuleMember -function Get-PSSIMParameters

@@ -61,7 +61,7 @@
         "Properties": {
           "ManagedRuntimeVersion": "",
           "ProcessModel": {
-            "identityType": "endpoint_Network_Url"
+            "identityType": "EndpointNetwork"
           }
         }
       }
@@ -84,7 +84,7 @@
     "CreateBindings": {
       "Type": "WebBinding",
       "Params": {
-        "app_Name": "[parameter('InstanceName')]",
+        "AppName": "[parameter('InstanceName')]",
         "Remove": [
           {
             "Port": "80",
@@ -111,7 +111,7 @@
         "Verb": "Sync",
         "Arguments": {
           "Source": {
-            "app_Package": "[parameter('PackagePath')]"
+            "App.Package": "[parameter('PackagePath')]"
           },
           "Dest": {
             "contentPath": "[parameter('InstanceName')]"

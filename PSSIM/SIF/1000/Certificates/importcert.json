@@ -1,21 +1,21 @@
 {
     "Parameters": {
-        "certificate_Client_Path": {
+        "CertificateClientPath": {
             "Type": "string",
             "Description": "The physical path to pfx file where client certificate is stored.",
             "DefaultValue": ""
         },
-        "certificate_Root_Path": {
+        "CertificateRootPath": {
             "Type": "string",
             "Description": "The physical path to pfx file where root certificate is stored.",
             "DefaultValue": ""
         },
-        "certificate_Client_Password": {
+        "CertificateClientPassword": {
             "Type": "string",
             "Description": "The password of client certificate file.",
             "DefaultValue": "sif-default"
         },
-        "certificate_Root_Password": {
+        "CertificateRootPassword": {
             "Type": "string",
             "Description": "The password of root certificate file.",
             "DefaultValue": "sif-default"
@@ -27,8 +27,8 @@
         }
     },
     "Variables": {
-        "Certificate.Client.Password.Secure": "[ConvertToSecureString(String:parameter('certificate_Client_Password'),AsPlainText:true,Force:true)]",
-        "Certificate.Root.Password.Secure": "[ConvertToSecureString(String:parameter('certificate_Root_Password'),AsPlainText:true,Force:true)]",
+        "Certificate.Client.Password.Secure": "[ConvertToSecureString(String:parameter('CertificateClientPassword'),AsPlainText:true,Force:true)]",
+        "Certificate.Root.Password.Secure": "[ConvertToSecureString(String:parameter('CertificateRootPassword'),AsPlainText:true,Force:true)]",
         "Certificate.Root.Store": "Cert:\\LocalMachine\\Root",
         "Certificate.Client.Store": "Cert:\\LocalMachine\\My"
     },
@@ -37,23 +37,23 @@
             "Type": "ImportPfxCertificate",
             "Description": "Import the root certificate from pfx file",
             "Params": {
-                "FilePath": "[parameter('certificate_Root_Path')]",
+                "FilePath": "[parameter('CertificateRootPath')]",
                 "Password": "[variable('Certificate.Root.Password.Secure')]",
                 "CertStoreLocation": "[variable('Certificate.Root.Store')]",
                 "Exportable": true
             },
-            "Skip": "[or(not(parameter('certificate_Root_Path')),parameter('Update'))]"
+            "Skip": "[or(not(parameter('CertificateRootPath')),parameter('Update'))]"
         },
         "ImportClientCert":{
             "Type": "ImportPfxCertificate",
             "Description": "Import the client certificate from pfx file",
             "Params": {
-                "FilePath": "[parameter('certificate_Client_Path')]",
+                "FilePath": "[parameter('CertificateClientPath')]",
                 "Password": "[variable('Certificate.Client.Password.Secure')]",
                 "CertStoreLocation": "[variable('Certificate.Client.Store')]",
                 "Exportable": true
             },
-            "Skip": "[or(not(parameter('certificate_Client_Path')),parameter('Update'))]"
+            "Skip": "[or(not(parameter('CertificateClientPath')),parameter('Update'))]"
         }
     },
     "Register":{

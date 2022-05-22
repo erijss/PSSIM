@@ -1,138 +1,138 @@
 {
     "Parameters": {
-        "HeadlessServices_ContentManagement_Package": {
+        "HeadlessServicesContentManagementPackage": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "HeadlessServices_ContentDelivery_Package": {
+        "HeadlessServicesContentDeliveryPackage": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "ContentManagement_AppName": {
+        "ContentManagementAppName": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "ContentDelivery_AppName": {
+        "ContentDeliveryAppName": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "Apps_RootFolder": {
+        "AppsRootFolder": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "Apps_Prefix": {
+        "AppsPrefix": {
             "Type": "String",
             "Description": "",
             "DefaultValue": ""
         },
-        "Sitecore_AdminPassword": {
+        "SitecoreAdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlServer_AdminUser": {
+        "SqlServerAdminUser": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlServer_AdminPassword": {
+        "SqlServerAdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlServer_Instance": {
+        "SqlServerInstance": {
             "Type": "String",
             "DefaultValue": "",
             "Description": ""
         },
-        "Packages_TempLocation": {
+        "PackagesTempLocation": {
             "Type": "String",
             "Description": "",
             "Reference": ""
         },
-        "Packages_DownloadLocations": {
+        "PackagesDownloadLocations": {
             "Type": "String",
             "Description": "",
             "Reference": ""
         },
-        "SHS_ContentManagement:app_Package": {
+        "SHS_ContentManagement:AppPackage": {
             "Type": "string",
-            "Reference": "HeadlessServices_ContentManagement_Package",
+            "Reference": "HeadlessServicesContentManagementPackage",
             "Description": ""
         },
-        "SHS_ContentManagement:app_Folder": {
+        "SHS_ContentManagement:AppsRootFolder": {
             "Type": "string",
-            "Reference": "Apps_RootFolder",
+            "Reference": "AppsRootFolder",
             "Description": ""
         },
-        "SHS_ContentManagement:app_Name": {
+        "SHS_ContentManagement:AppName": {
             "Type": "string",
-            "Reference": "ContentManagement_AppName",
+            "Reference": "ContentManagementAppName",
             "Description": ""
         },
-        "SHS_ContentManagement:sitecore_AdminPassword": {
+        "SHS_ContentManagement:SitecoreAdminPassword": {
             "Type": "string",
-            "Reference": "Sitecore_AdminPassword",
+            "Reference": "SitecoreAdminPassword",
             "Description": ""
         },
-        "SHS_ContentManagement:sqlserver_AdminUser": {
+        "SHS_ContentManagement:SqlServerAdminUser": {
             "Type": "string",
-            "Reference": "SqlServer_AdminUser",
+            "Reference": "SqlServerAdminUser",
             "Description": ""
         },
-        "SHS_ContentManagement:sqlserver_AdminPassword": {
+        "SHS_ContentManagement:SqlServerAdminPassword": {
             "Type": "string",
-            "Reference": "SqlServer_AdminPassword",
+            "Reference": "SqlServerAdminPassword",
             "Description": ""
         },
-        "SHS_ContentManagement:sqlserver_Instance": {
+        "SHS_ContentManagement:SqlServerInstance": {
             "Type": "string",
-            "Reference": "SqlServer_Instance",
+            "Reference": "SqlServerInstance",
             "Description": ""
         },
-        "SHS_ContentManagement:sqlserver_DatabasePrefix": {
+        "SHS_ContentManagement:SqlServerDatabasePrefix": {
             "Type": "string",
-            "Reference": "Apps_Prefix",
+            "Reference": "AppsPrefix",
             "Description": ""
         },
-        "SHS_ContentManagement:packages_TemporaryLocation": {
+        "SHS_ContentManagement:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
+            "Reference": "PackagesTempLocation",
             "Description": ""
         },
-        "SHS_ContentManagement:packages_DownloadLocations": {
+        "SHS_ContentManagement:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
+            "Reference": "PackagesDownloadLocations",
             "Description": ""
         },
-        "SHS_ContentDelivery:app_Package": {
+        "SHS_ContentDelivery:AppPackage": {
             "Type": "string",
-            "Reference": "HeadlessServices_ContentDelivery_Package",
+            "Reference": "HeadlessServicesContentDeliveryPackage",
             "Description": ""
         },
-        "SHS_ContentDelivery:app_Folder": {
+        "SHS_ContentDelivery:AppsRootFolder": {
             "Type": "string",
-            "Reference": "Apps_RootFolder",
+            "Reference": "AppsRootFolder",
             "Description": ""
         },
-        "SHS_ContentDelivery:app_Name": {
+        "SHS_ContentDelivery:AppName": {
             "Type": "string",
-            "Reference": "ContentDelivery_AppName",
+            "Reference": "ContentDeliveryAppName",
             "Description": ""
         },
-        "SHS_ContentDelivery:packages_TemporaryLocation": {
+        "SHS_ContentDelivery:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
+            "Reference": "PackagesTempLocation",
             "Description": ""
         },
-        "SHS_ContentDelivery:packages_DownloadLocations": {
+        "SHS_ContentDelivery:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
+            "Reference": "PackagesDownloadLocations",
             "Description": ""
         }
     },

@@ -1,201 +1,201 @@
 {
     "Parameters": {
-        "XConnect_CertificateName": {
+        "XConnectCertificateName": {
             "Type": "String",
             "Description": "The name of the certificate to be created for the xconnect server.",
             "DefaultValue": ""
         },
-        "IdentityServer_CertificateName": {
+        "IdentityServerCertificateName": {
             "Type": "String",
             "Description": "The name of the certificate to be created for the identity server.",
             "DefaultValue": ""
         },
-        "IdentityServer_AppName": {
+        "IdentityServerAppName": {
             "Type": "String",
             "Description": "The name of the identity server to be created.",
             "DefaultValue": "sitecore.auth"
         },
-        "Apps_LicenseFile": {
+        "AppsLicenseFile": {
             "Type": "String",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "Apps_Prefix": {
+        "AppsPrefix": {
             "Type": "String",
             "DefaultValue": "SC910",
             "Description": "The prefix for uniquely identifying instances."
         },
-        "Sitecore_AdminPassword": {
+        "SitecoreAdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The admin password for the Sitecore instance."
         },
-        "Apps_RootFolder": {
+        "AppsRootFolder": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "SqlServer_AdminUser": {
+        "SqlServerAdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlServer_AdminPassword": {
+        "SqlServerAdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SqlServer_Instance": {
+        "SqlServerInstance": {
             "Type": "String",
             "DefaultValue": "Localhost",
             "Description": "The Sql Server where databases will be installed."
         },
-        "Database_Collection_Password": {
+        "DatabaseCollectionPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "Database_ProcessingPools_Password": {
+        "DatabaseProcessingPoolsPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Pools connection string in Sitecore."
         },
-        "Database_ReferenceData_Password": {
+        "DatabaseReferenceDataPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Reference Data connection string in Sitecore."
         },
-        "Database_MarketingAutomation_Password": {
+        "DatabaseMarketingAutomationPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Marketing Automation connection string in Sitecore."
         },
-        "Database_Messaging_Password": {
+        "DatabaseMessagingPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Messaging connection string in Sitecore."
         },
-        "Database_ProcessingEngine_Password": {
+        "DatabaseProcessingEnginePassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Engine Tasks and Storage database connection strings in Sitecore."
         },
-        "Database_Reporting_Password": {
+        "DatabaseReportingPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Reporting connection string in Sitecore."
         },
-        "Database_Core_Password": {
+        "DatabaseCorePassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Core connection string in Sitecore."
         },
-        "Database_Security_Password": {
+        "DatabaseSecurityPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Security connection string in Sitecore."
         },
-        "Database_Master_Password": {
+        "DatabaseMasterPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Master connection string in Sitecore."
         },
-        "Database_Web_Password": {
+        "DatabaseWebPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Web connection string in Sitecore."
         },
-        "Database_ProcessingTasks_Password": {
+        "DatabaseProcessingTasksPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Tasks connection string in Sitecore."
         },
-        "Database_Forms_Password": {
+        "DatabaseFormsPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Experience Forms connection string in Sitecore."
         },
-        "Database_ExmMaster_Password": {
+        "DatabaseExmMasterPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the EXM Master connection string in Sitecore."
         },
-        "Solr_Url": {
+        "SolrUrl": {
             "Type": "String",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance to use."
         },
-        "Solr_Folder": {
+        "SolrFolder": {
             "Type": "String",
             "DefaultValue": "C:\\solr-8.8.2",
             "Description": "The file path to the Solr instance."
         },
-        "Solr_Service": {
+        "SolrService": {
             "Type": "String",
             "DefaultValue": "Solr-8.8.2",
             "Description": "The name of the Solr service."
         },
-        "XConnect_Package": {
+        "XConnectPackage": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the XConnect package to deploy."
         },
-        "XConnect_AppName": {
+        "XConnectAppName": {
             "Type": "String",
             "DefaultValue": "XConnect",
             "Description": "The name of the XConnect site."
         },
-        "Sitecore_AppName": {
+        "SitecoreAppName": {
             "Type": "String",
             "DefaultValue": "Sitecore",
             "Description": "The name of the Sitecore site."
         },
-        "IdentityServer_PasswordRecoveryUrl": {
+        "IdentityServerPasswordRecoveryUrl": {
             "Type": "string",
             "Description": "Password recovery Url (Host name of CM instance).",
             "DefaultValue": "http:\\"
         },
-        "Sitecore_Package": {
+        "SitecorePackage": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Sitecore package to deploy."
         },
-        "IdentityServer_Package": {
+        "IdentityServerPackage": {
             "Type": "String",
             "DefaultValue": "",
             "Description": "The path to the Identity Server package to deploy."
         },
-        "XConnectCollection_Endpoint": {
+        "XConnectCollectionEndpoint": {
             "Type": "string",
             "DefaultValue": "https://XConnect",
             "Description": "The url for the XConnect Collection Service."
         },
-        "IdentityServer_ClientsConfiguration": {
+        "IdentityServerClientsConfiguration": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "Sitecore IdentityServer clients configuration"
         },
-        "IdentityServer_AllowedCorsOrigins": {
+        "IdentityServerAllowedCorsOrigins": {
             "Type": "string",
             "Description": "Pipe-separated list of instances (URIs) that are allowed to login via Sitecore Identity.",
             "DefaultValue": ""
         },
-        "Sitecore_IdentityAuthority": {
+        "SitecoreIdentityAuthority": {
             "Type": "string",
             "DefaultValue": "https://SitecoreIdentityServerHost",
             "Description": "IdentityServer provider URI."
         },
-        "IdentityServer_ClientSecret": {
+        "IdentityServerClientSecret": {
             "Type": "string",
             "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
             "DefaultValue": "SIF-Default"
         },
-        "Packages_TempLocation": {
+        "PackagesTempLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": ""
         },
-        "Packages_DownloadLocations": {
+        "PackagesDownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
@@ -205,433 +205,431 @@
             "Description": "The parameter for the installing delta WDP packages.",
             "DefaultValue": false
         },
-        "SqlServer_DeployToElasticPoolName": {
+        "SqlServerDeployToElasticPoolName": {
             "Type": "String",
             "Description": "The elastic pool name for deploy databases from the SQL Azure.",
             "DefaultValue": ""
         },
-        "XConnect_App:Package": {
+        "XConnectApp:Package": {
             "Type": "String",
-            "Reference": "XConnect_Package",
-            "Description": "Override to pass XConnectPackage value to XConnect_App config."
+            "Reference": "XConnectPackage",
+            "Description": "Override to pass XConnectPackage value to XConnectApp config."
         },
-        "Sitecore_App:Package": {
+        "SitecoreApp:Package": {
             "Type": "String",
-            "Reference": "Sitecore_Package",
-            "Description": "Override to pass SitecorePackage value to Sitecore_App config."
+            "Reference": "SitecorePackage",
+            "Description": "Override to pass SitecorePackage value to SitecoreApp config."
         },
-        "IdentityServer_App:Package": {
+        "IdentityServerApp:Package": {
             "Type": "String",
-            "Reference": "IdentityServer_Package",
+            "Reference": "IdentityServerPackage",
             "Description": "Override to pass IdentityServerPackage value to IdentityServer config."
         },
-        "XConnect_App:Sitename": {
+        "XConnectApp:Sitename": {
             "Type": "String",
-            "Reference": "XConnect_AppName",
-            "Description": "Override to pass XConnectSiteName value to XConnect_App config."
+            "Reference": "XConnectAppName",
+            "Description": "Override to pass XConnectSiteName value to XConnectApp config."
         },
-        "Sitecore_App:Sitename": {
+        "SitecoreApp:Sitename": {
             "Type": "String",
-            "Reference": "Sitecore_AppName",
-            "Description": "Override to pass SitecoreSiteName value to Sitecore_App config."
+            "Reference": "SitecoreAppName",
+            "Description": "Override to pass SitecoreSiteName value to SitecoreApp config."
         },
-        "IdentityServer_App:SiteRoot": {
+        "IdentityServerApp:SiteRoot": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
+            "Reference": "AppsRootFolder",
             "Description": "Override to pass SiteRoot value to IdentityServer config."
         },
-        "XConnect_App:SiteRoot": {
+        "XConnectApp:SiteRoot": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to XConnect_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to XConnectApp config."
         },
-        "Sitecore_App:SiteRoot": {
+        "SitecoreApp:SiteRoot": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to Sitecore_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to SitecoreApp config."
         },
-        "IdentityServer_App:identityserver_PasswordRecoveryUrl": {
+        "IdentityServerApp:IdentityServerPasswordRecoveryUrl": {
             "Type": "String",
-            "Reference": "IdentityServer_PasswordRecoveryUrl",
+            "Reference": "IdentityServerPasswordRecoveryUrl",
             "Description": "Override to pass PasswordRecoveryUrl value to IdentityServer config."
         },
-        "Sitecore_App:sitecore_IdentityAuthority": {
+        "SitecoreApp:SitecoreIdentityAuthority": {
             "Type": "String",
-            "Reference": "Sitecore_IdentityAuthority",
-            "Description": "Override to pass SitecoreIdentityAuthority value to Sitecore_App config."
+            "Reference": "SitecoreIdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to SitecoreApp config."
         },
-        "Sitecore_App:endpoint_XConnectCollection_Url": {
+        "SitecoreApp:EndpointXConnectCollection": {
             "Type": "String",
-            "Reference": "XConnectCollection_Endpoint",
-            "Description": "Override to pass XConnectCollectionService value to Sitecore_App config."
+            "Reference": "XConnectCollectionEndpoint",
+            "Description": "Override to pass XConnectCollectionService value to SitecoreApp config."
         },
-        "IdentityServer_App:ClientsConfiguration": {
+        "IdentityServerApp:ClientsConfiguration": {
             "Type": "String",
-            "Reference": "IdentityServer_ClientsConfiguration",
+            "Reference": "IdentityServerClientsConfiguration",
             "Description": "Override to pass ClientsConfiguration value to IdentityServer config."
         },
-        "XConnect_App:SqlServer": {
+        "XConnectApp:SqlServer": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to XConnect_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to XConnectApp config."
         },
-        "Sitecore_App:SqlServer": {
+        "SitecoreApp:SqlServer": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to Sitecore_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to SitecoreApp config."
         },
-        "IdentityServer_App:SqlServer": {
+        "IdentityServerApp:SqlServer": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
+            "Reference": "SqlServerInstance",
             "Description": "Override to pass SqlServer value to IdentityServer config."
         },
-        "XConnect_Solr:solr_Url": {
+        "XConnectSolr:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrURL value to XConnect_Solr config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrURL value to XConnectSolr config."
         },
-        "XConnect_App:solr_Url": {
+        "XConnectApp:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrURL value to XConnect_App config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrURL value to XConnectApp config."
         },
-        "Sitecore_Solr:solr_Url": {
+        "SitecoreSolr:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrURL value to Sitecore_Solr config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrURL value to SitecoreSolr config."
         },
-        "Sitecore_App:solr_Url": {
+        "SitecoreApp:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrURL value to Sitecore_App config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrURL value to SitecoreApp config."
         },
-        "XConnect_Solr:solr_Path": {
+        "XConnectSolr:SolrFolder": {
             "Type": "String",
-            "Reference": "Solr_Folder",
-            "Description": "Override to pass SolrRoot value to XConnect_Solr config."
+            "Reference": "SolrFolder",
+            "Description": "Override to pass SolrRoot value to XConnectSolr config."
         },
-        "Sitecore_Solr:solr_Path": {
+        "SitecoreSolr:SolrFolder": {
             "Type": "String",
-            "Reference": "Solr_Folder",
-            "Description": "Override to pass SolrRoot value to Sitecore_Solr config."
+            "Reference": "SolrFolder",
+            "Description": "Override to pass SolrRoot value to SitecoreSolr config."
         },
-        "XConnect_Solrendpoint_Solr_Url": {
+        "XConnectSolrEndpointSolr": {
             "Type": "String",
-            "Reference": "Solr_Service",
-            "Description": "Override to pass SolrService value to XConnect_Solr config."
+            "Reference": "SolrService",
+            "Description": "Override to pass SolrService value to XConnectSolr config."
         },
-        "Sitecore_Solrendpoint_Solr_Url": {
+        "SitecoreSolrEndpointSolr": {
             "Type": "String",
-            "Reference": "Solr_Service",
-            "Description": "Override to pass SolrService value to Sitecore_Solr config."
+            "Reference": "SolrService",
+            "Description": "Override to pass SolrService value to SitecoreSolr config."
         },
-        "XConnect_Solr:SolrCorePrefix": {
+        "XConnectSolr:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnect_Solr config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectSolr config."
         },
-        "XConnect_App:SqlDbPrefix": {
+        "XConnectApp:SqlDbPrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnect_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectApp config."
         },
-        "XConnect_App:SolrCorePrefix": {
+        "XConnectApp:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnect_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectApp config."
         },
-        "Sitecore_Solr:SolrCorePrefix": {
+        "SitecoreSolr:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to Sitecore_Solr config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to SitecoreSolr config."
         },
-        "Sitecore_App:SqlDbPrefix": {
+        "SitecoreApp:SqlDbPrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to Sitecore_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to SitecoreApp config."
         },
-        "IdentityServer_App:SqlDbPrefix": {
+        "IdentityServerApp:SqlDbPrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
+            "Reference": "AppsPrefix",
             "Description": "Override to pass Prefix value to IdentityServer config."
         },
-        "Sitecore_App:SolrCorePrefix": {
+        "SitecoreApp:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to Sitecore_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to SitecoreApp config."
         },
-        "XConnect_Certificate:certificate_Name": {
+        "XConnectCertificate:CertificateName": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass XConnectCertificateName value to XConnect_Certificate config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass XConnectCertificateName value to XConnectCertificate config."
         },
-        "XConnect_Certificate:Update": {
+        "XConnectCertificate:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to Certificates config."
         },
-        "IdentityServer_Certificate:certificate_Name": {
+        "IdentityServerCertificate:CertificateName": {
             "Type": "String",
-            "Reference": "IdentityServer_CertificateName",
-            "Description": "Override to pass IdentityServer_CertificateName value to IdentityServer_Certificate config."
+            "Reference": "IdentityServerCertificateName",
+            "Description": "Override to pass IdentityServerCertificateName value to IdentityServerCertificate config."
         },
-        "IdentityServer_Certificate:Update": {
+        "IdentityServerCertificate:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to Certificates config."
         },
-        "IdentityServer_App:SiteName": {
+        "IdentityServerApp:SiteName": {
             "Type": "String",
-            "Reference": "IdentityServer_AppName",
-            "Description": "Override to pass IdentityServer_AppName value to IdentityServer config."
+            "Reference": "IdentityServerAppName",
+            "Description": "Override to pass IdentityServerAppName value to IdentityServer config."
         },
-        "IdentityServer_App:SitecoreIdentityCert": {
+        "IdentityServerApp:SitecoreIdentityCert": {
             "Type": "String",
-            "Reference": "IdentityServer_CertificateName",
-            "Description": "Override to pass IdentityServer_CertificateName value to IdentityServer config."
+            "Reference": "IdentityServerCertificateName",
+            "Description": "Override to pass IdentityServerCertificateName value to IdentityServer config."
         },
-        "XConnect_App:app_Certificate": {
+        "XConnectApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to XConnect_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to XConnectApp config."
         },
-        "Sitecore_App:xconnect_Certificate": {
+        "SitecoreApp:XConnectCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to Sitecore_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to SitecoreApp config."
         },
-        "XConnect_App:app_License": {
+        "XConnectApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to XConnect_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to XConnectApp config."
         },
-        "Sitecore_App:app_License": {
+        "SitecoreApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to Sitecore_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to SitecoreApp config."
         },
-        "IdentityServer_App:app_License": {
+        "IdentityServerApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
+            "Reference": "AppsLicenseFile",
             "Description": "Override to pass LicenseFile value to IdentityServer config."
         },
-        "XConnect_App:sqlserver_AdminUser": {
+        "XConnectApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to XConnect_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to XConnectApp config."
         },
-        "Sitecore_App:sqlserver_AdminUser": {
+        "SitecoreApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to Sitecore_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to SitecoreApp config."
         },
-        "XConnect_App:sqlserver_AdminPassword": {
+        "XConnectApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to XConnect_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to XConnectApp config."
         },
-        "Sitecore_App:sqlserver_AdminPassword": {
+        "SitecoreApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to Sitecore_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to SitecoreApp config."
         },
-        "IdentityServer_App:identityserver_AllowedCorsOrigins": {
+        "IdentityServerApp:IdentityServerAllowedCorsOrigins": {
             "Type": "String",
-            "Reference": "IdentityServer_AllowedCorsOrigins",
+            "Reference": "IdentityServerAllowedCorsOrigins",
             "Description": "Override to pass AllowedCorsOrigins value to IdentityServer config."
         },
-        "Sitecore_App:sitecore_AdminPassword": {
+        "SitecoreApp:SitecoreAdminPassword": {
             "Type": "String",
-            "Reference": "Sitecore_AdminPassword",
+            "Reference": "SitecoreAdminPassword",
             "Description": "Override to pass SitecoreAdminPassword value to SitecoreXPO config."
         },
-        "IdentityServer_App:PackagesTempLocation": {
+        "IdentityServerApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
+            "Reference": "PackagesTempLocation",
             "Description": "Override to pass PackagesTempLocation value to IdentityServer config."
         },
-        "Sitecore_App:PackagesTempLocation": {
+        "SitecoreApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to Sitecore_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to SitecoreApp config."
         },
-        "XConnect_App:PackagesTempLocation": {
+        "XConnectApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to XConnect_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XConnectApp config."
         },
-        "IdentityServer_App:DownloadLocations": {
+        "IdentityServerApp:DownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
+            "Reference": "PackagesDownloadLocations",
             "Description": "Override to pass DownloadLocations value to IdentityServer config."
         },
-        "Sitecore_App:DownloadLocations": {
+        "SitecoreApp:DownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to Sitecore_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to SitecoreApp config."
         },
-        "XConnect_App:DownloadLocations": {
+        "XConnectApp:DownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to XConnect_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XConnectApp config."
         },
-        "Sitecore_App:Update": {
+        "SitecoreApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to Sitecore_App config."
+            "Description": "Override to pass Update value to SitecoreApp config."
         },
-        "XConnect_App:Update": {
+        "XConnectApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to XConnect_App config."
+            "Description": "Override to pass Update value to XConnectApp config."
         },
-        "IdentityServer_App:Update": {
+        "IdentityServerApp:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to IdentityServer config."
         },
-        "XConnect_Solr:Update": {
+        "XConnectSolr:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to XConnect_Solr config."
+            "Description": "Override to pass Update value to XConnectSolr config."
         },
-        "Sitecore_Solr:Update": {
+        "SitecoreSolr:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to Sitecore_Solr config."
+            "Description": "Override to pass Update value to SitecoreSolr config."
         },
-        "Sitecore_App:sqlserver_DeployToElasticPoolName": {
+        "SitecoreApp:SqlServerDeployToElasticPoolName": {
             "Type": "String",
-            "Reference": "SqlServer_DeployToElasticPoolName",
-            "Description": "Override to pass DeployToElasticPoolName value to Sitecore_App config."
+            "Reference": "SqlServerDeployToElasticPoolName",
+            "Description": "Override to pass DeployToElasticPoolName value to SitecoreApp config."
         },
-        "XConnect_App:sqlserver_DeployToElasticPoolName": {
+        "XConnectApp:SqlServerDeployToElasticPoolName": {
             "Type": "String",
-            "Reference": "SqlServer_DeployToElasticPoolName",
-            "Description": "Override to pass DeployToElasticPoolName value to XConnect_App config."
+            "Reference": "SqlServerDeployToElasticPoolName",
+            "Description": "Override to pass DeployToElasticPoolName value to XConnectApp config."
         }
     },
     "Variables": {
-        "Sql.Database.ProcessingPools.Password": "[if(variable('Sql.Database.ProcessingPools.Password.Test'),variable('Sql.Database.ProcessingPools.Password.Generate'),parameter('Database_ProcessingPools_Password'))]",
-        "Sql.Database.ProcessingPools.Password.Test": "[equal(parameter('Database_ProcessingPools_Password'),'SIF-Default')]",
+        "Sql.Database.ProcessingPools.Password": "[if(variable('Sql.Database.ProcessingPools.Password.Test'),variable('Sql.Database.ProcessingPools.Password.Generate'),parameter('DatabaseProcessingPoolsPassword'))]",
+        "Sql.Database.ProcessingPools.Password.Test": "[equal(parameter('DatabaseProcessingPoolsPassword'),'SIF-Default')]",
         "Sql.Database.ProcessingPools.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
-        "Sitecore_App:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "XConnectApp:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "SitecoreApp:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
 
-        "Sql.Database.Collection.Password": "[if(variable('Sql.Database.Collection.Password.Test'),variable('Sql.Database.Collection.Password.Generate'),parameter('Database_Collection_Password'))]",
-        "Sql.Database.Collection.Password.Test": "[equal(parameter('Database_Collection_Password'),'SIF-Default')]",
+        "Sql.Database.Collection.Password": "[if(variable('Sql.Database.Collection.Password.Test'),variable('Sql.Database.Collection.Password.Generate'),parameter('DatabaseCollectionPassword'))]",
+        "Sql.Database.Collection.Password.Test": "[equal(parameter('DatabaseCollectionPassword'),'SIF-Default')]",
         "Sql.Database.Collection.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+        "XConnectApp:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
 
-        "Sql.Database.ReferenceData.Password": "[if(variable('Sql.Database.ReferenceData.Password.Test'),variable('Sql.Database.ReferenceData.Password.Generate'),parameter('Database_ReferenceData_Password'))]",
-        "Sql.Database.ReferenceData.Password.Test": "[equal(parameter('Database_ReferenceData_Password'),'SIF-Default')]",
+        "Sql.Database.ReferenceData.Password": "[if(variable('Sql.Database.ReferenceData.Password.Test'),variable('Sql.Database.ReferenceData.Password.Generate'),parameter('DatabaseReferenceDataPassword'))]",
+        "Sql.Database.ReferenceData.Password.Test": "[equal(parameter('DatabaseReferenceDataPassword'),'SIF-Default')]",
         "Sql.Database.ReferenceData.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "Sitecore_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XConnectApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "SitecoreApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
 
-        "Sql.Database.MarketingAutomation.Password": "[if(variable('Sql.Database.MarketingAutomation.Password.Test'),variable('Sql.Database.MarketingAutomation.Password.Generate'),parameter('Database_MarketingAutomation_Password'))]",
-        "Sql.Database.MarketingAutomation.Password.Test": "[equal(parameter('Database_MarketingAutomation_Password'),'SIF-Default')]",
+        "Sql.Database.MarketingAutomation.Password": "[if(variable('Sql.Database.MarketingAutomation.Password.Test'),variable('Sql.Database.MarketingAutomation.Password.Generate'),parameter('DatabaseMarketingAutomationPassword'))]",
+        "Sql.Database.MarketingAutomation.Password.Test": "[equal(parameter('DatabaseMarketingAutomationPassword'),'SIF-Default')]",
         "Sql.Database.MarketingAutomation.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
-        "Sitecore_App:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "XConnectApp:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "SitecoreApp:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
 
-        "Sql.Database.Messaging.Password": "[if(variable('Sql.Database.Messaging.Password.Test'),variable('Sql.Database.Messaging.Password.Generate'),parameter('Database_Messaging_Password'))]",
-        "Sql.Database.Messaging.Password.Test": "[equal(parameter('Database_Messaging_Password'),'SIF-Default')]",
+        "Sql.Database.Messaging.Password": "[if(variable('Sql.Database.Messaging.Password.Test'),variable('Sql.Database.Messaging.Password.Generate'),parameter('DatabaseMessagingPassword'))]",
+        "Sql.Database.Messaging.Password.Test": "[equal(parameter('DatabaseMessagingPassword'),'SIF-Default')]",
         "Sql.Database.Messaging.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
-        "Sitecore_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "XConnectApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "SitecoreApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
 
-        "Sql.Database.ProcessingEngine.Password": "[if(variable('Sql.Database.ProcessingEngine.Password.Test'),variable('Sql.Database.ProcessingEngine.Password.Generate'),parameter('Database_ProcessingEngine_Password'))]",
-        "Sql.Database.ProcessingEngine.Password.Test": "[equal(parameter('Database_ProcessingEngine_Password'),'SIF-Default')]",
+        "Sql.Database.ProcessingEngine.Password": "[if(variable('Sql.Database.ProcessingEngine.Password.Test'),variable('Sql.Database.ProcessingEngine.Password.Generate'),parameter('DatabaseProcessingEnginePassword'))]",
+        "Sql.Database.ProcessingEngine.Password.Test": "[equal(parameter('DatabaseProcessingEnginePassword'),'SIF-Default')]",
         "Sql.Database.ProcessingEngine.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.ProcessingEngine.Password": "[variable('Sql.Database.ProcessingEngine.Password')]",
+        "XConnectApp:Sql.Database.ProcessingEngine.Password": "[variable('Sql.Database.ProcessingEngine.Password')]",
 
-        "Sql.Database.Reporting.Password": "[if(variable('Sql.Database.Reporting.Password.Test'),variable('Sql.Database.Reporting.Password.Generate'),parameter('Database_Reporting_Password'))]",
-        "Sql.Database.Reporting.Password.Test": "[equal(parameter('Database_Reporting_Password'),'SIF-Default')]",
+        "Sql.Database.Reporting.Password": "[if(variable('Sql.Database.Reporting.Password.Test'),variable('Sql.Database.Reporting.Password.Generate'),parameter('DatabaseReportingPassword'))]",
+        "Sql.Database.Reporting.Password.Test": "[equal(parameter('DatabaseReportingPassword'),'SIF-Default')]",
         "Sql.Database.Reporting.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnect_App:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
-        "Sitecore_App:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "XConnectApp:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "SitecoreApp:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
 
-        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('Database_Core_Password'))]",
-        "Sql.Database.Core.Password.Test": "[equal(parameter('Database_Core_Password'),'SIF-Default')]",
+        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('DatabaseCorePassword'))]",
+        "Sql.Database.Core.Password.Test": "[equal(parameter('DatabaseCorePassword'),'SIF-Default')]",
         "Sql.Database.Core.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
+        "SitecoreApp:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
 
-        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('Database_Security_Password'))]",
-        "Sql.Database.Security.Password.Test": "[equal(parameter('Database_Security_Password'),'SIF-Default')]",
+        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('DatabaseSecurityPassword'))]",
+        "Sql.Database.Security.Password.Test": "[equal(parameter('DatabaseSecurityPassword'),'SIF-Default')]",
         "Sql.Database.Security.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
-        "IdentityServer_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "SitecoreApp:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "IdentityServerApp:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
 
-        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('Database_Master_Password'))]",
-        "Sql.Database.Master.Password.Test": "[equal(parameter('Database_Master_Password'),'SIF-Default')]",
+        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('DatabaseMasterPassword'))]",
+        "Sql.Database.Master.Password.Test": "[equal(parameter('DatabaseMasterPassword'),'SIF-Default')]",
         "Sql.Database.Master.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
+        "SitecoreApp:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
 
-        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('Database_Web_Password'))]",
-        "Sql.Database.Web.Password.Test": "[equal(parameter('Database_Web_Password'),'SIF-Default')]",
+        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('DatabaseWebPassword'))]",
+        "Sql.Database.Web.Password.Test": "[equal(parameter('DatabaseWebPassword'),'SIF-Default')]",
         "Sql.Database.Web.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+        "SitecoreApp:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
 
-        "Sql.Database.ProcessingTasks.Password": "[if(variable('Sql.Database.ProcessingTasks.Password.Test'),variable('Sql.Database.ProcessingTasks.Password.Generate'),parameter('Database_ProcessingTasks_Password'))]",
-        "Sql.Database.ProcessingTasks.Password.Test": "[equal(parameter('Database_ProcessingTasks_Password'),'SIF-Default')]",
+        "Sql.Database.ProcessingTasks.Password": "[if(variable('Sql.Database.ProcessingTasks.Password.Test'),variable('Sql.Database.ProcessingTasks.Password.Generate'),parameter('DatabaseProcessingTasksPassword'))]",
+        "Sql.Database.ProcessingTasks.Password.Test": "[equal(parameter('DatabaseProcessingTasksPassword'),'SIF-Default')]",
         "Sql.Database.ProcessingTasks.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.ProcessingTasks.Password": "[variable('Sql.Database.ProcessingTasks.Password')]",
+        "SitecoreApp:Sql.Database.ProcessingTasks.Password": "[variable('Sql.Database.ProcessingTasks.Password')]",
 
-        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('Database_Forms_Password'))]",
-        "Sql.Database.Forms.Password.Test": "[equal(parameter('Database_Forms_Password'),'SIF-Default')]",
+        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('DatabaseFormsPassword'))]",
+        "Sql.Database.Forms.Password.Test": "[equal(parameter('DatabaseFormsPassword'),'SIF-Default')]",
         "Sql.Database.Forms.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+        "SitecoreApp:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
 
-        "Sql.Database.EXMMaster.Password": "[if(variable('Sql.Database.EXMMaster.Password.Test'),variable('Sql.Database.EXMMaster.Password.Generate'),parameter('Database_ExmMaster_Password'))]",
-        "Sql.Database.EXMMaster.Password.Test": "[equal(parameter('Database_ExmMaster_Password'),'SIF-Default')]",
+        "Sql.Database.EXMMaster.Password": "[if(variable('Sql.Database.EXMMaster.Password.Test'),variable('Sql.Database.EXMMaster.Password.Generate'),parameter('DatabaseExmMasterPassword'))]",
+        "Sql.Database.EXMMaster.Password.Test": "[equal(parameter('DatabaseExmMasterPassword'),'SIF-Default')]",
         "Sql.Database.EXMMaster.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Sitecore_App:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
+        "SitecoreApp:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
 
-        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('IdentityServer_ClientSecret'))]",
-        "IdentityServer.Client.Secret.Test": "[equal(parameter('IdentityServer_ClientSecret'),'SIF-Default')]",
+        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('IdentityServerClientSecret'))]",
+        "IdentityServer.Client.Secret.Test": "[equal(parameter('IdentityServerClientSecret'),'SIF-Default')]",
         "IdentityServer.Client.Secret.Generate": "[randomstring(Length:100,DisAllowSpecial:True)]",
 
-        "IdentityServer_App:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
-        "Sitecore_App:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
+        "IdentityServerApp:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
+        "SitecoreApp:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
     },
     "Includes": {
-        "IdentityServer_Certificate": {
+        "IdentityServerCertificate": {
             "Source": ".\\..\\Certificates\\createcert.json"
         },
-        "IdentityServer_App": {
+        "IdentityServerApp": {
             "Source": ".\\identityServer.json"
         },
-        "XConnect_Certificate": {
+        "XConnectCertificate": {
             "Source": ".\\..\\Certificates\\createcert.json"
         },
-        "XConnect_Solr": {
+        "XConnectSolr": {
             "Source": ".\\xconnect-solr.json"
         },
-        "XConnect_App": {
+        "XConnectApp": {
             "Source": ".\\xconnect-xp0.json"
         },
-        "Sitecore_Certificate": {
-            "Source": ".\\..\\Certificates\\createcert.json"
-        },
-        "Sitecore_Solr": {
+
+        "SitecoreSolr": {
             "Source": ".\\Sitecore-solr.json"
         },
-        "Sitecore_App": {
+        "SitecoreApp": {
             "Source": ".\\Sitecore-XP0.json"
         }
     },
@@ -649,49 +647,49 @@
                 "Scope": "Global",
                 "Value": [
                     {
-                        "Database_ProcessingPools_Password": "[variable('Sql.Database.ProcessingPools.Password')]"
+                        "DatabaseProcessingPoolsPassword": "[variable('Sql.Database.ProcessingPools.Password')]"
                     },
                     {
-                        "Database_Collection_Password": "[variable('Sql.Database.Collection.Password')]"
+                        "DatabaseCollectionPassword": "[variable('Sql.Database.Collection.Password')]"
                     },
                     {
-                        "Database_ReferenceData_Password": "[variable('Sql.Database.ReferenceData.Password')]"
+                        "DatabaseReferenceDataPassword": "[variable('Sql.Database.ReferenceData.Password')]"
                     },
                     {
-                        "Database_MarketingAutomation_Password": "[variable('Sql.Database.MarketingAutomation.Password')]"
+                        "DatabaseMarketingAutomationPassword": "[variable('Sql.Database.MarketingAutomation.Password')]"
                     },
                     {
-                        "Database_Messaging_Password": "[variable('Sql.Database.Messaging.Password')]"
+                        "DatabaseMessagingPassword": "[variable('Sql.Database.Messaging.Password')]"
                     },
                     {
-                        "Database_ProcessingEngine_Password": "[variable('Sql.Database.ProcessingEngine.Password')]"
+                        "DatabaseProcessingEnginePassword": "[variable('Sql.Database.ProcessingEngine.Password')]"
                     },
                     {
-                        "Database_Reporting_Password": "[variable('Sql.Database.Reporting.Password')]"
+                        "DatabaseReportingPassword": "[variable('Sql.Database.Reporting.Password')]"
                     },
                     {
-                        "Database_Core_Password": "[variable('Sql.Database.Core.Password')]"
+                        "DatabaseCorePassword": "[variable('Sql.Database.Core.Password')]"
                     },
                     {
-                        "Database_Security_Password": "[variable('Sql.Database.Security.Password')]"
+                        "DatabaseSecurityPassword": "[variable('Sql.Database.Security.Password')]"
                     },
                     {
-                        "Database_Master_Password": "[variable('Sql.Database.Master.Password')]"
+                        "DatabaseMasterPassword": "[variable('Sql.Database.Master.Password')]"
                     },
                     {
-                        "Database_Web_Password": "[variable('Sql.Database.Web.Password')]"
+                        "DatabaseWebPassword": "[variable('Sql.Database.Web.Password')]"
                     },
                     {
-                        "Database_ProcessingTasks_Password": "[variable('Sql.Database.ProcessingTasks.Password')]"
+                        "DatabaseProcessingTasksPassword": "[variable('Sql.Database.ProcessingTasks.Password')]"
                     },
                     {
-                        "Database_Forms_Password": "[variable('Sql.Database.Forms.Password')]"
+                        "DatabaseFormsPassword": "[variable('Sql.Database.Forms.Password')]"
                     },
                     {
-                        "Database_ExmMaster_Password": "[variable('Sql.Database.EXMMaster.Password')]"
+                        "DatabaseExmMasterPassword": "[variable('Sql.Database.EXMMaster.Password')]"
                     },
                     {
-                        "IdentityServer_ClientSecret": "[variable('IdentityServer.Client.Secret')]"
+                        "IdentityServerClientSecret": "[variable('IdentityServer.Client.Secret')]"
                     }
                 ]
             },

@@ -1,336 +1,336 @@
 {
     "Parameters": {
-        "XConnect_CertificateName": {
+        "XConnectCertificateName": {
             "Type": "String",
             "Description": "The name of the certificate to be created.",
             "DefaultValue": ""
         },
-        "IdentityServer_CertificateName": {
+        "IdentityServerCertificateName": {
             "Type": "String",
             "Description": "The name of the certificate to be created for the identity server.",
             "DefaultValue": ""
         },
-        "IdentityServer_AppName": {
+        "IdentityServerAppName": {
             "Type": "string",
             "Description": "The name of the identity server to be created.",
             "DefaultValue": "sitecore.auth"
         },
-        "Apps_LicenseFile": {
+        "AppsLicenseFile": {
             "Type": "String",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "Apps_Prefix": {
+        "AppsPrefix": {
             "Type": "String",
             "DefaultValue": "SC910",
             "Description": "The prefix for uniquely identifying instances."
         },
-        "XConnectCollection_AppPackage": {
+        "XConnectCollectionAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 Collection package to deploy.",
             "DefaultValue": ""
         },
-        "XConnectCollectionSearch_AppPackage": {
+        "XConnectCollectionSearchAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 Collection search package to deploy.",
             "DefaultValue": ""
         },
-        "CortexProcessing_AppPackage": {
+        "CortexProcessingAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 Processing package to deploy.",
             "DefaultValue": ""
         },
-        "MarketingAutomationOperations_AppPackage": {
+        "MarketingAutomationOperationsAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 Marketing Automation package to deploy.",
             "DefaultValue": ""
         },
-        "MarketingAutomationReporting_AppPackage": {
+        "MarketingAutomationReportingAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 Marketing Automation Reporting package to deploy.",
             "DefaultValue": ""
         },
-        "CortexReporting_AppPackage": {
+        "CortexReportingAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 reporting package to deploy.",
             "DefaultValue": ""
         },
-        "ReferenceData_AppPackage": {
+        "ReferenceDataAppPackage": {
             "Type": "string",
             "Description": "The path to the XP1 reference data package to deploy.",
             "DefaultValue": ""
         },
-        "ContentDelivery_AppPackage": {
+        "ContentDeliveryAppPackage": {
             "Type": "string",
             "Description": "The path to the Sitecore XP1 content delivery package to deploy.",
             "DefaultValue": ""
         },
-        "ContentManagement_AppPackage": {
+        "ContentManagementAppPackage": {
             "Type": "string",
             "Description": "The path to the Sitecore XP1 content management package to deploy.",
             "DefaultValue": ""
         },
-        "Processing_AppPackage": {
+        "ProcessingAppPackage": {
             "Type": "string",
             "Description": "The path to the Sitecore XP1 prc package to deploy.",
             "DefaultValue": ""
         },
-        "IdentityServer_Package": {
+        "IdentityServerPackage": {
             "Type": "string",
             "Description": "The path to the Identity Server package to deploy.",
             "DefaultValue": ""
         },
-        "CortexProcessing_AppName": {
+        "CortexProcessingAppName": {
             "Type": "string",
             "DefaultValue": "CortexProcessing",
             "Description": "The name of the Cortex Processing site to be deployed."
         },
-        "XConnectCollection_AppName": {
+        "XConnectCollectionAppName": {
             "Type": "string",
             "DefaultValue": "XConnectCollection",
             "Description": "The name of the XConnect Collection site to be deployed."
         },
-        "XConnectCollectionSearch_AppName": {
+        "XConnectCollectionSearchAppName": {
             "Type": "string",
             "DefaultValue": "XConnectCollectionSearch",
             "Description": "The name of the XConnect Collection Search site to be deployed."
         },
-        "MarketingAutomationOperations_AppName": {
+        "MarketingAutomationOperationsAppName": {
             "Type": "string",
             "DefaultValue": "XConnectMarketingAutomation",
             "Description": "The name of the site to be deployed."
         },
-        "MarketingAutomationReporting_AppName": {
+        "MarketingAutomationReportingAppName": {
             "Type": "string",
             "DefaultValue": "XConnectMarketingAutomationReporting",
             "Description": "The name of the XConnect Marketing Automation Reporting site to be deployed."
         },
-        "ReferenceData_AppName": {
+        "ReferenceDataAppName": {
             "Type": "string",
             "DefaultValue": "XConnectReferenceData",
             "Description": "The name of the XConnect Reference Data site to be deployed."
         },
-        "CortexReporting_AppName": {
+        "CortexReportingAppName": {
             "Type": "string",
             "DefaultValue": "CortexReporting",
             "Description": "The name of the Cortex Reporting site to be deployed."
         },
-        "ContentDelivery_AppName": {
+        "ContentDeliveryAppName": {
             "Type": "string",
-            "DefaultValue": "ContentDelivery_App",
+            "DefaultValue": "ContentDeliveryApp",
             "Description": "The name of the Sitecore Content Delivery site to be deployed."
         },
-        "ContentManagement_AppName": {
+        "ContentManagementAppName": {
             "Type": "string",
-            "DefaultValue": "ContentManagment_App",
+            "DefaultValue": "ContentManagmentApp",
             "Description": "The name of the Sitecore Content Management site to be deployed."
         },
-        "Processing_AppName": {
+        "ProcessingAppName": {
             "Type": "string",
             "DefaultValue": "SitecoreProcessing",
             "Description": "The name of the Sitecore Processing site to be deployed."
         },
-        "Processing_Endpoint": {
+        "ProcessingEndpoint": {
             "Type": "string",
             "DefaultValue": "https://SitecoreProcessing",
             "Description": "The url for the Processing Service."
         },
-        "CortexReporting_Endpoint": {
+        "CortexReportingEndpoint": {
             "Type": "string",
             "DefaultValue": "https://CortexReporting",
             "Description": "The url for the Cortex Reporting Service."
         },
-        "Reporting_ApiKey": {
+        "ReportingApiKey": {
             "Type": "string",
             "DefaultValue": "00112233445566778899AABBCCDDEEFF",
             "Description": "The api key to use with the Processing Service server must be at least 32 characters long. e.g 00112233445566778899AABBCCDDEEFF"
         },
-        "IdentityServer_PasswordRecoveryUrl": {
+        "IdentityServerPasswordRecoveryUrl": {
             "Type": "string",
             "Description": "Password recovery Url (Host name of CM instance).",
-            "DefaultValue": "http:\\ContentManagment_App"
+            "DefaultValue": "http:\\ContentManagmentApp"
         },
-        "IdentityServer_ClientsConfiguration": {
+        "IdentityServerClientsConfiguration": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "Sitecore IdentityServer clients configuration"
         },
-        "SqlServer_AdminUser": {
+        "SqlServerAdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "SqlServer_AdminPassword": {
+        "SqlServerAdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "SqlServer_Instance": {
+        "SqlServerInstance": {
             "Type": "String",
             "DefaultValue": "Localhost",
             "Description": "The Sql Server where databases will be installed."
         },
-        "Sitecore_AdminPassword": {
+        "SitecoreAdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The admin password for the Sitecore instance."
         },
-        "Apps_RootFolder": {
+        "AppsRootFolder": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "Database_Core_Password": {
+        "DatabaseCorePassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Core connection string in Sitecore."
         },
-        "Database_Security_Password": {
+        "DatabaseSecurityPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Security connection string in Sitecore."
         },
-        "Database_MarketingAutomation_Password": {
+        "DatabaseMarketingAutomationPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Marketing Automation connection string in Sitecore."
         },
-        "Database_Messaging_Password": {
+        "DatabaseMessagingPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Messaging connection string in Sitecore."
         },
-        "Database_ProcessingPools_Password": {
+        "DatabaseProcessingPoolsPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Pools connection string in Sitecore."
         },
-        "Database_Collection_User": {
+        "DatabaseCollectionUser": {
             "Type": "string",
             "DefaultValue": "collectionuser",
             "Description": "The Sql user account to use for the collection databases."
         },
-        "Database_Collection_Password": {
+        "DatabaseCollectionPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "TThe Sql password for the collection connection string in Sitecore."
         },
-        "Database_ReferenceData_Password": {
+        "DatabaseReferenceDataPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Reference Data connection string in Sitecore."
         },
-        "Database_ProcessingEngine_Password": {
+        "DatabaseProcessingEnginePassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Engine Tasks and Storage database connection strings in Sitecore."
         },
-        "Database_Reporting_Password": {
+        "DatabaseReportingPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Reporting connection string in Sitecore."
         },
-        "Database_ExmMaster_Password": {
+        "DatabaseExmMasterPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the EXM Master connection string in Sitecore."
         },
-        "Database_Forms_Password": {
+        "DatabaseFormsPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Experience Forms connection string in Sitecore."
         },
-        "Database_Master_Password": {
+        "DatabaseMasterPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Master connection string in Sitecore."
         },
-        "Database_Web_Password": {
+        "DatabaseWebPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Web connection string in Sitecore."
         },
-        "Database_ProcessingTasks_Password": {
+        "DatabaseProcessingTasksPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Tasks connection string in Sitecore."
         },
-        "Sitecore_EXMCryptographicKey": {
+        "SitecoreEXMCryptographicKey": {
             "Type": "string",
             "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
             "Description": "64 digits hexadecimal EXM Cryptographic Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
         },
-        "Sitecore_EXMAuthenticationKey": {
+        "SitecoreEXMAuthenticationKey": {
             "Type": "string",
             "DefaultValue": "0x0123456789012345678901234567890123456789012345678901234678901234",
             "Description": "64 digits hexadecimal EXM Authentication Key. Takes the form 0x0000000000000000000000000000000000000000000000000000000000000000"
         },
-        "Solr_Url": {
+        "SolrUrl": {
             "Type": "String",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance to use."
         },
-        "Solr_Folder": {
+        "SolrFolder": {
             "Type": "String",
             "DefaultValue": "C:\\solr-8.4.0",
             "Description": "The file path to the Solr instance."
         },
-        "Solr_Service": {
+        "SolrService": {
             "Type": "String",
             "DefaultValue": "Solr-8.4.0",
             "Description": "The name of the Solr service."
         },
-        "XConnectCollection_Endpoint": {
+        "XConnectCollectionEndpoint": {
             "Type": "String",
             "DefaultValue": "https://localhost",
             "Description": "The url for the XConnect Collection Service."
         },
-        "XConnectCollectionSearch_Endpoint": {
+        "XConnectCollectionSearchEndpoint": {
             "Type": "String",
             "DefaultValue": "https://localhost",
             "Description": "The url for the XConnect Collection Search Service."
         },
-        "ReferenceData_Endpoint": {
+        "ReferenceDataEndpoint": {
             "Type": "String",
             "DefaultValue": "https://localhost",
             "Description": "The URL of the XConnect Reference Data service."
         },
-        "MarketingAutomationOperations_Endpoint": {
+        "MarketingAutomationOperationsEndpoint": {
             "Type": "String",
             "DefaultValue": "https://localhost",
             "Description": "The URL of the Marketing Automation Operations service."
         },
-        "MarketingAutomationReporting_Endpoint": {
+        "MarketingAutomationReportingEndpoint": {
             "Type": "String",
             "DefaultValue": "https://localhost",
             "Description": "The URL of the Marketing Automation Operations service."
         },
-        "IdentityServer_AllowedCorsOrigins": {
+        "IdentityServerAllowedCorsOrigins": {
             "Type": "string",
             "Description": "Pipe-separated list of instances (URIs) that are allowed to login via Sitecore Identity.",
             "DefaultValue": ""
         },
-        "IdentityServer_ClientSecret": {
+        "IdentityServerClientSecret": {
             "Type": "string",
             "Description": "Client secret of PasswordClient section. It's a random string between 1 and 100 symbols long.",
             "DefaultValue": "IdentityServerClientSecret"
         },
-        "Sitecore_IdentityAuthority": {
+        "SitecoreIdentityAuthority": {
             "Type": "string",
             "DefaultValue": "https://SitecoreIdentityServerHost",
             "Description": "IdentityServer provider URI."
         },
-        "Packages_TempLocation": {
+        "PackagesTempLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": ""
         },
-        "Packages_DownloadLocations": {
+        "PackagesDownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         },
-        "ContentDelivery_DisableHttps": {
+        "ContentDeliveryDisableHttps": {
             "Type": "bool",
             "Description": "The option for the enable/disable HTTPS to the Sitecore Content Delivery.",
             "DefaultValue": false
@@ -340,1045 +340,1043 @@
             "Description": "The parameter for the installing delta WDP packages.",
             "DefaultValue": false
         },
-        "ContentDelivery_App:DisableHttps": {
+        "ContentDeliveryApp:DisableHttps": {
             "Type": "bool",
-            "Reference": "ContentDelivery_DisableHttps",
-            "Description": "Override to pass DisableHttpsForCD value to ContentDelivery_App config."
+            "Reference": "ContentDeliveryDisableHttps",
+            "Description": "Override to pass DisableHttpsForCD value to ContentDeliveryApp config."
         },
-        "XConnect_Certificate:certificate_Name": {
+        "XConnectCertificate:CertificateName": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
+            "Reference": "XConnectCertificateName",
             "Description": "Override to pass CertificateName value to Certificates config."
         },
-        "XConnect_Certificate:Update": {
+        "XConnectCertificate:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to Certificates config."
         },
-        "XConnectCollection_App:app_Certificate": {
+        "XConnectCollectionApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to XConnectCollection_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:app_Certificate": {
+        "XConnectCollectionSearchApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to XConnectCollectionSearch_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to XConnectCollectionSearchApp config."
         },
-        "MarketingAutomationOperations_App:app_Certificate": {
+        "MarketingAutomationOperationsApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to MarketingAutomationOperations_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:app_Certificate": {
+        "MarketingAutomationReportingApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to MarketingAutomationReporting_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to MarketingAutomationReportingApp config."
         },
-        "CortexProcessing_App:app_Certificate": {
+        "CortexProcessingApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to CortexProcessing_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to CortexProcessingApp config."
         },
-        "CortexReporting_App:app_Certificate": {
+        "CortexReportingApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to CortexReporting_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to CortexReportingApp config."
         },
-        "ReferenceData_App:app_Certificate": {
+        "ReferenceDataApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to ReferenceData_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:app_Certificate": {
+        "ContentDeliveryApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to ContentDelivery_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:app_Certificate": {
+        "ContentManagementApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to ContentManagement_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to ContentManagementApp config."
         },
-        "Processing_App:app_Certificate": {
+        "ProcessingApp:AppCertificate": {
             "Type": "String",
-            "Reference": "XConnect_CertificateName",
-            "Description": "Override to pass CertificateName value to Processing_App config."
+            "Reference": "XConnectCertificateName",
+            "Description": "Override to pass CertificateName value to ProcessingApp config."
         },
-        "XConnectCollection_App:app_Package": {
+        "XConnectCollectionApp:AppPackage": {
             "Type": "String",
-            "Reference": "XConnectCollection_AppPackage",
-            "Description": "Override to pass XConnectCollection_AppPackage value to XConnectCollection_App config."
+            "Reference": "XConnectCollectionAppPackage",
+            "Description": "Override to pass XConnectCollectionAppPackage value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:app_Package": {
+        "XConnectCollectionSearchApp:AppPackage": {
             "Type": "String",
-            "Reference": "XConnectCollectionSearch_AppPackage",
-            "Description": "Override to pass XConnectCollectionSearch_AppPackage value to XConnectCollectionSearch_App config."
+            "Reference": "XConnectCollectionSearchAppPackage",
+            "Description": "Override to pass XConnectCollectionSearchAppPackage value to XConnectCollectionSearchApp config."
         },
-        "MarketingAutomationOperations_App:app_Package": {
+        "MarketingAutomationOperationsApp:AppPackage": {
             "Type": "String",
-            "Reference": "MarketingAutomationOperations_AppPackage",
-            "Description": "Override to pass MarketingAutomationOperations_AppPackage value to MarketingAutomationOperations_App config."
+            "Reference": "MarketingAutomationOperationsAppPackage",
+            "Description": "Override to pass MarketingAutomationOperationsAppPackage value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:app_Package": {
+        "MarketingAutomationReportingApp:AppPackage": {
             "Type": "String",
-            "Reference": "MarketingAutomationReporting_AppPackage",
-            "Description": "Override to pass MarketingAutomationReporting_AppPackage value to MarketingAutomationReporting_App config."
+            "Reference": "MarketingAutomationReportingAppPackage",
+            "Description": "Override to pass MarketingAutomationReportingAppPackage value to MarketingAutomationReportingApp config."
         },
-        "CortexProcessing_App:app_Package": {
+        "CortexProcessingApp:AppPackage": {
             "Type": "String",
-            "Reference": "CortexProcessing_AppPackage",
-            "Description": "Override to pass CortexProcessing_AppPackage value to CortexProcessing_App config."
+            "Reference": "CortexProcessingAppPackage",
+            "Description": "Override to pass CortexProcessingAppPackage value to CortexProcessingApp config."
         },
-        "CortexReporting_App:app_Package": {
+        "CortexReportingApp:AppPackage": {
             "Type": "String",
-            "Reference": "CortexReporting_AppPackage",
-            "Description": "Override to pass CortexReporting_AppPackage value to ReferenceData_App config."
+            "Reference": "CortexReportingAppPackage",
+            "Description": "Override to pass CortexReportingAppPackage value to ReferenceDataApp config."
         },
-        "ReferenceData_App:app_Package": {
+        "ReferenceDataApp:AppPackage": {
             "Type": "String",
-            "Reference": "ReferenceData_AppPackage",
-            "Description": "Override to pass ReferenceData_AppPackage value to ReferenceData_App config."
+            "Reference": "ReferenceDataAppPackage",
+            "Description": "Override to pass ReferenceDataAppPackage value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:app_Package": {
+        "ContentDeliveryApp:AppPackage": {
             "Type": "String",
-            "Reference": "ContentDelivery_AppPackage",
-            "Description": "Override to pass ContentDelivery_AppPackage value to ContentDelivery_App config."
+            "Reference": "ContentDeliveryAppPackage",
+            "Description": "Override to pass ContentDeliveryAppPackage value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:app_Package": {
+        "ContentManagementApp:AppPackage": {
             "Type": "String",
-            "Reference": "ContentManagement_AppPackage",
-            "Description": "Override to pass ContentManagement_AppPackage value to ContentManagement_App config."
+            "Reference": "ContentManagementAppPackage",
+            "Description": "Override to pass ContentManagementAppPackage value to ContentManagementApp config."
         },
-        "Processing_App:app_Package": {
+        "ProcessingApp:AppPackage": {
             "Type": "String",
-            "Reference": "Processing_AppPackage",
-            "Description": "Override to pass Processing_AppPackage value to Processing_App config."
+            "Reference": "ProcessingAppPackage",
+            "Description": "Override to pass ProcessingAppPackage value to ProcessingApp config."
         },
-        "IdentityServer_App:app_Package": {
+        "IdentityServerApp:AppPackage": {
             "Type": "String",
-            "Reference": "IdentityServer_Package",
+            "Reference": "IdentityServerPackage",
             "Description": "Override to pass IdentityServerPackage value to IdentityServer config."
         },
-        "XConnectCollection_App:app_Name": {
+        "XConnectCollectionApp:AppName": {
             "Type": "String",
-            "Reference": "XConnectCollection_AppName",
-            "Description": "Override to pass XConnectCollection_AppName value to XConnectCollection_App config."
+            "Reference": "XConnectCollectionAppName",
+            "Description": "Override to pass XConnectCollectionAppName value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:app_Name": {
+        "XConnectCollectionSearchApp:AppName": {
             "Type": "String",
-            "Reference": "XConnectCollectionSearch_AppName",
-            "Description": "Override to pass XConnectCollectionSearch_AppName value to XConnectCollectionSearch_App config."
+            "Reference": "XConnectCollectionSearchAppName",
+            "Description": "Override to pass XConnectCollectionSearchAppName value to XConnectCollectionSearchApp config."
         },
-        "CortexProcessing_App:app_Name": {
+        "CortexProcessingApp:AppName": {
             "Type": "String",
-            "Reference": "CortexProcessing_AppName",
-            "Description": "Override to pass CortexProcessing_AppName value to CortexProcessing_App config."
+            "Reference": "CortexProcessingAppName",
+            "Description": "Override to pass CortexProcessingAppName value to CortexProcessingApp config."
         },
-        "CortexReporting_App:app_Name": {
+        "CortexReportingApp:AppName": {
             "Type": "String",
-            "Reference": "CortexReporting_AppName",
-            "Description": "Override to pass CortexReporting_AppName value to CortexReporting_App config."
+            "Reference": "CortexReportingAppName",
+            "Description": "Override to pass CortexReportingAppName value to CortexReportingApp config."
         },
-        "MarketingAutomationOperations_App:app_Name": {
+        "MarketingAutomationOperationsApp:AppName": {
             "Type": "String",
-            "Reference": "MarketingAutomationOperations_AppName",
-            "Description": "Override to pass MarketingAutomationOperations_AppName value to MarketingAutomationOperations_App config."
+            "Reference": "MarketingAutomationOperationsAppName",
+            "Description": "Override to pass MarketingAutomationOperationsAppName value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:app_Name": {
+        "MarketingAutomationReportingApp:AppName": {
             "Type": "String",
-            "Reference": "MarketingAutomationReporting_AppName",
-            "Description": "Override to pass MarketingAutomationReporting_AppName value to MarketingAutomationReporting_App config."
+            "Reference": "MarketingAutomationReportingAppName",
+            "Description": "Override to pass MarketingAutomationReportingAppName value to MarketingAutomationReportingApp config."
         },
-        "ReferenceData_App:app_Name": {
+        "ReferenceDataApp:AppName": {
             "Type": "String",
-            "Reference": "ReferenceData_AppName",
-            "Description": "Override to pass ReferenceData_AppName value to ReferenceData_App config."
+            "Reference": "ReferenceDataAppName",
+            "Description": "Override to pass ReferenceDataAppName value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:app_Name": {
+        "ContentDeliveryApp:AppName": {
             "Type": "String",
-            "Reference": "ContentDelivery_AppName",
-            "Description": "Override to pass ContentDelivery_AppName value to ContentDelivery_App config."
+            "Reference": "ContentDeliveryAppName",
+            "Description": "Override to pass ContentDeliveryAppName value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:app_Name": {
+        "ContentManagementApp:AppName": {
             "Type": "String",
-            "Reference": "ContentManagement_AppName",
-            "Description": "Override to pass ContentManagement_AppName value to ContentManagement_App config."
+            "Reference": "ContentManagementAppName",
+            "Description": "Override to pass ContentManagementAppName value to ContentManagementApp config."
         },
-        "Processing_App:app_Name": {
+        "ProcessingApp:AppName": {
             "Type": "String",
-            "Reference": "Processing_AppName",
-            "Description": "Override to pass Processing_AppName value to Processing_App config."
+            "Reference": "ProcessingAppName",
+            "Description": "Override to pass ProcessingAppName value to ProcessingApp config."
         },
-        "IdentityServer_App:app_Name": {
+        "IdentityServerApp:AppName": {
             "Type": "String",
-            "Reference": "IdentityServer_AppName",
-            "Description": "Override to pass IdentityServer_AppName value to IdentityServer config."
+            "Reference": "IdentityServerAppName",
+            "Description": "Override to pass IdentityServerAppName value to IdentityServer config."
         },
-        "IdentityServer_App:app_Folder": {
+        "IdentityServerApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
+            "Reference": "AppsRootFolder",
             "Description": "Override to pass SiteRoot value to IdentityServer config."
         },
-        "XConnectCollection_App:app_Folder": {
+        "XConnectCollectionApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to XConnectCollection_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:app_Folder": {
+        "XConnectCollectionSearchApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to XConnectCollectionSearch_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to XConnectCollectionSearchApp config."
         },
-        "ReferenceData_App:app_Folder": {
+        "ReferenceDataApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to ReferenceData_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to ReferenceDataApp config."
         },
-        "MarketingAutomationOperations_App:app_Folder": {
+        "MarketingAutomationOperationsApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to MarketingAutomationOperations_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:app_Folder": {
+        "MarketingAutomationReportingApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to MarketingAutomationReporting_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to MarketingAutomationReportingApp config."
         },
-        "CortexProcessing_App:app_Folder": {
+        "CortexProcessingApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to CortexProcessing_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to CortexProcessingApp config."
         },
-        "CortexReporting_App:app_Folder": {
+        "CortexReportingApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to CortexReporting_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to CortexReportingApp config."
         },
-        "ContentManagement_App:app_Folder": {
+        "ContentManagementApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to ContentManagement_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to ContentManagementApp config."
         },
-        "ContentDelivery_App:app_Folder": {
+        "ContentDeliveryApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to ContentDelivery_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to ContentDeliveryApp config."
         },
-        "Processing_App:app_Folder": {
+        "ProcessingApp:AppsRootFolder": {
             "Type": "String",
-            "Reference": "Apps_RootFolder",
-            "Description": "Override to pass SiteRoot value to Processing_App config."
+            "Reference": "AppsRootFolder",
+            "Description": "Override to pass SiteRoot value to ProcessingApp config."
         },
-        "ContentManagement_App:endpoint_Processing_Url": {
+        "ContentManagementApp:EndpointProcessing": {
             "Type": "String",
-            "Reference": "Processing_Endpoint",
-            "Description": "Override to pass ProcessingService value to ContentManagement_App config."
+            "Reference": "ProcessingEndpoint",
+            "Description": "Override to pass ProcessingService value to ContentManagementApp config."
         },
-        "ContentManagement_App:endpoint_CortexReporting_Url": {
+        "ContentManagementApp:EndpointCortexReporting": {
             "Type": "String",
-            "Reference": "CortexReporting_Endpoint",
-            "Description": "Override to pass CortexReportingService value to ContentManagement_App config."
+            "Reference": "CortexReportingEndpoint",
+            "Description": "Override to pass CortexReportingService value to ContentManagementApp config."
         },
-        "CortexProcessing_App:endpoint_XConnectSearch_Url": {
+        "CortexProcessingApp:EndpointXConnectSearch": {
             "Type": "String",
-            "Reference": "XConnectCollectionSearch_Endpoint",
-            "Description": "Override to pass XConnectCollectionSearchService value to CortexProcessing_App config."
+            "Reference": "XConnectCollectionSearchEndpoint",
+            "Description": "Override to pass XConnectCollectionSearchService value to CortexProcessingApp config."
         },
-        "ContentManagement_App:endpoint_XConnectCollectionSearch_Url": {
+        "ContentManagementApp:EndpointXConnectCollectionSearch": {
             "Type": "String",
-            "Reference": "XConnectCollectionSearch_Endpoint",
-            "Description": "Override to pass XConnectCollectionSearchService value to ContentManagement_App config."
+            "Reference": "XConnectCollectionSearchEndpoint",
+            "Description": "Override to pass XConnectCollectionSearchService value to ContentManagementApp config."
         },
-        "ContentManagement_App:endpoint_XConnectCollection_Url": {
+        "ContentManagementApp:EndpointXConnectCollection": {
             "Type": "String",
-            "Reference": "XConnectCollection_Endpoint",
-            "Description": "Override to pass XConnectCollectionService value to ContentManagement_App config."
+            "Reference": "XConnectCollectionEndpoint",
+            "Description": "Override to pass XConnectCollectionService value to ContentManagementApp config."
         },
-        "IdentityServer_App:identityserver_PasswordRecoveryUrl": {
+        "IdentityServerApp:IdentityServerPasswordRecoveryUrl": {
             "Type": "String",
-            "Reference": "IdentityServer_PasswordRecoveryUrl",
+            "Reference": "IdentityServerPasswordRecoveryUrl",
             "Description": "Override to pass PasswordRecoveryUrl value to IdentityServer config."
         },
-        "IdentityServer_App:identityserver_ClientsConfiguration": {
+        "IdentityServerApp:IdentityServerClientsConfiguration": {
             "Type": "String",
-            "Reference": "IdentityServer_ClientsConfiguration",
+            "Reference": "IdentityServerClientsConfiguration",
             "Description": "Override to pass ClientsConfiguration value to IdentityServer config."
         },
-        "XConnect_Solr:solr_Url": {
+        "XConnectSolr:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrUrl value to XConnect_Solr config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to XConnectSolr config."
         },
-        "XConnectCollectionSearch_App:solr_Url": {
+        "XConnectCollectionSearchApp:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrUrl value to XConnectCollectionSearch_App config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to XConnectCollectionSearchApp config."
         },
-        "Sitecore_Solr:solr_Url": {
+        "SitecoreSolr:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrUrl value to Sitecore_Solr config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to SitecoreSolr config."
         },
-        "ContentDelivery_App:solr_Url": {
+        "ContentDeliveryApp:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrUrl value to ContentDelivery_App config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:solr_Url": {
+        "ContentManagementApp:SolrUrl": {
             "Type": "String",
-            "Reference": "Solr_Url",
-            "Description": "Override to pass SolrUrl value to ContentManagement_App config."
+            "Reference": "SolrUrl",
+            "Description": "Override to pass SolrUrl value to ContentManagementApp config."
         },
-        "XConnect_Solr:solr_Path": {
+        "XConnectSolr:SolrFolder": {
             "Type": "String",
-            "Reference": "Solr_Folder",
-            "Description": "Override to pass SolrRoot value to XConnect_Solr config."
+            "Reference": "SolrFolder",
+            "Description": "Override to pass SolrRoot value to XConnectSolr config."
         },
-        "Sitecore_Solr:solr_Path": {
+        "SitecoreSolr:SolrFolder": {
             "Type": "String",
-            "Reference": "Solr_Folder",
-            "Description": "Override to pass SolrRoot value to Sitecore_Solr config."
+            "Reference": "SolrFolder",
+            "Description": "Override to pass SolrRoot value to SitecoreSolr config."
         },
-        "XConnect_Solr:solr_Service": {
+        "XConnectSolr:SolrService": {
             "Type": "String",
-            "Reference": "Solr_Service",
-            "Description": "Override to pass SolrService value to XConnect_Solr config."
+            "Reference": "SolrService",
+            "Description": "Override to pass SolrService value to XConnectSolr config."
         },
-        "Sitecore_Solr:solr_Service": {
+        "SitecoreSolr:SolrService": {
             "Type": "String",
-            "Reference": "Solr_Service",
-            "Description": "Override to pass SolrService value to Sitecore_Solr config."
+            "Reference": "SolrService",
+            "Description": "Override to pass SolrService value to SitecoreSolr config."
         },
-        "Sitecore_Solr:solr_CorePrefix": {
+        "SitecoreSolr:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to Sitecore_Solr config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to SitecoreSolr config."
         },
-        "ContentDelivery_App:solr_CorePrefix": {
+        "ContentDeliveryApp:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to ContentDelivery_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:solr_CorePrefix": {
+        "ContentManagementApp:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to ContentManagement_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to ContentManagementApp config."
         },
-        "XConnect_Solr:solr_CorePrefix": {
+        "XConnectSolr:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnect_Solr config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectSolr config."
         },
-        "XConnectCollectionSearch_App:solr_CorePrefix": {
+        "XConnectCollectionSearchApp:SolrCorePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnectCollectionSearch_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectCollectionSearchApp config."
         },
-        "CortexProcessing_App:sqlserver_DatabasePrefix": {
+        "CortexProcessingApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to CortexProcessing_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to CortexProcessingApp config."
         },
-        "CortexReporting_App:sqlserver_DatabasePrefix": {
+        "CortexReportingApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to CortexReporting_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to CortexReportingApp config."
         },
-        "XConnectCollection_App:sqlserver_DatabasePrefix": {
+        "XConnectCollectionApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnectCollection_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:sqlserver_DatabasePrefix": {
+        "XConnectCollectionSearchApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to XConnectCollectionSearch_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to XConnectCollectionSearchApp config."
         },
-        "MarketingAutomationOperations_App:sqlserver_DatabasePrefix": {
+        "MarketingAutomationOperationsApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to MarketingAutomationOperations_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:sqlserver_DatabasePrefix": {
+        "MarketingAutomationReportingApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to MarketingAutomationReporting_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to MarketingAutomationReportingApp config."
         },
-        "ReferenceData_App:sqlserver_DatabasePrefix": {
+        "ReferenceDataApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to ReferenceData_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:sqlserver_DatabasePrefix": {
+        "ContentDeliveryApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to ContentDelivery_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:sqlserver_DatabasePrefix": {
+        "ContentManagementApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to ContentManagement_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to ContentManagementApp config."
         },
-        "Processing_App:sqlserver_DatabasePrefix": {
+        "ProcessingApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
-            "Description": "Override to pass Prefix value to Processing_App config."
+            "Reference": "AppsPrefix",
+            "Description": "Override to pass Prefix value to ProcessingApp config."
         },
-        "IdentityServer_App:sqlserver_DatabasePrefix": {
+        "IdentityServerApp:SqlServerDatabasePrefix": {
             "Type": "String",
-            "Reference": "Apps_Prefix",
+            "Reference": "AppsPrefix",
             "Description": "Override to pass Prefix value to IdentityServer config."
         },
-        "XConnectCollection_App:sqlserver_Instance": {
+        "XConnectCollectionApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to XConnectCollection_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:sqlserver_Instance": {
+        "XConnectCollectionSearchApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to XConnectCollectionSearch_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to XConnectCollectionSearchApp config."
         },
-        "MarketingAutomationOperations_App:sqlserver_Instance": {
+        "MarketingAutomationOperationsApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to MarketingAutomationOperations_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:sqlserver_Instance": {
+        "MarketingAutomationReportingApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to MarketingAutomationReporting_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to MarketingAutomationReportingApp config."
         },
-        "CortexProcessing_App:sqlserver_Instance": {
+        "CortexProcessingApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to CortexProcessing_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to CortexProcessingApp config."
         },
-        "CortexReporting_App:sqlserver_Instance": {
+        "CortexReportingApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to CortexReporting_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to CortexReportingApp config."
         },
-        "ReferenceData_App:sqlserver_Instance": {
+        "ReferenceDataApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to ReferenceData_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:sqlserver_Instance": {
+        "ContentDeliveryApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to ContentDelivery_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:sqlserver_Instance": {
+        "ContentManagementApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to ContentManagement_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to ContentManagementApp config."
         },
-        "Processing_App:sqlserver_Instance": {
+        "ProcessingApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
-            "Description": "Override to pass SqlServer value to Processing_App config."
+            "Reference": "SqlServerInstance",
+            "Description": "Override to pass SqlServer value to ProcessingApp config."
         },
-        "IdentityServer_App:sqlserver_Instance": {
+        "IdentityServerApp:SqlServerInstance": {
             "Type": "String",
-            "Reference": "SqlServer_Instance",
+            "Reference": "SqlServerInstance",
             "Description": "Override to pass SqlServer value to IdentityServer config."
         },
-        "XConnectCollection_App:sqlserver_AdminUser": {
+        "XConnectCollectionApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to XConnectCollection_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to XConnectCollectionApp config."
         },
-        "CortexProcessing_App:sqlserver_AdminUser": {
+        "CortexProcessingApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to CortexProcessing_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to CortexProcessingApp config."
         },
-        "CortexReporting_App:sqlserver_AdminUser": {
+        "CortexReportingApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to CortexReporting_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to CortexReportingApp config."
         },
-        "MarketingAutomationOperations_App:sqlserver_AdminUser": {
+        "MarketingAutomationOperationsApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to MarketingAutomationOperations_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to MarketingAutomationOperationsApp config."
         },
-        "ReferenceData_App:sqlserver_AdminUser": {
+        "ReferenceDataApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to ReferenceData_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to ReferenceDataApp config."
         },
-        "ContentManagement_App:sqlserver_AdminUser": {
+        "ContentManagementApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to ContentManagement_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to ContentManagementApp config."
         },
-        "Processing_App:sqlserver_AdminUser": {
+        "ProcessingApp:SqlServerAdminUser": {
             "Type": "String",
-            "Reference": "SqlServer_AdminUser",
-            "Description": "Override to pass SqlServer_AdminUser value to Processing_App config."
+            "Reference": "SqlServerAdminUser",
+            "Description": "Override to pass SqlServerAdminUser value to ProcessingApp config."
         },
-        "XConnectCollection_App:sqlserver_AdminPassword": {
+        "XConnectCollectionApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to XConnectCollection_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to XConnectCollectionApp config."
         },
-        "MarketingAutomationOperations_App:sqlserver_AdminPassword": {
+        "MarketingAutomationOperationsApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to MarketingAutomationOperations_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to MarketingAutomationOperationsApp config."
         },
-        "ReferenceData_App:sqlserver_AdminPassword": {
+        "ReferenceDataApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to ReferenceData_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to ReferenceDataApp config."
         },
-        "CortexProcessing_App:sqlserver_AdminPassword": {
+        "CortexProcessingApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to CortexProcessing_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to CortexProcessingApp config."
         },
-        "CortexReporting_App:sqlserver_AdminPassword": {
+        "CortexReportingApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to CortexReporting_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to CortexReportingApp config."
         },
-        "ContentManagement_App:sqlserver_AdminPassword": {
+        "ContentManagementApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to ContentManagement_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to ContentManagementApp config."
         },
-        "Processing_App:sqlserver_AdminPassword": {
+        "ProcessingApp:SqlServerAdminPassword": {
             "Type": "String",
-            "Reference": "SqlServer_AdminPassword",
-            "Description": "Override to pass SqlServer_AdminPassword value to Processing_App config."
+            "Reference": "SqlServerAdminPassword",
+            "Description": "Override to pass SqlServerAdminPassword value to ProcessingApp config."
         },
-        "XConnectCollection_App:app_License": {
+        "XConnectCollectionApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to XConnectCollection_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:app_License": {
+        "XConnectCollectionSearchApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to XConnectCollectionSearch_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to XConnectCollectionSearchApp config."
         },
-        "MarketingAutomationOperations_App:app_License": {
+        "MarketingAutomationOperationsApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to MarketingAutomationOperations_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:app_License": {
+        "MarketingAutomationReportingApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to MarketingAutomationReporting_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to MarketingAutomationReportingApp config."
         },
-        "ReferenceData_App:app_License": {
+        "ReferenceDataApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to ReferenceData_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to ReferenceDataApp config."
         },
-        "CortexProcessing_App:app_License": {
+        "CortexProcessingApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to CortexProcessing_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to CortexProcessingApp config."
         },
-        "CortexReporting_App:app_License": {
+        "CortexReportingApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to CortexReporting_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to CortexReportingApp config."
         },
-        "ContentDelivery_App:app_License": {
+        "ContentDeliveryApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to ContentDelivery_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:app_License": {
+        "ContentManagementApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to ContentManagement_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to ContentManagementApp config."
         },
-        "Processing_App:app_License": {
+        "ProcessingApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
-            "Description": "Override to pass LicenseFile value to Processing_App config."
+            "Reference": "AppsLicenseFile",
+            "Description": "Override to pass LicenseFile value to ProcessingApp config."
         },
-        "IdentityServer_Certificate:certificate_Name": {
+        "IdentityServerCertificate:CertificateName": {
             "Type": "String",
-            "Reference": "IdentityServer_AppName",
-            "Description": "Override to pass IdentityServer_AppName value to IdentityServer_Certificate config."
+            "Reference": "IdentityServerAppName",
+            "Description": "Override to pass IdentityServerAppName value to IdentityServerCertificate config."
         },
-        "IdentityServer_Certificate:Update": {
+        "IdentityServerCertificate:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to Certificates config."
         },
-        "IdentityServer_App:app_Certificate": {
+        "IdentityServerApp:AppCertificate": {
             "Type": "String",
-            "Reference": "IdentityServer_AppName",
-            "Description": "Override to pass IdentityServer_AppName value to IdentityServer config."
+            "Reference": "IdentityServerAppName",
+            "Description": "Override to pass IdentityServerAppName value to IdentityServer config."
         },
-        "IdentityServer_App:app_License": {
+        "IdentityServerApp:AppsLicenseFile": {
             "Type": "String",
-            "Reference": "Apps_LicenseFile",
+            "Reference": "AppsLicenseFile",
             "Description": "Override to pass LicenseFile value to IdentityServer config."
         },
-        "MarketingAutomationOperations_App:endpoint_XConnectCollectionSearch_Url": {
+        "MarketingAutomationOperationsApp:EndpointXConnectCollectionSearch": {
             "Type": "String",
-            "Reference": "XConnectCollectionSearch_Endpoint",
-            "Description": "Override to pass XConnectCollectionSearchService value to MarketingAutomationOperations_App config."
+            "Reference": "XConnectCollectionSearchEndpoint",
+            "Description": "Override to pass XConnectCollectionSearchService value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationOperations_App:endpoint_XConnectCollection_Url": {
+        "MarketingAutomationOperationsApp:EndpointXConnectCollection": {
             "Type": "String",
-            "Reference": "XConnectCollection_Endpoint",
-            "Description": "Override to pass XConnectCollectionService value to MarketingAutomationOperations_App config."
+            "Reference": "XConnectCollectionEndpoint",
+            "Description": "Override to pass XConnectCollectionService value to MarketingAutomationOperationsApp config."
         },
-        "CortexProcessing_App:endpoint_XConnectCollection_Url": {
+        "CortexProcessingApp:EndpointXConnectCollection": {
             "Type": "String",
-            "Reference": "XConnectCollection_Endpoint",
-            "Description": "Override to pass XConnectCollectionService value to CortexProcessing_App config."
+            "Reference": "XConnectCollectionEndpoint",
+            "Description": "Override to pass XConnectCollectionService value to CortexProcessingApp config."
         },
-        "ContentDelivery_App:endpoint_XConnectCollection_Url": {
+        "ContentDeliveryApp:EndpointXConnectCollection": {
             "Type": "String",
-            "Reference": "XConnectCollection_Endpoint",
-            "Description": "Override to pass XConnectCollectionService value to ContentDelivery_App config."
+            "Reference": "XConnectCollectionEndpoint",
+            "Description": "Override to pass XConnectCollectionService value to ContentDeliveryApp config."
         },
-        "Processing_App:endpoint_XConnectCollection_Url": {
+        "ProcessingApp:EndpointXConnectCollection": {
             "Type": "String",
-            "Reference": "XConnectCollection_Endpoint",
-            "Description": "Override to pass XConnectCollectionService value to Processing_App config."
+            "Reference": "XConnectCollectionEndpoint",
+            "Description": "Override to pass XConnectCollectionService value to ProcessingApp config."
         },
-        "MarketingAutomationOperations_App:endpoint_ReferenceData_Url": {
+        "MarketingAutomationOperationsApp:EndpointReferenceData": {
             "Type": "String",
-            "Reference": "ReferenceData_Endpoint",
-            "Description": "Override to pass XConnectReferenceDataService value to MarketingAutomationOperations_App config."
+            "Reference": "ReferenceDataEndpoint",
+            "Description": "Override to pass XConnectReferenceDataService value to MarketingAutomationOperationsApp config."
         },
-        "ContentDelivery_App:endpoint_ReferenceData_Url": {
+        "ContentDeliveryApp:EndpointReferenceData": {
             "Type": "String",
-            "Reference": "ReferenceData_Endpoint",
-            "Description": "Override to pass XConnectReferenceDataService value to ContentDelivery_App config."
+            "Reference": "ReferenceDataEndpoint",
+            "Description": "Override to pass XConnectReferenceDataService value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:endpoint_ReferenceData_Url": {
+        "ContentManagementApp:EndpointReferenceData": {
             "Type": "String",
-            "Reference": "ReferenceData_Endpoint",
-            "Description": "Override to pass XConnectReferenceDataService value to ContentManagement_App config."
+            "Reference": "ReferenceDataEndpoint",
+            "Description": "Override to pass XConnectReferenceDataService value to ContentManagementApp config."
         },
-        "ContentDelivery_App:endpoint_MarketingAutomationOperations_Url": {
+        "ContentDeliveryApp:EndpointMarketingAutomationOperations": {
             "Type": "String",
-            "Reference": "MarketingAutomationOperations_Endpoint",
-            "Description": "Override to pass MarketingAutomationOperationsService value to ContentDelivery_App config."
+            "Reference": "MarketingAutomationOperationsEndpoint",
+            "Description": "Override to pass MarketingAutomationOperationsService value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:endpoint_MarketingAutomationOperations_Url": {
+        "ContentManagementApp:EndpointMarketingAutomationOperations": {
             "Type": "String",
-            "Reference": "MarketingAutomationOperations_Endpoint",
-            "Description": "Override to pass MarketingAutomationOperationsService value to ContentManagement_App config."
+            "Reference": "MarketingAutomationOperationsEndpoint",
+            "Description": "Override to pass MarketingAutomationOperationsService value to ContentManagementApp config."
         },
-        "ContentDelivery_App:endpoint_MarketingAutomationReporting_Url": {
+        "ContentDeliveryApp:EndpointMarketingAutomationReporting": {
             "Type": "String",
-            "Reference": "MarketingAutomationReporting_Endpoint",
-            "Description": "Override to pass MarketingAutomationReportingService value to ContentDelivery_App config."
+            "Reference": "MarketingAutomationReportingEndpoint",
+            "Description": "Override to pass MarketingAutomationReportingService value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:endpoint_MarketingAutomationReporting_Url": {
+        "ContentManagementApp:EndpointMarketingAutomationReporting": {
             "Type": "String",
-            "Reference": "MarketingAutomationReporting_Endpoint",
-            "Description": "Override to pass MarketingAutomationReportingService value to ContentManagement_App config."
+            "Reference": "MarketingAutomationReportingEndpoint",
+            "Description": "Override to pass MarketingAutomationReportingService value to ContentManagementApp config."
         },
-        "ContentManagement_App:sitecore_IdentityAuthority": {
+        "ContentManagementApp:SitecoreIdentityAuthority": {
             "Type": "String",
-            "Reference": "Sitecore_IdentityAuthority",
-            "Description": "Override to pass SitecoreIdentityAuthority value to ContentManagement_App config."
+            "Reference": "SitecoreIdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to ContentManagementApp config."
         },
-        "ContentDelivery_App:sitecore_IdentityAuthority": {
+        "ContentDeliveryApp:SitecoreIdentityAuthority": {
             "Type": "String",
-            "Reference": "Sitecore_IdentityAuthority",
-            "Description": "Override to pass SitecoreIdentityAuthority value to ContentDelivery_App config."
+            "Reference": "SitecoreIdentityAuthority",
+            "Description": "Override to pass SitecoreIdentityAuthority value to ContentDeliveryApp config."
         },
-        "IdentityServer_App:identityserver_AllowedCorsOrigins": {
+        "IdentityServerApp:IdentityServerAllowedCorsOrigins": {
             "Type": "String",
-            "Reference": "IdentityServer_AllowedCorsOrigins",
+            "Reference": "IdentityServerAllowedCorsOrigins",
             "Description": "Override to pass AllowedCorsOrigins value to IdentityServer config."
         },
-        "ContentManagement_App:sitecore_AdminPassword": {
+        "ContentManagementApp:SitecoreAdminPassword": {
             "Type": "String",
-            "Reference": "Sitecore_AdminPassword",
-            "Description": "Override to pass SitecoreAdminPassword value to ContentManagement_App config."
+            "Reference": "SitecoreAdminPassword",
+            "Description": "Override to pass SitecoreAdminPassword value to ContentManagementApp config."
         },
-        "IdentityServer_App:packages_TemporaryLocation": {
+        "IdentityServerApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
+            "Reference": "PackagesTempLocation",
             "Description": "Override to pass PackagesTempLocation value to IdentityServer config."
         },
-        "XConnectCollection_App:packages_TemporaryLocation": {
+        "XConnectCollectionApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to XConnectCollection_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:packages_TemporaryLocation": {
+        "XConnectCollectionSearchApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to XConnectCollectionSearch_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to XConnectCollectionSearchApp config."
         },
-        "CortexProcessing_App:packages_TemporaryLocation": {
+        "CortexProcessingApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to CortexProcessing_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to CortexProcessingApp config."
         },
-        "CortexReporting_App:packages_TemporaryLocation": {
+        "CortexReportingApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to CortexReporting_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to CortexReportingApp config."
         },
-        "MarketingAutomationOperations_App:packages_TemporaryLocation": {
+        "MarketingAutomationOperationsApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to MarketingAutomationOperations_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:packages_TemporaryLocation": {
+        "MarketingAutomationReportingApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to MarketingAutomationReporting_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to MarketingAutomationReportingApp config."
         },
-        "ReferenceData_App:packages_TemporaryLocation": {
+        "ReferenceDataApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to ReferenceData_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:packages_TemporaryLocation": {
+        "ContentDeliveryApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to ContentDelivery_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:packages_TemporaryLocation": {
+        "ContentManagementApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to ContentManagement_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to ContentManagementApp config."
         },
-        "Processing_App:packages_TemporaryLocation": {
+        "ProcessingApp:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
-            "Description": "Override to pass PackagesTempLocation name value to Processing_App config."
+            "Reference": "PackagesTempLocation",
+            "Description": "Override to pass PackagesTempLocation name value to ProcessingApp config."
         },
-        "IdentityServer_App:packages_DownloadLocations": {
+        "IdentityServerApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
+            "Reference": "PackagesDownloadLocations",
             "Description": "Override to pass DownloadLocations value to IdentityServer config."
         },
-        "XConnectCollection_App:packages_DownloadLocations": {
+        "XConnectCollectionApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to XConnectCollection_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XConnectCollectionApp config."
         },
-        "XConnectCollectionSearch_App:packages_DownloadLocations": {
+        "XConnectCollectionSearchApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to XConnectCollectionSearch_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to XConnectCollectionSearchApp config."
         },
-        "CortexProcessing_App:packages_DownloadLocations": {
+        "CortexProcessingApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to CortexProcessing_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to CortexProcessingApp config."
         },
-        "CortexReporting_App:packages_DownloadLocations": {
+        "CortexReportingApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to CortexReporting_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to CortexReportingApp config."
         },
-        "MarketingAutomationOperations_App:packages_DownloadLocations": {
+        "MarketingAutomationOperationsApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to MarketingAutomationOperations_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to MarketingAutomationOperationsApp config."
         },
-        "MarketingAutomationReporting_App:packages_DownloadLocations": {
+        "MarketingAutomationReportingApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to MarketingAutomationReporting_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to MarketingAutomationReportingApp config."
         },
-        "ReferenceData_App:packages_DownloadLocations": {
+        "ReferenceDataApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to ReferenceData_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to ReferenceDataApp config."
         },
-        "ContentDelivery_App:packages_DownloadLocations": {
+        "ContentDeliveryApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to ContentDelivery_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:packages_DownloadLocations": {
+        "ContentManagementApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to ContentManagement_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to ContentManagementApp config."
         },
-        "Processing_App:packages_DownloadLocations": {
+        "ProcessingApp:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
-            "Description": "Override to pass DownloadLocations name value to Processing_App config."
+            "Reference": "PackagesDownloadLocations",
+            "Description": "Override to pass DownloadLocations name value to ProcessingApp config."
         },
-        "Processing_App:Update": {
+        "ProcessingApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to Processing_App config."
+            "Description": "Override to pass Update value to ProcessingApp config."
         },
-        "ContentDelivery_App:Update": {
+        "ContentDeliveryApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to ContentDelivery_App config."
+            "Description": "Override to pass Update value to ContentDeliveryApp config."
         },
-        "ContentManagement_App:Update": {
+        "ContentManagementApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to ContentManagement_App config."
+            "Description": "Override to pass Update value to ContentManagementApp config."
         },
-        "CortexReporting_App:Update": {
+        "CortexReportingApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to CortexReporting_App config."
+            "Description": "Override to pass Update value to CortexReportingApp config."
         },
-        "CortexProcessing_App:Update": {
+        "CortexProcessingApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to CortexProcessing_App config."
+            "Description": "Override to pass Update value to CortexProcessingApp config."
         },
-        "MarketingAutomationReporting_App:Update": {
+        "MarketingAutomationReportingApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to MarketingAutomationReporting_App config."
+            "Description": "Override to pass Update value to MarketingAutomationReportingApp config."
         },
-        "MarketingAutomationOperations_App:Update": {
+        "MarketingAutomationOperationsApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to MarketingAutomationOperations_App config."
+            "Description": "Override to pass Update value to MarketingAutomationOperationsApp config."
         },
-        "ReferenceData_App:Update": {
+        "ReferenceDataApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to ReferenceData_App config."
+            "Description": "Override to pass Update value to ReferenceDataApp config."
         },
-        "XConnectCollectionSearch_App:Update": {
+        "XConnectCollectionSearchApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to XConnectCollectionSearch_App config."
+            "Description": "Override to pass Update value to XConnectCollectionSearchApp config."
         },
-        "XConnectCollection_App:Update": {
+        "XConnectCollectionApp:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to XConnectCollection_App config."
+            "Description": "Override to pass Update value to XConnectCollectionApp config."
         },
-        "IdentityServer_App:Update": {
+        "IdentityServerApp:Update": {
             "Type": "bool",
             "Reference": "Update",
             "Description": "Override to pass Update value to IdentityServer config."
         },
-        "XConnect_Solr:Update": {
+        "XConnectSolr:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to XConnect_Solr config."
+            "Description": "Override to pass Update value to XConnectSolr config."
         },
-        "Sitecore_Solr:Update": {
+        "SitecoreSolr:Update": {
             "Type": "bool",
             "Reference": "Update",
-            "Description": "Override to pass Update value to Sitecore_Solr config."
+            "Description": "Override to pass Update value to SitecoreSolr config."
         }
     },
     "Variables": {
-        "Sql.Database.MarketingAutomation.Password": "[if(variable('Sql.Database.MarketingAutomation.Password.Test'),variable('Sql.Database.MarketingAutomation.Password.Generate'),parameter('Database_MarketingAutomation_Password'))]",
-        "Sql.Database.MarketingAutomation.Password.Test": "[equal(parameter('Database_MarketingAutomation_Password'),'SIF-Default')]",
+        "Sql.Database.MarketingAutomation.Password": "[if(variable('Sql.Database.MarketingAutomation.Password.Test'),variable('Sql.Database.MarketingAutomation.Password.Generate'),parameter('DatabaseMarketingAutomationPassword'))]",
+        "Sql.Database.MarketingAutomation.Password.Test": "[equal(parameter('DatabaseMarketingAutomationPassword'),'SIF-Default')]",
         "Sql.Database.MarketingAutomation.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnectCollection_App:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
-        "XConnectCollectionSearch_App:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
-        "MarketingAutomationOperations_App:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
-        "MarketingAutomationReporting_App:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "XConnectCollectionApp:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "XConnectCollectionSearchApp:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "MarketingAutomationOperationsApp:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
+        "MarketingAutomationReportingApp:Sql.Database.MarketingAutomation.Password": "[variable('Sql.Database.MarketingAutomation.Password')]",
 
-        "Sql.Database.Messaging.Password": "[if(variable('Sql.Database.Messaging.Password.Test'),variable('Sql.Database.Messaging.Password.Generate'),parameter('Database_Messaging_Password'))]",
-        "Sql.Database.Messaging.Password.Test": "[equal(parameter('Database_Messaging_Password'),'SIF-Default')]",
+        "Sql.Database.Messaging.Password": "[if(variable('Sql.Database.Messaging.Password.Test'),variable('Sql.Database.Messaging.Password.Generate'),parameter('DatabaseMessagingPassword'))]",
+        "Sql.Database.Messaging.Password.Test": "[equal(parameter('DatabaseMessagingPassword'),'SIF-Default')]",
         "Sql.Database.Messaging.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnectCollection_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
-        "CortexProcessing_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
-        "XConnectCollectionSearch_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
-        "MarketingAutomationOperations_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
-        "ContentManagement_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
-        "ContentDelivery_App:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "XConnectCollectionApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "CortexProcessingApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "XConnectCollectionSearchApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "MarketingAutomationOperationsApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "ContentManagementApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
+        "ContentDeliveryApp:Sql.Database.Messaging.Password": "[variable('Sql.Database.Messaging.Password')]",
 
-        "Sql.Database.ProcessingPools.Password": "[if(variable('Sql.Database.ProcessingPools.Password.Test'),variable('Sql.Database.ProcessingPools.Password.Generate'),parameter('Database_ProcessingPools_Password'))]",
-        "Sql.Database.ProcessingPools.Password.Test": "[equal(parameter('Database_ProcessingPools_Password'),'SIF-Default')]",
+        "Sql.Database.ProcessingPools.Password": "[if(variable('Sql.Database.ProcessingPools.Password.Test'),variable('Sql.Database.ProcessingPools.Password.Generate'),parameter('DatabaseProcessingPoolsPassword'))]",
+        "Sql.Database.ProcessingPools.Password.Test": "[equal(parameter('DatabaseProcessingPoolsPassword'),'SIF-Default')]",
         "Sql.Database.ProcessingPools.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnectCollection_App:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
-        "XConnectCollectionSearch_App:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
-        "Processing_App:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
-        "MarketingAutomationOperations_App:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "XConnectCollectionApp:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "XConnectCollectionSearchApp:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "ProcessingApp:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
+        "MarketingAutomationOperationsApp:Sql.Database.ProcessingPools.Password": "[variable('Sql.Database.ProcessingPools.Password')]",
 
-        "Sql.Database.Collection.Password": "[if(variable('Sql.Database.Collection.Password.Test'),variable('Sql.Database.Collection.Password.Generate'),parameter('Database_Collection_Password'))]",
-        "Sql.Database.Collection.Password.Test": "[equal(parameter('Database_Collection_Password'),'SIF-Default')]",
+        "Sql.Database.Collection.Password": "[if(variable('Sql.Database.Collection.Password.Test'),variable('Sql.Database.Collection.Password.Generate'),parameter('DatabaseCollectionPassword'))]",
+        "Sql.Database.Collection.Password.Test": "[equal(parameter('DatabaseCollectionPassword'),'SIF-Default')]",
         "Sql.Database.Collection.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "XConnectCollection_App:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
-        "XConnectCollectionSearch_App:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
-        "MarketingAutomationOperations_App:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+        "XConnectCollectionApp:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+        "XConnectCollectionSearchApp:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
+        "MarketingAutomationOperationsApp:Sql.Database.Collection.Password": "[variable('Sql.Database.Collection.Password')]",
 
-        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('Database_Core_Password'))]",
-        "Sql.Database.Core.Password.Test": "[equal(parameter('Database_Core_Password'),'SIF-Default')]",
+        "Sql.Database.Core.Password": "[if(variable('Sql.Database.Core.Password.Test'),variable('Sql.Database.Core.Password.Generate'),parameter('DatabaseCorePassword'))]",
+        "Sql.Database.Core.Password.Test": "[equal(parameter('DatabaseCorePassword'),'SIF-Default')]",
         "Sql.Database.Core.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ContentManagement_App:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
-        "Processing_App:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
+        "ContentManagementApp:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
+        "ProcessingApp:Sql.Database.Core.Password": "[variable('Sql.Database.Core.Password')]",
 
-        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('Database_Security_Password'))]",
-        "Sql.Database.Security.Password.Test": "[equal(parameter('Database_Security_Password'),'SIF-Default')]",
+        "Sql.Database.Security.Password": "[if(variable('Sql.Database.Security.Password.Test'),variable('Sql.Database.Security.Password.Generate'),parameter('DatabaseSecurityPassword'))]",
+        "Sql.Database.Security.Password.Test": "[equal(parameter('DatabaseSecurityPassword'),'SIF-Default')]",
         "Sql.Database.Security.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ContentManagement_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
-        "ContentDelivery_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
-        "IdentityServer_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
-        "Processing_App:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "ContentManagementApp:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "ContentDeliveryApp:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "IdentityServerApp:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
+        "ProcessingApp:Sql.Database.Security.Password": "[variable('Sql.Database.Security.Password')]",
 
-        "Sql.Database.ReferenceData.Password": "[if(variable('Sql.Database.ReferenceData.Password.Test'),variable('Sql.Database.ReferenceData.Password.Generate'),parameter('Database_ReferenceData_Password'))]",
-        "Sql.Database.ReferenceData.Password.Test": "[equal(parameter('Database_ReferenceData_Password'),'SIF-Default')]",
+        "Sql.Database.ReferenceData.Password": "[if(variable('Sql.Database.ReferenceData.Password.Test'),variable('Sql.Database.ReferenceData.Password.Generate'),parameter('DatabaseReferenceDataPassword'))]",
+        "Sql.Database.ReferenceData.Password.Test": "[equal(parameter('DatabaseReferenceDataPassword'),'SIF-Default')]",
         "Sql.Database.ReferenceData.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ReferenceData_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "MarketingAutomationOperations_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "MarketingAutomationReporting_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "XConnectCollection_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "XConnectCollectionSearch_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "ContentManagement_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
-        "Processing_App:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "ReferenceDataApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "MarketingAutomationOperationsApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "MarketingAutomationReportingApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XConnectCollectionApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "XConnectCollectionSearchApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "ContentManagementApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
+        "ProcessingApp:Sql.Database.ReferenceData.Password": "[variable('Sql.Database.ReferenceData.Password')]",
 
-        "Sql.Database.ProcessingEngine.Password": "[if(variable('Sql.Database.ProcessingEngine.Password.Test'),variable('Sql.Database.ProcessingEngine.Password.Generate'),parameter('Database_ProcessingEngine_Password'))]",
-        "Sql.Database.ProcessingEngine.Password.Test": "[equal(parameter('Database_ProcessingEngine_Password'),'SIF-Default')]",
+        "Sql.Database.ProcessingEngine.Password": "[if(variable('Sql.Database.ProcessingEngine.Password.Test'),variable('Sql.Database.ProcessingEngine.Password.Generate'),parameter('DatabaseProcessingEnginePassword'))]",
+        "Sql.Database.ProcessingEngine.Password.Test": "[equal(parameter('DatabaseProcessingEnginePassword'),'SIF-Default')]",
         "Sql.Database.ProcessingEngine.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "CortexProcessing_App:Sql.Database.ProcessingEngine.Password": "[variable('Sql.Database.ProcessingEngine.Password')]",
+        "CortexProcessingApp:Sql.Database.ProcessingEngine.Password": "[variable('Sql.Database.ProcessingEngine.Password')]",
 
-        "Sql.Database.Reporting.Password": "[if(variable('Sql.Database.Reporting.Password.Test'),variable('Sql.Database.Reporting.Password.Generate'),parameter('Database_Reporting_Password'))]",
-        "Sql.Database.Reporting.Password.Test": "[equal(parameter('Database_Reporting_Password'),'SIF-Default')]",
+        "Sql.Database.Reporting.Password": "[if(variable('Sql.Database.Reporting.Password.Test'),variable('Sql.Database.Reporting.Password.Generate'),parameter('DatabaseReportingPassword'))]",
+        "Sql.Database.Reporting.Password.Test": "[equal(parameter('DatabaseReportingPassword'),'SIF-Default')]",
         "Sql.Database.Reporting.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "CortexReporting_App:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
-        "CortexProcessing_App:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
-        "ContentManagement_App:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
-        "Processing_App:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "CortexReportingApp:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "CortexProcessingApp:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "ContentManagementApp:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
+        "ProcessingApp:Sql.Database.Reporting.Password": "[variable('Sql.Database.Reporting.Password')]",
 
-        "Sql.Database.EXMMaster.Password": "[if(variable('Sql.Database.EXMMaster.Password.Test'),variable('Sql.Database.EXMMaster.Password.Generate'),parameter('Database_ExmMaster_Password'))]",
-        "Sql.Database.EXMMaster.Password.Test": "[equal(parameter('Database_ExmMaster_Password'),'SIF-Default')]",
+        "Sql.Database.EXMMaster.Password": "[if(variable('Sql.Database.EXMMaster.Password.Test'),variable('Sql.Database.EXMMaster.Password.Generate'),parameter('DatabaseExmMasterPassword'))]",
+        "Sql.Database.EXMMaster.Password.Test": "[equal(parameter('DatabaseExmMasterPassword'),'SIF-Default')]",
         "Sql.Database.EXMMaster.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ContentManagement_App:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
-        "ContentDelivery_App:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
+        "ContentManagementApp:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
+        "ContentDeliveryApp:Sql.Database.EXMMaster.Password": "[variable('Sql.Database.EXMMaster.Password')]",
 
-        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('Database_Forms_Password'))]",
-        "Sql.Database.Forms.Password.Test": "[equal(parameter('Database_Forms_Password'),'SIF-Default')]",
+        "Sql.Database.Forms.Password": "[if(variable('Sql.Database.Forms.Password.Test'),variable('Sql.Database.Forms.Password.Generate'),parameter('DatabaseFormsPassword'))]",
+        "Sql.Database.Forms.Password.Test": "[equal(parameter('DatabaseFormsPassword'),'SIF-Default')]",
         "Sql.Database.Forms.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ContentManagement_App:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
-        "ContentDelivery_App:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+        "ContentManagementApp:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
+        "ContentDeliveryApp:Sql.Database.Forms.Password": "[variable('Sql.Database.Forms.Password')]",
 
-        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('Database_Master_Password'))]",
-        "Sql.Database.Master.Password.Test": "[equal(parameter('Database_Master_Password'),'SIF-Default')]",
+        "Sql.Database.Master.Password": "[if(variable('Sql.Database.Master.Password.Test'),variable('Sql.Database.Master.Password.Generate'),parameter('DatabaseMasterPassword'))]",
+        "Sql.Database.Master.Password.Test": "[equal(parameter('DatabaseMasterPassword'),'SIF-Default')]",
         "Sql.Database.Master.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ContentManagement_App:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
-        "Processing_App:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
+        "ContentManagementApp:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
+        "ProcessingApp:Sql.Database.Master.Password": "[variable('Sql.Database.Master.Password')]",
 
-        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('Database_Web_Password'))]",
-        "Sql.Database.Web.Password.Test": "[equal(parameter('Database_Web_Password'),'SIF-Default')]",
+        "Sql.Database.Web.Password": "[if(variable('Sql.Database.Web.Password.Test'),variable('Sql.Database.Web.Password.Generate'),parameter('DatabaseWebPassword'))]",
+        "Sql.Database.Web.Password.Test": "[equal(parameter('DatabaseWebPassword'),'SIF-Default')]",
         "Sql.Database.Web.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "ContentManagement_App:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
-        "ContentDelivery_App:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+        "ContentManagementApp:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
+        "ContentDeliveryApp:Sql.Database.Web.Password": "[variable('Sql.Database.Web.Password')]",
 
-        "Sql.Database.ProcessingTasks.Password": "[if(variable('Sql.Database.ProcessingTasks.Password.Test'),variable('Sql.Database.ProcessingTasks.Password.Generate'),parameter('Database_ProcessingTasks_Password'))]",
-        "Sql.Database.ProcessingTasks.Password.Test": "[equal(parameter('Database_ProcessingTasks_Password'),'SIF-Default')]",
+        "Sql.Database.ProcessingTasks.Password": "[if(variable('Sql.Database.ProcessingTasks.Password.Test'),variable('Sql.Database.ProcessingTasks.Password.Generate'),parameter('DatabaseProcessingTasksPassword'))]",
+        "Sql.Database.ProcessingTasks.Password.Test": "[equal(parameter('DatabaseProcessingTasksPassword'),'SIF-Default')]",
         "Sql.Database.ProcessingTasks.Password.Generate": "[randomstring(Length:20,DisAllowSpecial:True,EnforceComplexity:True)]",
 
-        "Processing_App:Sql.Database.ProcessingTasks.Password": "[variable('Sql.Database.ProcessingTasks.Password')]",
+        "ProcessingApp:Sql.Database.ProcessingTasks.Password": "[variable('Sql.Database.ProcessingTasks.Password')]",
 
-        "Sql.Database.Collection.User": "[if(variable('Sql.Database.Collection.User.Test'),variable('Sql.Database.Collection.User.Generate'),parameter('Database_Collection_User'))]",
-        "Sql.Database.Collection.User.Test": "[equal(parameter('Database_Collection_User'),'collectionuser')]",
+        "Sql.Database.Collection.User": "[if(variable('Sql.Database.Collection.User.Test'),variable('Sql.Database.Collection.User.Generate'),parameter('DatabaseCollectionUser'))]",
+        "Sql.Database.Collection.User.Test": "[equal(parameter('DatabaseCollectionUser'),'collectionuser')]",
         "Sql.Database.Collection.User.Generate": "[concat(parameter('Prefix'), '_collectionuser')]",
 
-        "XConnectCollection_App:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
-        "XConnectCollectionSearch_App:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
-        "MarketingAutomationOperations_App:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
+        "XConnectCollectionApp:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
+        "XConnectCollectionSearchApp:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
+        "MarketingAutomationOperationsApp:Sql.Database.Collection.User": "[variable('Sql.Database.Collection.User')]",
 
         "ReportingService.ApiKey": "[if(variable('ReportingService.ApiKey.Test'),variable('ReportingService.ApiKey.Generate'),parameter('ReportingServiceApiKey'))]",
 
-        "ContentManagement_App:endpoint_Reporting_ApiKey": "[variable('ReportingService.ApiKey')]",
+        "ContentManagementApp:EndpointReportingApiKey": "[variable('ReportingService.ApiKey')]",
         "ReportingService.ApiKey.Test": "[equal(parameter('ReportingServiceApiKey'),'00112233445566778899AABBCCDDEEFF')]",
         "ReportingService.ApiKey.Generate": "[randomstring(Length:32,DisAllowSpecial:True,EnforceComplexity:True)]",
-        "Processing_App:endpoint_Reporting_ApiKey": "[variable('ReportingService.ApiKey')]",
+        "ProcessingApp:EndpointReportingApiKey": "[variable('ReportingService.ApiKey')]",
 
-        "EXM.CryptographicKey": "[if(variable('EXM.CryptographicKey.Test'),variable('EXM.CryptographicKey.Generate'),parameter('EXMCryptographicKey'))]",
-        "EXM.CryptographicKey.Test": "[equal(parameter('EXMCryptographicKey'),'0x0123456789012345678901234567890123456789012345678901234678901234')]",
-        "EXM.CryptographicKey.Generate": "[concat('0x',randomstring(Length:64,DisAllowSpecial:True,DisAllowCaps:True,DisAllowLower:True))]",
+        "Sitecore.EXM.CryptographicKey": "[if(variable('Sitecore.EXM.CryptographicKey.Test'),variable('Sitecore.EXM.CryptographicKey.Generate'),parameter('EXMCryptographicKey'))]",
+        "Sitecore.EXM.CryptographicKey.Test": "[equal(parameter('EXMCryptographicKey'),'0x0123456789012345678901234567890123456789012345678901234678901234')]",
+        "Sitecore.EXM.CryptographicKey.Generate": "[concat('0x',randomstring(Length:64,DisAllowSpecial:True,DisAllowCaps:True,DisAllowLower:True))]",
 
-        "ContentManagement_App:EXM.CryptographicKey": "[variable('EXM.CryptographicKey')]",
-        "ContentDelivery_App:EXM.CryptographicKey": "[variable('EXM.CryptographicKey')]",
+        "ContentManagementApp:Sitecore.EXM.CryptographicKey": "[variable('Sitecore.EXM.CryptographicKey')]",
+        "ContentDeliveryApp:Sitecore.EXM.CryptographicKey": "[variable('Sitecore.EXM.CryptographicKey')]",
 
-        "EXM.AuthenticationKey": "[if(variable('EXM.AuthenticationKey.Test'),variable('EXM.AuthenticationKey.Generate'),parameter('EXMAuthenticationKey'))]",
-        "EXM.AuthenticationKey.Test": "[equal(parameter('EXMAuthenticationKey'),'0x0123456789012345678901234567890123456789012345678901234678901234')]",
-        "EXM.AuthenticationKey.Generate": "[concat('0x',randomstring(Length:64,DisAllowSpecial:True,DisAllowCaps:True,DisAllowLower:True))]",
+        "Sitecore.EXM.AuthenticationKey": "[if(variable('Sitecore.EXM.AuthenticationKey.Test'),variable('Sitecore.EXM.AuthenticationKey.Generate'),parameter('EXMAuthenticationKey'))]",
+        "Sitecore.EXM.AuthenticationKey.Test": "[equal(parameter('EXMAuthenticationKey'),'0x0123456789012345678901234567890123456789012345678901234678901234')]",
+        "Sitecore.EXM.AuthenticationKey.Generate": "[concat('0x',randomstring(Length:64,DisAllowSpecial:True,DisAllowCaps:True,DisAllowLower:True))]",
 
-        "ContentManagement_App:EXM.AuthenticationKey": "[variable('EXM.AuthenticationKey')]",
-        "ContentDelivery_App:EXM.AuthenticationKey": "[variable('EXM.AuthenticationKey')]",
+        "ContentManagementApp:Sitecore.EXM.AuthenticationKey": "[variable('Sitecore.EXM.AuthenticationKey')]",
+        "ContentDeliveryApp:Sitecore.EXM.AuthenticationKey": "[variable('Sitecore.EXM.AuthenticationKey')]",
 
-        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('IdentityServer_ClientSecret'))]",
-        "IdentityServer.Client.Secret.Test": "[equal(parameter('IdentityServer_ClientSecret'),'SIF-Default')]",
+        "IdentityServer.Client.Secret": "[if(variable('IdentityServer.Client.Secret.Test'),variable('IdentityServer.Client.Secret.Generate'),parameter('IdentityServerClientSecret'))]",
+        "IdentityServer.Client.Secret.Test": "[equal(parameter('IdentityServerClientSecret'),'SIF-Default')]",
         "IdentityServer.Client.Secret.Generate": "[randomstring(Length:100,DisAllowSpecial:True)]",
 
-        "IdentityServer_App:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
-        "ContentManagement_App:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
+        "IdentityServerApp:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]",
+        "ContentManagementApp:IdentityServer.Client.Secret": "[variable('IdentityServer.Client.Secret')]"
     },
     "Includes": {
-        "IdentityServer_Certificate": {
+        "IdentityServerCertificate": {
             "Source": ".\\..\\Certificates\\createcert.json"
         },
-        "IdentityServer_App": {
+        "IdentityServerApp": {
             "Source": ".\\IdentityServer.json"
         },
-        "XConnect_Certificate": {
+        "XConnectCertificate": {
             "Source": ".\\..\\Certificates\\createcert.json"
         },
-        "XConnect_Solr": {
+        "XConnectSolr": {
             "Source": ".\\xconnect-solr.json"
         },
-        "XConnectCollection_App": {
+        "XConnectCollectionApp": {
             "Source": ".\\xconnect-xp1-collection.json"
         },
-        "XConnectCollectionSearch_App": {
+        "XConnectCollectionSearchApp": {
             "Source": ".\\xconnect-xp1-collectionsearch.json"
         },
-        "ReferenceData_App": {
+        "ReferenceDataApp": {
             "Source": ".\\xconnect-xp1-referencedata.json"
         },
-        "MarketingAutomationOperations_App": {
+        "MarketingAutomationOperationsApp": {
             "Source": ".\\xconnect-xp1-marketingautomation.json"
         },
-        "MarketingAutomationReporting_App": {
+        "MarketingAutomationReportingApp": {
             "Source": ".\\xconnect-xp1-marketingautomationreporting.json"
         },
-        "CortexProcessing_App": {
+        "CortexProcessingApp": {
             "Source": ".\\xconnect-xp1-cortexprocessing.json"
         },
-        "CortexReporting_App": {
+        "CortexReportingApp": {
             "Source": ".\\xconnect-xp1-cortexreporting.json"
         },
-        "ContentManagement_Certificate": {
-            "Source": ".\\..\\Certificates\\createcert.json"
-        },
-        "ContentManagement_Solr": {
+
+        "ContentManagementSolr": {
             "Source": ".\\Sitecore-solr.json"
         },
-        "ContentManagement_App": {
+        "ContentManagementApp": {
             "Source": ".\\Sitecore-xp1-cm.json"
         },
-        "ContentDelivery_App": {
+        "ContentDeliveryApp": {
             "Source": ".\\Sitecore-xp1-cd.json"
         },
-        "Processing_App": {
+        "ProcessingApp": {
             "Source": ".\\Sitecore-xp1-prc.json"
         }
     },
@@ -1396,61 +1394,61 @@
                 "Scope": "Global",
                 "Value": [
                     {
-                        "Database_MarketingAutomation_Password": "[variable('Sql.Database.MarketingAutomation.Password')]"
+                        "DatabaseMarketingAutomationPassword": "[variable('Sql.Database.MarketingAutomation.Password')]"
                     },
                     {
-                        "Database_ProcessingTasks_Password": "[variable('Sql.Database.ProcessingTasks.Password')]"
+                        "DatabaseProcessingTasksPassword": "[variable('Sql.Database.ProcessingTasks.Password')]"
                     },
                     {
-                        "Database_ProcessingPools_Password": "[variable('Sql.Database.ProcessingPools.Password')]"
+                        "DatabaseProcessingPoolsPassword": "[variable('Sql.Database.ProcessingPools.Password')]"
                     },
                     {
-                        "Database_Collection_Password": "[variable('Sql.Database.Collection.Password')]"
+                        "DatabaseCollectionPassword": "[variable('Sql.Database.Collection.Password')]"
                     },
                     {
-                        "Database_Messaging_Password": "[variable('Sql.Database.Messaging.Password')]"
+                        "DatabaseMessagingPassword": "[variable('Sql.Database.Messaging.Password')]"
                     },
                     {
-                        "Database_Core_Password": "[variable('Sql.Database.Core.Password')]"
+                        "DatabaseCorePassword": "[variable('Sql.Database.Core.Password')]"
                     },
                     {
-                        "Database_Security_Password": "[variable('Sql.Database.Security.Password')]"
+                        "DatabaseSecurityPassword": "[variable('Sql.Database.Security.Password')]"
                     },
                     {
-                        "Database_ReferenceData_Password": "[variable('Sql.Database.ReferenceData.Password')]"
+                        "DatabaseReferenceDataPassword": "[variable('Sql.Database.ReferenceData.Password')]"
                     },
                     {
-                        "Database_ProcessingEngine_Password": "[variable('Sql.Database.ProcessingEngine.Password')]"
+                        "DatabaseProcessingEnginePassword": "[variable('Sql.Database.ProcessingEngine.Password')]"
                     },
                     {
-                        "Database_Reporting_Password": "[variable('Sql.Database.Reporting.Password')]"
+                        "DatabaseReportingPassword": "[variable('Sql.Database.Reporting.Password')]"
                     },
                     {
-                        "Database_ExmMaster_Password": "[variable('Sql.Database.EXMMaster.Password')]"
+                        "DatabaseExmMasterPassword": "[variable('Sql.Database.EXMMaster.Password')]"
                     },
                     {
-                        "Database_Forms_Password": "[variable('Sql.Database.Forms.Password')]"
+                        "DatabaseFormsPassword": "[variable('Sql.Database.Forms.Password')]"
                     },
                     {
-                        "Database_Master_Password": "[variable('Sql.Database.Master.Password')]"
+                        "DatabaseMasterPassword": "[variable('Sql.Database.Master.Password')]"
                     },
                     {
-                        "Database_Web_Password": "[variable('Sql.Database.Web.Password')]"
+                        "DatabaseWebPassword": "[variable('Sql.Database.Web.Password')]"
                     },
                     {
-                        "Database_Collection_User": "[variable('Sql.Database.Collection.User')]"
+                        "DatabaseCollectionUser": "[variable('Sql.Database.Collection.User')]"
                     },
                     {
-                        "IdentityServer_ClientSecret": "[variable('IdentityServer.Client.Secret')]"
+                        "IdentityServerClientSecret": "[variable('IdentityServer.Client.Secret')]"
                     },
                     {
-                        "Reporting_ApiKey": "[variable('ReportingService.ApiKey')]"
+                        "ReportingApiKey": "[variable('ReportingService.ApiKey')]"
                     },
                     {
-                        "Sitecore_EXMCryptographicKey": "[variable('EXM.CryptographicKey')]"
+                        "SitecoreEXMCryptographicKey": "[variable('Sitecore.EXM.CryptographicKey')]"
                     },
                     {
-                        "Sitecore_EXMAuthenticationKey": "[variable('EXM.AuthenticationKey')]"
+                        "SitecoreEXMAuthenticationKey": "[variable('Sitecore.EXM.AuthenticationKey')]"
                     }
                 ]
             },

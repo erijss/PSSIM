@@ -1,35 +1,35 @@
 {
     "Parameters": {
-        "solr_Url": {
+        "SolrUrl": {
             "Type": "string",
             "DefaultValue": "https://localhost:8983/solr",
             "Description": "The Solr instance url."
         },
-        "solr_Path": {
+        "SolrFolder": {
             "Type": "string",
             "DefaultValue": "c:\\solr-8.1.1",
             "Description": "The file path to the Solr instance."
         },
-        "solr_Service": {
+        "SolrService": {
             "Type": "string",
             "DefaultValue": "Solr-8.1.1",
             "Description": "The name of the Solr service."
         },
-        "solr_BaseConfig": {
+        "SolrBaseConfig": {
             "Type": "string",
             "DefaultValue": "_default",
             "Description": "The configset to copy as a base for each core."
         },
-        "solr_CorePrefix": {
+        "SolrCorePrefix": {
             "Type": "string",
             "DefaultValue": "sitecore",
             "Description": "The prefix for each of the created indexes."
         }
     },
     "Variables": {
-        "Solr.Root": "[resolvepath(parameter('solr_Path'))]",
+        "Solr.Root": "[resolvepath(parameter('SolrFolder'))]",
         "Solr.Server": "[joinpath(variable('Solr.Root'), 'server', 'solr')]",
-        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('solr_BaseConfig'))]",
+        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('SolrBaseConfig'))]",
         "Solr.SchemaFileName": "managed-schema",
         "Solr.Xpath.SchemaRoot": "//schema",
         "Solr.Xpath.UniqueKey": "[concat(variable('Solr.Xpath.SchemaRoot'), '/uniqueKey')]",
@@ -42,18 +42,18 @@
             "stored": "true"
         },
 
-        "Solr.Core.Core.Name": "[concat(parameter('solr_CorePrefix'), '_core_index')]",
-        "Solr.Core.Master.Name": "[concat(parameter('solr_CorePrefix'), '_master_index')]",
-        "Solr.Core.Web.Name": "[concat(parameter('solr_CorePrefix'), '_web_index')]",
-        "Solr.Core.MarketingDefinitions.Master.Name": "[concat(parameter('solr_CorePrefix'), '_marketingdefinitions_master')]",
-        "Solr.Core.MarketingDefinitions.Web.Name": "[concat(parameter('solr_CorePrefix'), '_marketingdefinitions_web')]",
-        "Solr.Core.MarketingAssets.Master.Name": "[concat(parameter('solr_CorePrefix'), '_marketing_asset_index_master')]",
-        "Solr.Core.MarketingAssets.Web.Name": "[concat(parameter('solr_CorePrefix'), '_marketing_asset_index_web')]",
-        "Solr.Core.Testing.Name": "[concat(parameter('solr_CorePrefix'), '_testing_index')]",
-        "Solr.Core.Suggested.Name": "[concat(parameter('solr_CorePrefix'), '_suggested_test_index')]",
-        "Solr.Core.FXM.Master.Name": "[concat(parameter('solr_CorePrefix'), '_fxm_master_index')]",
-        "Solr.Core.FXM.Web.Name": "[concat(parameter('solr_CorePrefix'), '_fxm_web_index')]",
-        "Solr.Core.Personalization.Name": "[concat(parameter('solr_CorePrefix'), '_personalization_index')]",
+        "Solr.Core.Core.Name": "[concat(parameter('SolrCorePrefix'), '_core_index')]",
+        "Solr.Core.Master.Name": "[concat(parameter('SolrCorePrefix'), '_master_index')]",
+        "Solr.Core.Web.Name": "[concat(parameter('SolrCorePrefix'), '_web_index')]",
+        "Solr.Core.MarketingDefinitions.Master.Name": "[concat(parameter('SolrCorePrefix'), '_marketingdefinitions_master')]",
+        "Solr.Core.MarketingDefinitions.Web.Name": "[concat(parameter('SolrCorePrefix'), '_marketingdefinitions_web')]",
+        "Solr.Core.MarketingAssets.Master.Name": "[concat(parameter('SolrCorePrefix'), '_marketing_asset_index_master')]",
+        "Solr.Core.MarketingAssets.Web.Name": "[concat(parameter('SolrCorePrefix'), '_marketing_asset_index_web')]",
+        "Solr.Core.Testing.Name": "[concat(parameter('SolrCorePrefix'), '_testing_index')]",
+        "Solr.Core.Suggested.Name": "[concat(parameter('SolrCorePrefix'), '_suggested_test_index')]",
+        "Solr.Core.FXM.Master.Name": "[concat(parameter('SolrCorePrefix'), '_fxm_master_index')]",
+        "Solr.Core.FXM.Web.Name": "[concat(parameter('SolrCorePrefix'), '_fxm_web_index')]",
+        "Solr.Core.Personalization.Name": "[concat(parameter('SolrCorePrefix'), '_personalization_index')]",
 
         "Solr.Core.Core.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Core.Name'))]",
         "Solr.Core.Master.Root": "[joinpath(variable('Solr.Server'), variable('Solr.Core.Master.Name'))]",
@@ -88,7 +88,7 @@
             "Params": [
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Core.Name')]",
                         "deleteInstanceDir": "true"
@@ -97,7 +97,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -106,7 +106,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -115,7 +115,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingDefinitions.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -124,7 +124,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingDefinitions.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -133,7 +133,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingAssets.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -142,7 +142,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingAssets.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -151,7 +151,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Testing.Name')]",
                         "deleteInstanceDir": "true"
@@ -160,7 +160,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Suggested.Name')]",
                         "deleteInstanceDir": "true"
@@ -169,7 +169,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.FXM.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -178,7 +178,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.FXM.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -187,7 +187,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Personalization.Name')]",
                         "deleteInstanceDir": "true"
@@ -420,7 +420,7 @@
             "Params": [
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Core.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -428,7 +428,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Master.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -436,7 +436,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Web.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -444,7 +444,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.MarketingDefinitions.Master.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -452,7 +452,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.MarketingDefinitions.Web.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -460,7 +460,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.MarketingAssets.Master.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -468,7 +468,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.MarketingAssets.Web.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -476,7 +476,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Testing.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -484,7 +484,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Suggested.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -492,7 +492,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.FXM.Master.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -500,7 +500,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.FXM.Web.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -508,7 +508,7 @@
                 },
                 {
                     "Action": "Create",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "name": "[variable('Solr.Core.Personalization.Name')]",
                         "property.update.autoCreateFields": "false"
@@ -524,7 +524,7 @@
             "Params": [
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Core.Name')]",
                         "deleteInstanceDir": "true"
@@ -533,7 +533,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -542,7 +542,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -551,7 +551,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingDefinitions.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -560,7 +560,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingDefinitions.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -569,7 +569,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingAssets.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -578,7 +578,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.MarketingAssets.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -587,7 +587,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Testing.Name')]",
                         "deleteInstanceDir": "true"
@@ -596,7 +596,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Suggested.Name')]",
                         "deleteInstanceDir": "true"
@@ -605,7 +605,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.FXM.Master.Name')]",
                         "deleteInstanceDir": "true"
@@ -614,7 +614,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.FXM.Web.Name')]",
                         "deleteInstanceDir": "true"
@@ -623,7 +623,7 @@
                 },
                 {
                     "Action": "Unload",
-                    "Address": "[parameter('solr_Url')]",
+                    "Address": "[parameter('SolrUrl')]",
                     "Arguments": {
                         "core": "[variable('Solr.Core.Personalization.Name')]",
                         "deleteInstanceDir": "true"

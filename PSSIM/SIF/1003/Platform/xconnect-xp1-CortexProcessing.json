@@ -1,200 +1,200 @@
 ﻿{
     "Parameters": {
-        "app_Package": {
+        "AppPackage": {
             "Type": "string",
             "Description": "The path to the Web Deploy package to deploy.",
             "DefaultValue": ""
         },
-        "app_License": {
+        "AppsLicenseFile": {
             "Type": "string",
             "Description": "The path to the Sitecore license file.",
             "DefaultValue": ".\\License.xml"
         },
-        "app_Name": {
+        "AppName": {
             "Type": "string",
             "DefaultValue": "CortexProcessing",
             "Description": "The name of the site to be deployed."
         },
-        "app_Path": {
+        "AppsRootFolder": {
             "Type": "String",
             "Description": "Root folder to install the site to. If left on the default [systemdrive]:\\inetpub\\wwwroot will be used.",
             "DefaultValue": ""
         },
-        "app_Certificate": {
+        "AppCertificate": {
             "Type": "string",
             "Description": "The certificate to use for HTTPS web bindings. Provide the name or the thumbprint. If not provided a certificate will be generated.",
             "DefaultValue": ""
         },
-        "xconnect_Certificate": {
+        "XConnectCertificate": {
             "Type": "string",
             "Description": "The certificate to use for encryption. Provide the name or the thumbprint.",
             "DefaultValue": ""
         },
-        "sqlserver_DatabasePrefix": {
+        "SqlServerDatabasePrefix": {
             "Type": "string",
             "Description": "The prefix used for all Sql databases.",
             "DefaultValue": ""
         },
-        "sqlserver_AdminUser": {
+        "SqlServerAdminUser": {
             "Type": "string",
             "DefaultValue": "sa",
             "Description": "The Sql admin user account to use when installing databases."
         },
-        "sqlserver_AdminPassword": {
+        "SqlServerAdminPassword": {
             "Type": "string",
             "DefaultValue": "12345",
             "Description": "The Sql admin password to use when installing databases."
         },
-        "database_Messaging_User": {
+        "DatabaseMessagingUser": {
             "Type": "string",
             "DefaultValue": "messaginguser",
             "Description": "The Sql user for the Messaging connection string in Sitecore."
         },
-        "database_Messaging_Password": {
+        "DatabaseMessagingPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Messaging connection string in Sitecore."
         },
-        "database_ProcessingEngine_User": {
+        "DatabaseProcessingEngineUser": {
             "Type": "string",
             "DefaultValue": "processingengineuser",
             "Description": "The Sql user for the Processing Engine Tasks and Storage database connection strings in Sitecore."
         },
-        "database_ProcessingEngine_Password": {
+        "DatabaseProcessingEnginePassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Processing Engine Tasks and Storage database connection strings in Sitecore."
         },
-        "database_Reporting_User": {
+        "DatabaseReportingUser": {
             "Type": "string",
             "DefaultValue": "reportinguser",
             "Description": "The Sql user for the Reporting database connection string in Sitecore."
         },
-        "database_Reporting_Password": {
+        "DatabaseReportingPassword": {
             "Type": "string",
             "DefaultValue": "SIF-Default",
             "Description": "The Sql password for the Reporting database connection string in Sitecore."
         },
-        "sqlserver_Instance": {
+        "SqlServerInstance": {
             "Type": "string",
-            "DefaultValue": ".\\sqlserver_Instance",
+            "DefaultValue": ".\\SqlServerInstance",
             "Description": "The Sql Server where databases will be installed."
         },
-        "endpoint_XConnectCollection_Url": {
+        "EndpointXConnectCollection": {
             "Type": "string",
             "DefaultValue": "https://XConnectCollection",
             "Description": "The url for the XConnect Collection Service."
         },
-        "endpoint_XConnectSearch_Url": {
+        "EndpointXConnectSearch": {
             "Type": "string",
             "DefaultValue": "https://XConnectSearch",
             "Description": "The url for the XConnect Search Service."
         },
-        "app_Environment": {
+        "AppEnvironment": {
             "Type": "string",
             "DefaultValue": "Development",
             "Description": "The configuration environment for this instance."
         },
-        "app_LogLevel": {
+        "AppLogLevel": {
             "Type": "string",
             "DefaultValue": "Information",
             "Description": "The level of log information to output."
         },
-        "machinelearningserver_Url": {
+        "MachineLearningServerUrl": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The Microsoft Machine Learning Server instance to use."
         },
-        "machinelearningserver_BlobEndpointCertificatePath": {
+        "MachineLearningServerBlobEndpointCertificatePath": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The Machine Learning Server Blob Storage WebApi Endpoint Certificate Path."
         },
-        "machinelearningserver_BlobEndpointCertificatePassword": {
+        "MachineLearningServerBlobEndpointCertificatePassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The Machine Learning Server Blob Storage WebApi Endpoint Certificate Password."
         },
-        "machinelearningserver_TableEndpointCertificatePath": {
+        "MachineLearningServerTableEndpointCertificatePath": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The Machine Learning Server Table Storage WebApi Endpoint Certificate Path."
         },
-        "machinelearningserver_TableEndpointCertificatePassword": {
+        "MachineLearningServerTableEndpointCertificatePassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The Machine Learning Server Table Storage WebApi Endpoint Certificate Password."
         },
-        "machinelearningserver_EndpointCertificationAuthorityCertificatePath": {
+        "MachineLearningServerEndpointCertificationAuthorityCertificatePath": {
             "Type": "string",
             "DefaultValue": "",
             "Description": "The path to certificate of certification authority that issued certificates for Machine Learning Server Blob and Table storage endpoints."
         },
-        "app_HostMappingName": {
+        "AppHostMappingName": {
             "Type": "string",
-            "Reference": "app_Name",
+            "Reference": "AppName",
             "Description": "The host mapping name of the app."
         },
-        "app_DnsName": {
+        "AppDnsName": {
             "Type": "string",
-            "Reference": "app_Name",
+            "Reference": "AppName",
             "Description": "The dns name of the app."
         },
-        "app_SkipDatabaseInstallation": {
+        "AppSkipDatabaseInstallation": {
             "Type": "bool",
             "DefaultValue": false,
             "Description": "Skip database installation."
         },
-        "packages_TemporaryLocation": {
+        "PackagesTempLocation": {
             "Type": "String",
             "Description": "Alternative location to save WDP packages. If left on the default $Env:Temp will be used.",
             "DefaultValue": "",
             "Validate": "[TestPath(variable('Package.Download.Location'))]"
         },
-        "packages_DownloadLocations": {
+        "PackagesDownloadLocations": {
             "Type": "String",
             "Description": "File with URI and SHA256 hashes of dynamically downloadable WDPs.",
             "DefaultValue": ".\\downloads.json"
         }
     },
     "Variables": {
-        "Sql.Server.Password.Secure": "[ConvertToSecureString(String:parameter('sqlserver_AdminPassword'),AsPlainText:true,Force:true)]",
-        "Skip.dbDacFx": "[if(parameter('app_SkipDatabaseInstallation'),'dbDacFx','null')]",
-        "Skip.dbFullSql": "[if(parameter('app_SkipDatabaseInstallation'),'dbFullSql','null')]",
+        "Sql.Server.Password.Secure": "[ConvertToSecureString(String:parameter('SqlServerAdminPassword'),AsPlainText:true,Force:true)]",
+        "Skip.dbDacFx": "[if(parameter('AppSkipDatabaseInstallation'),'dbDacFx','null')]",
+        "Skip.dbFullSql": "[if(parameter('AppSkipDatabaseInstallation'),'dbFullSql','null')]",
 
-        "Sql.Database.Messaging.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Messaging')]",
-        "Sql.Database.ProcessingEngineTasks.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_ProcessingEngineTasks')]",
-        "Sql.Database.ProcessingEngineStorage.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_ProcessingEngineStorage')]",
-        "Sql.Database.Reporting.Name": "[concat(parameter('sqlserver_DatabasePrefix'), '_Reporting')]",
-        "Sql.Database.ProcessingEngine.Password": "[parameter('database_ProcessingEngine_Password'))]",
-        "Sql.Database.Messaging.Password": "[parameter('database_Messaging_Password')]",
-        "Sql.Database.Reporting.Password": "[parameter('database_Reporting_Password')]",
+        "Sql.Database.Messaging.Name": "[concat(parameter('SqlServerDatabasePrefix'), '_Messaging')]",
+        "Sql.Database.ProcessingEngineTasks.Name": "[concat(parameter('SqlServerDatabasePrefix'), '_ProcessingEngineTasks')]",
+        "Sql.Database.ProcessingEngineStorage.Name": "[concat(parameter('SqlServerDatabasePrefix'), '_ProcessingEngineStorage')]",
+        "Sql.Database.Reporting.Name": "[concat(parameter('SqlServerDatabasePrefix'), '_Reporting')]",
+        "Sql.Database.ProcessingEngine.Password": "[parameter('DatabaseProcessingEnginePassword'))]",
+        "Sql.Database.Messaging.Password": "[parameter('DatabaseMessagingPassword')]",
+        "Sql.Database.Reporting.Password": "[parameter('DatabaseReportingPassword')]",
 
         "Certificate.Store": "Cert:\\Localmachine\\My",
-        "Certificate.App.Thumbprint": "[GetCertificateThumbprint(parameter('app_Certificate'), variable('Certificate.Store'))]",
-        "Certificate.XConnect.Thumbprint": "[GetCertificateThumbprint(parameter('xconnect_Certificate'), variable('Certificate.Store'))]",
+        "Certificate.App.Thumbprint": "[GetCertificateThumbprint(parameter('AppCertificate'), variable('Certificate.Store'))]",
+        "Certificate.XConnect.Thumbprint": "[GetCertificateThumbprint(parameter('XConnectCertificate'), variable('Certificate.Store'))]",
         "Certificate.XConnect.Path": "[joinpath(variable('Certificate.Store'), variable('Certificate.XConnect.Thumbprint'))]",
 
         "App.Path": "[if(variable('App.Path.Test'),variable('App.Path.Default'),variable('App.Path.Custom'))]",
-        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('app_Name'))]",
-        "App.Path.Custom": "[joinpath(parameter('app_Path'),parameter('app_Name'))]",
-        "App.Path.Test": "[equal(parameter('app_Path'),'')]",
+        "App.Path.Default": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('AppName'))]",
+        "App.Path.Custom": "[joinpath(parameter('AppsRootFolder'),parameter('AppName'))]",
+        "App.Path.Test": "[equal(parameter('AppsRootFolder'),'')]",
         "App.DataFolder": "[joinpath(variable('App.Path'), 'App_Data')]",
 
         "Services.ProcessingEngine.InstallPath": "[joinpath(variable('App.DataFolder'), 'jobs','continuous','ProcessingEngine')]",
-        "Services.ProcessingEngine.Name": "[concat(parameter('app_Name'), '-endpoint_ProcessingEngine_Url')]",
+        "Services.ProcessingEngine.Name": "[concat(parameter('AppName'), '-EndpointProcessingEngine')]",
 
-        "Endpoint.Collection": "[parameter('endpoint_XConnectCollection_Url')]",
-        "Endpoint.Search": "[parameter('endpoint_XConnectSearch_Url')]",
-        "Endpoint.Processing.BlobStorage": "[concat('https://', parameter('app_Name'))]",
-        "Endpoint.Processing.TableStorage": "[concat('https://', parameter('app_Name'))]",
+        "Endpoint.Collection": "[parameter('EndpointXConnectCollection')]",
+        "Endpoint.Search": "[parameter('EndpointXConnectSearch')]",
+        "Endpoint.Processing.BlobStorage": "[concat('https://', parameter('AppName'))]",
+        "Endpoint.Processing.TableStorage": "[concat('https://', parameter('AppName'))]",
 
-        "Packages.DownloadLocations.File": "[ReadJson(parameter('packages_DownloadLocations'))]",
-        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('packages_DownloadLocations'))]",
+        "Packages.DownloadLocations.File": "[ReadJson(parameter('PackagesDownloadLocations'))]",
+        "Packages.DownloadLocations.File.Test": "[TestPath(Path:Parameter('PackagesDownloadLocations'))]",
 
         "Package.Download.Identifier": "xconnect-xp1-CortexProcessing.json",
-        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('packages_TemporaryLocation'))]",
-        "Package.Download.Location.Test": "[equal(parameter('packages_TemporaryLocation'),'')]",
+        "Package.Download.Location": "[if(variable('Package.Download.Location.Test'),Environment('Temp'),parameter('PackagesTempLocation'))]",
+        "Package.Download.Location.Test": "[equal(parameter('PackagesTempLocation'),'')]",
         "Package.Download.Object": "[SelectObject(InputObject:variable('Packages.DownloadLocations.File'),ExpandProperty:variable('Package.Download.Identifier'))]",
         "Package.Download.Uri": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Uri')]",
         "Package.Download.Hash": "[SelectObject(InputObject:variable('Package.Download.Object'),ExpandProperty:'Hash')]",
@@ -202,9 +202,9 @@
         "Package.Download.Document": "[SplitPath(Path:variable('Package.Download.Uri'),Leaf:true)]",
         "Package.Download.Filename": "[Split(String:variable('Package.Download.Document'),Characters:'?')]",
 
-        "app_Package": "[if(parameter('app_Package'),parameter('app_Package'),variable('Package.Download.Path'))]",
+        "App.Package": "[if(parameter('AppPackage'),parameter('AppPackage'),variable('Package.Download.Path'))]",
         "Package.Available": "[or(variable('Package.Provided'),not(variable('Packages.DownloadLocations.File.Test')))]",
-        "Package.Provided": "[if(parameter('app_Package'),parameter('app_Package'),'')]"
+        "Package.Provided": "[if(parameter('AppPackage'),parameter('AppPackage'),'')]"
     },
     "Register": {
         "Tasks": {
@@ -242,7 +242,7 @@
             "Description": "Creates or updates the app pool.",
             "Type": "AppPool",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Properties": {
                     "ProcessModel": {
                         "identityType": "ApplicationPoolIdentity"
@@ -257,7 +257,7 @@
                 "Path": "[ResolveCertificatePath(variable('Certificate.XConnect.Path'))]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('AppName'))]",
                         "FileSystemRights": [
                             "Read"
                         ],
@@ -272,8 +272,8 @@
             "Description": "Creates or updates the IIS website instance.",
             "Type": "Website",
             "Params": {
-                "Name": "[parameter('app_Name')]",
-                "ApplicationPool": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
+                "ApplicationPool": "[parameter('AppName')]",
                 "PhysicalPath": "[variable('App.Path')]"
             }
         },
@@ -281,7 +281,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Action": "Stop"
             }
         },
@@ -289,22 +289,22 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Action": "Stop"
             }
         },
-        "endpoint_Stop_Url": {
+        "EndpointStop": {
             "Description": "Stops the service if it is running.",
-            "Type": "endpoint_Manage_Url",
+            "Type": "EndpointManage",
             "Params": {
                 "Name": "[variable('Services.ProcessingEngine.Name')]",
                 "Status": "Stopped",
                 "PostDelay": 3000
             }
         },
-        "endpoint_Remove_Url": {
+        "EndpointRemove": {
             "Description": "Removes the current service.",
-            "Type": "endpoint_Remove_Url",
+            "Type": "EndpointRemove",
             "Params": {
                 "Name": "[variable('Services.ProcessingEngine.Name')]"
             }
@@ -313,7 +313,7 @@
             "Description": "Removes the default *:80 web binding.",
             "Type": "WebBinding",
             "Params": {
-                "app_Name": "[parameter('app_Name')]",
+                "SiteName": "[parameter('AppName')]",
                 "Remove": [
                     {
                         "Port": "80",
@@ -326,22 +326,22 @@
             "Description": "Configures the site bindings for the webapp.",
             "Type": "WebBinding",
             "Params": {
-                "app_Name": "[parameter('app_Name')]",
+                "SiteName": "[parameter('AppName')]",
                 "Add": [
                     {
-                        "HostHeader": "[parameter('app_DnsName')]",
+                        "HostHeader": "[parameter('AppDnsName')]",
                         "Protocol": "https",
                         "SSLFlags": 1,
                         "Thumbprint": "[variable('Certificate.App.Thumbprint')]"
                     }
                 ]
             },
-            "Skip": "[not(parameter('app_Certificate'))]"
+            "Skip": "[not(parameter('AppCertificate'))]"
         },
         "SetClientCertificatePermissions": {
             "Type": "WebsiteClientCert",
             "Params": {
-                "app_Name": "[parameter('app_Name')]",
+                "SiteName": "[parameter('AppName')]",
                 "Setting": "Accept"
             }
         },
@@ -349,9 +349,9 @@
             "Description": "Sets a hostheader for the webapp.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('app_HostMappingName')]"
+                "HostName": "[parameter('AppHostMappingName')]"
             },
-            "Skip": "[not(parameter('app_HostMappingName'))]"
+            "Skip": "[not(parameter('AppHostMappingName'))]"
         },
         "SetPermissions": {
             "Description": "Sets permissions for the app pool user.",
@@ -360,7 +360,7 @@
                 "Path": "[variable('App.Path')]",
                 "Rights": [
                     {
-                        "User": "[concat('IIS AppPool\\', parameter('app_Name'))]",
+                        "User": "[concat('IIS AppPool\\', parameter('AppName'))]",
                         "FileSystemRights": "FullControl",
                         "InheritanceFlags": [
                             "ContainerInherit",
@@ -377,25 +377,25 @@
                 "Verb": "Sync",
                 "Arguments": {
                     "Source": {
-                        "app_Package": "[resolvepath(variable('app_Package'))]"
+                        "Package": "[resolvepath(variable('App.Package'))]"
                     },
                     "Dest": "Auto",
                     "SetParam": [
                         {
                             "Name": "IIS Web Application Name",
-                            "Value": "[parameter('app_Name')]"
+                            "Value": "[parameter('AppName')]"
                         },
                         {
                             "Name": "Database Server Name",
-                            "Value": "[parameter('sqlserver_Instance')]"
+                            "Value": "[parameter('SqlServerInstance')]"
                         },
                         {
                             "Name": "Database Admin User Name",
-                            "Value": "[parameter('sqlserver_AdminUser')]"
+                            "Value": "[parameter('SqlServerAdminUser')]"
                         },
                         {
                             "Name": "Database Admin User Password",
-                            "Value": "[parameter('sqlserver_AdminPassword')]"
+                            "Value": "[parameter('SqlServerAdminPassword')]"
                         },
                         {
                             "Name": "Processing Engine Tasks Database Name",
@@ -415,7 +415,7 @@
                         },
                         {
                             "Name": "Processing Engine Database Application User Name",
-                            "Value": "[parameter('database_ProcessingEngine_User')]"
+                            "Value": "[parameter('DatabaseProcessingEngineUser')]"
                         },
                         {
                             "Name": "Processing Engine Database Application User Password",
@@ -423,7 +423,7 @@
                         },
                         {
                             "Name": "Messaging Database Application User Name",
-                            "Value": "[parameter('database_Messaging_User')]"
+                            "Value": "[parameter('DatabaseMessagingUser')]"
                         },
                         {
                             "Name": "Messaging Database Application User Password",
@@ -431,7 +431,7 @@
                         },
                         {
                             "Name": "Reporting Database Application User Name",
-                            "Value": "[parameter('database_Reporting_User')]"
+                            "Value": "[parameter('DatabaseReportingUser')]"
                         },
                         {
                             "Name": "Reporting Database Application User Password",
@@ -439,7 +439,7 @@
                         },
                         {
                             "Name": "XConnect Server Configuration Environment",
-                            "Value": "[parameter('app_Environment')]"
+                            "Value": "[parameter('AppEnvironment')]"
                         },
                         {
                             "Name": "XConnect Server Certificate Validation Thumbprint",
@@ -447,7 +447,7 @@
                         },
                         {
                             "Name": "XConnect Server Log Level",
-                            "Value": "[parameter('app_LogLevel')]"
+                            "Value": "[parameter('AppLogLevel')]"
                         },
                         {
                             "Name": "Processing Engine Xconnect Collection Client Endpoint",
@@ -475,27 +475,27 @@
                         },
                         {
                             "Name": "Processing Engine Machine Learning Server Endpoint",
-                            "Value": "[parameter('machinelearningserver_Url')]"
+                            "Value": "[parameter('MachineLearningServerUrl')]"
                         },
                         {
                             "Name": "Machine Learning Server Blob Storage WebApi Endpoint Certificate Path",
-                            "Value": "[parameter('machinelearningserver_BlobEndpointCertificatePath')]"
+                            "Value": "[parameter('MachineLearningServerBlobEndpointCertificatePath')]"
                         },
                         {
                             "Name": "Machine Learning Server Blob Storage WebApi Endpoint Certificate Password",
-                            "Value": "[parameter('machinelearningserver_BlobEndpointCertificatePassword')]"
+                            "Value": "[parameter('MachineLearningServerBlobEndpointCertificatePassword')]"
                         },
                         {
                             "Name": "Machine Learning Server Table Storage WebApi Endpoint Certificate Path",
-                            "Value": "[parameter('machinelearningserver_TableEndpointCertificatePath')]"
+                            "Value": "[parameter('MachineLearningServerTableEndpointCertificatePath')]"
                         },
                         {
                             "Name": "Machine Learning Server Table Storage WebApi Endpoint Certificate Password",
-                            "Value": "[parameter('machinelearningserver_TableEndpointCertificatePassword')]"
+                            "Value": "[parameter('MachineLearningServerTableEndpointCertificatePassword')]"
                         },
                         {
                             "Name": "Machine Learning Server Storage WebApi Endpoint Certification Authority Certificate Path",
-                            "Value": "[parameter('machinelearningserver_EndpointCertificationAuthorityCertificatePath')]"
+                            "Value": "[parameter('MachineLearningServerEndpointCertificationAuthorityCertificatePath')]"
                         }
                     ],
                     "Skip": [
@@ -513,7 +513,7 @@
             "Description": "Copies the license file to the instance data folder.",
             "Type": "Copy",
             "Params": {
-                "Source": "[resolvepath(parameter('app_License'))]",
+                "Source": "[resolvepath(parameter('AppsLicenseFile'))]",
                 "Destination": "[variable('App.DataFolder')]"
             }
         },
@@ -521,17 +521,17 @@
             "Description": "Creates a new thumbprint with a custom CA.",
             "Type": "AddWebFeatureSSL",
             "Params": {
-                "app_Name": "[parameter('app_Name')]",
-                "HostName": "[parameter('app_DnsName')]",
+                "SiteName": "[parameter('AppName')]",
+                "HostName": "[parameter('AppDnsName')]",
                 "OutputDirectory": "[variable('App.DataFolder')]"
             },
-            "Skip": "[parameter('app_Certificate')]"
+            "Skip": "[parameter('AppCertificate')]"
         },
         "StartAppPool": {
             "Description": "Starts the app pool.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Action": "Start"
             }
         },
@@ -539,18 +539,18 @@
             "Description": "Starts the webapp.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Action": "Start"
             }
         },
-        "endpoint_Set_UrlsCertStorePermissions": {
+        "EndpointSetsCertStorePermissions": {
             "Description": "Set permissions for the services to access the client certificate.",
             "Type": "FilePermissions",
             "Params": {
                 "Path": "[ResolveCertificatePath(variable('Certificate.XConnect.Path'))]",
                 "Rights": [
                     {
-                        "User": "NT AUTHORITY\\endpoint_Local_Url",
+                        "User": "NT AUTHORITY\\EndpointLocal",
                         "FileSystemRights": [
                             "Read"
                         ],
@@ -561,7 +561,7 @@
                 ]
             }
         },
-        "endpoint_Create_UrlLogPath": {
+        "EndpointCreateLogPath": {
             "Description": "Ensure the destination path for the site exists.",
             "Type": "EnsurePath",
             "Params": {
@@ -570,22 +570,22 @@
                 ]
             }
         },
-        "endpoint_SetProcessingEngine_UrlLicense": {
+        "EndpointSetProcessingEngineLicense": {
             "Description": "Copies the license file to the processing engine service data folder.",
             "Type": "Copy",
             "Params": {
-                "Source": "[resolvepath(parameter('app_License'))]",
+                "Source": "[resolvepath(parameter('AppsLicenseFile'))]",
                 "Destination": "[joinpath(variable('Services.ProcessingEngine.InstallPath'), 'App_Data')]"
             }
         },
-        "endpoint_Set_UrlPermissions": {
+        "EndpointSetPermissions": {
             "Description": "Set permissions for the service.",
             "Type": "FilePermissions",
             "Params": {
                 "Path": "[joinpath(variable('Services.ProcessingEngine.InstallPath'), 'App_Data', 'Logs')]",
                 "Rights": [
                     {
-                        "User": "NT AUTHORITY\\endpoint_Local_Url",
+                        "User": "NT AUTHORITY\\EndpointLocal",
                         "FileSystemRights": [
                             "FullControl"
                         ],
@@ -597,7 +597,7 @@
                 ]
             }
         },
-        "endpoint_Install_Url": {
+        "EndpointInstall": {
             "Description": "Installs the service.",
             "Type": "Command",
             "Params": {
@@ -608,9 +608,9 @@
                 ]
             }
         },
-        "endpoint_Start_Url": {
+        "EndpointStart": {
             "Description": "Starts the service.",
-            "Type": "endpoint_Manage_Url",
+            "Type": "EndpointManage",
             "Params": {
                 "Name": "[variable('Services.ProcessingEngine.Name')]",
                 "Status": "Running"
@@ -618,18 +618,18 @@
         }
     },
     "UninstallTasks": {
-        "endpoint_Stop_Url": {
+        "EndpointStop": {
             "Description": "Stops the service if it is running.",
-            "Type": "endpoint_Manage_Url",
+            "Type": "EndpointManage",
             "Params": {
                 "Name": "[variable('Services.ProcessingEngine.Name')]",
                 "Status": "Stopped",
                 "PostDelay": 3000
             }
         },
-        "endpoint_Remove_Url": {
+        "EndpointRemove": {
             "Description": "Removes the current service.",
-            "Type": "endpoint_Remove_Url",
+            "Type": "EndpointRemove",
             "Params": {
                 "Name": "[variable('Services.ProcessingEngine.Name')]"
             }
@@ -638,7 +638,7 @@
             "Description": "Stops the website if it is running.",
             "Type": "ManageWebsite",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
@@ -647,7 +647,7 @@
             "Description": "Stops the app pool if it is running.",
             "Type": "ManageAppPool",
             "Params": {
-                "Name": "[parameter('app_Name')]",
+                "Name": "[parameter('AppName')]",
                 "Action": "Stop",
                 "ErrorAction": "SilentlyContinue"
             }
@@ -656,14 +656,14 @@
             "Description": "Removes the IIS webapp.",
             "Type": "RemoveWebsite",
             "Params": {
-                "Name": "[parameter('app_Name')]"
+                "Name": "[parameter('AppName')]"
             }
         },
         "RemoveAppPool": {
             "Description": "Removes the IIS application pool.",
             "Type": "RemoveAppPool",
             "Params": {
-                "Name": "[parameter('app_Name')]"
+                "Name": "[parameter('AppName')]"
             }
         },
         "RemoveContent": {
@@ -679,7 +679,7 @@
             "Description": "Removes the website host name.",
             "Type": "HostHeader",
             "Params": {
-                "HostName": "[parameter('app_Name')]",
+                "HostName": "[parameter('AppName')]",
                 "Action": "Remove"
             }
         },
@@ -687,8 +687,8 @@
             "Description": "Removes the databases.",
             "Type": "RemoveSQLDatabase",
             "Params": {
-                "ServerName": "[parameter('sqlserver_Instance')]",
-                "Username": "[parameter('sqlserver_AdminUser')]",
+                "ServerName": "[parameter('SqlServerInstance')]",
+                "Username": "[parameter('SqlServerAdminUser')]",
                 "Password": "[variable('Sql.Server.Password.Secure')]",
                 "DatabaseName": [
                     "[variable('Sql.Database.ProcessingEngineTasks.Name')]",

@@ -1,103 +1,103 @@
 {
     "Parameters": {
-        "HeadlessServices_Package": {
+        "HeadlessServicesPackage": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "Sitecore_AppName": {
+        "SitecoreAppName": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "Apps_RootFolder": {
+        "AppsRootFolder": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "Apps_Prefix": {
+        "AppsPrefix": {
             "Type": "String",
             "Description": "",
             "DefaultValue": ""
         },
-        "Sitecore_AdminPassword": {
+        "SitecoreAdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlServer_AdminUser": {
+        "SqlServerAdminUser": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlServer_AdminPassword": {
+        "SqlServerAdminPassword": {
             "Type": "string",
             "DefaultValue": "",
             "Description": ""
         },
-        "SqlServer_Instance": {
+        "SqlServerInstance": {
             "Type": "String",
             "DefaultValue": "",
             "Description": ""
         },
-        "Packages_TempLocation": {
+        "PackagesTempLocation": {
             "Type": "String",
             "Description": "",
             "Reference": ""
         },
-        "Packages_DownloadLocations": {
+        "PackagesDownloadLocations": {
             "Type": "String",
             "Description": "",
             "Reference": ""
         },
-        "SHS_Sitecore:app_Package": {
+        "SHS_Sitecore:AppPackage": {
             "Type": "string",
-            "Reference": "HeadlessServices_Package",
+            "Reference": "HeadlessServicesPackage",
             "Description": ""
         },
-        "SHS_Sitecore:app_Folder": {
+        "SHS_Sitecore:AppsRootFolder": {
             "Type": "string",
-            "Reference": "Apps_RootFolder",
+            "Reference": "AppsRootFolder",
             "Description": ""
         },
-        "SHS_Sitecore:app_Name": {
+        "SHS_Sitecore:AppName": {
             "Type": "string",
-            "Reference": "Sitecore_AppName",
+            "Reference": "SitecoreAppName",
             "Description": ""
         },
-        "SHS_Sitecore:sitecore_AdminPassword": {
+        "SHS_Sitecore:SitecoreAdminPassword": {
             "Type": "string",
-            "Reference": "Sitecore_AdminPassword",
+            "Reference": "SitecoreAdminPassword",
             "Description": ""
         },
-        "SHS_Sitecore:sqlserver_AdminUser": {
+        "SHS_Sitecore:SqlServerAdminUser": {
             "Type": "string",
-            "Reference": "SqlServer_AdminUser",
+            "Reference": "SqlServerAdminUser",
             "Description": ""
         },
-        "SHS_Sitecore:sqlserver_AdminPassword": {
+        "SHS_Sitecore:SqlServerAdminPassword": {
             "Type": "string",
-            "Reference": "SqlServer_AdminPassword",
+            "Reference": "SqlServerAdminPassword",
             "Description": ""
         },
-        "SHS_Sitecore:sqlserver_Instance": {
+        "SHS_Sitecore:SqlServerInstance": {
             "Type": "string",
-            "Reference": "SqlServer_Instance",
+            "Reference": "SqlServerInstance",
             "Description": ""
         },
-        "SHS_Sitecore:sqlserver_DatabasePrefix": {
+        "SHS_Sitecore:SqlServerDatabasePrefix": {
             "Type": "string",
-            "Reference": "Apps_Prefix",
+            "Reference": "AppsPrefix",
             "Description": ""
         },
-        "SHS_Sitecore:packages_TemporaryLocation": {
+        "SHS_Sitecore:PackagesTempLocation": {
             "Type": "String",
-            "Reference": "Packages_TempLocation",
+            "Reference": "PackagesTempLocation",
             "Description": ""
         },
-        "SHS_Sitecore:packages_DownloadLocations": {
+        "SHS_Sitecore:PackagesDownloadLocations": {
             "Type": "String",
-            "Reference": "Packages_DownloadLocations",
+            "Reference": "PackagesDownloadLocations",
             "Description": ""
         }
     },
